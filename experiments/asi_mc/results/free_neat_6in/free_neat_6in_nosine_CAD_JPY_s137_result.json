@@ -1,0 +1,56 @@
+{
+  "pair": "CAD_JPY",
+  "variant": "free_neat_v2",
+  "seed": 137,
+  "actual_gens": 159,
+  "n_inputs": 6,
+  "n_outputs": 3,
+  "n_islands": 4,
+  "n_activations": 13,
+  "activation_names": [
+    "tanh",
+    "sin",
+    "cos",
+    "gauss",
+    "sech",
+    "dog",
+    "gabor",
+    "sinc",
+    "mex_hat",
+    "morlet_re",
+    "morlet_im",
+    "sigmoid",
+    "haar"
+  ],
+  "pretrain_gens": 50,
+  "discovered_nodes": 7,
+  "discovered_conns": 7,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 72.8838,
+  "activations": {
+    "sin": 1,
+    "cos": 1,
+    "morlet_re": 1,
+    "tanh": 4
+  },
+  "is": {
+    "n_trades": 3930,
+    "total_pnl": 22429.3,
+    "avg_mae": 6.87,
+    "n_long": 2038,
+    "n_short": 1892,
+    "pips_per_day": 56.5,
+    "dir_ratio": 0.481
+  },
+  "oos": {
+    "n_trades": 1855,
+    "total_pnl": 5813.1,
+    "avg_mae": 5.71,
+    "n_long": 959,
+    "n_short": 896,
+    "pips_per_day": 34.2,
+    "dir_ratio": 0.483
+  },
+  "elapsed_s": 995.7
+}

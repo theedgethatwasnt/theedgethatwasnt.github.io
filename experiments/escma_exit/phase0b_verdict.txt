@@ -1,0 +1,29 @@
+ESCMA Phase 0b (sine noise + amplitude sweeps) — VERDICT (2026-06-12)
+
+NOISE sweep (clean 50p sine + Gaussian per-bar noise, gauss/bank, seed42):
+  noise 0/0.5/1/2/4/8/16 p/bar → best OOS raw +14,442 / +14,575 / +14,776 / +15,088 /
+  +15,783 / +15,430 / +16,112. EDGE SURVIVES even at 16p/bar (10× spread).
+  Why: (1) multi-scale mn features average per-bar noise by √window (16p→~1.2p on the
+  180-bar channel); (2) the sine is a DETERMINISTIC restoring signal, not a random walk,
+  so noise does NOT accumulate over the ride. → Noise is NOT why real FX fails.
+
+AMPLITUDE sweep (clean sine, shrink amp toward spread, noise=0, seed42):
+  amp  50/20/10/5/3/2/1 p → best raw PnL/trade +48.3/+18.3/+8.3/+3.3/+1.3/+0.30/-0.70.
+  PER-TRADE RAW PnL ≈ AMPLITUDE − SPREAD, exactly, at every level. Breakeven EXACTLY at
+  the 1.7p spread (amp2=+0.30, amp1=-0.70). Net rides to the peak (~181b) at ALL amps —
+  provably optimal exit, even where net-negative (amp1).
+
+COMBINED DIAGNOSTIC — real FX needs TWO things the exit learner cannot manufacture:
+  1. Amplitude > spread (move must exceed round-trip cost; linear, breakeven AT spread).
+  2. Predictability/persistence (deterministic signal rideable even under 10× noise; real
+     move is small AND unpredictable bar-to-bar → net bails to cut AMDDP5 drawdown risk).
+  Tell: on the sine the net rides to the peak even at amp=1 (knows the peak is coming);
+  on real data it bails in 2-3 bars despite real reversion existing.
+
+Real shock-fade reversion fails BOTH (< spread, not persistently rideable). Complete
+mechanistic explanation of the v2 negative. The exit learner itself is provably optimal.
+
+Files: run_phase0b.sh (noise), run_phase0b_amp.sh (amplitude), phase0b_curve.txt,
+phase0b_amp_curve.txt.
+NEXT: Phase 1 — momentum-continuation entries on REAL data (c-c5>0 & c-c12>0 & c-c120>0),
+exit learner warm-started from sine. First real test for an entry edge > spread.

@@ -1,0 +1,97 @@
+
+=== AUD_JPY ===
+  M5 bars: 36491
+  h=1: dir_signed IC=-0.0180(t=-2.88) mag IC=-0.0001(t=-0.02) vol IC=+nan(t=+0.00) ac1=0.105
+
+=== AUD_USD ===
+  M5 bars: 7407
+  h=1: dir_signed IC=+0.0041(t=+0.31) mag IC=-0.0272(t=-0.97) vol IC=+nan(t=+0.00) ac1=0.262
+
+=== CAD_JPY ===
+  M5 bars: 11728
+  h=1: dir_signed IC=-0.0239(t=-1.94) mag IC=+0.0006(t=+0.05) vol IC=+nan(t=+0.00) ac1=0.091
+
+=== CHF_JPY ===
+  M5 bars: 18694
+  h=1: dir_signed IC=-0.0246(t=-2.37) mag IC=+0.0023(t=+0.30) vol IC=+nan(t=+0.00) ac1=0.153
+
+=== EUR_GBP ===
+  M5 bars: 4490
+  h=1: dir_signed IC=-0.0014(t=-0.11) mag IC=-0.0201(t=-1.32) vol IC=+nan(t=+0.00) ac1=0.337
+
+=== EUR_JPY ===
+  M5 bars: 43233
+  h=1: dir_signed IC=-0.0333(t=-4.99) mag IC=-0.0054(t=-1.00) vol IC=+nan(t=+0.00) ac1=0.053
+
+=== EUR_USD ===
+  M5 bars: 24968
+  h=1: dir_signed IC=-0.0059(t=-0.86) mag IC=+0.0109(t=+1.74) vol IC=+nan(t=+0.00) ac1=0.020
+
+=== GBP_JPY ===
+  M5 bars: 46409
+  h=1: dir_signed IC=-0.0279(t=-5.38) mag IC=+0.0004(t=+0.09) vol IC=+nan(t=+0.00) ac1=0.101
+
+=== GBP_USD ===
+  M5 bars: 23642
+  h=1: dir_signed IC=-0.0086(t=-1.48) mag IC=-0.0138(t=-1.42) vol IC=+nan(t=+0.00) ac1=0.225
+
+=== NZD_JPY ===
+  M5 bars: 12724
+  h=1: dir_signed IC=-0.0220(t=-3.33) mag IC=-0.0259(t=-2.20) vol IC=+nan(t=+0.00) ac1=0.169
+
+=== NZD_USD ===
+  M5 bars: 5832
+  h=1: dir_signed IC=-0.0023(t=-0.14) mag IC=-0.0208(t=-0.87) vol IC=+nan(t=+0.00) ac1=0.204
+
+=== USD_JPY ===
+  M5 bars: 35848
+  h=1: dir_signed IC=-0.0072(t=-1.30) mag IC=-0.0076(t=-1.00) vol IC=+nan(t=+0.00) ac1=0.076
+
+=== POOLED CROSS-PAIR SCREEN ===
+h=1: POOLED n=271454 | dir_signed IC=-0.0184(t=-7.14,mc=0.001996007984031936) | mag IC=-0.0047(t=-1.96,mc=0.001996007984031936) | vol IC=+nan(t=+0.00,mc=0.001996007984031936)
+      WF dir=['-0.019', '-0.016', '-0.007'] mag=['-0.011', '-0.013', '-0.021'] vol=['+nan', '+nan', '+nan']
+h=2: POOLED n=271442 | dir_signed IC=-0.0206(t=-8.88,mc=0.001996007984031936) | mag IC=-0.0042(t=-1.62,mc=0.001996007984031936) | vol IC=-0.0026(t=-1.11,mc=0.001996007984031936)
+      WF dir=['-0.013', '-0.020', '-0.008'] mag=['-0.015', '-0.013', '-0.014'] vol=['-0.011', '-0.011', '-0.011']
+h=3: POOLED n=271430 | dir_signed IC=-0.0203(t=-8.88,mc=0.001996007984031936) | mag IC=-0.0049(t=-2.00,mc=0.001996007984031936) | vol IC=-0.0043(t=-1.64,mc=0.001996007984031936)
+      WF dir=['-0.014', '-0.014', '-0.006'] mag=['-0.016', '-0.016', '-0.011'] vol=['-0.015', '-0.019', '-0.013']
+h=6: POOLED n=271394 | dir_signed IC=-0.0223(t=-11.26,mc=0.001996007984031936) | mag IC=-0.0089(t=-3.58,mc=0.001996007984031936) | vol IC=-0.0044(t=-1.49,mc=0.001996007984031936)
+      WF dir=['-0.010', '-0.012', '-0.003'] mag=['-0.021', '-0.020', '-0.014'] vol=['-0.016', '-0.029', '-0.012']
+h=12: POOLED n=271322 | dir_signed IC=-0.0269(t=-14.96,mc=0.001996007984031936) | mag IC=-0.0070(t=-3.18,mc=0.001996007984031936) | vol IC=-0.0042(t=-1.56,mc=0.001996007984031936)
+      WF dir=['-0.010', '-0.011', '-0.005'] mag=['-0.012', '-0.021', '-0.015'] vol=['-0.015', '-0.036', '-0.012']
+
+Saved envelope_penetration_results.json
+
+================================================================================
+VERDICT — Envelope Penetration Ratio P(t)
+================================================================================
+LEAKAGE CONTROL: P built ONLY from the 60 S5 bars composing M5 bar k; forward
+target measured from close of bar k onward (no shared bars). Full-60-S5 M5 bars
+only. Real per-bar spread (ask_c-bid_c). Pooled n~271K, 12 pairs.
+
+1. DIRECTION (Psigned): CONTRARIAN, robust, but UN-tradeable net spread.
+   Pooled IC: h1 -0.018(t-7.1) h2 -0.021(t-8.9) h3 -0.020(t-8.9)
+              h6 -0.022(t-11.3) h12 -0.027(t-15.0). WF all-negative every horizon.
+   Per-pair h6: 11/12 negative (AUD_USD n=7407 noisy +). MC p<0.05 (huge n).
+   Signed breach => price FADES it (upward breach -> down next, vice versa).
+   ECONOMICS: best fade bucket (bottom Psig decile, h12) raw +1.33p -> NET -1.15p
+   after ~2.48p spread. fade_net AND follow_net negative in EVERY decile, EVERY h.
+   => REAL contrarian direction signal, magnitude ~0.02 IC, spread-blocked. Not tradeable.
+
+2. MAGNITUDE / VOL: prior ("breach intensity -> future vol") FAILS.
+   ic_mag NEGATIVE (h6 -0.0089 t-3.6), ic_vol NEGATIVE & weak (h6 -0.0044 t-1.5).
+   Decile fwd_abs flat 14.2->13.8, fwd_vol flat ~6.2-6.4. High P -> if anything
+   slightly QUIETER ahead (spent move), NOT more vol. P is NOT a magnitude/vol gate.
+
+3. PERSISTENCE: autocorr(P) decays 0.150->0.130->0.123->0.110->0.096 (lag 1,3,6,12,24).
+   Mild persistence; NOT a strong trending-vs-ranging regime classifier.
+   Decile fwd_dir/abs/vol show no clean regime separation.
+
+4. CONDITIONAL: no P or Psigned bucket has a tradeable directional tilt net spread.
+
+BOTTOM LINE: P is a WEAK CONTRARIAN DIRECTION measure (real, multi-pair, WF-stable,
+but ~0.02 IC, fully spread-blocked) and is NOT the magnitude/vol-regime gate the prior
+predicted (that sign is reversed/insignificant). Same wall as spread_sigma /
+overextension_conditional / trend_vs_contrarian. Only conceivable use: a faint
+contrarian tilt input to a multi-feature net on a pair with an independent edge --
+not a standalone signal, not even a clean vol gate. CLOSED-NEGATIVE for deployment.
+================================================================================

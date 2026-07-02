@@ -1,0 +1,32 @@
+{
+  "candidate": "candle_range",
+  "pair": "AUD_JPY",
+  "seed": 7,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -15.528042079810627,
+  "activations": [
+    "tanh",
+    "tanh",
+    "tanh",
+    "gauss"
+  ],
+  "theta": 0.3443781664068078,
+  "is": {
+    "n_trades": 1255,
+    "pnl": -1682.0000000000978,
+    "pd": -1.7589734092964997,
+    "dir": 0.48366533864541833,
+    "cum_mae": 32764.7999999963
+  },
+  "oos": {
+    "n_trades": 658,
+    "pnl": -1687.7000000000787,
+    "pd": -4.1181550140646515,
+    "dir": 0.5,
+    "cum_mae": 17567.60000000051
+  },
+  "elapsed_s": 1120.097244977951,
+  "gens_run": 200
+}

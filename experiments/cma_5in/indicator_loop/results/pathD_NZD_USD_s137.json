@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "NZD_USD",
+  "seed": 137,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -4.333992162611628,
+  "is": {
+    "n_trades": 214,
+    "pd": -0.23688139341991507,
+    "dir": 0.48598130841121495
+  },
+  "oos": {
+    "n_trades": 84,
+    "pd": 0.07015923675010452,
+    "dir": 0.42857142857142855,
+    "pnl": 28.700000000011507,
+    "cum_mae": 8266.099999999882
+  },
+  "elapsed_s": 29.276165008544922,
+  "gens_run": 100
+}

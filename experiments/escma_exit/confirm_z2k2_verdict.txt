@@ -1,0 +1,26 @@
+ESCMA sighted-shock-fade exit-learner — full-gen (100g) confirmation, z2_k2 wavelet gate, USD_JPY
+Run: 2026-06-11/12, strictly sequential, --t-max-alloc 1440. s123 killed (swap-wedged, 2h38m / 0 gens).
+
+OOS batch n=2341. Objective = AMDDP5 (pnl - 0.05·Σ max(0,-u)·bar_min).
+
+  seed   trained_AMDDP5   trained_rawPnL   IS_AMDDP5   mean_hold   WR
+  s42        +22.6           +318.4          +1166       28b        50.5%
+  s7        +167.4           +516.6          +1366       35b        52.3%
+  s123       (killed — swap-wedged, never reached gen 5)
+
+NAIVE BASELINES on the identical OOS batch (these are the bar to beat):
+  First negative tick   AMDDP5 = +437.2   rawPnL = +444.2   WR=6.5%   hold=164b
+  Fixed +20p TP         AMDDP5 = -73217   rawPnL = +1459    WR=59.2%  (huge DD)
+  Hold to time cap      AMDDP5 = -79931   rawPnL = +479     (huge DD)
+
+VERDICT: NEGATIVE.
+- On its own AMDDP5 objective the learned exit LOSES to the trivial "cut at first red tick"
+  rule on BOTH completed seeds (+22.6 and +167.4 vs +437.2). Mean is < half the naive bar.
+- The only place the network helps is raw pips on s7 (+516 > +444 naive) by holding winners —
+  but that gain is (a) seed-unstable (s42 only +318) and (b) erased by drawdown in the objective.
+- Conclusion matches the 60g->100g collapse: the 60g "+140 mean" was an unconverged transient.
+  At convergence the policy degenerates toward hold-and-hope, which AMDDP5 punishes.
+- Cross-pair Part B (EUR/GBP/AUD_JPY) NOT run: within-pair result already settles it, and the
+  box was in swap-degraded state (freeze risk). No reason to spend a day confirming a USD_JPY-negative.
+
+SHELVED. The trivial first-negative-tick stop already dominates anything ESCMA learned here.

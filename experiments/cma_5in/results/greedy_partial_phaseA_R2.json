@@ -1,0 +1,47 @@
+{
+  "pair": "CHF_JPY",
+  "seed": 42,
+  "phase": "A_round2",
+  "note": "partial \u2014 stopped before round complete",
+  "results": [
+    {
+      "extras": [
+        "range_pos_30",
+        "bb_width"
+      ],
+      "is_pps": 34.24,
+      "oos_pps": 45.75,
+      "is_trades": 14481,
+      "oos_trades": 6420,
+      "dir_oos": 0.496,
+      "passed_gates": false,
+      "min_chunk_pps": null
+    },
+    {
+      "extras": [
+        "range_pos_30",
+        "m5_slope"
+      ],
+      "is_pps": 53.79,
+      "oos_pps": 66.98,
+      "is_trades": 7714,
+      "oos_trades": 3507,
+      "dir_oos": 0.493,
+      "passed_gates": true,
+      "min_chunk_pps": 25.05555288304153
+    },
+    {
+      "extras": [
+        "range_pos_30",
+        "macd_hist"
+      ],
+      "is_pps": 6.19,
+      "oos_pps": 8.2,
+      "is_trades": 2924,
+      "oos_trades": 1313,
+      "dir_oos": 0.345,
+      "passed_gates": true,
+      "min_chunk_pps": 1.4783198128274855
+    }
+  ]
+}

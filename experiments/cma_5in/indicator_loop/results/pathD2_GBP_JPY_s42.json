@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "GBP_JPY",
+  "seed": 42,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -2.8826310225386775,
+  "is": {
+    "n_trades": 225,
+    "pd": -0.2109664063915553,
+    "dir": 0.49777777777777776
+  },
+  "oos": {
+    "n_trades": 98,
+    "pd": -1.3212934716287545,
+    "dir": 0.37755102040816324,
+    "pnl": -541.3999999998822,
+    "cum_mae": 7754.89999999931
+  },
+  "elapsed_s": 57.929890871047974,
+  "gens_run": 200
+}

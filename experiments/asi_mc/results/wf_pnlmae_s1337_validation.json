@@ -1,0 +1,11 @@
+{
+  "genome": "wf_pnlmae_s1337",
+  "total_pnl": 79882.9,
+  "total_trades": 14199,
+  "win_rate": 48.0,
+  "wf_pass": true,
+  "mc_p": 0.0,
+  "sign_p": 0.0,
+  "all_pass": true,
+  "verdict": "DEPLOY"
+}

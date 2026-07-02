@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "CAD_JPY",
+  "seed": 137,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -3.0439973135333247,
+  "is": {
+    "n_trades": 207,
+    "pd": -0.20113163418718133,
+    "dir": 0.4975845410628019
+  },
+  "oos": {
+    "n_trades": 66,
+    "pd": 0.02440491826900316,
+    "dir": 0.48484848484848486,
+    "pnl": 10.00000000002359,
+    "cum_mae": 6333.399999999898
+  },
+  "elapsed_s": 57.344438314437866,
+  "gens_run": 200
+}

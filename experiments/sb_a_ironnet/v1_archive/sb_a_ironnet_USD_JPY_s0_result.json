@@ -1,0 +1,12 @@
+{
+  "pair": "USD_JPY",
+  "seed": 0,
+  "oos_total_pips": 73162.55,
+  "oos_pips_per_day": 450.19,
+  "oos_n_trades": 4251,
+  "oos_n_long": 2133,
+  "oos_n_short": 2119,
+  "oos_avg_mae": 1.72,
+  "is_best_fitness": 442.5,
+  "training_gens": 200
+}

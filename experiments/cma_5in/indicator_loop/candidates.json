@@ -1,0 +1,658 @@
+{
+  "description": "Slot-4 swap candidates \u2014 full indicator universe. Iteration order is alphabetical within class (no SHAP privilege). Each candidate must be ported into FXFeatureBuilder and pass validate.py before CMA screening.",
+  "fixed_inputs": [
+    "mc_d_a",
+    "mc_dd_a",
+    "er_norm",
+    "UPnL"
+  ],
+  "architecture": {
+    "inputs": 5,
+    "hidden": 4,
+    "outputs": 3,
+    "skip": true,
+    "act_gene_per_node": {
+      "tanh": 0,
+      "sin": 1,
+      "gauss": 2
+    },
+    "theta_latch_gene": true
+  },
+  "fitness": "amddp1",
+  "gates": {
+    "min_trades_per_day_per_chunk": 1,
+    "min_dir_ratio": 0.15
+  },
+  "protocol": {
+    "tier_1_screen": {
+      "pairs": [
+        "EUR_JPY",
+        "USD_JPY"
+      ],
+      "seeds": [
+        42,
+        137
+      ],
+      "gens": 100,
+      "where": "local"
+    },
+    "tier_2_validate": {
+      "pairs": "all_12",
+      "seeds": [
+        42,
+        137,
+        23,
+        7
+      ],
+      "gens": 200,
+      "where": "hetzner"
+    }
+  },
+  "tier_1_promote_threshold_oos_pd": -2.0,
+  "candidates": [
+    {
+      "name": "THI",
+      "class": "state",
+      "port_status": "state_level",
+      "range": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "adx",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        0,
+        100
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T12:55:48.879717"
+    },
+    {
+      "name": "aroon_osc",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T12:11:25.751330"
+    },
+    {
+      "name": "at_hvn_lvn",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "atr_ratio",
+      "class": "volatility",
+      "port_status": "ported",
+      "range": [
+        0,
+        10
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T12:59:32.827760"
+    },
+    {
+      "name": "bb_pos",
+      "class": "structure",
+      "port_status": "ported",
+      "range": [
+        -2,
+        2
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:03:28.862423"
+    },
+    {
+      "name": "bb_width",
+      "class": "volatility",
+      "port_status": "ported",
+      "range": [
+        0,
+        0.05
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T12:07:24.888512"
+    },
+    {
+      "name": "body_pips",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        -50,
+        50
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:07:20.696555"
+    },
+    {
+      "name": "body_ratio",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:11:25.737365"
+    },
+    {
+      "name": "candle_range",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        0,
+        50
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:15:09.888166"
+    },
+    {
+      "name": "cci",
+      "class": "momentum",
+      "port_status": "ported",
+      "range": [
+        -300,
+        300
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:18:52.916317"
+    },
+    {
+      "name": "cvd_cum",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "cvd_delta",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "cvd_divergence_30",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "dTEC",
+      "class": "momentum",
+      "port_status": "ported",
+      "range": [
+        -2,
+        2
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:23:00.726846"
+    },
+    {
+      "name": "dist_to_poc_100",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "dlog_close_pos",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        -0.02,
+        0.02
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:26:53.788809"
+    },
+    {
+      "name": "dmi_diff",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        -100,
+        100
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:30:38.865367"
+    },
+    {
+      "name": "donchian_pos",
+      "class": "structure",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:34:31.417655"
+    },
+    {
+      "name": "dow_cos",
+      "class": "seasonality",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:38:13.370741"
+    },
+    {
+      "name": "dow_sin",
+      "class": "seasonality",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:41:52.453596"
+    },
+    {
+      "name": "ema21_ratio",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        0.95,
+        1.05
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:45:49.363178"
+    },
+    {
+      "name": "ema8_ratio",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        0.95,
+        1.05
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:49:57.114552"
+    },
+    {
+      "name": "gap_norm",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        -10,
+        10
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:53:45.687806"
+    },
+    {
+      "name": "give_back",
+      "class": "state",
+      "port_status": "state_level",
+      "range": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "h1_slope",
+      "class": "mtf",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T13:57:28.392715"
+    },
+    {
+      "name": "h1_sr_zone",
+      "class": "structure",
+      "port_status": "pending",
+      "range": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "hh_asi",
+      "class": "asi_swing",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:01:08.244425"
+    },
+    {
+      "name": "hh_price",
+      "class": "structure",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:04:48.510700"
+    },
+    {
+      "name": "high_vol",
+      "class": "volatility",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:08:32.865982"
+    },
+    {
+      "name": "hl_asi",
+      "class": "asi_swing",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:12:12.517254"
+    },
+    {
+      "name": "hl_price",
+      "class": "structure",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:16:00.894363"
+    },
+    {
+      "name": "hour_cos",
+      "class": "seasonality",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:19:41.050912"
+    },
+    {
+      "name": "hour_sin",
+      "class": "seasonality",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:23:21.832769"
+    },
+    {
+      "name": "is_engulfing",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:27:16.097706"
+    },
+    {
+      "name": "is_inside_bar",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:31:12.348111"
+    },
+    {
+      "name": "macd_hist",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        -2,
+        2
+      ],
+      "validated": true
+    },
+    {
+      "name": "psar_signal",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:35:13.897699"
+    },
+    {
+      "name": "range_expansion",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        0,
+        5
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:39:18.634173"
+    },
+    {
+      "name": "range_pos_30",
+      "class": "structure",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T11:58:43.475074"
+    },
+    {
+      "name": "recovery",
+      "class": "state",
+      "port_status": "state_level",
+      "range": [
+        0,
+        10
+      ]
+    },
+    {
+      "name": "roc_10",
+      "class": "momentum",
+      "port_status": "ported",
+      "range": [
+        -0.05,
+        0.05
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T11:54:18.126719"
+    },
+    {
+      "name": "rsi_14",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T12:03:15.422911"
+    },
+    {
+      "name": "sb_a",
+      "class": "asi_swing",
+      "port_status": "pending",
+      "range": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "sb_p",
+      "class": "structure",
+      "port_status": "pending",
+      "range": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "squeeze",
+      "class": "volatility",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:43:16.306688"
+    },
+    {
+      "name": "stoch_d",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:47:08.244088"
+    },
+    {
+      "name": "stoch_k",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:51:06.222676"
+    },
+    {
+      "name": "str_diff_sign",
+      "class": "mtf",
+      "port_status": "pending",
+      "range": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "supertrend",
+      "class": "trend",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:54:53.142871"
+    },
+    {
+      "name": "tec5",
+      "class": "momentum",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true
+    },
+    {
+      "name": "tsf_slope",
+      "class": "momentum",
+      "port_status": "ported",
+      "range": [
+        -1,
+        1
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T14:58:35.864478"
+    },
+    {
+      "name": "two_bar_momentum",
+      "class": "candle",
+      "port_status": "ported",
+      "range": [
+        -5,
+        5
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T15:02:18.789346"
+    },
+    {
+      "name": "vol_capitulation",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "vol_ratio_20",
+      "class": "volume",
+      "port_status": "ported",
+      "range": [
+        0,
+        1
+      ],
+      "validated": false
+    },
+    {
+      "name": "vol_regime",
+      "class": "volatility",
+      "port_status": "ported",
+      "range": [
+        0,
+        2
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T15:06:01.917765"
+    },
+    {
+      "name": "williams_r",
+      "class": "oscillator",
+      "port_status": "ported",
+      "range": [
+        -1,
+        0
+      ],
+      "validated": true,
+      "last_run": "2026-04-14T15:10:02.151002"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "variant": "B",
+  "seed": 256,
+  "gens": 150,
+  "is_fitness": 0.1151,
+  "network_size": [
+    11,
+    7
+  ],
+  "train_pairs": [
+    "EUR_JPY"
+  ],
+  "oos": {
+    "EUR_JPY": {
+      "n_trades": 266,
+      "total_pnl": 594.6,
+      "sharpe": 0.6483,
+      "win_rate": 53.4,
+      "n_long": 266,
+      "n_short": 0
+    },
+    "USD_JPY": {
+      "n_trades": 276,
+      "total_pnl": 801.5,
+      "sharpe": 0.7491,
+      "win_rate": 56.5,
+      "n_long": 276,
+      "n_short": 0
+    },
+    "GBP_JPY": {
+      "n_trades": 280,
+      "total_pnl": 415.8,
+      "sharpe": 0.3661,
+      "win_rate": 54.3,
+      "n_long": 280,
+      "n_short": 0
+    },
+    "AUD_JPY": {
+      "n_trades": 260,
+      "total_pnl": 1004.6,
+      "sharpe": 1.4232,
+      "win_rate": 53.5,
+      "n_long": 260,
+      "n_short": 0
+    },
+    "CAD_JPY": {
+      "n_trades": 255,
+      "total_pnl": 291.0,
+      "sharpe": 0.4355,
+      "win_rate": 49.8,
+      "n_long": 255,
+      "n_short": 0
+    },
+    "CHF_JPY": {
+      "n_trades": 275,
+      "total_pnl": 868.0,
+      "sharpe": 0.8508,
+      "win_rate": 54.2,
+      "n_long": 275,
+      "n_short": 0
+    },
+    "NZD_JPY": {
+      "n_trades": 252,
+      "total_pnl": -179.0,
+      "sharpe": -0.289,
+      "win_rate": 48.4,
+      "n_long": 252,
+      "n_short": 0
+    },
+    "EUR_USD": {
+      "n_trades": 253,
+      "total_pnl": -484.2,
+      "sharpe": -0.823,
+      "win_rate": 43.5,
+      "n_long": 253,
+      "n_short": 0
+    },
+    "GBP_USD": {
+      "n_trades": 258,
+      "total_pnl": -541.6,
+      "sharpe": -0.7271,
+      "win_rate": 50.0,
+      "n_long": 258,
+      "n_short": 0
+    },
+    "AUD_USD": {
+      "n_trades": 247,
+      "total_pnl": 228.0,
+      "sharpe": 0.5298,
+      "win_rate": 49.8,
+      "n_long": 247,
+      "n_short": 0
+    },
+    "NZD_USD": {
+      "n_trades": 246,
+      "total_pnl": -461.9,
+      "sharpe": -1.2189,
+      "win_rate": 48.0,
+      "n_long": 246,
+      "n_short": 0
+    },
+    "EUR_GBP": {
+      "n_trades": 245,
+      "total_pnl": -340.3,
+      "sharpe": -1.1987,
+      "win_rate": 45.3,
+      "n_long": 245,
+      "n_short": 0
+    }
+  },
+  "elapsed_s": 1463.2
+}

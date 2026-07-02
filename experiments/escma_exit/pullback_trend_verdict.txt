@@ -1,0 +1,31 @@
+SMA-pullback / trendline trend-ride — MULTI-PAIR WF VERDICT: NEGATIVE (USD_JPY drift) 2026-06-12
+
+User idea: ride a higher-TF uptrend, buy the dip (price pulled back below SMA in a strong
+trend), exit on a trailing channel. Causal (SMA/slope/ATR, NO swing pivots → no lookahead),
+real per-pair spread, 4 contiguous WF folds, 12 pairs.
+
+Single-pair (USD_JPY H1) looked promising: pullback+chandelier SMA14 = +1.2 p/d OOS (IS≈OOS,
+424 trades); best swept config SMA10/k3/depth5/angle0.2 = +1.72 OOS.
+
+MULTI-PAIR WALK-FORWARD (the gate):
+  C1 SMA10 mod        : 2/12 net+, 2/12 WF
+  C2 SMA10 deep/strong: 2/12 net+, 1/12 WF
+  C3 SMA14 (best)     : 3/12 net+, 3/12 WF
+  C4 orig-ish         : 1/12 net+, 0/12 WF
+Only USD_JPY passes every config; EUR_USD/GBP_USD occasionally. 9-10/12 pairs net-NEGATIVE,
+deeply (CAD_JPY -10..-12, CHF_JPY -8, EUR_JPY -7). The +1.2 was USD_JPY carry-uptrend DRIFT,
+not a generalizable edge. Fails the majority-pairs + WF gate decisively.
+
+PATTERN CONFIRMED (do not re-derive a 3rd time): intraday trend-following / momentum /
+pullback does NOT generalize cross-pair net of spread — always reduces to USD_JPY (or whatever
+trended) drift. Cf. H1 Donchian 0/2400, MTF trend 0 survivors, H4 Donchian died live,
+momentum-continuation entries failed, ESCMA-on-momentum failed. The ONLY survivors are
+CONTRARIAN at longer horizons (post-shock retrace live/009; CSI StrengthSpread H4 Sharpe 0.59).
+The exit learner is provably optimal — there is no intraday directional ENTRY edge to ride.
+
+NOTE: did NOT build the swing-pivot trendline (the literal chart idea) — swing detection is
+the project's worst lookahead trap (SB-A IronNet: 5/5 gates → 47% batch-vs-causal agreement →
+"entirely lookahead bias" → 0/12 causal). The SMA-pullback is the lookahead-FREE version and
+it already fails cross-pair, so the trendline (which can only do worse honestly) is moot.
+
+Files: backtest_trail_channel.py, sweep_sma_pullback.py, multipair_wf_pullback.py.

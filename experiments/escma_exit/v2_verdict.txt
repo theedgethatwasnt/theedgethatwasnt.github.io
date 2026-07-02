@@ -1,0 +1,29 @@
+ESCMA v2 (simplified) — FINAL VERDICT: NEGATIVE (2026-06-12)
+Net 6→3→1, inputs = 5× tanh(mn/(4.45·MAD_pooled)) + position = LIVE AMDDP5 reward tanh((u−λ·cumdd)/20).
+Activation bank {sin,cos,tanh,gauss,morlet,ricker} × {sweep, evolved}. Seeds 42/7/123. 100 gens.
+Spread charged UP FRONT (full round-trip). Wavelet z2_k2 entries. OOS n=2341. Run: 9 min (parallel).
+
+Naive first-neg-tick bar:  OOS AMDDP5 = -4005.1   raw PnL = -3996.7   (= -1.71p/trade = full spread)
+
+Best per seed (OOS AMDDP5 / raw PnL / WR / hold):
+  s42  sweep:sin    -3956.2 / -3938.9 / 5.8% / 2b
+  s7   sweep:gauss  -3913.5 / -3881.3 / 9.4% / 3b   <- best raw PnL anywhere
+  s123 sweep:cos    -3932.2 / -3915.4 / 5.6% / 2b
+
+Best raw PnL anywhere = -3881.3 → +115p over naive = +0.049 pips/trade above bail-immediately.
+Spread = 1.71 p/trade. Net recovers ~3% of one spread, loses the other 97%. NO config net-positive.
+
+Findings:
+- Every config converges to "bail within 1-5 bars". WR rises 0%→5-10% (catches a few green bars) but
+  the recovered momentum (~0.05p/trade) is < spread. = MSP shock-reversion finding restated.
+- No activation consistently best (gauss best s7, near-worst s42; cos beats s42/s123, collapses s7).
+- Evolved (mixed-activation layer) NEVER wins — mid-pack, tends to collapse to hold=1. A heterogeneous
+  layer does not beat the best single activation.
+- IS also deeply negative (-8400..-9270) everywhere → not overfitting; genuinely no exit signal net
+  of spread, in-sample or out.
+
+CONCLUSION: cleanest possible negative. Minimal formulation (reward-as-feature, MAD-scaled mn, full
+activation search, honest full spread) confirms v1 + random-entry: exits create no alpha; the
+wavelet-gated shock-fade entries have no directional edge larger than the round-trip spread.
+ESCMA exit-learner arc DOUBLY CLOSED. Reusable: amddp5 scorer, index-only causal pipeline, the
+parallel @njit eval_population harness, the MAD-scale/sign-preserving feature convention.

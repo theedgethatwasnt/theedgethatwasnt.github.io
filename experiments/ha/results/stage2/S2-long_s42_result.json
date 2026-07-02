@@ -1,0 +1,141 @@
+{
+  "variant": "S2-long",
+  "seed": 42,
+  "generations": 200,
+  "pop_size": 150,
+  "is_fitness": 0.1321,
+  "oos": {
+    "EUR_JPY": {
+      "n_trades": 242,
+      "total_pnl": 597.9,
+      "sharpe": 0.6366,
+      "win_rate": 54.5,
+      "mean_pnl": 2.47,
+      "avg_mfe": 40.1,
+      "avg_mae": 45.0,
+      "max_dd": 539.7
+    },
+    "USD_JPY": {
+      "n_trades": 243,
+      "total_pnl": 787.5,
+      "sharpe": 0.7113,
+      "win_rate": 51.9,
+      "mean_pnl": 3.24,
+      "avg_mfe": 44.0,
+      "avg_mae": 48.0,
+      "max_dd": 636.4
+    },
+    "GBP_JPY": {
+      "n_trades": 243,
+      "total_pnl": 599.8,
+      "sharpe": 0.5167,
+      "win_rate": 56.4,
+      "mean_pnl": 2.47,
+      "avg_mfe": 50.3,
+      "avg_mae": 55.7,
+      "max_dd": 745.2
+    },
+    "GBP_USD": {
+      "n_trades": 243,
+      "total_pnl": -583.6,
+      "sharpe": -0.8803,
+      "win_rate": 48.1,
+      "mean_pnl": -2.4,
+      "avg_mfe": 30.2,
+      "avg_mae": 35.0,
+      "max_dd": 824.7
+    },
+    "EUR_USD": {
+      "n_trades": 243,
+      "total_pnl": -411.6,
+      "sharpe": -0.711,
+      "win_rate": 46.5,
+      "mean_pnl": -1.69,
+      "avg_mfe": 26.2,
+      "avg_mae": 28.3,
+      "max_dd": 563.8
+    },
+    "AUD_USD": {
+      "n_trades": 243,
+      "total_pnl": 342.6,
+      "sharpe": 0.8256,
+      "win_rate": 51.4,
+      "mean_pnl": 1.41,
+      "avg_mfe": 19.9,
+      "avg_mae": 21.4,
+      "max_dd": 265.9
+    },
+    "AUD_JPY": {
+      "n_trades": 243,
+      "total_pnl": 998.6,
+      "sharpe": 1.3131,
+      "win_rate": 55.6,
+      "mean_pnl": 4.11,
+      "avg_mfe": 33.3,
+      "avg_mae": 36.0,
+      "max_dd": 415.8
+    },
+    "CAD_JPY": {
+      "n_trades": 242,
+      "total_pnl": 433.5,
+      "sharpe": 0.627,
+      "win_rate": 53.7,
+      "mean_pnl": 1.79,
+      "avg_mfe": 28.2,
+      "avg_mae": 33.3,
+      "max_dd": 496.3
+    },
+    "NZD_JPY": {
+      "n_trades": 243,
+      "total_pnl": -128.9,
+      "sharpe": -0.2083,
+      "win_rate": 52.3,
+      "mean_pnl": -0.53,
+      "avg_mfe": 25.2,
+      "avg_mae": 31.5,
+      "max_dd": 529.3
+    },
+    "CHF_JPY": {
+      "n_trades": 241,
+      "total_pnl": 873.2,
+      "sharpe": 0.8036,
+      "win_rate": 52.3,
+      "mean_pnl": 3.62,
+      "avg_mfe": 46.3,
+      "avg_mae": 48.9,
+      "max_dd": 473.2
+    },
+    "NZD_USD": {
+      "n_trades": 243,
+      "total_pnl": -419.7,
+      "sharpe": -1.0792,
+      "win_rate": 50.2,
+      "mean_pnl": -1.73,
+      "avg_mfe": 16.3,
+      "avg_mae": 20.8,
+      "max_dd": 617.2
+    },
+    "EUR_GBP": {
+      "n_trades": 243,
+      "total_pnl": -370.6,
+      "sharpe": -1.3007,
+      "win_rate": 46.9,
+      "mean_pnl": -1.53,
+      "avg_mfe": 12.1,
+      "avg_mae": 14.8,
+      "max_dd": 412.8
+    },
+    "_total": {
+      "n_trades": 2912,
+      "total_pnl": 2718.8
+    }
+  },
+  "elapsed_s": 1709.6,
+  "genome_file": "/root/neat/results/stage2/S2-long_s42_best.pkl",
+  "train_pairs": [
+    "EUR_JPY",
+    "GBP_USD",
+    "USD_JPY",
+    "GBP_JPY"
+  ]
+}

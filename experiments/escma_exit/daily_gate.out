@@ -1,0 +1,15 @@
+
+==============================================================================
+FADE large daily bar, hold 3d  | trades=2458  agg p/day(sum pairs)=-2.8
+  WALK-FORWARD (5 folds): pair×fold positive = 32/60  (53%)
+    per-fold aggregate p/day: F1:+7.7  F2:-21.6  F3:+20.3  F4:-12.4  F5:-8.0
+  MONTE CARLO sign-shuffle (n=2000): mc_p = 0.8030  🔴 not significant
+  per-trade: mean=-1.98p  WR=51%  median=+3.10p
+
+==============================================================================
+FADE large daily bar, hold 5d  | trades=1978  agg p/day(sum pairs)=+1.6
+  WALK-FORWARD (5 folds): pair×fold positive = 33/60  (55%)
+    per-fold aggregate p/day: F1:-3.0  F2:+0.7  F3:+7.6  F4:-8.2  F5:+10.8
+  MONTE CARLO sign-shuffle (n=2000): mc_p = 0.3205  🔴 not significant
+  per-trade: mean=+1.37p  WR=50%  median=-1.20p
+==============================================================================

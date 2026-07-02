@@ -1,0 +1,19 @@
+RETRACE ENTRY-FILTER SCREEN — modest real structure, but raw entries stay negative (2026-06-12)
+
+Path 1: find complementary entry filters to reject dead-on-arrival shocks. Per-entry dataset
+(152K entries, 3 live pairs), entry-time features, baseline TP20/SL30/horizon outcome.
+
+Baseline: -2.82 p/entry, -386.7 OOS p/d, 5.4% TP rate.
+LightGBM OOS IC = +0.244 (HIGHEST entry-predictability all session; momentum screens ~0).
+  top quintile -1.64 p/entry vs bottom -6.80 — real ranking power.
+BUT: even top quintile is NEGATIVE. IC is largely MAGNITUDE/COST prediction ("avoid expensive
+  shocks: z>4 -> -6.67p"), not direction. HTF alignment barely separates (with-4h -3.18 vs
+  against -3.25). Simple filters cut loss -386 -> -5 to -180 p/d but NONE cross zero; the
+  near-breakeven ones (spike_ext>15 & fade_4h = -5.3) have tiny samples (385 OOS, <1/day).
+
+VERDICT: complementary entry filters reduce the loss but cannot make raw shock-fades positive.
+The live Markov filter (+9 p/d) already captures most of the separable edge. The one real lead:
+does the +0.24-IC LightGBM entry score STACK with the Markov filter (push +9 higher)? Requires
+reconstructing the D1 Markov filter offline, then WF+MC on the combination. Modest expected upside.
+
+Files: retrace_filter_screen.py. Related: retrace_exit_verdict.txt (exit not the lever).

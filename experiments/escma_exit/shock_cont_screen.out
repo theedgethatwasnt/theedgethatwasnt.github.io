@@ -1,0 +1,33 @@
+
+====================================================================================
+SHOCK→SHELF→BREAKOUT CONTINUATION  H=+10min  W=10min consol  (6 pairs, net spread)
+====================================================================================
+  retrace bucket    n_oos  mean pnl    WR  IS mean  net-of-spread
+  shallow <0.33       158    -1.428   37%   -2.495  🔴
+  mid 0.33-0.66       191    -2.632   32%   -1.948  🔴
+  deep >0.66          292    -3.604   37%   -3.478  🔴
+  ALL                 641    -2.778   36%   -2.765  🔴
+  -- shallow<0.33 bucket, per pair (OOS mean pnl) --
+     USD_JPY  n=  33 mean=+0.194 WR=45%
+     GBP_JPY  n=  36 mean=-1.411 WR=33%
+     EUR_JPY  n=  28 mean=+1.111 WR=39%
+     AUD_JPY  n=  21 mean=-3.024 WR=38%
+     EUR_USD  n=  18 mean=-3.355 WR=22%
+     GBP_USD  n=  22 mean=-4.023 WR=41%
+
+====================================================================================
+SHOCK→SHELF→BREAKOUT CONTINUATION  H=+15min  W=10min consol  (6 pairs, net spread)
+====================================================================================
+  retrace bucket    n_oos  mean pnl    WR  IS mean  net-of-spread
+  shallow <0.33       158    -0.757   45%   -2.859  🔴
+  mid 0.33-0.66       191    -2.966   32%   -1.490  🔴
+  deep >0.66          292    -3.743   37%   -3.986  🔴
+  ALL                 641    -2.775   37%   -2.930  🔴
+  -- shallow<0.33 bucket, per pair (OOS mean pnl) --
+     USD_JPY  n=  33 mean=+3.097 WR=55%
+     GBP_JPY  n=  36 mean=-2.806 WR=42%
+     EUR_JPY  n=  28 mean=+1.068 WR=46%
+     AUD_JPY  n=  21 mean=-0.443 WR=38%
+     EUR_USD  n=  18 mean=-1.261 WR=50%
+     GBP_USD  n=  22 mean=-5.396 WR=36%
+====================================================================================

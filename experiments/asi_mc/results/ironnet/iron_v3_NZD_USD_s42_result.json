@@ -1,0 +1,41 @@
+{
+  "pair": "NZD_USD",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 58,
+  "min_swing_pips": 18,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 74.0133,
+  "network_size": [
+    7,
+    40
+  ],
+  "activations": {
+    "cos": 2,
+    "tanh": 3,
+    "gauss": 2
+  },
+  "is": {
+    "n_trades": 3686,
+    "total_pnl": 10388.2,
+    "avg_mae": 3.64,
+    "n_long": 1794,
+    "n_short": 1892,
+    "pips_per_day": 26.2,
+    "dir_ratio": 0.487
+  },
+  "oos": {
+    "n_trades": 1460,
+    "total_pnl": 3104.7,
+    "avg_mae": 3.61,
+    "n_long": 689,
+    "n_short": 771,
+    "pips_per_day": 18.3,
+    "dir_ratio": 0.472
+  },
+  "pretrain_time_s": 1004.6,
+  "evolve_time_s": 807.1
+}

@@ -1,0 +1,19 @@
+ESCMA Phase 1 (momentum-continuation entries, real USD_JPY) — VERDICT: NEGATIVE (2026-06-12)
+
+Entries: rising edge of aligned multi-lag momentum (c−c5>0 & c−c12>0 & c−c120>0 → LONG,
+mirror SHORT), lags 5/12/120 S5 bars. 6000 entries (3096 long / 2904 short), IS 4200 /
+OOS 1800. Exit ESCMA warm-started from sine. chop_momentum_entries.py.
+
+Naive first-neg-tick bar (OOS): raw −3150.1 (= −1.75p/trade = full spread).
+Best per seed (raw PnL): s42 ricker −3106, s7 evolved −3144, s123 morlet −3139.
+ALL bail in 1-3 bars, WR 0-2%, NONE net-positive. Best beat over bail = +0.024p/trade (s42).
+
+CONCLUSION: momentum-continuation entries have NO edge > round-trip spread, multi-seed.
+Same outcome as shock-fade (v2). Two distinct hand-crafted entry families both fail; the
+provably-optimal exit learner (Phase 0) correctly bails because there is nothing to ride.
+
+Picture so far: exit learner optimal; edge needs amplitude>spread AND predictability
+(Phase 0b); shock-fade and momentum-continuation entries both lack it. Remaining test:
+Phase 2 — a LEARNED entry ESCMA (nonlinear combo of the 5 mn channels) might find what
+threshold rules miss, though the prior is weak (same features, two rules already failed).
+Files: chop_momentum_entries.py, mom_s{42,7,123}.log, meta3_USD_JPY_mom.parquet.

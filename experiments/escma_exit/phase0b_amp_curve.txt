@@ -1,0 +1,10 @@
+=== Phase 0b amplitude curve (clean) 13:18:27 UTC ===
+amp_p    | best_OOS_A5  | best_raw_pnl | best_hold  | best_cfg
+50       | +14440.1     | +14441.7     | hold=181b  | sweep:gauss
+20       |              | +5471.6      | hold=180b  | sweep:gauss
+10       |              | +2481.8      | hold=181b  | sweep:gauss
+5        |              |              | hold=182b  | sweep:cos
+3        |              |              | hold=181b  | sweep:cos
+2        |              |              | hold=182b  | sweep:cos
+1        |              |              | hold=182b  | sweep:cos
+=== done 13:24:18 UTC ===

@@ -1,0 +1,70 @@
+{
+  "n_in": 7,
+  "n_hid": 8,
+  "n_out": 3,
+  "n_params": 107,
+  "pair": "EUR_GBP",
+  "seed": 123,
+  "mode": "inputs",
+  "passed_hard_gates": true,
+  "is_min_chunk_pps": 42.134670649538904,
+  "is_full": {
+    "n_trades": 14922,
+    "total_pnl": 61974.0,
+    "pips_per_day": 64.86,
+    "n_long": 7461,
+    "n_short": 7461,
+    "dir_ratio": 0.5,
+    "win_rate": 0.64,
+    "contrarian_rate": 0.874,
+    "avg_hold": 18.4,
+    "short_hold_pct": 0.205
+  },
+  "oos": {
+    "n_trades": 5902,
+    "total_pnl": 18644.6,
+    "pips_per_day": 45.53,
+    "n_long": 2975,
+    "n_short": 2927,
+    "dir_ratio": 0.496,
+    "win_rate": 0.62,
+    "contrarian_rate": 0.881,
+    "avg_hold": 20.0,
+    "short_hold_pct": 0.186
+  },
+  "hidden_activations": [
+    "sin",
+    "dog",
+    "sin",
+    "dog",
+    "sech",
+    "dog",
+    "dog",
+    "tanh"
+  ],
+  "hidden_scales": [
+    3.93,
+    3.06,
+    0.73,
+    2.72,
+    2.26,
+    0.16,
+    0.41,
+    0.54
+  ],
+  "evolved_max_hold": null,
+  "evolved_threshold": null,
+  "elapsed_s": 62.2,
+  "args": {
+    "pair": "EUR_GBP",
+    "mode": "inputs",
+    "seed": 123,
+    "gens": 200,
+    "popsize": 24,
+    "sigma0": 0.5,
+    "max_hold": 200,
+    "n_chunks": 3,
+    "min_dir_ratio": 0.15,
+    "workers": 14
+  }
+}

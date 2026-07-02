@@ -1,0 +1,41 @@
+{
+  "pair": "CAD_JPY",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 123,
+  "min_swing_pips": 60,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 92.7997,
+  "network_size": [
+    8,
+    71
+  ],
+  "activations": {
+    "tanh": 3,
+    "cos": 2,
+    "gauss": 3
+  },
+  "is": {
+    "n_trades": 3201,
+    "total_pnl": 31535.2,
+    "avg_mae": 9.03,
+    "n_long": 1681,
+    "n_short": 1520,
+    "pips_per_day": 395.6,
+    "dir_ratio": 0.475
+  },
+  "oos": {
+    "n_trades": 1374,
+    "total_pnl": 11194.3,
+    "avg_mae": 10.44,
+    "n_long": 709,
+    "n_short": 665,
+    "pips_per_day": 327.7,
+    "dir_ratio": 0.484
+  },
+  "pretrain_time_s": 224.8,
+  "evolve_time_s": 394.4
+}

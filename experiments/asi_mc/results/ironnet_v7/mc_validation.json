@@ -1,0 +1,86 @@
+{
+  "EUR_JPY": {
+    "n_trades": 1724,
+    "total_pnl": 17022.0,
+    "win_rate": 54.4,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "USD_JPY": {
+    "n_trades": 1506,
+    "total_pnl": 21487.8,
+    "win_rate": 63.5,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "GBP_JPY": {
+    "n_trades": 1709,
+    "total_pnl": 21649.2,
+    "win_rate": 50.3,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "AUD_JPY": {
+    "n_trades": 1788,
+    "total_pnl": 10263.2,
+    "win_rate": 42.4,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "CAD_JPY": {
+    "n_trades": 1374,
+    "total_pnl": 11200.3,
+    "win_rate": 49.9,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "CHF_JPY": {
+    "n_trades": 1509,
+    "total_pnl": 16892.7,
+    "win_rate": 54.2,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "NZD_JPY": {
+    "n_trades": 1429,
+    "total_pnl": 11157.9,
+    "win_rate": 58.6,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "EUR_USD": {
+    "n_trades": 1420,
+    "total_pnl": 10059.5,
+    "win_rate": 52.7,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "GBP_USD": {
+    "n_trades": 2109,
+    "total_pnl": 12653.3,
+    "win_rate": 59.4,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "AUD_USD": {
+    "n_trades": 1842,
+    "total_pnl": 8748.2,
+    "win_rate": 59.2,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "NZD_USD": {
+    "n_trades": 1509,
+    "total_pnl": 6379.5,
+    "win_rate": 53.9,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "EUR_GBP": {
+    "n_trades": 1415,
+    "total_pnl": 4572.4,
+    "win_rate": 50.7,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  }
+}

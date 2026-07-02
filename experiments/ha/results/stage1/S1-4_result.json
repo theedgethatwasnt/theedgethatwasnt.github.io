@@ -1,0 +1,23 @@
+{
+  "variant_id": "S1-4",
+  "tf": "H1",
+  "direction": "both",
+  "n_outputs": 3,
+  "pair": "EUR_JPY",
+  "generations": 50,
+  "seed": 42,
+  "is_fitness": 1.3317,
+  "oos": {
+    "n_trades": 263,
+    "total_pnl": 9.7,
+    "sharpe": 0.0103,
+    "win_rate": 39.2,
+    "mean_pnl": 0.04,
+    "avg_mfe": 29.5,
+    "avg_mae": 28.6,
+    "max_dd": 600.8,
+    "avg_bars": 15.5
+  },
+  "elapsed_s": 12.8,
+  "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-4_best.pkl"
+}

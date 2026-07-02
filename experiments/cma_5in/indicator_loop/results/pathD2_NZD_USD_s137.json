@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "NZD_USD",
+  "seed": 137,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -2.702304042392371,
+  "is": {
+    "n_trades": 250,
+    "pd": -0.0642230403212384,
+    "dir": 0.5
+  },
+  "oos": {
+    "n_trades": 83,
+    "pd": -0.1620751706107716,
+    "dir": 0.39759036144578314,
+    "pnl": -66.29999999998688,
+    "cum_mae": 8358.499999999847
+  },
+  "elapsed_s": 57.08591032028198,
+  "gens_run": 200
+}

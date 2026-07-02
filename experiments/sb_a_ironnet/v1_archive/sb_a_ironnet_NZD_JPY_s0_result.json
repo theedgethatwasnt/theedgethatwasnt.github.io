@@ -1,0 +1,12 @@
+{
+  "pair": "NZD_JPY",
+  "seed": 0,
+  "oos_total_pips": 34328.52,
+  "oos_pips_per_day": 396.27,
+  "oos_n_trades": 2561,
+  "oos_n_long": 1291,
+  "oos_n_short": 1271,
+  "oos_avg_mae": 2.7,
+  "is_best_fitness": 384.45,
+  "training_gens": 200
+}

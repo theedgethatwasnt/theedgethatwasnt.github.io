@@ -1,0 +1,70 @@
+{
+  "n_in": 5,
+  "n_hid": 8,
+  "n_out": 3,
+  "n_params": 91,
+  "pair": "CAD_JPY",
+  "seed": 42,
+  "mode": "baseline",
+  "passed_hard_gates": false,
+  "is_min_chunk_pps": null,
+  "is_full": {
+    "n_trades": 2076,
+    "total_pnl": -2107.7,
+    "pips_per_day": -2.2,
+    "n_long": 1648,
+    "n_short": 428,
+    "dir_ratio": 0.206,
+    "win_rate": 0.489,
+    "contrarian_rate": 0.0,
+    "avg_hold": 132.6,
+    "short_hold_pct": 0.217
+  },
+  "oos": {
+    "n_trades": 886,
+    "total_pnl": -1154.7,
+    "pips_per_day": -2.82,
+    "n_long": 704,
+    "n_short": 182,
+    "dir_ratio": 0.205,
+    "win_rate": 0.467,
+    "contrarian_rate": 0.0,
+    "avg_hold": 133.2,
+    "short_hold_pct": 0.211
+  },
+  "hidden_activations": [
+    "sech",
+    "sinc",
+    "sech",
+    "sinc",
+    "dog",
+    "gauss",
+    "sinc",
+    "gauss"
+  ],
+  "hidden_scales": [
+    2.54,
+    2.37,
+    2.75,
+    2.05,
+    2.87,
+    3.45,
+    2.48,
+    2.8
+  ],
+  "evolved_max_hold": null,
+  "evolved_threshold": null,
+  "elapsed_s": 56.1,
+  "args": {
+    "pair": "CAD_JPY",
+    "mode": "baseline",
+    "seed": 42,
+    "gens": 200,
+    "popsize": 24,
+    "sigma0": 0.5,
+    "max_hold": 200,
+    "n_chunks": 3,
+    "min_dir_ratio": 0.15,
+    "workers": 14
+  }
+}

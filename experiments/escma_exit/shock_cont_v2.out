@@ -1,0 +1,21 @@
+
+=== EARLY flag-breakout  H=+5min  E=4min  (6 pairs, net spread) ===
+  shallow<0.33 n=0 few
+  mid          n=0 few
+  deep>0.66    n=20811 mean= -3.515 WR= 26% 🔴
+  ALL          n=20811 mean= -3.515 WR= 26% 🔴
+  shallow per-pair: USD_JPY:+nan(n0)  GBP_JPY:+nan(n0)  EUR_JPY:+nan(n0)  AUD_JPY:+nan(n0)  EUR_USD:+nan(n0)  GBP_USD:+nan(n0)
+
+=== EARLY flag-breakout  H=+10min  E=4min  (6 pairs, net spread) ===
+  shallow<0.33 n=0 few
+  mid          n=0 few
+  deep>0.66    n=20811 mean= -3.539 WR= 31% 🔴
+  ALL          n=20811 mean= -3.539 WR= 31% 🔴
+  shallow per-pair: USD_JPY:+nan(n0)  GBP_JPY:+nan(n0)  EUR_JPY:+nan(n0)  AUD_JPY:+nan(n0)  EUR_USD:+nan(n0)  GBP_USD:+nan(n0)
+
+=== EARLY flag-breakout  H=+15min  E=4min  (6 pairs, net spread) ===
+  shallow<0.33 n=0 few
+  mid          n=0 few
+  deep>0.66    n=20811 mean= -3.545 WR= 33% 🔴
+  ALL          n=20811 mean= -3.545 WR= 33% 🔴
+  shallow per-pair: USD_JPY:+nan(n0)  GBP_JPY:+nan(n0)  EUR_JPY:+nan(n0)  AUD_JPY:+nan(n0)  EUR_USD:+nan(n0)  GBP_USD:+nan(n0)

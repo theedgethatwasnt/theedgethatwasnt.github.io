@@ -1,0 +1,19 @@
+phase,cell,ws_thr,sum_ppd,sum_pips,n_fills,note
+IS,ws_only,0.25,136.64,118589.7,32077,
+IS,ws_only,0.5,86.79,75326.0,11441,
+IS,ws_only,0.75,49.92,43326.1,5038,
+IS,ws_only,1.0,30.18,26189.8,2593,
+IS,ws_only,1.5,12.73,11046.8,961,
+IS,ws_only,2.0,6.94,6023.0,471,
+IS,markov+ws,0.25,76.43,66336.0,15596,
+IS,markov+ws,0.5,43.81,38025.2,5500,
+IS,markov+ws,0.75,24.14,20955.1,2402,
+IS,markov+ws,1.0,14.1,12237.7,1221,
+IS,markov+ws,1.5,6.37,5528.5,464,
+IS,markov+ws,2.0,3.67,3189.6,236,
+IS,baseline,,44.84,38914.3,136368,
+IS,markov_only,,22.61,19621.4,99754,
+OOS,baseline,,55.85,20774.8,59231,—
+OOS,markov_only,,63.92,23775.7,43513,—
+OOS,ws_isfit,,161.7,60145.6,15052,IS-pick ws_thr=0.25
+OOS,markov+ws_isfit,,88.39,32878.2,7347,IS-pick ws_thr=0.25

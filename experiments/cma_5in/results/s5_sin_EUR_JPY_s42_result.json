@@ -1,0 +1,29 @@
+{
+  "pair": "EUR_JPY",
+  "seed": 42,
+  "gens": 200,
+  "architecture": "7\u21923(sin)\u21923",
+  "n_params": 36,
+  "elapsed_s": 507.9,
+  "max_hold_bars": 2400,
+  "spread_pips": 2.3,
+  "is": {
+    "pnl": -341.5,
+    "pps": -3.88,
+    "trades": 699,
+    "n_long": 655,
+    "n_short": 44,
+    "dir_ratio": 0.063,
+    "days": 88.1
+  },
+  "oos": {
+    "pnl": -357.2,
+    "pps": -9.46,
+    "trades": 287,
+    "n_long": 277,
+    "n_short": 10,
+    "dir_ratio": 0.035,
+    "days": 37.8
+  },
+  "hard_gates": false
+}

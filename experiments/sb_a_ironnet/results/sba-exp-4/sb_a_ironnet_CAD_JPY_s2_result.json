@@ -1,0 +1,12 @@
+{
+  "pair": "CAD_JPY",
+  "seed": 2,
+  "oos_total_pips": 277.7,
+  "oos_pips_per_day": 1.16,
+  "oos_n_trades": 83,
+  "oos_n_long": 40,
+  "oos_n_short": 44,
+  "oos_avg_mae": 108.42,
+  "is_best_fitness": 1.72,
+  "training_gens": 200
+}

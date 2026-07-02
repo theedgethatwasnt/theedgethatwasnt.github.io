@@ -1,0 +1,42 @@
+{
+  "pair": "CHF_JPY",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 147,
+  "min_swing_pips": 70,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 83.3514,
+  "network_size": [
+    7,
+    40
+  ],
+  "activations": {
+    "tanh": 1,
+    "sin": 1,
+    "gauss": 2,
+    "cos": 3
+  },
+  "is": {
+    "n_trades": 678,
+    "total_pnl": 10181.5,
+    "avg_mae": 6.43,
+    "n_long": 415,
+    "n_short": 263,
+    "pips_per_day": 307.8,
+    "dir_ratio": 0.388
+  },
+  "oos": {
+    "n_trades": 305,
+    "total_pnl": 3569.6,
+    "avg_mae": 5.57,
+    "n_long": 183,
+    "n_short": 122,
+    "pips_per_day": 251.8,
+    "dir_ratio": 0.4
+  },
+  "pretrain_time_s": 74.7,
+  "evolve_time_s": 176.2
+}

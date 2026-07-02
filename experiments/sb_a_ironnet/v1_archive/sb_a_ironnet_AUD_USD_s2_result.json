@@ -1,0 +1,12 @@
+{
+  "pair": "AUD_USD",
+  "seed": 2,
+  "oos_total_pips": 18401.55,
+  "oos_pips_per_day": 401.28,
+  "oos_n_trades": 1225,
+  "oos_n_long": 629,
+  "oos_n_short": 597,
+  "oos_avg_mae": 1.33,
+  "is_best_fitness": 389.76,
+  "training_gens": 200
+}

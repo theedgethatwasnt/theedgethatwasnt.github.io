@@ -1,0 +1,56 @@
+{
+  "pair": "EUR_GBP",
+  "variant": "free_neat_v2",
+  "seed": 42,
+  "actual_gens": 159,
+  "n_inputs": 6,
+  "n_outputs": 3,
+  "n_islands": 4,
+  "n_activations": 13,
+  "activation_names": [
+    "tanh",
+    "sin",
+    "cos",
+    "gauss",
+    "sech",
+    "dog",
+    "gabor",
+    "sinc",
+    "mex_hat",
+    "morlet_re",
+    "morlet_im",
+    "sigmoid",
+    "haar"
+  ],
+  "pretrain_gens": 50,
+  "discovered_nodes": 5,
+  "discovered_conns": 9,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 35.7959,
+  "activations": {
+    "cos": 2,
+    "dog": 1,
+    "morlet_im": 1,
+    "sech": 1
+  },
+  "is": {
+    "n_trades": 3576,
+    "total_pnl": 5413.3,
+    "avg_mae": 2.82,
+    "n_long": 1754,
+    "n_short": 1822,
+    "pips_per_day": 13.6,
+    "dir_ratio": 0.49
+  },
+  "oos": {
+    "n_trades": 1615,
+    "total_pnl": 2394.1,
+    "avg_mae": 2.79,
+    "n_long": 785,
+    "n_short": 830,
+    "pips_per_day": 14.1,
+    "dir_ratio": 0.486
+  },
+  "elapsed_s": 938.7
+}

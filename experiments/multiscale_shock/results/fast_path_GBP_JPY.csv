@@ -1,0 +1,5 @@
+fold,train_n,auc,lift_p90,cont_top_decile,pair
+0,61,0.7196,0.968,0.8571,GBP_JPY
+1,122,0.5988,1.298,1.0,GBP_JPY
+2,183,0.3536,0.758,0.5714,GBP_JPY
+3,244,0.457,0.29,0.1429,GBP_JPY

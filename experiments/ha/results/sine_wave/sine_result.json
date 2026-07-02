@@ -1,0 +1,19 @@
+{
+  "is_fitness": 10.2435,
+  "oos": {
+    "n_trades": 83,
+    "total_pnl": 336.4,
+    "sharpe": 5.9362,
+    "win_rate": 60.2,
+    "mean_pnl": 4.05
+  },
+  "elapsed_s": 164.4,
+  "args": {
+    "generations": 100,
+    "pop_size": 150,
+    "n_bars": 50000,
+    "period": 500,
+    "amplitude": 10,
+    "seed": 42
+  }
+}

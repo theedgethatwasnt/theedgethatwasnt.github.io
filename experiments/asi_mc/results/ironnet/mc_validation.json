@@ -1,0 +1,16 @@
+{
+  "EUR_GBP": {
+    "n_trades": 1562,
+    "total_pnl": 2434.7,
+    "win_rate": 38.5,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "CAD_JPY": {
+    "n_trades": 1710,
+    "total_pnl": 7074.4,
+    "win_rate": 42.0,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  }
+}

@@ -1,0 +1,26 @@
+ASYM REWARD + MARKOV-FILTERED RETRACE — VERDICT (2026-06-12)
+
+User idea: asymmetric reward max(0,AMDDP5) (losers free) to cancel the bail-immediately
+collapse, tested on the Markov-FILTERED retrace subset (the live winning entries).
+
+Markov filter: D1 regime (mw=10 mt=0.002 sig_thr=0.20), 42% of shocks pass (21,262 entries).
+
+ESCMA harness, OOS 6379 trades, raw P&L (R3-correct spread):
+  naive first-neg-tick : -11,499 (-1.80/trade, bail at spread)
+  standard AMDDP5      : -11,378 (-1.78, hold 2b, WR 1.8% — bails)
+  ASYM (max(0,AMDDP5)) :  -8,696 (-1.36, hold 400b, WR 43.3%) -> +2,682p OVER bail
+
+ASYM WORKED MECHANICALLY: canceled bail (hold 2b->400b, WR 1.8%->43%), captured the retrace
+holding value (+2,682p vs standard). BUT still net-negative, and doesn't beat the live's fixed
+TP20. Reason: asym makes losses free -> removes the incentive to LOCK a gain -> the net holds
+past the +20 retrace pop and gives it back. The retrace's edge IS the fixed-TP20 "lock the pop";
+that is the right exit and the learned exit can't beat it (standard bails before the pop, asym
+holds past it).
+
+CONCLUSION: the exit is NOT the improvement lever — now shown 5 ways (ESCMA-std, scratch,
+trailing, ESCMA-asym, entry-filter screen). Asym is a real fix for the bail artifact and would
+help on a population whose optimal exit is "ride" (e.g. the sine, +11,767); but the retrace's
+optimal exit is "lock at +20", which the fixed TP20 already does. Sine positive control still
+passes under asym (hold-to-peak). Code: train_cma_exit_v2 --reward-mode asym; chop_retrace_entries
+--markov. Caveat: a clean reconciliation of the live retrace's full-OOS robustness (validated
++56-70 p/d 4-pair no-SL vs USD_JPY-only) would need backtest_post_shock_retrace.py + Markov.

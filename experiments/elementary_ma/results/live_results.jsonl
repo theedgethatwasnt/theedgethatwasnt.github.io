@@ -1,0 +1,1 @@
+{"ts": "2026-04-17 13:00:18", "tag": "E-atan_EUR_USD_s42", "arm": "E-atan", "pair": "EUR_USD", "seed": 42, "oos_pps": -2.7, "is_pps": -5.05, "oos_trades": 1018, "is_trades": 2278, "oos_dir_ratio": 0.258, "best_fit": 80.84524964667301, "elapsed_s": 14.4, "hidden_activations": ["sech", "morlet", "sech", "gabor", "gauss", "dog", "morlet", "dog"]}

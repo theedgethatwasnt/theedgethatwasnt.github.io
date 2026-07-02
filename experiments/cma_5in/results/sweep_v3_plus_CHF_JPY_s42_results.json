@@ -1,0 +1,128 @@
+{
+  "pair": "CHF_JPY",
+  "seed": 42,
+  "gens": 200,
+  "elapsed": 1974.558711051941,
+  "results": [
+    {
+      "extra": "m5_slope",
+      "ok": true,
+      "elapsed": 178.43392658233643,
+      "is_pps": 53.77,
+      "oos_pps": 65.2,
+      "is_trades": 4476,
+      "oos_trades": 1983,
+      "dir_oos": 0.487,
+      "passed_gates": true,
+      "min_chunk_pps": 29.515387138391972
+    },
+    {
+      "extra": "h1_slope",
+      "ok": true,
+      "elapsed": 215.29993724822998,
+      "is_pps": 14.47,
+      "oos_pps": 15.86,
+      "is_trades": 6511,
+      "oos_trades": 2998,
+      "dir_oos": 0.455,
+      "passed_gates": true,
+      "min_chunk_pps": 2.316506680080281
+    },
+    {
+      "extra": "tec_5",
+      "ok": true,
+      "elapsed": 218.79221200942993,
+      "is_pps": -0.69,
+      "oos_pps": 0.21,
+      "is_trades": 2561,
+      "oos_trades": 1139,
+      "dir_oos": 0.318,
+      "passed_gates": false,
+      "min_chunk_pps": null
+    },
+    {
+      "extra": "bb_width",
+      "ok": true,
+      "elapsed": 189.88155961036682,
+      "is_pps": 48.31,
+      "oos_pps": 57.66,
+      "is_trades": 4691,
+      "oos_trades": 2261,
+      "dir_oos": 0.488,
+      "passed_gates": true,
+      "min_chunk_pps": 26.113204906743025
+    },
+    {
+      "extra": "stoch_d",
+      "ok": true,
+      "elapsed": 177.63176703453064,
+      "is_pps": 19.77,
+      "oos_pps": 21.51,
+      "is_trades": 3123,
+      "oos_trades": 1530,
+      "dir_oos": 0.498,
+      "passed_gates": true,
+      "min_chunk_pps": 11.096057551440714
+    },
+    {
+      "extra": "macd_hist",
+      "ok": true,
+      "elapsed": 211.63798880577087,
+      "is_pps": 55.68,
+      "oos_pps": 73.03,
+      "is_trades": 7401,
+      "oos_trades": 3215,
+      "dir_oos": 0.494,
+      "passed_gates": true,
+      "min_chunk_pps": 25.523451337111588
+    },
+    {
+      "extra": "gap_norm",
+      "ok": true,
+      "elapsed": 176.24937176704407,
+      "is_pps": 28.96,
+      "oos_pps": 34.13,
+      "is_trades": 3629,
+      "oos_trades": 1611,
+      "dir_oos": 0.467,
+      "passed_gates": true,
+      "min_chunk_pps": 14.692515251569978
+    },
+    {
+      "extra": "range_pos_30",
+      "ok": true,
+      "elapsed": 196.950777053833,
+      "is_pps": 56.78,
+      "oos_pps": 67.36,
+      "is_trades": 3971,
+      "oos_trades": 1774,
+      "dir_oos": 0.479,
+      "passed_gates": true,
+      "min_chunk_pps": 30.695209148756028
+    },
+    {
+      "extra": "aroon_osc",
+      "ok": true,
+      "elapsed": 205.2742636203766,
+      "is_pps": 35.24,
+      "oos_pps": 43.45,
+      "is_trades": 12705,
+      "oos_trades": 5155,
+      "dir_oos": 0.496,
+      "passed_gates": false,
+      "min_chunk_pps": null
+    },
+    {
+      "extra": "hl_price",
+      "ok": true,
+      "elapsed": 198.8590395450592,
+      "is_pps": -0.15,
+      "oos_pps": 0.05,
+      "is_trades": 29,
+      "oos_trades": 43,
+      "dir_oos": 0.302,
+      "passed_gates": false,
+      "min_chunk_pps": null
+    }
+  ]
+}

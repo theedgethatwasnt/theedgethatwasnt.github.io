@@ -1,0 +1,25 @@
+ESCMA Phase 2 cheap screen (LightGBM entry-signal predictability) — DEFINITIVE NEGATIVE (2026-06-12)
+
+Question: does ANY nonlinear combo of the 5 mn channels predict a forward move > spread (1.7p)?
+Method: LightGBM regressor on the 5 mn_* channels → forward mid return at K=12/60/180 bars.
+OOS n≈525k each, temporal 70/30, stride 12.
+
+Univariate IC (each channel vs fwd 180b return): -0.0012 to -0.0074 (≈0, slightly contrarian).
+LightGBM nonlinear IC: +0.0038 / +0.0089 / +0.0033 (K=12/60/180) — noise.
+Best predicted decile move: top +0.019/+0.082/+0.058p ; bottom -0.032/-0.108/-0.090p.
+Decile spread: 0.05 / 0.19 / 0.15p — need >3.4p (2×spread) to trade both sides. 20-70× too small.
+Best single-side net of spread: long top-decile = -1.62p (still LOSES after cost). ALL 🔴 < spread.
+
+VERDICT: the 5 σ-momentum channels at S5 on USD_JPY carry ~ZERO forward directional edge
+(IC<0.01, decile spread 20-70× below the round-trip spread). A learned nonlinear entry ESCMA
+CANNOT beat cost — nothing to learn. Phase 2 (two-net continuous sim) is pointless; NOT built.
+
+ESCMA REVIVAL ARC CLOSED — definitive, full mechanistic explanation:
+  • Exit learner: provably OPTIMAL (sine control: hold-to-peak, WR100%, +14,440p).
+  • Edge requires amplitude>spread (breakeven exactly at 1.7p) AND predictability (noise harmless 10×).
+  • Shock-fade entries: no edge > spread.
+  • Momentum-continuation entries: no edge > spread (multi-seed).
+  • Learned entry (LightGBM): mn channels have ~zero forward predictability → no entry can beat cost.
+Deficiency is entirely the ENTRY signal at this scale; the exit machinery is sound and reusable.
+Matches project-wide finding (feature_statistics: zero indicators pass on M5).
+File: screen_entry_signal.py.

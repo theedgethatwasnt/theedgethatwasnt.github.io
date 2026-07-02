@@ -1,0 +1,38 @@
+{
+  "pair": "EUR_GBP",
+  "variant": "free_neat",
+  "seed": 42,
+  "actual_gens": 186,
+  "n_inputs": 4,
+  "n_outputs": 3,
+  "discovered_nodes": 8,
+  "discovered_conns": 3,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 40.6239,
+  "activations": {
+    "cos": 1,
+    "sin": 3,
+    "gauss": 1,
+    "tanh": 3
+  },
+  "is": {
+    "n_trades": 3690,
+    "total_pnl": 5046.1,
+    "avg_mae": 2.86,
+    "n_long": 1842,
+    "n_short": 1848,
+    "pips_per_day": 12.7,
+    "dir_ratio": 0.499
+  },
+  "oos": {
+    "n_trades": 1560,
+    "total_pnl": 2417.0,
+    "avg_mae": 2.87,
+    "n_long": 767,
+    "n_short": 793,
+    "pips_per_day": 14.2,
+    "dir_ratio": 0.492
+  },
+  "elapsed_s": 347.2
+}

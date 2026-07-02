@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "USD_JPY",
+  "seed": 7,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -3.9974440527823925,
+  "is": {
+    "n_trades": 270,
+    "pd": -0.28237654130301904,
+    "dir": 0.4925925925925926
+  },
+  "oos": {
+    "n_trades": 112,
+    "pd": -1.3345995997692415,
+    "dir": 0.38392857142857145,
+    "pnl": -546.499999999952,
+    "cum_mae": 8719.399999999623
+  },
+  "elapsed_s": 56.682618856430054,
+  "gens_run": 200
+}

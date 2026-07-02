@@ -1,0 +1,12 @@
+{
+  "pair": "EUR_USD",
+  "seed": 2,
+  "oos_total_pips": 1277.2,
+  "oos_pips_per_day": 7.33,
+  "oos_n_trades": 44,
+  "oos_n_long": 38,
+  "oos_n_short": 7,
+  "oos_avg_mae": 71.18,
+  "is_best_fitness": 2.2,
+  "training_gens": 200
+}

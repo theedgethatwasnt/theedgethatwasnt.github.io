@@ -1,0 +1,49 @@
+=== position-aware sequential run started 23:53:18 UTC ===
+>>> 23:53:18 posaware_rand_s42  seed=42  mode=continuation  (avail=11612MB)
+--- posaware_rand_s42 (rc=0) ---
+  AMDDP5   sum = -3287.63p   per-sample mean = -1.826p
+  Raw PnL  sum = -3268.62p
+  WR = 1.9%
+    First negative tick     amddp5=-3226.91p  pnl=-3220.20p  WR=0.0%  hold=1b  causes net/sl/tp/time = 1800/0/0/0
+
+>>> 23:54:13 posaware_rand_s7  seed=7  mode=continuation  (avail=11525MB)
+--- posaware_rand_s7 (rc=0) ---
+  AMDDP5   sum = -3260.37p   per-sample mean = -1.811p
+  Raw PnL  sum = -3245.72p
+  WR = 1.4%
+    First negative tick     amddp5=-3226.91p  pnl=-3220.20p  WR=0.0%  hold=1b  causes net/sl/tp/time = 1800/0/0/0
+
+>>> 23:55:04 posaware_rand_s123  seed=123  mode=continuation  (avail=11412MB)
+--- posaware_rand_s123 (rc=0) ---
+  AMDDP5   sum = -3258.54p   per-sample mean = -1.810p
+  Raw PnL  sum = -3242.78p
+  WR = 1.3%
+    First negative tick     amddp5=-3226.91p  pnl=-3220.20p  WR=0.0%  hold=1b  causes net/sl/tp/time = 1800/0/0/0
+
+>>> 23:55:47 posaware_z2k2_s42  seed=42  mode=fade  (avail=11584MB)
+--- posaware_z2k2_s42 (rc=0) ---
+  AMDDP5   sum =  +291.45p   per-sample mean = +0.124p
+  Raw PnL  sum =  +410.33p
+  WR = 47.0%
+    First negative tick     amddp5=  -56.59p  pnl= -48.53p  WR=4.4%  hold=241b  causes net/sl/tp/time = 2239/0/0/102
+
+>>> 23:58:27 posaware_z2k2_s7  seed=7  mode=fade  (avail=7914MB)
+--- posaware_z2k2_s7 (rc=0) ---
+  AMDDP5   sum =  +108.08p   per-sample mean = +0.046p
+  Raw PnL  sum =  +177.80p
+  WR = 47.6%
+    First negative tick     amddp5=  -56.59p  pnl= -48.53p  WR=4.4%  hold=241b  causes net/sl/tp/time = 2239/0/0/102
+
+>>> 00:00:56 posaware_z2k2_s123  seed=123  mode=fade  (avail=9535MB)
+--- posaware_z2k2_s123 (rc=0) ---
+  AMDDP5   sum =   +19.91p   per-sample mean = +0.009p
+  Raw PnL  sum =  +566.09p
+  WR = 51.9%
+    First negative tick     amddp5=  -56.59p  pnl= -48.53p  WR=4.4%  hold=241b  causes net/sl/tp/time = 2239/0/0/102
+
+=== position-aware sequential run DONE 00:04:59 UTC ===
+
+=== SUMMARY ===
+random-entry OOS trades: 1800  (spread floor ≈ -1.7p × n = ~-3060p raw)
+  rand: mean_AMDDP5=-3268.8   (s42=A5:-3288/raw:-3269  s7=A5:-3260/raw:-3246  s123=A5:-3259/raw:-3243)
+  z2k2: mean_AMDDP5=+139.8   (s42=A5:+291/raw:+410  s7=A5:+108/raw:+178  s123=A5:+20/raw:+566)

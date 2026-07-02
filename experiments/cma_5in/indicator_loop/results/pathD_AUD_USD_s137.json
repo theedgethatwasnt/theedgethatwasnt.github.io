@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "AUD_USD",
+  "seed": 137,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -4.5211033532392175,
+  "is": {
+    "n_trades": 401,
+    "pd": -0.3297546001111413,
+    "dir": 0.4912718204488778
+  },
+  "oos": {
+    "n_trades": 168,
+    "pd": -0.4993456730400754,
+    "dir": 0.43452380952380953,
+    "pnl": -204.29999999994834,
+    "cum_mae": 11654.199999999471
+  },
+  "elapsed_s": 29.93713641166687,
+  "gens_run": 100
+}

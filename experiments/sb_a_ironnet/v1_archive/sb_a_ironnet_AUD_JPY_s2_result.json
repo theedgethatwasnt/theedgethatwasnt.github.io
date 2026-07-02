@@ -1,0 +1,12 @@
+{
+  "pair": "AUD_JPY",
+  "seed": 2,
+  "oos_total_pips": 47684.95,
+  "oos_pips_per_day": 429.37,
+  "oos_n_trades": 2937,
+  "oos_n_long": 1505,
+  "oos_n_short": 1433,
+  "oos_avg_mae": 2.11,
+  "is_best_fitness": 405.82,
+  "training_gens": 200
+}

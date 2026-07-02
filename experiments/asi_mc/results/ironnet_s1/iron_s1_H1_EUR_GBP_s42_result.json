@@ -1,0 +1,41 @@
+{
+  "pair": "EUR_GBP",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 200,
+  "min_swing_pips": 30,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 79.2619,
+  "network_size": [
+    7,
+    47
+  ],
+  "activations": {
+    "tanh": 4,
+    "cos": 1,
+    "sin": 2
+  },
+  "is": {
+    "n_trades": 407,
+    "total_pnl": 1340.7,
+    "avg_mae": 1.15,
+    "n_long": 232,
+    "n_short": 175,
+    "pips_per_day": 40.5,
+    "dir_ratio": 0.43
+  },
+  "oos": {
+    "n_trades": 145,
+    "total_pnl": 343.6,
+    "avg_mae": 1.21,
+    "n_long": 70,
+    "n_short": 75,
+    "pips_per_day": 24.2,
+    "dir_ratio": 0.483
+  },
+  "pretrain_time_s": 85.4,
+  "evolve_time_s": 252.6
+}

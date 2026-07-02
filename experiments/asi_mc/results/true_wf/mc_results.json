@@ -1,0 +1,74 @@
+{
+  "EUR_JPY": {
+    "n_trades": 2020,
+    "total_pnl": 12564.8,
+    "order_p": 0.6308,
+    "sign_p": 0.0
+  },
+  "USD_JPY": {
+    "n_trades": 2032,
+    "total_pnl": 14891.2,
+    "order_p": 1.0,
+    "sign_p": 0.0
+  },
+  "GBP_JPY": {
+    "n_trades": 2153,
+    "total_pnl": 17584.2,
+    "order_p": 0.7954,
+    "sign_p": 0.0
+  },
+  "AUD_JPY": {
+    "n_trades": 2086,
+    "total_pnl": 11318.4,
+    "order_p": 0.998,
+    "sign_p": 0.0
+  },
+  "CAD_JPY": {
+    "n_trades": 2111,
+    "total_pnl": 8708.2,
+    "order_p": 0.9833,
+    "sign_p": 0.0
+  },
+  "CHF_JPY": {
+    "n_trades": 1967,
+    "total_pnl": 11202.0,
+    "order_p": 0.9926,
+    "sign_p": 0.0
+  },
+  "NZD_JPY": {
+    "n_trades": 2211,
+    "total_pnl": 6052.1,
+    "order_p": 0.9871,
+    "sign_p": 0.0
+  },
+  "EUR_USD": {
+    "n_trades": 2269,
+    "total_pnl": 9328.1,
+    "order_p": 0.8978,
+    "sign_p": 0.0
+  },
+  "GBP_USD": {
+    "n_trades": 2207,
+    "total_pnl": 10318.0,
+    "order_p": 0.99,
+    "sign_p": 0.0
+  },
+  "AUD_USD": {
+    "n_trades": 2208,
+    "total_pnl": 5472.1,
+    "order_p": 0.902,
+    "sign_p": 0.0
+  },
+  "NZD_USD": {
+    "n_trades": 2169,
+    "total_pnl": 5410.1,
+    "order_p": 0.1926,
+    "sign_p": 0.0
+  },
+  "EUR_GBP": {
+    "n_trades": 2057,
+    "total_pnl": 2587.7,
+    "order_p": 0.3033,
+    "sign_p": 0.0
+  }
+}

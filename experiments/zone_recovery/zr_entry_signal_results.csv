@@ -1,0 +1,4 @@
+label,ppd,nc,cpd,med,win,is_wf,oos_wf,p5,p_pos,sig_pct,passed
+baseline,1387.8,3142,7.7,1.7,70.5,3,3,145.4,0.9955,0.0,True
+m5_sma10,981.3,3327,8.1,1.7,71.7,2,3,,,94.8,False
+h1_sma10,-4660.4,3408,8.3,1.7,72.8,1,2,,,93.6,False

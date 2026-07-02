@@ -1,0 +1,37 @@
+{
+  "pair": "CAD_JPY",
+  "variant": "free_neat",
+  "seed": 137,
+  "actual_gens": 132,
+  "n_inputs": 4,
+  "n_outputs": 3,
+  "discovered_nodes": 5,
+  "discovered_conns": 5,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 80.969,
+  "activations": {
+    "tanh": 3,
+    "gauss": 1,
+    "sin": 1
+  },
+  "is": {
+    "n_trades": 3555,
+    "total_pnl": 24681.6,
+    "avg_mae": 6.62,
+    "n_long": 1844,
+    "n_short": 1711,
+    "pips_per_day": 62.2,
+    "dir_ratio": 0.481
+  },
+  "oos": {
+    "n_trades": 1637,
+    "total_pnl": 6957.6,
+    "avg_mae": 5.55,
+    "n_long": 847,
+    "n_short": 790,
+    "pips_per_day": 40.9,
+    "dir_ratio": 0.483
+  },
+  "elapsed_s": 343.2
+}

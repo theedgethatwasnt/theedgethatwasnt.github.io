@@ -1,0 +1,5 @@
+pair,s1_pass,mc_pass,oos_winners,best_oos_pd,best_config
+GBP_JPY,599,199,175,39.28,atr20_m0p5_r3_n4_E1_X3b_1
+USD_JPY,685,200,170,52.12,atr20_m0p5_r3_n4_E1_X3c_1_3
+EUR_JPY,491,200,179,19.04,atr20_m0p5_r3_n4_E1_X3c_1_5
+GBP_USD,614,200,173,24.91,atr20_m0p5_r3_n4_E1_X3c_1_5

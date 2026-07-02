@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "NZD_JPY",
+  "seed": 42,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -1.918550282539385,
+  "is": {
+    "n_trades": 173,
+    "pd": 0.02543143389766592,
+    "dir": 0.4797687861271676
+  },
+  "oos": {
+    "n_trades": 59,
+    "pd": -0.27398802760773994,
+    "dir": 0.423728813559322,
+    "pnl": -112.20000000000567,
+    "cum_mae": 5575.300000000039
+  },
+  "elapsed_s": 58.328277587890625,
+  "gens_run": 200
+}

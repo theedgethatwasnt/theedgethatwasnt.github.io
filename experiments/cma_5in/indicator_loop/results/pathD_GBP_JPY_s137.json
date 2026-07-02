@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "GBP_JPY",
+  "seed": 137,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -10.34099376180954,
+  "is": {
+    "n_trades": 227,
+    "pd": -1.1794036680585573,
+    "dir": 0.4845814977973568
+  },
+  "oos": {
+    "n_trades": 67,
+    "pd": -0.34826113483812,
+    "dir": 0.44776119402985076,
+    "pnl": -142.69999999991967,
+    "cum_mae": 4216.899999999676
+  },
+  "elapsed_s": 29.632084846496582,
+  "gens_run": 100
+}

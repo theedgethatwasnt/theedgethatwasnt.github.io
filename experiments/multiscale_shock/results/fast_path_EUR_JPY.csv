@@ -1,0 +1,5 @@
+fold,train_n,auc,lift_p90,cont_top_decile,pair
+0,224,0.5775,1.428,0.9565,EUR_JPY
+1,448,0.529,0.569,0.3478,EUR_JPY
+2,672,0.583,1.259,0.6522,EUR_JPY
+3,896,0.5301,1.227,0.6957,EUR_JPY

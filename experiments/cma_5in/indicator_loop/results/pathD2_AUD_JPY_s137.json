@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "AUD_JPY",
+  "seed": 137,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -4.206435119866758,
+  "is": {
+    "n_trades": 256,
+    "pd": -0.2908266974586098,
+    "dir": 0.4765625
+  },
+  "oos": {
+    "n_trades": 66,
+    "pd": -0.2708509845121634,
+    "dir": 0.42424242424242425,
+    "pnl": -111.00000000000563,
+    "cum_mae": 3169.399999999955
+  },
+  "elapsed_s": 57.27540421485901,
+  "gens_run": 200
+}

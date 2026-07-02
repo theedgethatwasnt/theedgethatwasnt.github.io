@@ -1,0 +1,42 @@
+{
+  "pair": "NZD_JPY",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 79,
+  "min_swing_pips": 50,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 72.5977,
+  "network_size": [
+    8,
+    71
+  ],
+  "activations": {
+    "gauss": 1,
+    "cos": 1,
+    "sin": 4,
+    "tanh": 2
+  },
+  "is": {
+    "n_trades": 3491,
+    "total_pnl": 26415.7,
+    "avg_mae": 9.71,
+    "n_long": 1746,
+    "n_short": 1745,
+    "pips_per_day": 331.4,
+    "dir_ratio": 0.5
+  },
+  "oos": {
+    "n_trades": 1429,
+    "total_pnl": 11153.1,
+    "avg_mae": 10.11,
+    "n_long": 716,
+    "n_short": 713,
+    "pips_per_day": 326.5,
+    "dir_ratio": 0.499
+  },
+  "pretrain_time_s": 221.8,
+  "evolve_time_s": 189.4
+}

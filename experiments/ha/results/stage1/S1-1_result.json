@@ -1,0 +1,23 @@
+{
+  "variant_id": "S1-1",
+  "tf": "M5",
+  "direction": "long",
+  "n_outputs": 2,
+  "pair": "EUR_JPY",
+  "generations": 50,
+  "seed": 42,
+  "is_fitness": 0.4046,
+  "oos": {
+    "n_trades": 243,
+    "total_pnl": 674.0,
+    "sharpe": 0.7111,
+    "win_rate": 54.3,
+    "mean_pnl": 2.77,
+    "avg_mfe": 40.9,
+    "avg_mae": 43.6,
+    "max_dd": 521.4,
+    "avg_bars": 199.3
+  },
+  "elapsed_s": 151.8,
+  "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-1_best.pkl"
+}

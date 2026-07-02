@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "EUR_GBP",
+  "seed": 137,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -3.3347470057377384,
+  "is": {
+    "n_trades": 217,
+    "pd": -0.22815860337171348,
+    "dir": 0.4838709677419355
+  },
+  "oos": {
+    "n_trades": 100,
+    "pd": -0.22125104932468326,
+    "dir": 0.32,
+    "pnl": -90.60000000002732,
+    "cum_mae": 5355.000000000275
+  },
+  "elapsed_s": 29.269272804260254,
+  "gens_run": 100
+}

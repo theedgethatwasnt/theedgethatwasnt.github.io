@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "CHF_JPY",
+  "seed": 137,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -2.1339138171065493,
+  "is": {
+    "n_trades": 172,
+    "pd": -0.1324548104955523,
+    "dir": 0.4941860465116279
+  },
+  "oos": {
+    "n_trades": 53,
+    "pd": -0.45844508124927774,
+    "dir": 0.37735849056603776,
+    "pnl": -187.1999999999872,
+    "cum_mae": 4009.899999999966
+  },
+  "elapsed_s": 56.22173595428467,
+  "gens_run": 200
+}

@@ -1,0 +1,32 @@
+{
+  "candidate": "aroon_osc",
+  "pair": "USD_JPY",
+  "seed": 42,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -14.54583587559988,
+  "activations": [
+    "gauss",
+    "sin",
+    "gauss",
+    "tanh"
+  ],
+  "theta": 0.30676227459410493,
+  "is": {
+    "n_trades": 1113,
+    "pnl": -1694.399999999576,
+    "pd": -1.7733832897845279,
+    "dir": 0.481581311769991,
+    "cum_mae": 16532.500000001608
+  },
+  "oos": {
+    "n_trades": 485,
+    "pnl": -1222.599999999804,
+    "pd": -2.9856934504625,
+    "dir": 0.4,
+    "cum_mae": 5164.099999999719
+  },
+  "elapsed_s": 851.5766639709473,
+  "gens_run": 200
+}

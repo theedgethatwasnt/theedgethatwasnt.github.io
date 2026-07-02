@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "AUD_USD",
+  "seed": 7,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -4.345630753162491,
+  "is": {
+    "n_trades": 214,
+    "pd": -0.38181560273361553,
+    "dir": 0.5
+  },
+  "oos": {
+    "n_trades": 65,
+    "pd": -0.2375741528120147,
+    "dir": 0.4153846153846154,
+    "pnl": -97.19999999997397,
+    "cum_mae": 6134.3999999997095
+  },
+  "elapsed_s": 56.362751960754395,
+  "gens_run": 200
+}

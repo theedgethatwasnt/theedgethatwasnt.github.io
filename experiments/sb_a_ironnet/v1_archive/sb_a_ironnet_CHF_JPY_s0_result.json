@@ -1,0 +1,12 @@
+{
+  "pair": "CHF_JPY",
+  "seed": 0,
+  "oos_total_pips": 71157.23,
+  "oos_pips_per_day": 427.48,
+  "oos_n_trades": 4427,
+  "oos_n_long": 2253,
+  "oos_n_short": 2175,
+  "oos_avg_mae": 3.5,
+  "is_best_fitness": 414.2,
+  "training_gens": 200
+}

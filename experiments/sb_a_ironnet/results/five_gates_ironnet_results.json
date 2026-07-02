@@ -1,0 +1,482 @@
+[
+  {
+    "pair": "AUD_JPY",
+    "oos_ppd": 8.51,
+    "per_trade_sharpe": 1.7997,
+    "n_trades": 88,
+    "trades_per_day": 0.3,
+    "perm_p": 0.11,
+    "perm_95th": 9.51,
+    "ci_lo": -2.8978,
+    "ci_hi": 51.6698,
+    "wf_folds": [
+      19.31,
+      -2.71,
+      7.42,
+      10.47,
+      8.55
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 5.18,
+      "seg1": 13.66,
+      "seg2": 6.8,
+      "seg3": 8.4
+    },
+    "seed_std_pct": -724.07,
+    "seed_ppds": [
+      8.51,
+      -23.99,
+      7.14,
+      1.1
+    ],
+    "gate_str": "\u2705\u274c\u274c\u274c\u2705",
+    "gates_passed": 2,
+    "g1_ppd": 1,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 0
+  },
+  {
+    "pair": "AUD_USD",
+    "oos_ppd": 10.15,
+    "per_trade_sharpe": 2.8203,
+    "n_trades": 50,
+    "trades_per_day": 0.3,
+    "perm_p": 0.014,
+    "perm_95th": 6.9,
+    "ci_lo": 1.5954,
+    "ci_hi": 56.0937,
+    "wf_folds": [
+      30.6,
+      5.71,
+      -11.37,
+      -4.82,
+      23.3
+    ],
+    "n_pos_folds": 3,
+    "drop_one_segs": {
+      "seg0": 3.78,
+      "seg1": 15.1,
+      "seg2": 14.59,
+      "seg3": 7.13
+    },
+    "seed_std_pct": -162.87,
+    "seed_ppds": [
+      10.15,
+      7.38,
+      -48.73,
+      -30.23
+    ],
+    "gate_str": "\u2705\u2705\u2705\u274c\u2705",
+    "gates_passed": 4,
+    "g1_ppd": 1,
+    "g2_perm": true,
+    "g3_ci": true,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 0
+  },
+  {
+    "pair": "CAD_JPY",
+    "oos_ppd": 4.71,
+    "per_trade_sharpe": 1.1587,
+    "n_trades": 188,
+    "trades_per_day": 0.8,
+    "perm_p": 0.208,
+    "perm_95th": 7.12,
+    "ci_lo": -4.4432,
+    "ci_hi": 15.8024,
+    "wf_folds": [
+      23.4,
+      -10.79,
+      -0.61,
+      8.65,
+      -0.61
+    ],
+    "n_pos_folds": 2,
+    "drop_one_segs": {
+      "seg0": 0.9,
+      "seg1": 9.36,
+      "seg2": 4.47,
+      "seg3": 4.12
+    },
+    "seed_std_pct": -237.02,
+    "seed_ppds": [
+      4.71,
+      2.71,
+      1.16,
+      -39.9
+    ],
+    "gate_str": "\u2705\u274c\u274c\u274c\u2705",
+    "gates_passed": 2,
+    "g1_ppd": 1,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 0
+  },
+  {
+    "pair": "CHF_JPY",
+    "oos_ppd": 7.38,
+    "per_trade_sharpe": 1.5423,
+    "n_trades": 200,
+    "trades_per_day": 0.6,
+    "perm_p": 0.346,
+    "perm_95th": 9.64,
+    "ci_lo": -0.1209,
+    "ci_hi": 27.1519,
+    "wf_folds": [
+      -1.83,
+      10.14,
+      4.94,
+      14.26,
+      6.82
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 10.22,
+      "seg1": 5.52,
+      "seg2": 7.2,
+      "seg3": 6.57
+    },
+    "seed_std_pct": -190.92,
+    "seed_ppds": [
+      -2.37,
+      2.64,
+      -110.12,
+      7.38
+    ],
+    "gate_str": "\u2705\u274c\u274c\u274c\u2705",
+    "gates_passed": 2,
+    "g1_ppd": 1,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 3
+  },
+  {
+    "pair": "EUR_GBP",
+    "oos_ppd": 6.56,
+    "per_trade_sharpe": 1.6509,
+    "n_trades": 296,
+    "trades_per_day": 4.0,
+    "perm_p": 0.008,
+    "perm_95th": 3.72,
+    "ci_lo": -1.6432,
+    "ci_hi": 5.353,
+    "wf_folds": [
+      6.24,
+      -11.87,
+      15.42,
+      11.01,
+      4.48
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 7.8,
+      "seg1": 9.98,
+      "seg2": 1.69,
+      "seg3": 6.77
+    },
+    "seed_std_pct": -91.08,
+    "seed_ppds": [
+      6.56,
+      -17.84,
+      -46.41,
+      -25.5
+    ],
+    "gate_str": "\u2705\u2705\u274c\u274c\u2705",
+    "gates_passed": 3,
+    "g1_ppd": 1,
+    "g2_perm": true,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 0
+  },
+  {
+    "pair": "EUR_JPY",
+    "oos_ppd": 6.98,
+    "per_trade_sharpe": 1.4104,
+    "n_trades": 123,
+    "trades_per_day": 0.3,
+    "perm_p": 0.188,
+    "perm_95th": 9.38,
+    "ci_lo": -2.0034,
+    "ci_hi": 44.4099,
+    "wf_folds": [
+      9.17,
+      0.3,
+      -2.62,
+      8.1,
+      15.61
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 8.35,
+      "seg1": 7.12,
+      "seg2": 8.99,
+      "seg3": 3.43
+    },
+    "seed_std_pct": -81.92,
+    "seed_ppds": [
+      6.98,
+      -33.79,
+      -77.81,
+      -42.73
+    ],
+    "gate_str": "\u2705\u274c\u274c\u274c\u2705",
+    "gates_passed": 2,
+    "g1_ppd": 1,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 0
+  },
+  {
+    "pair": "EUR_USD",
+    "oos_ppd": 7.33,
+    "per_trade_sharpe": 1.9318,
+    "n_trades": 44,
+    "trades_per_day": 0.3,
+    "perm_p": 0.116,
+    "perm_95th": 8.63,
+    "ci_lo": -7.8746,
+    "ci_hi": 61.253,
+    "wf_folds": [
+      5.06,
+      23.44,
+      6.66,
+      -6.04,
+      -0.22
+    ],
+    "n_pos_folds": 3,
+    "drop_one_segs": {
+      "seg0": 4.36,
+      "seg1": 6.39,
+      "seg2": 9.41,
+      "seg3": 9.16
+    },
+    "seed_std_pct": 33.64,
+    "seed_ppds": [
+      2.82,
+      6.1,
+      7.33,
+      4.25
+    ],
+    "gate_str": "\u2705\u274c\u274c\u274c\u2705",
+    "gates_passed": 2,
+    "g1_ppd": 1,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 2
+  },
+  {
+    "pair": "GBP_JPY",
+    "oos_ppd": 4.29,
+    "per_trade_sharpe": 0.7632,
+    "n_trades": 174,
+    "trades_per_day": 0.3,
+    "perm_p": 0.058,
+    "perm_95th": 4.48,
+    "ci_lo": -9.9822,
+    "ci_hi": 35.3352,
+    "wf_folds": [
+      10.37,
+      1.46,
+      0.87,
+      -2.99,
+      9.75
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 2.7,
+      "seg1": 5.66,
+      "seg2": 6.21,
+      "seg3": 2.61
+    },
+    "seed_std_pct": -180.26,
+    "seed_ppds": [
+      -3.6,
+      4.29,
+      -103.76,
+      2.23
+    ],
+    "gate_str": "\u274c\u274c\u274c\u274c\u2705",
+    "gates_passed": 1,
+    "g1_ppd": 0,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 1
+  },
+  {
+    "pair": "GBP_USD",
+    "oos_ppd": 7.67,
+    "per_trade_sharpe": 1.438,
+    "n_trades": 103,
+    "trades_per_day": 0.4,
+    "perm_p": 0.02,
+    "perm_95th": 5.11,
+    "ci_lo": -5.3242,
+    "ci_hi": 44.291,
+    "wf_folds": [
+      26.96,
+      4.64,
+      20.6,
+      -7.8,
+      -9.06
+    ],
+    "n_pos_folds": 3,
+    "drop_one_segs": {
+      "seg0": 3.84,
+      "seg1": 3.54,
+      "seg2": 9.95,
+      "seg3": 13.34
+    },
+    "seed_std_pct": 108.83,
+    "seed_ppds": [
+      0.32,
+      -0.88,
+      7.67,
+      6.99
+    ],
+    "gate_str": "\u2705\u2705\u274c\u274c\u2705",
+    "gates_passed": 3,
+    "g1_ppd": 1,
+    "g2_perm": true,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 2
+  },
+  {
+    "pair": "NZD_JPY",
+    "oos_ppd": 5.31,
+    "per_trade_sharpe": 1.275,
+    "n_trades": 322,
+    "trades_per_day": 1.5,
+    "perm_p": 0.42,
+    "perm_95th": 11.58,
+    "ci_lo": -2.4599,
+    "ci_hi": 9.5273,
+    "wf_folds": [
+      7.8,
+      -6.47,
+      21.0,
+      7.76,
+      1.85
+    ],
+    "n_pos_folds": 4,
+    "drop_one_segs": {
+      "seg0": 3.1,
+      "seg1": 8.72,
+      "seg2": 5.13,
+      "seg3": 4.3
+    },
+    "seed_std_pct": -261.02,
+    "seed_ppds": [
+      4.64,
+      5.31,
+      3.23,
+      -47.9
+    ],
+    "gate_str": "\u274c\u274c\u274c\u274c\u2705",
+    "gates_passed": 1,
+    "g1_ppd": 0,
+    "g2_perm": false,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 1
+  },
+  {
+    "pair": "NZD_USD",
+    "oos_ppd": 10.37,
+    "per_trade_sharpe": 2.6147,
+    "n_trades": 99,
+    "trades_per_day": 0.8,
+    "perm_p": 0.034,
+    "perm_95th": 9.1,
+    "ci_lo": -1.2183,
+    "ci_hi": 27.928,
+    "wf_folds": [
+      27.15,
+      -9.49,
+      27.92,
+      7.97,
+      -2.69
+    ],
+    "n_pos_folds": 3,
+    "drop_one_segs": {
+      "seg0": 10.81,
+      "seg1": 11.77,
+      "seg2": 7.2,
+      "seg3": 11.69
+    },
+    "seed_std_pct": 39.78,
+    "seed_ppds": [
+      8.04,
+      8.39,
+      2.52,
+      10.37
+    ],
+    "gate_str": "\u2705\u2705\u274c\u274c\u2705",
+    "gates_passed": 3,
+    "g1_ppd": 1,
+    "g2_perm": true,
+    "g3_ci": false,
+    "g4_wf": false,
+    "g5_drop": true,
+    "best_seed": 3
+  },
+  {
+    "pair": "USD_JPY",
+    "oos_ppd": 7.66,
+    "per_trade_sharpe": 1.4755,
+    "n_trades": 111,
+    "trades_per_day": 0.3,
+    "perm_p": 0.03,
+    "perm_95th": 6.45,
+    "ci_lo": -5.0696,
+    "ci_hi": 49.7391,
+    "wf_folds": [
+      3.93,
+      15.15,
+      16.69,
+      1.08,
+      4.39
+    ],
+    "n_pos_folds": 5,
+    "drop_one_segs": {
+      "seg0": 9.6,
+      "seg1": 3.06,
+      "seg2": 8.25,
+      "seg3": 9.71
+    },
+    "seed_std_pct": -326.37,
+    "seed_ppds": [
+      7.41,
+      7.66,
+      -55.1,
+      6.9
+    ],
+    "gate_str": "\u2705\u2705\u274c\u2705\u2705",
+    "gates_passed": 4,
+    "g1_ppd": 1,
+    "g2_perm": true,
+    "g3_ci": false,
+    "g4_wf": true,
+    "g5_drop": true,
+    "best_seed": 1
+  }
+]

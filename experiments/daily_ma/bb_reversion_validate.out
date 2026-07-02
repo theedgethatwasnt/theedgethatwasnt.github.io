@@ -1,0 +1,106 @@
+Loading 12 pairs, TFs=['30m', '1h'] ...
+Loaded in 4s
+
+============================================================================================
+CONFIG  1h_MA5_K1.5  (fast=1h ma=5 K=1.5 trig=close_beyond)
+============================================================================================
+  [audit] EUR_USD: numba_trades=830  python_replay_trades=830  phantom_rejects=0
+  [audit] USD_JPY: numba_trades=480  python_replay_trades=480  phantom_rejects=0
+  [audit] GBP_JPY: numba_trades=494  python_replay_trades=494  phantom_rejects=0
+
+  STEP1 accounting:  exp=+3.057 p/trade  tdpp=1.654 tr/day/pair  pdpp=+5.058 p/day/pair
+         reconcile  exp*tdpp = +5.058  vs pdpp = +5.058  -> OK
+         WR=67.9%  n=6194  pairs+=12/12
+
+  STEP2 fill-realism:  total phantom rejects (exit outside [low,high]) = 0
+         spot-check 10 EUR_USD trades (dir entry stop exit bar[lo,hi] kind pnl):
+           L ent=1.08482 stp=0.00000 exit=1.08546 bar=[1.08437,1.08556]  target pnl=+4.9  exit_in_bar=True prot_side=True
+           L ent=1.08460 stp=0.00000 exit=1.08524 bar=[1.08474,1.08536]  target pnl=+4.9  exit_in_bar=True prot_side=True
+           L ent=1.08380 stp=0.00000 exit=1.08276 bar=[1.08088,1.08329]  target pnl=-11.8  exit_in_bar=True prot_side=True
+           L ent=1.08236 stp=0.00000 exit=1.08531 bar=[1.08368,1.08560]  target pnl=+28.0  exit_in_bar=True prot_side=True
+           L ent=1.08402 stp=0.00000 exit=1.08532 bar=[1.08460,1.08540]  target pnl=+11.5  exit_in_bar=True prot_side=True
+           L ent=1.08530 stp=0.00000 exit=1.08558 bar=[1.08495,1.08559]  target pnl=+1.3  exit_in_bar=True prot_side=True
+           L ent=1.08481 stp=0.00000 exit=1.08589 bar=[1.08537,1.08596]  target pnl=+9.3  exit_in_bar=True prot_side=True
+           L ent=1.08934 stp=0.00000 exit=1.09014 bar=[1.08928,1.09028]  target pnl=+6.5  exit_in_bar=True prot_side=True
+           L ent=1.08744 stp=0.00000 exit=1.09222 bar=[1.08958,1.09261]  target pnl=+46.4  exit_in_bar=True prot_side=True
+           L ent=1.09345 stp=0.00000 exit=1.09362 bar=[1.09291,1.09390]  target pnl=+0.1  exit_in_bar=True prot_side=True
+
+  STEP3 sealed OOS (70/30 by time):
+         IS : exp=+3.252  WR=67.9%  n=4335  pairs+=12/12
+         OOS: exp=+2.605  WR=67.9%  n=1859  pairs+=11/12
+
+  STEP4 Monte Carlo (sign-flip, 500 iters, on OOS set, n=1859):
+         observed net exp=+2.605   p(shuffle>=obs)=0.0000  -> SIGNIFICANT
+
+  STEP5 VERDICT: DIES
+         frequent(tdpp>=2)=False (1.65)  meaty=True  oos_pos=True  oos_broad(>=60%)=True (11/12)  mc_sig=True  fill_clean=True
+
+============================================================================================
+CONFIG  30m_MA9_K2.0  (fast=30m ma=9 K=2.0 trig=close_beyond)
+============================================================================================
+  [audit] EUR_USD: numba_trades=559  python_replay_trades=559  phantom_rejects=0
+  [audit] USD_JPY: numba_trades=345  python_replay_trades=345  phantom_rejects=0
+  [audit] GBP_JPY: numba_trades=354  python_replay_trades=354  phantom_rejects=0
+
+  STEP1 accounting:  exp=+3.467 p/trade  tdpp=1.150 tr/day/pair  pdpp=+3.985 p/day/pair
+         reconcile  exp*tdpp = +3.985  vs pdpp = +3.985  -> OK
+         WR=65.8%  n=4304  pairs+=12/12
+
+  STEP2 fill-realism:  total phantom rejects (exit outside [low,high]) = 0
+         spot-check 10 EUR_USD trades (dir entry stop exit bar[lo,hi] kind pnl):
+           L ent=1.08409 stp=0.00000 exit=1.08534 bar=[1.08474,1.08536]  target pnl=+11.1  exit_in_bar=True prot_side=True
+           L ent=1.08361 stp=0.00000 exit=1.08259 bar=[1.08088,1.08303]  target pnl=-11.6  exit_in_bar=True prot_side=True
+           L ent=1.08324 stp=0.00000 exit=1.08381 bar=[1.08302,1.08382]  target pnl=+4.2  exit_in_bar=True prot_side=True
+           L ent=1.08043 stp=0.00000 exit=1.08243 bar=[1.08167,1.08243]  target pnl=+18.5  exit_in_bar=True prot_side=True
+           L ent=1.08530 stp=0.00000 exit=1.08550 bar=[1.08515,1.08559]  target pnl=+0.4  exit_in_bar=True prot_side=True
+           L ent=1.08431 stp=0.00000 exit=1.08652 bar=[1.08604,1.08666]  target pnl=+20.6  exit_in_bar=True prot_side=True
+           L ent=1.08934 stp=0.00000 exit=1.09134 bar=[1.08958,1.09196]  target pnl=+18.5  exit_in_bar=True prot_side=True
+           L ent=1.09345 stp=0.00000 exit=1.09410 bar=[1.09311,1.09426]  target pnl=+4.9  exit_in_bar=True prot_side=True
+           L ent=1.09355 stp=0.00000 exit=1.09303 bar=[1.09264,1.09304]  target pnl=-6.7  exit_in_bar=True prot_side=True
+           L ent=1.09245 stp=0.00000 exit=1.09383 bar=[1.09028,1.09441]  target pnl=+12.4  exit_in_bar=True prot_side=True
+
+  STEP3 sealed OOS (70/30 by time):
+         IS : exp=+3.469  WR=65.3%  n=3006  pairs+=12/12
+         OOS: exp=+3.460  WR=66.9%  n=1298  pairs+=12/12
+
+  STEP4 Monte Carlo (sign-flip, 500 iters, on OOS set, n=1298):
+         observed net exp=+3.460   p(shuffle>=obs)=0.0000  -> SIGNIFICANT
+
+  STEP5 VERDICT: DIES
+         frequent(tdpp>=2)=False (1.15)  meaty=True  oos_pos=True  oos_broad(>=60%)=True (12/12)  mc_sig=True  fill_clean=True
+
+============================================================================================
+CONFIG  1h_MA9_K2.0  (fast=1h ma=9 K=2.0 trig=close_beyond)
+============================================================================================
+  [audit] EUR_USD: numba_trades=307  python_replay_trades=307  phantom_rejects=0
+  [audit] USD_JPY: numba_trades=178  python_replay_trades=178  phantom_rejects=0
+  [audit] GBP_JPY: numba_trades=189  python_replay_trades=189  phantom_rejects=0
+
+  STEP1 accounting:  exp=+5.724 p/trade  tdpp=0.615 tr/day/pair  pdpp=+3.519 p/day/pair
+         reconcile  exp*tdpp = +3.519  vs pdpp = +3.519  -> OK
+         WR=65.2%  n=2302  pairs+=11/12
+
+  STEP2 fill-realism:  total phantom rejects (exit outside [low,high]) = 0
+         spot-check 10 EUR_USD trades (dir entry stop exit bar[lo,hi] kind pnl):
+           L ent=1.08380 stp=0.00000 exit=1.08453 bar=[1.08328,1.08459]  target pnl=+5.8  exit_in_bar=True prot_side=True
+           L ent=1.08055 stp=0.00000 exit=1.08211 bar=[1.08086,1.08229]  target pnl=+14.1  exit_in_bar=True prot_side=True
+           L ent=1.08934 stp=0.00000 exit=1.09213 bar=[1.08958,1.09261]  target pnl=+26.4  exit_in_bar=True prot_side=True
+           L ent=1.09345 stp=0.00000 exit=1.09546 bar=[1.09191,1.09813]  target pnl=+18.6  exit_in_bar=True prot_side=True
+           L ent=1.09260 stp=0.00000 exit=1.09307 bar=[1.09269,1.09324]  target pnl=+3.2  exit_in_bar=True prot_side=True
+           L ent=1.09109 stp=0.00000 exit=1.09304 bar=[1.09210,1.09319]  target pnl=+18.0  exit_in_bar=True prot_side=True
+           L ent=1.09166 stp=0.00000 exit=1.08867 bar=[1.08780,1.08870]  target pnl=-31.4  exit_in_bar=True prot_side=True
+           L ent=1.08729 stp=0.00000 exit=1.08755 bar=[1.08698,1.08766]  target pnl=+1.2  exit_in_bar=True prot_side=True
+           L ent=1.08632 stp=0.00000 exit=1.08692 bar=[1.08622,1.08695]  target pnl=+4.6  exit_in_bar=True prot_side=True
+           L ent=1.08519 stp=0.00000 exit=1.08818 bar=[1.08621,1.08940]  target pnl=+28.5  exit_in_bar=True prot_side=True
+
+  STEP3 sealed OOS (70/30 by time):
+         IS : exp=+5.829  WR=64.8%  n=1622  pairs+=11/12
+         OOS: exp=+5.474  WR=66.2%  n=680  pairs+=10/12
+
+  STEP4 Monte Carlo (sign-flip, 500 iters, on OOS set, n=680):
+         observed net exp=+5.474   p(shuffle>=obs)=0.0000  -> SIGNIFICANT
+
+  STEP5 VERDICT: DIES
+         frequent(tdpp>=2)=False (0.61)  meaty=True  oos_pos=True  oos_broad(>=60%)=True (10/12)  mc_sig=True  fill_clean=True
+
+Done in 6s

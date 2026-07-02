@@ -1,0 +1,74 @@
+{
+  "EUR_USD": {
+    "n_trades": 3948,
+    "pips_per_day": 42.7,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "GBP_USD": {
+    "n_trades": 3233,
+    "pips_per_day": 49.2,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "USD_JPY": {
+    "n_trades": 3441,
+    "pips_per_day": 96.8,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "AUD_USD": {
+    "n_trades": 3555,
+    "pips_per_day": 36.2,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "EUR_JPY": {
+    "n_trades": 3292,
+    "pips_per_day": 75.1,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "GBP_JPY": {
+    "n_trades": 3445,
+    "pips_per_day": 95.7,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "AUD_JPY": {
+    "n_trades": 3526,
+    "pips_per_day": 56.8,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "CAD_JPY": {
+    "n_trades": 3908,
+    "pips_per_day": 49.6,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "CHF_JPY": {
+    "n_trades": 3207,
+    "pips_per_day": 73.0,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "NZD_JPY": {
+    "n_trades": 2811,
+    "pips_per_day": 41.4,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "NZD_USD": {
+    "n_trades": 3668,
+    "pips_per_day": 28.2,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  },
+  "EUR_GBP": {
+    "n_trades": 3476,
+    "pips_per_day": 17.1,
+    "sign_p": 0.0,
+    "verdict": "PASS"
+  }
+}

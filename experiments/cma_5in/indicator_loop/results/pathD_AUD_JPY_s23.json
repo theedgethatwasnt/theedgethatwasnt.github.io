@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "AUD_JPY",
+  "seed": 23,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -3.961974646809092,
+  "is": {
+    "n_trades": 332,
+    "pd": -0.37929824943629464,
+    "dir": 0.49698795180722893
+  },
+  "oos": {
+    "n_trades": 131,
+    "pd": -0.4404378622022187,
+    "dir": 0.48091603053435117,
+    "pnl": -180.50000000001205,
+    "cum_mae": 7275.999999999973
+  },
+  "elapsed_s": 59.38152050971985,
+  "gens_run": 200
+}

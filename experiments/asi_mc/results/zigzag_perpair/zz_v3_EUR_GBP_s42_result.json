@@ -1,0 +1,35 @@
+{
+  "pair": "EUR_GBP",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 150,
+  "min_swing_pips": 15,
+  "label_window": 6,
+  "labels_buy": 2263,
+  "labels_sell": 2263,
+  "fitness": 11.4819,
+  "network_size": [
+    6,
+    11
+  ],
+  "is": {
+    "n_trades": 2961,
+    "total_pnl": 5895.7,
+    "sharpe": 11.4073,
+    "win_rate": 41.2,
+    "n_long": 1429,
+    "n_short": 1532,
+    "avg_mae": 3.0,
+    "pips_per_day": 14.9
+  },
+  "oos": {
+    "n_trades": 1398,
+    "total_pnl": 2466.7,
+    "sharpe": 7.6091,
+    "win_rate": 40.3,
+    "n_long": 669,
+    "n_short": 729,
+    "avg_mae": 2.93,
+    "pips_per_day": 14.5
+  }
+}

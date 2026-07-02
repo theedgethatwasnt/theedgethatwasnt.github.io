@@ -1,0 +1,41 @@
+{
+  "pair": "AUD_JPY",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 200,
+  "min_swing_pips": 50,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 182.8473,
+  "network_size": [
+    7,
+    47
+  ],
+  "activations": {
+    "tanh": 1,
+    "gauss": 2,
+    "sin": 4
+  },
+  "is": {
+    "n_trades": 1107,
+    "total_pnl": 12262.1,
+    "avg_mae": 3.39,
+    "n_long": 558,
+    "n_short": 549,
+    "pips_per_day": 370.7,
+    "dir_ratio": 0.496
+  },
+  "oos": {
+    "n_trades": 451,
+    "total_pnl": 3896.6,
+    "avg_mae": 3.38,
+    "n_long": 222,
+    "n_short": 229,
+    "pips_per_day": 274.8,
+    "dir_ratio": 0.492
+  },
+  "pretrain_time_s": 88.0,
+  "evolve_time_s": 326.8
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "stop_pips": 50.0,
+    "gap_min": 5.0,
+    "gap_max": 60.0,
+    "apply_stop": true,
+    "apply_calendar": true,
+    "apply_correlation_cap": true
+  },
+  "total_trades": 1587,
+  "oos_sharpe": 1.0624,
+  "is_sharpe": 1.7296,
+  "oos_total_pips": 1097.47,
+  "oos_mean_pips": 2.43,
+  "oos_win_rate": 0.8429,
+  "perm_p": 0.962,
+  "boot_ci_lo": -0.7075,
+  "boot_ci_hi": 2.9503,
+  "wf_fold_sharpes": [
+    1.9954556834653991,
+    -1.2884540594371074
+  ],
+  "drop_one": {
+    "2025": -1.2885,
+    "2026": 1.9955
+  },
+  "gates_passed": 1,
+  "gate_str": "\u2705\u274c\u274c\u274c\u274c",
+  "gate_detail": {
+    "g1": true,
+    "g2": false,
+    "g3": false,
+    "g4": false,
+    "g5": false
+  }
+}

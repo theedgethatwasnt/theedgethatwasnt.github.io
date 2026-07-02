@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "GBP_USD",
+  "seed": 137,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -3.1056606505002935,
+  "is": {
+    "n_trades": 295,
+    "pd": -0.0668031252156032,
+    "dir": 0.4915254237288136
+  },
+  "oos": {
+    "n_trades": 103,
+    "pd": -0.5655873295948944,
+    "dir": 0.33980582524271846,
+    "pnl": -231.4999999999158,
+    "cum_mae": 10435.999999999272
+  },
+  "elapsed_s": 58.46502614021301,
+  "gens_run": 200
+}

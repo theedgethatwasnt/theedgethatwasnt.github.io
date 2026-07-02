@@ -1,0 +1,7 @@
+0        |            | +14440.1     | +14441.7     | hold=181b  | sweep:gauss
+0.5      |            | +14573.1     | +14575.2     | hold=182b  | sweep:gauss
+1        |            | +14772.5     | +14776.1     | hold=183b  | sweep:ricker
+2        |            | +15079.4     | +15088.0     | hold=186b  | sweep:morlet
+4        |            | +15756.6     | +15783.2     | hold=192b  | sweep:ricker
+8        |            | +15334.6     | +15429.8     | hold=210b  | sweep:morlet
+16       |            | +15719.1     | +16112.2     | hold=110b  | sweep:cos

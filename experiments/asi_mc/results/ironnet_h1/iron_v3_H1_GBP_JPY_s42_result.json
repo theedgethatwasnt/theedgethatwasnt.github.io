@@ -1,0 +1,42 @@
+{
+  "pair": "GBP_JPY",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 200,
+  "min_swing_pips": 80,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 157.062,
+  "network_size": [
+    7,
+    40
+  ],
+  "activations": {
+    "sin": 1,
+    "tanh": 2,
+    "gauss": 3,
+    "cos": 1
+  },
+  "is": {
+    "n_trades": 569,
+    "total_pnl": 16539.8,
+    "avg_mae": 6.66,
+    "n_long": 295,
+    "n_short": 274,
+    "pips_per_day": 500.0,
+    "dir_ratio": 0.482
+  },
+  "oos": {
+    "n_trades": 253,
+    "total_pnl": 5267.4,
+    "avg_mae": 4.9,
+    "n_long": 173,
+    "n_short": 80,
+    "pips_per_day": 371.5,
+    "dir_ratio": 0.316
+  },
+  "pretrain_time_s": 81.5,
+  "evolve_time_s": 277.6
+}

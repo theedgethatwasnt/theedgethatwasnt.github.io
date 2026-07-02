@@ -1,0 +1,35 @@
+{
+  "pair": "CAD_JPY",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 150,
+  "min_swing_pips": 30,
+  "label_window": 6,
+  "labels_buy": 3888,
+  "labels_sell": 3880,
+  "fitness": 16.7371,
+  "network_size": [
+    4,
+    3
+  ],
+  "is": {
+    "n_trades": 4048,
+    "total_pnl": 23731.9,
+    "sharpe": 16.6371,
+    "win_rate": 46.7,
+    "n_long": 1921,
+    "n_short": 2127,
+    "avg_mae": 7.32,
+    "pips_per_day": 59.8
+  },
+  "oos": {
+    "n_trades": 1725,
+    "total_pnl": 7037.1,
+    "sharpe": 9.8609,
+    "win_rate": 44.2,
+    "n_long": 850,
+    "n_short": 875,
+    "avg_mae": 5.92,
+    "pips_per_day": 41.4
+  }
+}

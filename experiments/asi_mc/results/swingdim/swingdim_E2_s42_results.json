@@ -1,0 +1,26 @@
+[
+  {
+    "pair": "CAD_JPY",
+    "mode": "E2",
+    "seed": 42,
+    "n_inputs": 7,
+    "ind_cols": [
+      "mc_d_a",
+      "mc_dd_a",
+      "er_norm",
+      "sb_a",
+      "hh_asi",
+      "hl_asi"
+    ],
+    "fitness": 844.3939573010898,
+    "oos": {
+      "n_trades": 22407,
+      "total_pnl": 50180.8,
+      "avg_mae": 0.73,
+      "n_long": 11204,
+      "n_short": 11203,
+      "pips_per_day": 295.1,
+      "dir_ratio": 0.5
+    }
+  }
+]

@@ -1,0 +1,28 @@
+ESCMA Phase 0 (sine positive-control + warm-start) — VERDICT (2026-06-12)
+
+GOAL A — positive control (clean sine, amp 50p, P=720, spread 1.7p, 996 entries):
+  naive bail bar:           OOS AMDDP5 -509 / raw -508
+  sweep:gauss/morlet/ricker OOS AMDDP5 +14,440 / raw +14,442 / WR 100% / hold 181b
+  evolved[tanh+morlet+gauss] same +14,440
+  sweep:sin/cos/tanh        FAILED: held to timeout (360b), OOS -380 (~breakeven-spread)
+  → optimal exit = +P/4 = 180b (the peak). Bump activations hold 181b, exit at the peak,
+    100% WR, capture full ~48p/trade. HARNESS + reward + spread + CMA all WORK.
+
+GOAL B — warm-start the REAL shock-fade run from sine weights (seed 42):
+  cold v2 best:    sin   OOS -3956 / raw -3939 / 2b
+  warm-start best: gauss OOS -3940 / raw -3915 / 3b   (gauss: worst cold -4081 → best warm)
+  → transfer is REAL (~+20p, gauss benefits most) but every config STILL bails in 2-3 bars,
+    none net-positive, IS still ~-8400. Bail is the TRUE optimum, not an init artifact.
+
+CONCLUSIONS:
+  1. v2 negative = REAL no-edge (reversion < spread), triply confirmed. Pipeline finds edges
+     when they exist (+14,440 on sine) and ≈bails when they don't (real).
+  2. NEW STRUCTURAL FINDING: bump activations {gauss, morlet, ricker} are NECESSARY for
+     localized "exit-at-the-extreme" decisions; monotonic tanh + periodic sin/cos cannot
+     represent a single localized threshold and fail entirely on the sine. The activation
+     bank is load-bearing, not decorative. (Explains why gauss quietly won real seed 7.)
+  3. Warm-start machinery validated (--init-dir/--init-pair, v2w_*.npy saved weights).
+
+NEXT: Phase 0b (sine + calibrated noise → edge-vs-SNR curve), then Phase 1 (momentum-
+continuation entries on real data, warm-started). Files: make_sine_dataset.py,
+sine_s42.log, warmstart_s42.log, results/v2w_SINE_*.npy.

@@ -1,0 +1,39 @@
+{
+  "pair": "CHF_JPY",
+  "seed": 42,
+  "architecture": "7\u21923(sin)\u21923(dog)\u21923(tanh)\u21923+skip",
+  "layers": [
+    3,
+    3,
+    3
+  ],
+  "activations": [
+    "sin",
+    "dog",
+    "tanh"
+  ],
+  "skip": true,
+  "n_params": 78,
+  "elapsed_s": 270.2,
+  "extras": [
+    "macd_hist"
+  ],
+  "is": {
+    "n_trades": 8200,
+    "total_pnl": 34327.3,
+    "pips_per_day": 36.03,
+    "n_long": 4103,
+    "n_short": 4097,
+    "dir_ratio": 0.5
+  },
+  "oos": {
+    "n_trades": 3811,
+    "total_pnl": 18831.2,
+    "pips_per_day": 46.12,
+    "n_long": 1913,
+    "n_short": 1898,
+    "dir_ratio": 0.498
+  },
+  "hard_gates": true,
+  "is_min_chunk_pps": 12.51
+}

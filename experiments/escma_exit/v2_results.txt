@@ -1,0 +1,20 @@
+=== ESCMA v2 sequential run started 12:33:20 UTC ===
+>>> 12:33:20  seed=42  (avail=9088MB)
+--- seed 42 (rc=0) — leaderboard ---
+LEADERBOARD (seed=42)  — OOS AMDDP5, naive bar = -4005.1
+========================================================================
+[baseline] OOS first-negative-tick  amddp5= -4005.1p  pnl=-3996.7p  WR=0.0%
+
+>>> 12:36:32  seed=7  (avail=9188MB)
+--- seed 7 (rc=0) — leaderboard ---
+LEADERBOARD (seed=7)  — OOS AMDDP5, naive bar = -4005.1
+========================================================================
+[baseline] OOS first-negative-tick  amddp5= -4005.1p  pnl=-3996.7p  WR=0.0%
+
+>>> 12:39:39  seed=123  (avail=9074MB)
+--- seed 123 (rc=0) — leaderboard ---
+LEADERBOARD (seed=123)  — OOS AMDDP5, naive bar = -4005.1
+========================================================================
+[baseline] OOS first-negative-tick  amddp5= -4005.1p  pnl=-3996.7p  WR=0.0%
+
+=== ESCMA v2 sequential run DONE 12:42:12 UTC ===

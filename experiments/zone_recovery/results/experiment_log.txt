@@ -1,0 +1,1205 @@
+
+============================================================
+PHASE 0: EDA + E/Z Ratio Analysis  [18:05:48]
+============================================================
+EUR_USD M5: 384,633 bars | 2021-01-04 → 2026-04-09
+
+ATR_short (H1×8) median: 13.0 pips
+ATR_long  (D1×20) median: 73.8 pips
+
+Original cBot params:
+  halfZone = 10.25 pips | target = 6.0 pips | E/Z = 0.293
+
+  ATR mult hz=0.3×S tgt=1.0×L:
+    Zone half = 3.9p | Target = 73.8p
+    E/Z median = 9.71 | in [6,15]: 91%
+
+  ATR mult hz=0.5×S tgt=1.5×L:
+    Zone half = 6.5p | Target = 110.8p
+    E/Z median = 8.74 | in [6,15]: 89%
+
+  ATR mult hz=0.7×S tgt=2.0×L:
+    Zone half = 9.1p | Target = 147.7p
+    E/Z median = 8.32 | in [6,15]: 86%
+
+============================================================
+PHASE 1: Classic cBot Grid Search  [18:06:03]
+============================================================
+  [20/320] hz=5p tgt=8p pf=1.50 | n=27965 pnl=-606715.2p sharpe=-0.185
+  [40/320] hz=5p tgt=20p pf=1.50 | n=23061 pnl=-176726.4p sharpe=-0.090
+  [60/320] hz=8p tgt=8p pf=1.50 | n=23175 pnl=-259743.2p sharpe=-0.112
+  [80/320] hz=8p tgt=20p pf=1.50 | n=19921 pnl=-91336.5p sharpe=-0.053
+  [100/320] hz=10p tgt=8p pf=1.50 | n=20916 pnl=-221038.9p sharpe=-0.097
+  [120/320] hz=10p tgt=20p pf=1.50 | n=18010 pnl=-90900.6p sharpe=-0.055
+  [140/320] hz=10.25p tgt=8p pf=1.50 | n=20538 pnl=-179852.6p sharpe=-0.087
+  [160/320] hz=10.25p tgt=20p pf=1.50 | n=17886 pnl=-59984.5p sharpe=-0.037
+  [180/320] hz=12p tgt=8p pf=1.50 | n=18690 pnl=-182653.9p sharpe=-0.085
+  [200/320] hz=12p tgt=20p pf=1.50 | n=16486 pnl=-73065.7p sharpe=-0.048
+  [220/320] hz=15p tgt=8p pf=1.50 | n=16448 pnl=-129821.1p sharpe=-0.068
+  [240/320] hz=15p tgt=20p pf=1.50 | n=14762 pnl=-60155.1p sharpe=-0.042
+  [260/320] hz=20p tgt=8p pf=1.50 | n=13389 pnl=-111124.1p sharpe=-0.067
+  [280/320] hz=20p tgt=20p pf=1.50 | n=12232 pnl=-42264.6p sharpe=-0.031
+  [300/320] hz=25p tgt=8p pf=1.50 | n=11694 pnl=-83152.9p sharpe=-0.049
+  [320/320] hz=25p tgt=20p pf=1.50 | n=10633 pnl=-23962.2p sharpe=-0.025
+
+Top 10 by Sharpe:
+     half_zone_pips  target_beyond_pips  profit_factor  n_cycles  net_pnl_pips    sharpe  win_rate  avg_legs  max_legs_hit_pct
+155           10.25                  20           1.00     17886     -24278.45 -0.022045  0.844459  3.584256          0.263614
+317           25.00                  20           1.19     10633     -16869.00 -0.022621  0.913571  2.351547          0.135333
+318           25.00                  20           1.30     10633     -17616.80 -0.022656  0.913947  2.351547          0.135333
+316           25.00                  20           1.10     10633     -16508.20 -0.022884  0.913101  2.351547          0.135333
+315           25.00                  20           1.00     10633     -16140.10 -0.023175  0.911972  2.351547          0.135333
+156           10.25                  20           1.10     17886     -29946.90 -0.025019  0.846975  3.584256          0.263614
+319           25.00                  20           1.50     10633     -23962.20 -0.025123  0.914888  2.351547          0.135333
+157           10.25                  20           1.19     17886     -34631.80 -0.027301  0.847646  3.584256          0.263614
+158           10.25                  20           1.30     17886     -38056.00 -0.028748  0.848429  3.584256          0.263614
+311           25.00                  15           1.10     11094     -26059.70 -0.029200  0.912385  2.198936          0.111321
+
+============================================================
+PHASE 2: ATR-Calibrated Grid Search  [18:14:32]
+============================================================
+  hz=0.30 tgt=1.00 | n=22732 pnl=+44363.2p sharpe=0.032 ez=9.5
+  hz=0.30 tgt=1.25 | n=22714 pnl=+46962.1p sharpe=0.034 ez=11.8
+  hz=0.30 tgt=1.50 | n=22714 pnl=+49851.2p sharpe=0.036 ez=14.2
+  hz=0.30 tgt=1.75 | n=22714 pnl=+51799.7p sharpe=0.037 ez=16.6
+  hz=0.30 tgt=2.00 | n=22714 pnl=+52485.7p sharpe=0.038 ez=18.9
+  hz=0.30 tgt=2.25 | n=22714 pnl=+53004.7p sharpe=0.038 ez=21.3
+  hz=0.30 tgt=2.50 | n=22714 pnl=+53402.5p sharpe=0.039 ez=23.7
+  hz=0.30 tgt=2.75 | n=22714 pnl=+53900.1p sharpe=0.039 ez=26.1
+  hz=0.30 tgt=3.00 | n=22714 pnl=+54149.5p sharpe=0.039 ez=28.4
+  hz=0.30 tgt=3.25 | n=22714 pnl=+54305.7p sharpe=0.039 ez=30.8
+  hz=0.40 tgt=1.00 | n=21540 pnl=+45049.8p sharpe=0.034 ez=7.1
+  hz=0.40 tgt=1.25 | n=21540 pnl=+48597.1p sharpe=0.037 ez=8.9
+  hz=0.40 tgt=1.50 | n=21540 pnl=+51202.5p sharpe=0.039 ez=10.7
+  hz=0.40 tgt=1.75 | n=21540 pnl=+51828.6p sharpe=0.039 ez=12.4
+  hz=0.40 tgt=2.00 | n=21540 pnl=+52349.3p sharpe=0.040 ez=14.2
+  hz=0.40 tgt=2.25 | n=21540 pnl=+52830.1p sharpe=0.040 ez=16.0
+  hz=0.40 tgt=2.50 | n=21540 pnl=+53227.6p sharpe=0.041 ez=17.8
+  hz=0.40 tgt=2.75 | n=21540 pnl=+53828.7p sharpe=0.041 ez=19.5
+  hz=0.40 tgt=3.00 | n=21540 pnl=+54047.0p sharpe=0.041 ez=21.3
+  hz=0.40 tgt=3.25 | n=21540 pnl=+54288.9p sharpe=0.042 ez=23.1
+  hz=0.50 tgt=1.00 | n=20393 pnl=+44211.4p sharpe=0.038 ez=5.7
+  hz=0.50 tgt=1.25 | n=20318 pnl=+46083.7p sharpe=0.039 ez=7.1
+  hz=0.50 tgt=1.50 | n=20318 pnl=+47928.0p sharpe=0.041 ez=8.5
+  hz=0.50 tgt=1.75 | n=20318 pnl=+48632.5p sharpe=0.041 ez=9.9
+  hz=0.50 tgt=2.00 | n=20318 pnl=+48905.9p sharpe=0.041 ez=11.4
+  hz=0.50 tgt=2.25 | n=20318 pnl=+49178.5p sharpe=0.042 ez=12.8
+  hz=0.50 tgt=2.50 | n=20318 pnl=+49616.4p sharpe=0.042 ez=14.2
+  hz=0.50 tgt=2.75 | n=20318 pnl=+49999.1p sharpe=0.042 ez=15.6
+  hz=0.50 tgt=3.00 | n=20318 pnl=+50131.1p sharpe=0.043 ez=17.1
+  hz=0.50 tgt=3.25 | n=20318 pnl=+50278.0p sharpe=0.043 ez=18.5
+  hz=0.60 tgt=1.00 | n=18473 pnl=+37277.7p sharpe=0.034 ez=4.7
+  hz=0.60 tgt=1.25 | n=18606 pnl=+32664.2p sharpe=0.031 ez=5.9
+  hz=0.60 tgt=1.50 | n=18639 pnl=+35537.6p sharpe=0.033 ez=7.1
+  hz=0.60 tgt=1.75 | n=18473 pnl=+45638.7p sharpe=0.042 ez=8.3
+  hz=0.60 tgt=2.00 | n=18473 pnl=+46178.2p sharpe=0.043 ez=9.5
+  hz=0.60 tgt=2.25 | n=18473 pnl=+45945.1p sharpe=0.043 ez=10.7
+  hz=0.60 tgt=2.50 | n=18473 pnl=+46157.4p sharpe=0.043 ez=11.8
+  hz=0.60 tgt=2.75 | n=18473 pnl=+46396.5p sharpe=0.043 ez=13.0
+  hz=0.60 tgt=3.00 | n=18473 pnl=+46926.8p sharpe=0.044 ez=14.2
+  hz=0.60 tgt=3.25 | n=18473 pnl=+47091.0p sharpe=0.044 ez=15.4
+  hz=0.70 tgt=1.00 | n=17433 pnl=+50896.2p sharpe=0.051 ez=4.1
+  hz=0.70 tgt=1.25 | n=17494 pnl=+55544.4p sharpe=0.054 ez=5.1
+  hz=0.70 tgt=1.50 | n=17494 pnl=+57624.7p sharpe=0.055 ez=6.1
+  hz=0.70 tgt=1.75 | n=17203 pnl=+45371.0p sharpe=0.045 ez=7.1
+  hz=0.70 tgt=2.00 | n=17203 pnl=+45605.6p sharpe=0.045 ez=8.1
+  hz=0.70 tgt=2.25 | n=17203 pnl=+45834.9p sharpe=0.045 ez=9.1
+  hz=0.70 tgt=2.50 | n=17203 pnl=+45887.9p sharpe=0.045 ez=10.2
+  hz=0.70 tgt=2.75 | n=17203 pnl=+46012.7p sharpe=0.046 ez=11.2
+  hz=0.70 tgt=3.00 | n=17203 pnl=+46168.4p sharpe=0.046 ez=12.2
+  hz=0.70 tgt=3.25 | n=17203 pnl=+46216.3p sharpe=0.046 ez=13.2
+  hz=0.80 tgt=1.00 | n=16103 pnl=+28351.5p sharpe=0.031 ez=3.6
+  hz=0.80 tgt=1.25 | n=16090 pnl=+26296.3p sharpe=0.028 ez=4.4
+  hz=0.80 tgt=1.50 | n=16006 pnl=+26782.2p sharpe=0.028 ez=5.3
+  hz=0.80 tgt=1.75 | n=16006 pnl=+27783.9p sharpe=0.029 ez=6.2
+  hz=0.80 tgt=2.00 | n=16006 pnl=+28428.8p sharpe=0.030 ez=7.1
+  hz=0.80 tgt=2.25 | n=16006 pnl=+28537.1p sharpe=0.030 ez=8.0
+  hz=0.80 tgt=2.50 | n=16006 pnl=+28638.3p sharpe=0.030 ez=8.9
+  hz=0.80 tgt=2.75 | n=16006 pnl=+28566.2p sharpe=0.030 ez=9.8
+  hz=0.80 tgt=3.00 | n=16006 pnl=+28643.1p sharpe=0.030 ez=10.7
+  hz=0.80 tgt=3.25 | n=16006 pnl=+28577.6p sharpe=0.030 ez=11.5
+  hz=0.90 tgt=1.00 | n=14951 pnl=+28455.8p sharpe=0.032 ez=3.2
+  hz=0.90 tgt=1.25 | n=14951 pnl=+32745.2p sharpe=0.037 ez=3.9
+  hz=0.90 tgt=1.50 | n=14951 pnl=+35283.3p sharpe=0.040 ez=4.7
+  hz=0.90 tgt=1.75 | n=14951 pnl=+36721.9p sharpe=0.041 ez=5.5
+  hz=0.90 tgt=2.00 | n=14951 pnl=+41874.1p sharpe=0.047 ez=6.3
+  hz=0.90 tgt=2.25 | n=14951 pnl=+42067.1p sharpe=0.047 ez=7.1
+  hz=0.90 tgt=2.50 | n=14951 pnl=+42164.0p sharpe=0.047 ez=7.9
+  hz=0.90 tgt=2.75 | n=14951 pnl=+42313.1p sharpe=0.048 ez=8.7
+  hz=0.90 tgt=3.00 | n=14951 pnl=+42328.3p sharpe=0.048 ez=9.5
+  hz=0.90 tgt=3.25 | n=14951 pnl=+42494.0p sharpe=0.048 ez=10.3
+  hz=1.00 tgt=1.00 | n=14319 pnl=+19337.2p sharpe=0.023 ez=2.8
+  hz=1.00 tgt=1.25 | n=14319 pnl=+22121.3p sharpe=0.027 ez=3.6
+  hz=1.00 tgt=1.50 | n=14319 pnl=+24196.0p sharpe=0.029 ez=4.3
+  hz=1.00 tgt=1.75 | n=14319 pnl=+24356.7p sharpe=0.029 ez=5.0
+  hz=1.00 tgt=2.00 | n=14319 pnl=+24893.5p sharpe=0.030 ez=5.7
+  hz=1.00 tgt=2.25 | n=14319 pnl=+24944.1p sharpe=0.030 ez=6.4
+  hz=1.00 tgt=2.50 | n=14319 pnl=+25056.2p sharpe=0.030 ez=7.1
+  hz=1.00 tgt=2.75 | n=14319 pnl=+25370.2p sharpe=0.031 ez=7.8
+  hz=1.00 tgt=3.00 | n=14319 pnl=+25371.3p sharpe=0.031 ez=8.5
+  hz=1.00 tgt=3.25 | n=14319 pnl=+25560.1p sharpe=0.031 ez=9.2
+
+Top 10 by Sharpe:
+    half_zone_mult  target_mult  median_ez_ratio  n_cycles  net_pnl_pips    sharpe       sqn  avg_legs  max_legs_hit_pct
+42             0.7         1.50         6.090359     17494  57624.670902  0.055490  7.339345  3.808734          0.312050
+41             0.7         1.25         5.075299     17494  55544.361003  0.053907  7.130014  3.808391          0.311878
+40             0.7         1.00         4.060239     17433  50896.192364  0.050753  6.701090  3.798715          0.310560
+69             0.9         3.25        10.263382     14951  42494.001339  0.047881  5.854582  3.433550          0.270350
+68             0.9         3.00         9.473891     14951  42328.330190  0.047654  5.826847  3.433550          0.270350
+67             0.9         2.75         8.684400     14951  42313.109180  0.047624  5.823161  3.433550          0.270350
+66             0.9         2.50         7.894909     14951  42164.023304  0.047356  5.790478  3.433550          0.270350
+65             0.9         2.25         7.105418     14951  42067.111580  0.047189  5.769998  3.433550          0.270350
+64             0.9         2.00         6.315927     14951  41874.075815  0.046843  5.727747  3.433550          0.270350
+49             0.7         3.25        13.195777     17203  46216.340381  0.045975  6.030065  3.847410          0.316340
+
+============================================================
+PHASE 3: Walk-Forward + 5-Gate Validation  [18:16:54]
+============================================================
+
+--- Classic cBot top candidates ---
+  classic_hz10.25_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-12963.9p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.19: 0/5 gates | OOS pnl=-15516.6p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.30: 0/5 gates | OOS pnl=-16041.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.10: 0/5 gates | OOS pnl=-14861.0p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-14488.2p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+
+--- ATR-calibrated top candidates ---
+  atr_hz0.7_tgt1.50: 1/5 gates | OOS pnl=+1580.6p | FAIL
+    ✅ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.25: 0/5 gates | OOS pnl=-790.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.00: 2/5 gates | OOS pnl=+555.8p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.9_tgt3.25: 3/5 gates | OOS pnl=+10975.3p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+  atr_hz0.9_tgt3.00: 3/5 gates | OOS pnl=+10144.4p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+Traceback (most recent call last):
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/run_experiments.py", line 348, in <module>
+    main()
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/run_experiments.py", line 326, in main
+    validation_results = phase3_validation(classic_grid, atr_grid)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/run_experiments.py", line 227, in phase3_validation
+    json.dump([make_serializable(r) for r in results_all], f, indent=2)
+  File "/usr/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.12/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable
+
+============================================================
+PHASE 3: Walk-Forward + 5-Gate Validation  [18:17:45]
+============================================================
+
+--- Classic cBot top candidates ---
+  classic_hz10.25_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-12963.9p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.19: 0/5 gates | OOS pnl=-15516.6p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.30: 0/5 gates | OOS pnl=-16041.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.10: 0/5 gates | OOS pnl=-14861.0p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-14488.2p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+
+--- ATR-calibrated top candidates ---
+  atr_hz0.7_tgt1.50: 1/5 gates | OOS pnl=+1580.6p | FAIL
+    ✅ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.25: 0/5 gates | OOS pnl=-790.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.00: 2/5 gates | OOS pnl=+555.8p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.9_tgt3.25: 3/5 gates | OOS pnl=+10975.3p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+  atr_hz0.9_tgt3.00: 3/5 gates | OOS pnl=+10144.4p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+
+============================================================
+PHASE 3: Walk-Forward + 5-Gate Validation  [18:19:50]
+============================================================
+
+--- Classic cBot top candidates ---
+  classic_hz10.25_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-12963.9p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.19: 0/5 gates | OOS pnl=-15516.6p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.30: 0/5 gates | OOS pnl=-16041.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.10: 0/5 gates | OOS pnl=-14861.0p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  classic_hz25.0_tgt20.0_pf1.00: 0/5 gates | OOS pnl=-14488.2p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+
+--- ATR-calibrated top candidates ---
+  atr_hz0.7_tgt1.50: 2/5 gates | OOS pnl=+1580.6p | FAIL
+    ✅ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ✅ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.25: 0/5 gates | OOS pnl=-790.7p | FAIL
+    ❌ gate1_oos_positive
+    ❌ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.7_tgt1.00: 2/5 gates | OOS pnl=+555.8p | FAIL
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ❌ gate3_permutation_significant
+    ❌ gate4_seed_cv_pass
+    ❌ gate5_sqn_pass
+  atr_hz0.9_tgt3.25: 5/5 gates | OOS pnl=+10975.3p | PASS
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ✅ gate3_permutation_significant
+    ✅ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+  atr_hz0.9_tgt3.00: 5/5 gates | OOS pnl=+10144.4p | PASS
+    ✅ gate1_oos_positive
+    ✅ gate2_wf_all_positive
+    ✅ gate3_permutation_significant
+    ✅ gate4_seed_cv_pass
+    ✅ gate5_sqn_pass
+
+============================================================
+PHASE 4: Sizing Mode Comparison  [18:20:32]
+============================================================
+  dynamic   : pnl=-12963.9p sharpe=-0.026 avgLegs=3.6 maxLegsPct=26.1%
+  convex    : pnl=+399186.6p sharpe=0.112 avgLegs=3.6 maxLegsPct=26.1%
+  linear    : pnl=+138756.4p sharpe=0.093 avgLegs=3.6 maxLegsPct=26.1%
+
+=== ATR hz=0.9 tgt=3.25 ===
+  dynamic : pnl= +13553.2p sharpe=+0.0339 sqn=+2.82 wr=86.0% maxLegs=25.7%
+  convex  : pnl=+565044.1p sharpe=+0.1308 sqn=+10.85 wr=89.4% maxLegs=25.7%
+           5-gate: 5/5 | verdict=PASS
+             ✅ gate1_oos_positive
+             ✅ gate2_wf_all_positive
+             ✅ gate3_permutation_significant
+             ✅ gate4_seed_cv_pass
+             ✅ gate5_sqn_pass
+  linear  : pnl=+201586.2p sharpe=+0.1146 sqn=+9.51 wr=88.7% maxLegs=25.7%
+
+=== ATR hz=0.9 tgt=3.0 ===
+  dynamic : pnl= +13623.4p sharpe=+0.0340 sqn=+2.82 wr=86.0% maxLegs=25.7%
+  convex  : pnl=+565044.1p sharpe=+0.1308 sqn=+10.85 wr=89.4% maxLegs=25.7%
+           5-gate: 5/5 | verdict=PASS
+             ✅ gate1_oos_positive
+             ✅ gate2_wf_all_positive
+             ✅ gate3_permutation_significant
+             ✅ gate4_seed_cv_pass
+             ✅ gate5_sqn_pass
+  linear  : pnl=+201586.2p sharpe=+0.1146 sqn=+9.51 wr=88.7% maxLegs=25.7%
+=== Convex sizing + proper ez_ratio filter ===
+  hz=0.9 tgt=3.25: n= 6392 pnl= +463365.7p sharpe=+0.1189 sqn=+9.51 wr=90.2%
+      5-gate: 5/5 PASS | gates: ✅ ✅ ✅ ✅ ✅
+  hz=0.9 tgt=3.0: n= 6292 pnl= +462482.4p sharpe=+0.1284 sqn=+10.18 wr=89.4%
+      5-gate: 5/5 PASS | gates: ✅ ✅ ✅ ✅ ✅
+  hz=0.9 tgt=2.75: n= 6043 pnl= +459198.4p sharpe=+0.1301 sqn=+10.11 wr=90.2%
+      5-gate: 5/5 PASS | gates: ✅ ✅ ✅ ✅ ✅
+  hz=0.9 tgt=2.5: n= 5664 pnl= +415892.7p sharpe=+0.1305 sqn=+9.82 wr=89.5%
+      5-gate: 5/5 PASS | gates: ✅ ✅ ✅ ✅ ✅
+=== 5-Gate Validation: Pure Zone Recovery (no init_target) ===
+hz=12p tgt=12p E/Z=0.50 | 2/5 FAIL | pnl=  +35347p sh=+0.0163 sqn=+0.87 | esc=44% ml=56% avgL=7.8
+   ✅ gate1_oos_positive
+   ❌ gate2_wf_all_positive
+   ❌ gate3_permutation_significant
+   ✅ gate4_seed_cv_pass
+   ❌ gate5_sqn_pass
+
+hz=15p tgt=10p E/Z=0.33 | 0/5 FAIL | pnl=  -88083p sh=-0.0522 sqn=-2.47 | esc=57% ml=43% avgL=7.0
+   ❌ gate1_oos_positive
+   ❌ gate2_wf_all_positive
+   ❌ gate3_permutation_significant
+   ❌ gate4_seed_cv_pass
+   ❌ gate5_sqn_pass
+
+hz=15p tgt=15p E/Z=0.50 | 5/5 PASS | pnl= +134737p sh=+0.0704 sqn=+3.21 | esc=34% ml=66% avgL=8.4
+   ✅ gate1_oos_positive
+   ✅ gate2_wf_all_positive
+   ✅ gate3_permutation_significant
+   ✅ gate4_seed_cv_pass
+   ✅ gate5_sqn_pass
+
+hz=20p tgt= 8p E/Z=0.20 | 0/5 FAIL | pnl=  -40261p sh=-0.0402 sqn=-1.62 | esc=69% ml=31% avgL=6.0
+   ❌ gate1_oos_positive
+   ❌ gate2_wf_all_positive
+   ❌ gate3_permutation_significant
+   ❌ gate4_seed_cv_pass
+   ❌ gate5_sqn_pass
+
+hz=20p tgt=12p E/Z=0.30 | 5/5 PASS | pnl=  +87610p sh=+0.0727 sqn=+2.82 | esc=50% ml=50% avgL=7.4
+   ✅ gate1_oos_positive
+   ✅ gate2_wf_all_positive
+   ✅ gate3_permutation_significant
+   ✅ gate4_seed_cv_pass
+   ✅ gate5_sqn_pass
+
+hz=20p tgt=15p E/Z=0.38 | 5/5 PASS | pnl= +129632p sh=+0.0940 sqn=+3.54 | esc=38% ml=62% avgL=8.2
+   ✅ gate1_oos_positive
+   ✅ gate2_wf_all_positive
+   ✅ gate3_permutation_significant
+   ✅ gate4_seed_cv_pass
+   ✅ gate5_sqn_pass
+
+hz=25p tgt=10p E/Z=0.20 | 0/5 FAIL | pnl=   -8300p sh=-0.0087 sqn=-0.29 | esc=60% ml=40% avgL=6.7
+   ❌ gate1_oos_positive
+   ❌ gate2_wf_all_positive
+   ❌ gate3_permutation_significant
+   ❌ gate4_seed_cv_pass
+   ❌ gate5_sqn_pass
+
+hz=25p tgt=15p E/Z=0.30 | 5/5 PASS | pnl= +108383p sh=+0.0977 sqn=+3.17 | esc=38% ml=62% avgL=8.1
+   ✅ gate1_oos_positive
+   ✅ gate2_wf_all_positive
+   ✅ gate3_permutation_significant
+   ✅ gate4_seed_cv_pass
+   ✅ gate5_sqn_pass
+
+Traceback (most recent call last):
+  File "/tmp/zone_sweep_v2.py", line 6, in <module>
+    from data_utils import load_m5, prepare_features
+ModuleNotFoundError: No module named 'data_utils'
+Traceback (most recent call last):
+  File "/tmp/zone_sweep_v2.py", line 6, in <module>
+    from data_utils import load_m5, prepare_features
+ModuleNotFoundError: No module named 'data_utils'
+A: Large zone sweep E/Z≈0.5 ...
+  hz=25 tgt=12 E/Z=0.24 ml=7 | 0/5 FAIL | avgL=5.7 esc=41% pnl=$-3,410 sh=-0.0588
+  hz=25 tgt=12 E/Z=0.24 ml=10 | 4/5 PASS | avgL=7.3 esc=51% pnl=$+4,178 sh=+0.0468
+  hz=25 tgt= 9 E/Z=0.18 ml=7 | 0/5 FAIL | avgL=5.0 esc=55% pnl=$-3,000 sh=-0.0753
+  hz=25 tgt= 9 E/Z=0.18 ml=10 | 0/5 FAIL | avgL=6.3 esc=65% pnl=$-3,889 sh=-0.0441
+  hz=25 tgt=25 E/Z=0.50 ml=7 | 5/5 PASS | avgL=6.6 esc=13% pnl=$+5,354 sh=+0.0924
+  hz=25 tgt=25 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.2 esc=17% pnl=$+17,144 sh=+0.1311
+  hz=35 tgt=17 E/Z=0.24 ml=7 | 4/5 PASS | avgL=6.1 esc=29% pnl=$+1,997 sh=+0.0587
+  hz=35 tgt=17 E/Z=0.24 ml=10 | 5/5 PASS | avgL=8.1 esc=38% pnl=$+7,828 sh=+0.1093
+  hz=35 tgt=13 E/Z=0.19 ml=7 | 0/5 FAIL | avgL=5.6 esc=40% pnl=$-1,419 sh=-0.0410
+  hz=35 tgt=13 E/Z=0.19 ml=10 | 0/5 FAIL | avgL=7.3 esc=49% pnl=$-1,692 sh=-0.0230
+  hz=35 tgt=35 E/Z=0.50 ml=7 | 5/5 PASS | avgL=6.8 esc=7% pnl=$+5,730 sh=+0.1315
+  hz=35 tgt=35 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.5 esc=10% pnl=$+26,525 sh=+0.3563
+  hz=45 tgt=22 E/Z=0.24 ml=7 | 2/5 FAIL | avgL=6.4 esc=17% pnl=$+926 sh=+0.0345
+  hz=45 tgt=22 E/Z=0.24 ml=10 | 5/5 PASS | avgL=8.8 esc=24% pnl=$+8,949 sh=+0.1540
+  hz=45 tgt=17 E/Z=0.19 ml=7 | 0/5 FAIL | avgL=6.0 esc=28% pnl=$-1,137 sh=-0.0350
+  hz=45 tgt=17 E/Z=0.19 ml=10 | 5/5 PASS | avgL=8.1 esc=35% pnl=$+5,557 sh=+0.1256
+  hz=45 tgt=45 E/Z=0.50 ml=7 | 4/5 PASS | avgL=6.8 esc=4% pnl=$+2,768 sh=+0.0887
+  hz=45 tgt=45 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.6 esc=6% pnl=$+12,114 sh=+0.1591
+  hz=55 tgt=27 E/Z=0.25 ml=7 | 4/5 PASS | avgL=6.5 esc=16% pnl=$+2,180 sh=+0.0947
+  hz=55 tgt=27 E/Z=0.25 ml=10 | 3/5 FAIL | avgL=8.9 esc=19% pnl=$+3,786 sh=+0.0819
+  hz=55 tgt=20 E/Z=0.18 ml=7 | 0/5 FAIL | avgL=6.2 esc=22% pnl=$-365 sh=-0.0145
+  hz=55 tgt=20 E/Z=0.18 ml=10 | 0/5 FAIL | avgL=8.3 esc=33% pnl=$-426 sh=-0.0091
+  hz=55 tgt=55 E/Z=0.50 ml=7 | 5/5 PASS | avgL=6.9 esc=3% pnl=$+5,016 sh=+0.2027
+  hz=55 tgt=55 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.8 esc=4% pnl=$+8,356 sh=+0.1281
+  hz=65 tgt=32 E/Z=0.25 ml=7 | 4/5 PASS | avgL=6.6 esc=14% pnl=$+2,070 sh=+0.1300
+  hz=65 tgt=32 E/Z=0.25 ml=10 | 5/5 PASS | avgL=9.1 esc=15% pnl=$+9,457 sh=+0.4335
+  hz=65 tgt=24 E/Z=0.18 ml=7 | 1/5 FAIL | avgL=6.2 esc=20% pnl=$+151 sh=+0.0100
+  hz=65 tgt=24 E/Z=0.18 ml=10 | 2/5 FAIL | avgL=8.5 esc=27% pnl=$+1,622 sh=+0.0382
+  hz=65 tgt=65 E/Z=0.50 ml=7 | 3/5 FAIL | avgL=6.9 esc=3% pnl=$+1,669 sh=+0.0706
+  hz=65 tgt=65 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.8 esc=4% pnl=$+8,141 sh=+0.1723
+  hz=75 tgt=37 E/Z=0.25 ml=7 | 4/5 PASS | avgL=6.5 esc=12% pnl=$+1,763 sh=+0.0994
+  hz=75 tgt=37 E/Z=0.25 ml=10 | 5/5 PASS | avgL=9.3 esc=10% pnl=$+7,748 sh=+0.2118
+  hz=75 tgt=28 E/Z=0.19 ml=7 | 5/5 PASS | avgL=6.3 esc=19% pnl=$+1,752 sh=+0.1402
+  hz=75 tgt=28 E/Z=0.19 ml=10 | 5/5 PASS | avgL=8.8 esc=22% pnl=$+8,518 sh=+0.3230
+  hz=75 tgt=75 E/Z=0.50 ml=7 | 5/5 PASS | avgL=6.8 esc=2% pnl=$+2,257 sh=+0.1434
+  hz=75 tgt=75 E/Z=0.50 ml=10 | 5/5 PASS | avgL=9.8 esc=3% pnl=$+8,921 sh=+0.1910
+
+B: Session filter (London 07-12 + NY 13-18 UTC) ...
+  hz=15 tgt=15 E/Z=0.50 | 5/5 PASS | n=1578 avgL=8.3 esc=35% pnl=$+11,471 sh=+0.0801
+  hz=15 tgt= 5 E/Z=0.17 | 0/5 FAIL | n=2024 avgL=4.3 esc=88% pnl=$-12,674 sh=-0.1318
+  hz=20 tgt=15 E/Z=0.38 | 5/5 PASS | n=1150 avgL=8.2 esc=36% pnl=$+11,621 sh=+0.1072
+  hz=20 tgt= 7 E/Z=0.17 | 0/5 FAIL | n=1300 avgL=5.5 esc=75% pnl=$-1,625 sh=-0.0240
+  hz=25 tgt=15 E/Z=0.30 | 2/5 FAIL | n= 864 avgL=8.2 esc=35% pnl=$+1,046 sh=+0.0112
+  hz=25 tgt= 9 E/Z=0.18 | 0/5 FAIL | n= 930 avgL=6.4 esc=62% pnl=$-3,857 sh=-0.0490
+  hz=35 tgt=18 E/Z=0.26 | 5/5 PASS | n= 499 avgL=8.5 esc=32% pnl=$+8,764 sh=+0.1269
+  hz=35 tgt=13 E/Z=0.19 | 3/5 FAIL | n= 505 avgL=7.4 esc=49% pnl=$+2,887 sh=+0.0530
+  hz=45 tgt=22 E/Z=0.24 | 5/5 PASS | n= 351 avgL=8.8 esc=23% pnl=$+7,042 sh=+0.1417
+  hz=45 tgt=17 E/Z=0.19 | 3/5 FAIL | n= 346 avgL=8.1 esc=36% pnl=$+2,477 sh=+0.0488
+
+C: Directional bias ...
+  momentum   hz=15 tgt=15 | 5/5 PASS | n=2078 avgL=8.4 esc=34% pnl=$+12,810 sh=+0.0667
+  mean_rev   hz=15 tgt=15 | 5/5 PASS | n=2078 avgL=8.4 esc=34% pnl=$+12,434 sh=+0.0638
+  momentum   hz=20 tgt=15 | 5/5 PASS | n=1420 avgL=8.2 esc=38% pnl=$+11,483 sh=+0.0812
+  mean_rev   hz=20 tgt=15 | 5/5 PASS | n=1420 avgL=8.2 esc=38% pnl=$+13,959 sh=+0.0999
+  momentum   hz=25 tgt=15 | 5/5 PASS | n=1052 avgL=8.1 esc=38% pnl=$+9,391 sh=+0.0816
+  mean_rev   hz=25 tgt=15 | 5/5 PASS | n=1052 avgL=8.1 esc=38% pnl=$+12,589 sh=+0.1163
+
+D: Session + best directional bias combos ...
+  sess+momentum   hz=15 tgt=15 | 5/5 PASS | n=1578 avgL=8.3 esc=35% pnl=$+11,799 sh=+0.0847
+  sess+mean_rev   hz=15 tgt=15 | 5/5 PASS | n=1578 avgL=8.3 esc=35% pnl=$+13,390 sh=+0.0942
+  sess+momentum   hz=20 tgt=15 | 5/5 PASS | n=1150 avgL=8.2 esc=36% pnl=$+10,061 sh=+0.0932
+  sess+mean_rev   hz=20 tgt=15 | 5/5 PASS | n=1150 avgL=8.2 esc=36% pnl=$+11,646 sh=+0.1053
+  sess+momentum   hz=25 tgt=15 | 2/5 FAIL | n= 864 avgL=8.2 esc=35% pnl=$+291 sh=+0.0030
+  sess+mean_rev   hz=25 tgt=15 | 2/5 FAIL | n= 864 avgL=8.2 esc=35% pnl=$+1,900 sh=+0.0201
+
+=== TOP RESULTS ===
+                   label             exp   ez  gates verdict  avg_legs   esc_pct        pnl_$   sharpe      sqn
+    rand_hz65_tgt32_ml10        A_random 0.25      5    PASS  9.140845 14.553991  9456.739782 0.433475 6.326361
+    rand_hz35_tgt35_ml10        A_random 0.50      5    PASS  9.462633 10.320285 26525.338515 0.356259 8.445665
+    rand_hz75_tgt28_ml10        A_random 0.19      5    PASS  8.835366 21.951220  8517.787277 0.323009 4.136534
+    rand_hz75_tgt37_ml10        A_random 0.25      5    PASS  9.345029  9.941520  7747.599221 0.211826 2.769979
+     rand_hz55_tgt55_ml7        A_random 0.50      5    PASS  6.864964  3.284672  5015.809539 0.202666 3.354723
+    rand_hz75_tgt75_ml10        A_random 0.50      5    PASS  9.779070  2.906977  8920.703228 0.191020 2.505197
+    rand_hz65_tgt65_ml10        A_random 0.50      5    PASS  9.783505  3.608247  8140.920030 0.172294 2.399775
+    rand_hz45_tgt45_ml10        A_random 0.50      5    PASS  9.608142  6.361323 12113.948848 0.159085 3.153740
+    rand_hz45_tgt22_ml10        A_random 0.24      5    PASS  8.764851 23.514851  8949.451253 0.154042 3.096208
+     rand_hz75_tgt75_ml7        A_random 0.50      5    PASS  6.827160  2.469136  2257.493987 0.143443 1.825733
+    sess_hz45_tgt22_ml10       B_session 0.24      5    PASS  8.809117 23.076923  7041.628258 0.141716 2.655049
+     rand_hz75_tgt28_ml7        A_random 0.19      5    PASS  6.327044 18.867925  1751.804570 0.140235 1.768295
+     rand_hz35_tgt35_ml7        A_random 0.50      5    PASS  6.774960  6.973059  5730.245823 0.131543 3.304330
+    rand_hz25_tgt25_ml10        A_random 0.50      5    PASS  9.171369 17.450366 17143.825374 0.131068 4.054654
+    rand_hz55_tgt55_ml10        A_random 0.50      5    PASS  9.798479  3.802281  8355.539315 0.128093 2.077321
+    sess_hz35_tgt18_ml10       B_session 0.26      5    PASS  8.488978 31.863727  8764.328758 0.126922 2.835225
+    rand_hz45_tgt17_ml10        A_random 0.19      5    PASS  8.070560 35.036496  5557.441260 0.125637 2.547046
+     mean_rev_hz25_tgt15      C_mean_rev 0.30      5    PASS  8.092205 38.212928 12588.641011 0.116317 3.772676
+    rand_hz35_tgt17_ml10        A_random 0.24      5    PASS  8.061962 38.209983  7828.395399 0.109273 2.633918
+    sess_hz20_tgt15_ml10       B_session 0.38      5    PASS  8.222609 36.347826 11620.556855 0.107160 3.633966
+sess+mean_rev_hz20_tgt15 D_sess+mean_rev 0.38      5    PASS  8.222609 36.347826 11646.106176 0.105306 3.571096
+     mean_rev_hz20_tgt15      C_mean_rev 0.38      5    PASS  8.206338 38.098592 13959.349019 0.099945 3.766233
+sess+mean_rev_hz15_tgt15 D_sess+mean_rev 0.50      5    PASS  8.337136 35.044360 13390.140252 0.094178 3.741135
+sess+momentum_hz20_tgt15 D_sess+momentum 0.38      5    PASS  8.222609 36.347826 10060.628164 0.093229 3.161566
+     rand_hz25_tgt25_ml7        A_random 0.50      5    PASS  6.625575 12.511500  5354.151293 0.092381 3.045783
+sess+momentum_hz15_tgt15 D_sess+momentum 0.50      5    PASS  8.337136 35.044360 11798.982613 0.084713 3.365133
+     momentum_hz25_tgt15      C_momentum 0.30      5    PASS  8.092205 38.212928  9391.252728 0.081603 2.646763
+     momentum_hz20_tgt15      C_momentum 0.38      5    PASS  8.206338 38.098592 11483.113986 0.081173 3.058848
+    sess_hz15_tgt15_ml10       B_session 0.50      5    PASS  8.337136 35.044360 11470.618662 0.080067 3.180583
+     momentum_hz15_tgt15      C_momentum 0.50      5    PASS  8.376323 33.974976 12809.868181 0.066652 3.038325
+     mean_rev_hz15_tgt15      C_mean_rev 0.50      5    PASS  8.376323 33.974976 12433.935261 0.063828 2.909588
+     rand_hz65_tgt32_ml7        A_random 0.25      4    PASS  6.559091 13.636364  2070.204263 0.129966 1.927714
+     rand_hz75_tgt37_ml7        A_random 0.25      4    PASS  6.517857 11.904762  1762.647939 0.099373 1.288026
+     rand_hz55_tgt27_ml7        A_random 0.25      4    PASS  6.496296 15.925926  2179.793740 0.094726 1.556505
+     rand_hz45_tgt45_ml7        A_random 0.50      4    PASS  6.837772  4.358354  2768.031534 0.088679 1.802161
+     rand_hz35_tgt17_ml7        A_random 0.24      4    PASS  6.055556 28.703704  1996.604447 0.058681 1.493780
+    rand_hz25_tgt12_ml10        A_random 0.24      4    PASS  7.333021 50.656660  4177.851779 0.046760 1.526701
+  hz=30 tgt=18 E/Z=0.30 | 5/5 PASS | avgL=8.5 esc=-45% esc_rate=30.1% pnl=$+564 sh=+0.0598 sqn=1.65
+  hz=30 tgt=21 E/Z=0.35 | 5/5 PASS | avgL=8.8 esc=-26% esc_rate=23.3% pnl=$+1,086 sh=+0.1131 sqn=3.08
+  hz=30 tgt=24 E/Z=0.40 | 5/5 PASS | avgL=9.0 esc=-25% esc_rate=20.5% pnl=$+1,133 sh=+0.1113 sqn=3.01
+  hz=30 tgt=27 E/Z=0.45 | 5/5 PASS | avgL=9.2 esc=-26% esc_rate=15.3% pnl=$+1,320 sh=+0.1263 sqn=3.41
+  hz=30 tgt=30 E/Z=0.50 | 5/5 PASS | avgL=9.3 esc=-11% esc_rate=13.1% pnl=$+1,878 sh=+0.1810 sqn=4.92
+  hz=30 tgt=33 E/Z=0.55 | 5/5 PASS | avgL=9.4 esc=-7% esc_rate=11.0% pnl=$+2,292 sh=+0.2173 sqn=5.90
+  hz=30 tgt=36 E/Z=0.60 | 5/5 PASS | avgL=9.5 esc=-7% esc_rate=9.5% pnl=$+2,542 sh=+0.2373 sqn=6.39
+  hz=30 tgt=39 E/Z=0.65 | 5/5 PASS | avgL=9.6 esc=-6% esc_rate=8.2% pnl=$+2,799 sh=+0.2528 sqn=6.76
+  hz=30 tgt=42 E/Z=0.70 | 5/5 PASS | avgL=9.7 esc=-6% esc_rate=6.6% pnl=$+2,653 sh=+0.2318 sqn=6.19
+  hz=30 tgt=45 E/Z=0.75 | 5/5 PASS | avgL=9.7 esc=-7% esc_rate=5.8% pnl=$+2,757 sh=+0.2437 sqn=6.47
+  hz=30 tgt=48 E/Z=0.80 | 5/5 PASS | avgL=9.8 esc=-7% esc_rate=5.0% pnl=$+2,586 sh=+0.2140 sqn=5.67
+  hz=30 tgt=51 E/Z=0.85 | 5/5 PASS | avgL=9.8 esc=-7% esc_rate=4.2% pnl=$+2,636 sh=+0.2182 sqn=5.81
+  hz=30 tgt=54 E/Z=0.90 | 5/5 PASS | avgL=9.8 esc=-6% esc_rate=4.0% pnl=$+2,940 sh=+0.2457 sqn=6.53
+  hz=35 tgt=21 E/Z=0.30 | 5/5 PASS | avgL=8.6 esc=-8% esc_rate=26.8% pnl=$+1,381 sh=+0.1997 sqn=4.82
+  hz=35 tgt=24 E/Z=0.35 | 5/5 PASS | avgL=8.9 esc=-7% esc_rate=21.9% pnl=$+1,954 sh=+0.2611 sqn=6.29
+  hz=35 tgt=28 E/Z=0.40 | 5/5 PASS | avgL=9.2 esc=-6% esc_rate=17.7% pnl=$+2,205 sh=+0.2906 sqn=6.94
+  hz=35 tgt=32 E/Z=0.45 | 5/5 PASS | avgL=9.4 esc=-4% esc_rate=12.5% pnl=$+2,722 sh=+0.3719 sqn=8.87
+  hz=35 tgt=35 E/Z=0.50 | 5/5 PASS | avgL=9.5 esc=-4% esc_rate=10.3% pnl=$+2,653 sh=+0.3563 sqn=8.45
+  hz=35 tgt=38 E/Z=0.55 | 5/5 PASS | avgL=9.6 esc=-4% esc_rate=8.5% pnl=$+2,792 sh=+0.3568 sqn=8.50
+  hz=35 tgt=42 E/Z=0.60 | 5/5 PASS | avgL=9.7 esc=-4% esc_rate=6.3% pnl=$+2,875 sh=+0.3524 sqn=8.43
+  hz=35 tgt=46 E/Z=0.65 | 5/5 PASS | avgL=9.7 esc=-4% esc_rate=5.4% pnl=$+2,921 sh=+0.3605 sqn=8.63
+  hz=35 tgt=49 E/Z=0.70 | 5/5 PASS | avgL=9.7 esc=-4% esc_rate=5.1% pnl=$+3,192 sh=+0.3729 sqn=8.90
+  hz=35 tgt=52 E/Z=0.75 | 5/5 PASS | avgL=9.8 esc=-3% esc_rate=4.2% pnl=$+3,214 sh=+0.3718 sqn=8.90
+  hz=35 tgt=56 E/Z=0.80 | 5/5 PASS | avgL=9.8 esc=-3% esc_rate=3.9% pnl=$+3,198 sh=+0.3639 sqn=8.67
+  hz=35 tgt=60 E/Z=0.85 | 5/5 PASS | avgL=9.8 esc=-3% esc_rate=3.0% pnl=$+3,767 sh=+0.4077 sqn=9.70
+  hz=35 tgt=63 E/Z=0.90 | 5/5 PASS | avgL=9.8 esc=-3% esc_rate=3.0% pnl=$+3,754 sh=+0.4032 sqn=9.60
+  hz=40 tgt=24 E/Z=0.30 | 4/5 PASS | avgL=9.0 esc=-70% esc_rate=20.6% pnl=$+558 sh=+0.0672 sqn=1.47
+  hz=40 tgt=28 E/Z=0.35 | 5/5 PASS | avgL=9.2 esc=-24% esc_rate=14.1% pnl=$+970 sh=+0.1165 sqn=2.56
+  hz=40 tgt=32 E/Z=0.40 | 5/5 PASS | avgL=9.4 esc=-25% esc_rate=11.1% pnl=$+909 sh=+0.1076 sqn=2.35
+  hz=40 tgt=36 E/Z=0.45 | 5/5 PASS | avgL=9.6 esc=-22% esc_rate=7.9% pnl=$+1,100 sh=+0.1260 sqn=2.73
+  hz=40 tgt=40 E/Z=0.50 | 5/5 PASS | avgL=9.6 esc=-15% esc_rate=7.2% pnl=$+1,395 sh=+0.1566 sqn=3.39
+  hz=40 tgt=44 E/Z=0.55 | 5/5 PASS | avgL=9.7 esc=-10% esc_rate=5.9% pnl=$+1,598 sh=+0.1834 sqn=3.99
+  hz=40 tgt=48 E/Z=0.60 | 5/5 PASS | avgL=9.7 esc=-13% esc_rate=5.1% pnl=$+1,670 sh=+0.1856 sqn=4.02
+  hz=40 tgt=52 E/Z=0.65 | 5/5 PASS | avgL=9.7 esc=-13% esc_rate=4.7% pnl=$+2,021 sh=+0.2356 sqn=5.10
+  hz=40 tgt=56 E/Z=0.70 | 5/5 PASS | avgL=9.8 esc=-13% esc_rate=3.4% pnl=$+1,943 sh=+0.2141 sqn=4.63
+  hz=40 tgt=60 E/Z=0.75 | 5/5 PASS | avgL=9.8 esc=-13% esc_rate=3.2% pnl=$+2,025 sh=+0.2245 sqn=4.85
+  hz=40 tgt=64 E/Z=0.80 | 5/5 PASS | avgL=9.8 esc=-14% esc_rate=2.6% pnl=$+1,847 sh=+0.2040 sqn=4.42
+  hz=40 tgt=68 E/Z=0.85 | 5/5 PASS | avgL=9.8 esc=-11% esc_rate=2.4% pnl=$+1,974 sh=+0.2212 sqn=4.78
+  hz=40 tgt=72 E/Z=0.90 | 5/5 PASS | avgL=9.8 esc=-10% esc_rate=2.2% pnl=$+2,047 sh=+0.2268 sqn=4.88
+
+=== TOP RESULTS (by Sharpe, 5/5 gates) ===
+ hz  tgt   ez  gates verdict   n  avg_legs   esc_pct  max_legs_pct       pnl_$   sharpe      sqn        wr      max_dd
+ 35   60 0.85      5    PASS 566  9.844523  3.003534     96.996466 3767.104981 0.407681 9.699048 68.551237 -109.168850
+ 35   63 0.90      5    PASS 567  9.848325  2.998236     97.001764 3753.644485 0.403177 9.600359 69.488536 -109.168850
+ 35   49 0.70      5    PASS 570  9.729825  5.087719     94.912281 3191.968406 0.372934 8.903670 70.877193 -119.956984
+ 35   32 0.45      5    PASS 569  9.376098 12.478032     87.521968 2721.823741 0.371864 8.870348 70.826011 -103.943459
+ 35   52 0.75      5    PASS 573  9.778360  4.188482     95.811518 3214.206195 0.371819 8.900382 68.586387 -104.718615
+ 35   56 0.80      5    PASS 568  9.816901  3.873239     96.126761 3198.259268 0.363899 8.672709 66.901408 -103.943459
+ 35   46 0.65      5    PASS 573  9.732984  5.410122     94.589878 2921.248723 0.360505 8.629555 68.760908 -103.943459
+ 35   38 0.55      5    PASS 567  9.582011  8.465608     91.534392 2792.335086 0.356775 8.495437 71.075838 -103.943459
+ 35   35 0.50      5    PASS 562  9.462633 10.320285     89.679715 2652.533851 0.356259 8.445665 72.241993 -103.943459
+ 35   42 0.60      5    PASS 572  9.678322  6.293706     93.706294 2874.642445 0.352360 8.427237 67.657343 -103.943459
+ 35   28 0.40      5    PASS 570  9.185965 17.719298     82.105263 2205.021615 0.290588 6.937687 70.000000 -126.040121
+ 35   24 0.35      5    PASS 580  8.941379 21.896552     78.103448 1954.267949 0.261137 6.289005 68.793103 -130.025901
+ 30   39 0.65      5    PASS 716  9.594972  8.240223     91.620112 2799.259722 0.252751 6.763149 64.106145 -172.414031
+ 30   54 0.90      5    PASS 707  9.818953  3.960396     95.898161 2940.414306 0.245686 6.532667 62.800566 -170.725423
+ 30   45 0.75      5    PASS 706  9.688385  5.807365     94.050992 2757.139604 0.243678 6.474692 63.314448 -182.344788
+ 30   36 0.60      5    PASS 725  9.511724  9.517241     90.344828 2542.100003 0.237323 6.390113 62.758621 -185.214191
+ 40   52 0.65      5    PASS 469  9.718550  4.690832     95.095949 2020.519435 0.235564 5.101467 66.311301 -265.535157
+ 30   42 0.70      5    PASS 713  9.670407  6.591865     93.267882 2653.487070 0.231752 6.188256 62.973352 -171.122149
+ 40   72 0.90      5    PASS 463  9.842333  2.159827     97.624190 2047.468401 0.226820 4.880586 65.658747 -213.182003
+ 40   60 0.75      5    PASS 467  9.781585  3.211991     96.573876 2024.893077 0.224508 4.851655 67.237687 -257.656672
+ 40   68 0.85      5    PASS 466  9.828326  2.360515     97.424893 1974.161368 0.221246 4.776048 66.309013 -213.182003
+ 30   51 0.85      5    PASS 708  9.809322  4.237288     95.621469 2636.452460 0.218184 5.805486 62.288136 -181.184374
+ 30   33 0.55      5    PASS 736  9.441576 11.005435     88.858696 2292.042511 0.217317 5.895663 63.858696 -171.385436
+ 40   56 0.70      5    PASS 467  9.762313  3.426124     96.359743 1943.395918 0.214100 4.626732 68.094218 -257.656672
+ 30   48 0.80      5    PASS 701  9.761769  4.992867     94.864479 2586.218949 0.214029 5.666731 62.196862 -179.931726
+ 40   64 0.80      5    PASS 469  9.805970  2.558635     97.228145 1846.558746 0.203972 4.417301 66.311301 -257.578451
+ 35   21 0.30      5    PASS 582  8.604811 26.804124     73.195876 1380.948712 0.199719 4.818166 69.759450 -116.934293
+ 40   48 0.60      5    PASS 470  9.700000  5.106383     94.680851 1670.328237 0.185643 4.024653 65.744681 -213.911719
+ 40   44 0.55      5    PASS 474  9.679325  5.907173     93.881857 1597.876505 0.183439 3.993749 65.822785 -158.321005
+ 30   30 0.50      5    PASS 738  9.262873 13.143631     86.720867 1877.839341 0.181012 4.917400 63.414634 -203.011562
+ 40   40 0.50      5    PASS 470  9.629787  7.234043     92.553191 1394.676663 0.156561 3.394171 65.319149 -213.911719
+ 30   27 0.45      5    PASS 731  9.177839 15.321477     84.541724 1320.480086 0.126289 3.414473 60.328317 -348.709604
+ 40   36 0.45      5    PASS 469  9.550107  7.889126     91.897655 1100.347059 0.125963 2.727906 64.605544 -243.003223
+ 40   28 0.35      5    PASS 482  9.248963 14.107884     85.684647  969.835573 0.116501 2.557727 65.767635 -228.679554
+ 30   21 0.35      5    PASS 743  8.775236 23.283984     76.581427 1086.006692 0.113075 3.082189 64.199192 -280.870519
+ 30   24 0.40      5    PASS 731  8.961696 20.519836     79.343365 1132.639676 0.111281 3.008713 62.380301 -287.141747
+ 40   32 0.40      5    PASS 477  9.419287 11.111111     88.679245  909.268205 0.107574 2.349460 63.522013 -231.521506
+ 40   24 0.30      4    PASS 480  8.958333 20.625000     79.166667  558.490256 0.067176 1.471757 66.666667 -389.780846
+ 30   18 0.30      5    PASS 762  8.471129 30.052493     69.816273  564.483317 0.059823 1.651362 62.335958 -251.551523
+
+=== ALL RESULTS ===
+ hz  tgt   ez  gates verdict   n  avg_legs   esc_pct  max_legs_pct       pnl_$   sharpe      sqn        wr      max_dd
+ 35   60 0.85      5    PASS 566  9.844523  3.003534     96.996466 3767.104981 0.407681 9.699048 68.551237 -109.168850
+ 35   63 0.90      5    PASS 567  9.848325  2.998236     97.001764 3753.644485 0.403177 9.600359 69.488536 -109.168850
+ 35   49 0.70      5    PASS 570  9.729825  5.087719     94.912281 3191.968406 0.372934 8.903670 70.877193 -119.956984
+ 35   32 0.45      5    PASS 569  9.376098 12.478032     87.521968 2721.823741 0.371864 8.870348 70.826011 -103.943459
+ 35   52 0.75      5    PASS 573  9.778360  4.188482     95.811518 3214.206195 0.371819 8.900382 68.586387 -104.718615
+ 35   56 0.80      5    PASS 568  9.816901  3.873239     96.126761 3198.259268 0.363899 8.672709 66.901408 -103.943459
+ 35   46 0.65      5    PASS 573  9.732984  5.410122     94.589878 2921.248723 0.360505 8.629555 68.760908 -103.943459
+ 35   38 0.55      5    PASS 567  9.582011  8.465608     91.534392 2792.335086 0.356775 8.495437 71.075838 -103.943459
+ 35   35 0.50      5    PASS 562  9.462633 10.320285     89.679715 2652.533851 0.356259 8.445665 72.241993 -103.943459
+ 35   42 0.60      5    PASS 572  9.678322  6.293706     93.706294 2874.642445 0.352360 8.427237 67.657343 -103.943459
+ 35   28 0.40      5    PASS 570  9.185965 17.719298     82.105263 2205.021615 0.290588 6.937687 70.000000 -126.040121
+ 35   24 0.35      5    PASS 580  8.941379 21.896552     78.103448 1954.267949 0.261137 6.289005 68.793103 -130.025901
+ 30   39 0.65      5    PASS 716  9.594972  8.240223     91.620112 2799.259722 0.252751 6.763149 64.106145 -172.414031
+ 30   54 0.90      5    PASS 707  9.818953  3.960396     95.898161 2940.414306 0.245686 6.532667 62.800566 -170.725423
+ 30   45 0.75      5    PASS 706  9.688385  5.807365     94.050992 2757.139604 0.243678 6.474692 63.314448 -182.344788
+ 30   36 0.60      5    PASS 725  9.511724  9.517241     90.344828 2542.100003 0.237323 6.390113 62.758621 -185.214191
+ 40   52 0.65      5    PASS 469  9.718550  4.690832     95.095949 2020.519435 0.235564 5.101467 66.311301 -265.535157
+ 30   42 0.70      5    PASS 713  9.670407  6.591865     93.267882 2653.487070 0.231752 6.188256 62.973352 -171.122149
+ 40   72 0.90      5    PASS 463  9.842333  2.159827     97.624190 2047.468401 0.226820 4.880586 65.658747 -213.182003
+ 40   60 0.75      5    PASS 467  9.781585  3.211991     96.573876 2024.893077 0.224508 4.851655 67.237687 -257.656672
+ 40   68 0.85      5    PASS 466  9.828326  2.360515     97.424893 1974.161368 0.221246 4.776048 66.309013 -213.182003
+ 30   51 0.85      5    PASS 708  9.809322  4.237288     95.621469 2636.452460 0.218184 5.805486 62.288136 -181.184374
+ 30   33 0.55      5    PASS 736  9.441576 11.005435     88.858696 2292.042511 0.217317 5.895663 63.858696 -171.385436
+ 40   56 0.70      5    PASS 467  9.762313  3.426124     96.359743 1943.395918 0.214100 4.626732 68.094218 -257.656672
+ 30   48 0.80      5    PASS 701  9.761769  4.992867     94.864479 2586.218949 0.214029 5.666731 62.196862 -179.931726
+ 40   64 0.80      5    PASS 469  9.805970  2.558635     97.228145 1846.558746 0.203972 4.417301 66.311301 -257.578451
+ 35   21 0.30      5    PASS 582  8.604811 26.804124     73.195876 1380.948712 0.199719 4.818166 69.759450 -116.934293
+ 40   48 0.60      5    PASS 470  9.700000  5.106383     94.680851 1670.328237 0.185643 4.024653 65.744681 -213.911719
+ 40   44 0.55      5    PASS 474  9.679325  5.907173     93.881857 1597.876505 0.183439 3.993749 65.822785 -158.321005
+ 30   30 0.50      5    PASS 738  9.262873 13.143631     86.720867 1877.839341 0.181012 4.917400 63.414634 -203.011562
+ 40   40 0.50      5    PASS 470  9.629787  7.234043     92.553191 1394.676663 0.156561 3.394171 65.319149 -213.911719
+ 30   27 0.45      5    PASS 731  9.177839 15.321477     84.541724 1320.480086 0.126289 3.414473 60.328317 -348.709604
+ 40   36 0.45      5    PASS 469  9.550107  7.889126     91.897655 1100.347059 0.125963 2.727906 64.605544 -243.003223
+ 40   28 0.35      5    PASS 482  9.248963 14.107884     85.684647  969.835573 0.116501 2.557727 65.767635 -228.679554
+ 30   21 0.35      5    PASS 743  8.775236 23.283984     76.581427 1086.006692 0.113075 3.082189 64.199192 -280.870519
+ 30   24 0.40      5    PASS 731  8.961696 20.519836     79.343365 1132.639676 0.111281 3.008713 62.380301 -287.141747
+ 40   32 0.40      5    PASS 477  9.419287 11.111111     88.679245  909.268205 0.107574 2.349460 63.522013 -231.521506
+ 40   24 0.30      4    PASS 480  8.958333 20.625000     79.166667  558.490256 0.067176 1.471757 66.666667 -389.780846
+ 30   18 0.30      5    PASS 762  8.471129 30.052493     69.816273  564.483317 0.059823 1.651362 62.335958 -251.551523
+
+Saved: results/phase6_ez_sweep.csv
+label                                  variant    gates     n  avgL  esc%      pnl$      sh    sqn
+-----------------------------------------------------------------------------------------------
+  zw=20 tgt= 10 ez=0.50                center         0  3799   7.3  52.8      -353 -0.0159  -0.98
+Traceback (most recent call last):
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/boundary_experiment.py", line 55, in <module>
+    r = run_5gate_validation(eng, features, train_f, test_f, seed=42)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/backtest.py", line 211, in run_5gate_validation
+    oos_results = run_backtest(engine, test_features, seed=seed,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/projects/fx-core/research/experiments/zone_recovery/backtest.py", line 66, in run_backtest
+    results = engine.simulate_on_ohlc(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BoundaryZoneEngine.simulate_on_ohlc() got an unexpected keyword argument 'atr_short'
+label                                  variant    gates     n  avgL  esc%      pnl$      sh    sqn
+-----------------------------------------------------------------------------------------------
+  zw=20 tgt= 10 ez=0.50                center         0  3799   7.3  52.8      -353 -0.0159  -0.98
+  zw=20 tgt= 10 ez=0.50                boundary       1  6299   7.7  45.9       -86 -0.0020  -0.16
+  zw=20 tgt= 14 ez=0.70                center         5  3492   8.4  32.9    +1,962 +0.0759   4.49
+  zw=20 tgt= 14 ez=0.70                boundary       5  5676   8.7  28.6    +4,046 +0.0850   6.41
+  zw=20 tgt= 17 ez=0.85                center         5  3378   8.9  23.9    +3,386 +0.1218   7.08
+  zw=20 tgt= 17 ez=0.85                boundary       5  5685   9.2  18.6    +7,431 +0.1484  11.19
+  zw=20 tgt= 20 ez=1.00                center         5  3319   9.2  18.4    +5,580 +0.1939  11.17
+  zw=20 tgt= 20 ez=1.00                boundary       5  5563   9.5  13.3   +10,661 +0.2028  15.12
+  zw=20 tgt= 25 ez=1.25                center         5  3239   9.5  11.2    +6,776 +0.2187  12.45
+  zw=20 tgt= 25 ez=1.25                boundary       5  5346   9.7   8.1   +12,350 +0.2237  16.36
+  zw=20 tgt= 30 ez=1.50                center         5  3199   9.7   7.4    +8,213 +0.2538  14.36
+  zw=20 tgt= 30 ez=1.50                boundary       5  5283   9.8   5.3   +13,084 +0.2260  16.43
+  zw=20 tgt= 40 ez=2.00                center         5  3172   9.9   3.7    +9,683 +0.2736  15.41
+  zw=20 tgt= 40 ez=2.00                boundary       5  5318   9.9   2.1   +14,578 +0.2347  17.12
+  zw=20 tgt= 50 ez=2.50                center         5  3141   9.9   1.9   +10,709 +0.2868  16.07
+  zw=20 tgt= 50 ez=2.50                boundary       5  5225  10.0   1.1   +15,901 +0.2453  17.73
+  zw=25 tgt= 12 ez=0.50                center         5  2753   7.8  44.4    +1,142 +0.0577   3.03
+  zw=25 tgt= 12 ez=0.50                boundary       5  5127   8.3  35.6    +1,910 +0.0452   3.24
+  zw=25 tgt= 18 ez=0.70                center         5  2589   8.9  23.8    +3,806 +0.1672   8.51
+  zw=25 tgt= 18 ez=0.70                boundary       5  4851   9.2  17.4    +7,251 +0.1529  10.65
+  zw=25 tgt= 21 ez=0.85                center         5  2516   9.2  18.3    +4,083 +0.1679   8.42
+  zw=25 tgt= 21 ez=0.85                boundary       5  4693   9.5  12.6    +8,235 +0.1686  11.55
+  zw=25 tgt= 25 ez=1.00                center         5  2498   9.5  12.0    +5,104 +0.1934   9.67
+  zw=25 tgt= 25 ez=1.00                boundary       5  4688   9.6   8.7   +10,970 +0.2100  14.38
+  zw=25 tgt= 31 ez=1.25                center         5  2475   9.7   7.4    +6,822 +0.2490  12.39
+  zw=25 tgt= 31 ez=1.25                boundary       5  4665   9.8   4.9   +13,011 +0.2406  16.43
+  zw=25 tgt= 38 ez=1.50                center         5  2455   9.8   4.2    +8,136 +0.2786  13.80
+  zw=25 tgt= 38 ez=1.50                boundary       5  4678   9.9   2.7   +13,541 +0.2390  16.35
+  zw=25 tgt= 50 ez=2.00                center         5  2432   9.9   2.1    +8,846 +0.2878  14.19
+  zw=25 tgt= 50 ez=2.00                boundary       5  4474   9.9   1.5   +15,202 +0.2682  17.94
+  zw=25 tgt= 62 ez=2.50                center         5  2425  10.0   1.1    +9,039 +0.2866  14.11
+  zw=25 tgt= 62 ez=2.50                boundary       5  4639  10.0   0.6   +15,273 +0.2457  16.74
+  zw=30 tgt= 15 ez=0.50                center         5  2078   8.4  34.0    +1,347 +0.0704   3.21
+  zw=30 tgt= 15 ez=0.50                boundary       5  4288   8.9  25.2    +3,765 +0.0888   5.81
+  zw=30 tgt= 21 ez=0.70                center         5  1988   9.1  18.7    +3,084 +0.1453   6.48
+  zw=30 tgt= 21 ez=0.70                boundary       5  4380   9.5  12.9    +9,004 +0.1911  12.65
+  zw=30 tgt= 26 ez=0.85                center         5  1952   9.4  12.1    +4,329 +0.1956   8.64
+  zw=30 tgt= 26 ez=0.85                boundary       5  4147   9.7   7.9   +11,076 +0.2285  14.72
+  zw=30 tgt= 30 ez=1.00                center         5  1945   9.6   8.6    +4,863 +0.2143   9.45
+  zw=30 tgt= 30 ez=1.00                boundary       5  4026   9.8   5.4   +10,949 +0.2228  14.14
+  zw=30 tgt= 38 ez=1.25                center         5  1911   9.8   5.1    +5,813 +0.2411  10.54
+  zw=30 tgt= 38 ez=1.25                boundary       5  4032   9.9   3.2   +11,659 +0.2162  13.73
+  zw=30 tgt= 45 ez=1.50                center         5  1903   9.9   3.4    +6,082 +0.2399  10.46
+  zw=30 tgt= 45 ez=1.50                boundary       5  4046   9.9   2.0   +11,666 +0.2142  13.62
+  zw=30 tgt= 60 ez=2.00                center         5  1911   9.9   1.9    +7,230 +0.2652  11.59
+  zw=30 tgt= 60 ez=2.00                boundary       5  4115  10.0   0.6   +13,827 +0.2536  16.27
+  zw=30 tgt= 75 ez=2.50                center         5  1904  10.0   0.8    +7,666 +0.2795  12.20
+  zw=30 tgt= 75 ez=2.50                boundary       5  3989  10.0   0.4   +13,635 +0.2411  15.23
+  zw=35 tgt= 18 ez=0.50                center         5  1664   8.8  27.2    +2,273 +0.1289   5.26
+  zw=35 tgt= 18 ez=0.50                boundary       5  3648   9.2  18.3    +4,645 +0.1188   7.17
+  zw=35 tgt= 24 ez=0.70                center         5  1595   9.3  15.5    +3,212 +0.1714   6.85
+  zw=35 tgt= 24 ez=0.70                boundary       5  3743   9.6   9.5    +7,563 +0.1657  10.14
+  zw=35 tgt= 30 ez=0.85                center         5  1603   9.5   9.9    +4,493 +0.2213   8.86
+  zw=35 tgt= 30 ez=0.85                boundary       5  3704   9.8   5.4    +9,628 +0.2030  12.35
+  zw=35 tgt= 35 ez=1.00                center         5  1580   9.6   7.4    +5,649 +0.2812  11.18
+  zw=35 tgt= 35 ez=1.00                boundary       5  3673   9.9   3.7   +10,706 +0.2294  13.91
+  zw=35 tgt= 44 ez=1.25                center         5  1573   9.8   3.8    +5,997 +0.2877  11.41
+  zw=35 tgt= 44 ez=1.25                boundary       5  3653   9.9   1.8    +9,418 +0.1826  11.04
+  zw=35 tgt= 52 ez=1.50                center         5  1543   9.9   2.9    +6,084 +0.2717  10.67
+  zw=35 tgt= 52 ez=1.50                boundary       5  3702   9.9   1.4   +11,832 +0.2272  13.82
+  zw=35 tgt= 70 ez=2.00                center         5  1534   9.9   1.1    +6,421 +0.2743  10.74
+  zw=35 tgt= 70 ez=2.00                boundary       5  3478  10.0   0.5   +13,134 +0.2585  15.25
+  zw=35 tgt= 88 ez=2.50                center         5  1533  10.0   0.5    +6,744 +0.2737  10.71
+  zw=35 tgt= 88 ez=2.50                boundary       5  3470  10.0   0.3   +13,919 +0.2710  15.97
+  zw=40 tgt= 20 ez=0.50                center         5  1376   8.9  24.6    +2,958 +0.2071   7.68
+  zw=40 tgt= 20 ez=0.50                boundary       5  3402   9.4  14.8    +6,974 +0.1790  10.44
+  zw=40 tgt= 28 ez=0.70                center         5  1318   9.4  11.8    +3,267 +0.2001   7.27
+  zw=40 tgt= 28 ez=0.70                boundary       5  3463   9.8   6.3    +8,875 +0.1992  11.72
+  zw=40 tgt= 34 ez=0.85                center         5  1305   9.6   7.6    +3,700 +0.2062   7.45
+  zw=40 tgt= 34 ez=0.85                boundary       5  3366   9.9   4.0   +10,878 +0.2466  14.30
+  zw=40 tgt= 40 ez=1.00                center         5  1307   9.7   5.5    +4,359 +0.2435   8.80
+  zw=40 tgt= 40 ez=1.00                boundary       5  3320   9.9   2.9   +10,043 +0.2159  12.44
+  zw=40 tgt= 50 ez=1.25                center         5  1289   9.8   3.1    +4,549 +0.2389   8.58
+  zw=40 tgt= 50 ez=1.25                boundary       5  3348   9.9   1.3   +11,601 +0.2519  14.57
+  zw=40 tgt= 60 ez=1.50                center         5  1277   9.9   2.2    +5,062 +0.2529   9.04
+  zw=40 tgt= 60 ez=1.50                boundary       5  3319  10.0   0.9   +10,745 +0.2147  12.37
+  zw=40 tgt= 80 ez=2.00                center         5  1271   9.9   0.8    +4,953 +0.2307   8.22
+  zw=40 tgt= 80 ez=2.00                boundary       5  3157  10.0   0.4    +9,964 +0.2037  11.45
+  zw=40 tgt=100 ez=2.50                center         5  1272  10.0   0.5    +5,082 +0.2320   8.28
+  zw=40 tgt=100 ez=2.50                boundary       5  3349  10.0   0.1   +14,241 +0.2740  15.86
+  zw=45 tgt= 22 ez=0.50                center         5  1162   9.0  20.7    +2,493 +0.1844   6.28
+  zw=45 tgt= 22 ez=0.50                boundary       5  3146   9.5  12.5    +7,588 +0.2039  11.43
+  zw=45 tgt= 31 ez=0.70                center         5  1147   9.5  10.4    +3,629 +0.2383   8.07
+  zw=45 tgt= 31 ez=0.70                boundary       5  3009   9.8   5.2    +9,609 +0.2444  13.40
+  zw=45 tgt= 38 ez=0.85                center         5  1130   9.7   7.3    +4,215 +0.2736   9.20
+  zw=45 tgt= 38 ez=0.85                boundary       5  3122   9.9   3.2    +9,785 +0.2261  12.63
+  zw=45 tgt= 45 ez=1.00                center         5  1132   9.8   4.9    +5,219 +0.3190  10.73
+  zw=45 tgt= 45 ez=1.00                boundary       5  3008   9.9   2.0    +8,591 +0.1891  10.37
+  zw=45 tgt= 56 ez=1.25                center         5  1127   9.9   2.7    +5,658 +0.3301  11.08
+  zw=45 tgt= 56 ez=1.25                boundary       5  3011  10.0   1.2   +10,862 +0.2353  12.91
+  zw=45 tgt= 68 ez=1.50                center         5  1121   9.9   1.5    +5,918 +0.3311  11.08
+  zw=45 tgt= 68 ez=1.50                boundary       5  3011  10.0   0.6   +10,640 +0.2294  12.59
+  zw=45 tgt= 90 ez=2.00                center         5  1116  10.0   0.6    +6,048 +0.3214  10.74
+  zw=45 tgt= 90 ez=2.00                boundary       5  3083  10.0   0.3   +10,146 +0.2094  11.63
+  zw=45 tgt=112 ez=2.50                center         5  1118  10.0   0.3    +6,416 +0.3210  10.73
+  zw=45 tgt=112 ez=2.50                boundary       5  3040  10.0   0.1   +10,302 +0.2252  12.41
+  zw=50 tgt= 25 ez=0.50                center         5   957   9.2  17.5    +1,714 +0.1311   4.05
+  zw=50 tgt= 25 ez=0.50                boundary       5  2968   9.6   9.5    +7,824 +0.2003  10.91
+  zw=50 tgt= 35 ez=0.70                center         5   942   9.5   9.9    +2,899 +0.2169   6.66
+  zw=50 tgt= 35 ez=0.70                boundary       5  2749   9.8   4.4    +9,022 +0.2213  11.60
+  zw=50 tgt= 42 ez=0.85                center         5   939   9.7   6.8    +3,359 +0.2416   7.40
+  zw=50 tgt= 42 ez=0.85                boundary       5  2873   9.9   2.4    +8,952 +0.2007  10.76
+  zw=50 tgt= 50 ez=1.00                center         5   930   9.8   4.2    +3,547 +0.2471   7.53
+  zw=50 tgt= 50 ez=1.00                boundary       5  3004   9.9   1.4   +11,479 +0.2638  14.46
+  zw=50 tgt= 62 ez=1.25                center         5   923   9.9   2.1    +4,130 +0.2751   8.36
+  zw=50 tgt= 62 ez=1.25                boundary       5  2720  10.0   0.7   +11,057 +0.2520  13.14
+  zw=50 tgt= 75 ez=1.50                center         5   924   9.9   1.6    +4,471 +0.2809   8.54
+  zw=50 tgt= 75 ez=1.50                boundary       5  3004  10.0   0.5   +12,212 +0.2676  14.67
+  zw=50 tgt=100 ez=2.00                center         5   925  10.0   0.8    +4,672 +0.2779   8.45
+  zw=50 tgt=100 ez=2.00                boundary       5  2893  10.0   0.3   +12,183 +0.2629  14.14
+  zw=50 tgt=125 ez=2.50                center         5   921  10.0   0.2    +4,877 +0.2781   8.44
+  zw=50 tgt=125 ez=2.50                boundary       5  2971  10.0   0.1   +11,987 +0.2521  13.74
+  zw=55 tgt= 28 ez=0.50                center         5   826   9.2  14.9    +1,738 +0.1553   4.46
+  zw=55 tgt= 28 ez=0.50                boundary       5  2756   9.7   7.0    +7,686 +0.1988  10.43
+  zw=55 tgt= 38 ez=0.70                center         5   828   9.6   8.7    +2,442 +0.1972   5.68
+  zw=55 tgt= 38 ez=0.70                boundary       5  2768   9.9   3.2    +8,794 +0.2146  11.29
+  zw=55 tgt= 47 ez=0.85                center         5   826   9.7   5.0    +2,733 +0.1962   5.64
+  zw=55 tgt= 47 ez=0.85                boundary       5  2533   9.9   2.0    +7,451 +0.1862   9.37
+  zw=55 tgt= 55 ez=1.00                center         5   821   9.8   3.0    +2,539 +0.1718   4.92
+  zw=55 tgt= 55 ez=1.00                boundary       5  2714   9.9   1.3   +11,330 +0.2637  13.74
+  zw=55 tgt= 69 ez=1.25                center         5   824   9.9   1.9    +3,106 +0.1975   5.67
+  zw=55 tgt= 69 ez=1.25                boundary       5  2514  10.0   0.8   +10,747 +0.2570  12.89
+  zw=55 tgt= 82 ez=1.50                center         5   821   9.9   1.3    +3,050 +0.1901   5.45
+  zw=55 tgt= 82 ez=1.50                boundary       5  2623  10.0   0.3   +11,543 +0.2705  13.85
+  zw=55 tgt=110 ez=2.00                center         5   808  10.0   0.6    +3,393 +0.2062   5.86
+  zw=55 tgt=110 ez=2.00                boundary       5  2647  10.0   0.2   +11,624 +0.2659  13.68
+  zw=55 tgt=138 ez=2.50                center         5   811  10.0   0.1    +3,639 +0.2068   5.89
+  zw=55 tgt=138 ez=2.50                boundary       5  2564  10.0   0.0   +10,536 +0.2491  12.62
+
+=== TOP 15 overall (5/5 gates, by Sharpe) ===
+ zone_width  tgt   ez variant  gates    n  avg_legs  esc_pct        pnl_$   sharpe       sqn
+         45   68 1.50  center      5 1121  9.917038 1.516503  5917.809796 0.331064 11.084453
+         45   56 1.25  center      5 1127  9.880213 2.661934  5657.937058 0.330081 11.081075
+         45   90 2.00  center      5 1116  9.962366 0.627240  6048.487414 0.321424 10.737679
+         45  112 2.50  center      5 1118  9.993739 0.268336  6415.735845 0.320979 10.732430
+         45   45 1.00  center      5 1132  9.765018 4.858657  5219.251738 0.318965 10.731646
+         25   50 2.00  center      5 2432  9.908306 2.055921  8846.046485 0.287752 14.190592
+         35   44 1.25  center      5 1573  9.806739 3.814367  5996.730861 0.287698 11.410412
+         20   50 2.50  center      5 3141  9.926457 1.942057 10708.758158 0.286751 16.070855
+         25   62 2.50  center      5 2425  9.950515 1.113402  9038.565888 0.286587 14.112784
+         35   35 1.00  center      5 1580  9.648101 7.405063  5648.527287 0.281230 11.178659
+         50   75 1.50  center      5  924  9.913420 1.623377  4470.675686 0.280893  8.538394
+         30   75 2.50  center      5 1904  9.968487 0.787815  7666.129117 0.279482 12.195173
+         25   38 1.50  center      5 2455  9.827291 4.195519  8135.886401 0.278555 13.801823
+         50  125 2.50  center      5  921  9.985885 0.217155  4877.152368 0.278136  8.440880
+         50  100 2.00  center      5  925  9.955676 0.756757  4671.550934 0.277851  8.450497
+
+=== BOUNDARY vs CENTER: avg Sharpe across 5/5 PASS configs ===
+  center    :  63 passing configs  mean_sharpe=0.2266  mean_sqn=8.88  best_sharpe=0.3311
+  boundary  :  63 passing configs  mean_sharpe=0.2162  mean_sqn=12.94  best_sharpe=0.2740
+Pair         zw  tgt    ez  g     n  avgH    $/hr@1u  $/day@1ku  maxDD@1ku  Sharpe    SQN  prior
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  EUR_USD       8   32   4.0  5  8806   1.1 $  0.02171 $   520.96 $  -921.87  0.2744  25.75    20p ◄ BEST
+  EUR_USD      11   44   4.0  5  7524   1.3 $  0.02135 $   512.35 $ -1156.96  0.2732  23.70    20p
+  EUR_USD      11   38   3.5  5  7524   1.3 $  0.02127 $   510.39 $ -1052.89  0.2770  24.02    20p
+  EUR_USD      14   56   4.0  5  6555   1.5 $  0.02093 $   502.30 $ -1100.94  0.2727  22.07    20p
+  EUR_USD       8   28   3.5  5  8858   1.1 $  0.02074 $   497.66 $  -921.87  0.2710  25.50    20p
+  EUR_USD      14   49   3.5  5  6657   1.5 $  0.01989 $   477.25 $ -1045.49  0.2627  21.43    20p
+  EUR_USD      20   70   3.5  5  5363   1.8 $  0.01970 $   472.83 $ -1410.86  0.2753  20.16    20p
+  EUR_USD      17   51   3.0  5  6103   1.6 $  0.01950 $   467.97 $ -1129.99  0.2668  20.84    20p
+  EUR_USD      20   80   4.0  5  5363   1.8 $  0.01949 $   467.85 $ -1452.52  0.2748  20.13    20p
+  EUR_USD      14   42   3.0  5  6657   1.5 $  0.01937 $   464.97 $  -981.52  0.2670  21.78    20p
+  EUR_USD      11   33   3.0  5  7522   1.3 $  0.01927 $   462.44 $ -1479.08  0.2619  22.72    20p
+  EUR_USD      17   60   3.5  5  5959   1.6 $  0.01902 $   456.51 $ -1597.31  0.2618  20.21    20p
+  EUR_USD      17   68   4.0  5  5903   1.7 $  0.01877 $   450.40 $ -2043.47  0.2477  19.03    20p
+  EUR_USD      20   60   3.0  5  5377   1.8 $  0.01842 $   442.07 $ -1452.52  0.2748  20.15    20p
+  EUR_USD       8   24   3.0  5  8976   1.1 $  0.01808 $   433.97 $ -1003.26  0.2453  23.24    20p
+  EUR_USD      24   60   2.5  5  4845   2.0 $  0.01794 $   430.54 $ -1119.98  0.2800  19.49    20p
+  EUR_USD      17   42   2.5  5  5997   1.6 $  0.01779 $   427.07 $ -1208.14  0.2654  20.56    20p
+  EUR_USD      20   50   2.5  5  5363   1.8 $  0.01778 $   426.69 $ -1410.86  0.2692  19.71    20p
+  EUR_USD      24   84   3.5  5  4781   2.1 $  0.01760 $   422.47 $ -1770.53  0.2696  18.64    20p
+  EUR_USD      14   35   2.5  5  6820   1.4 $  0.01758 $   421.96 $ -1814.08  0.2403  19.84    20p
+  EUR_USD      24   72   3.0  5  4781   2.1 $  0.01735 $   416.36 $ -1599.33  0.2641  18.26    20p
+  EUR_USD      28   84   3.0  5  4332   2.3 $  0.01730 $   415.24 $ -1568.47  0.2764  18.19    20p
+  EUR_USD      28   98   3.5  5  4332   2.3 $  0.01727 $   414.49 $ -1568.47  0.2757  18.15    20p
+  EUR_USD      24   96   4.0  5  4781   2.1 $  0.01725 $   413.89 $ -1373.90  0.2630  18.19    20p
+  EUR_USD      20   40   2.0  5  5496   1.8 $  0.01674 $   401.76 $ -1354.28  0.2588  19.19    20p
+  EUR_USD      28   70   2.5  5  4348   2.3 $  0.01656 $   397.46 $ -1829.06  0.2713  17.89    20p
+  EUR_USD      28  112   4.0  5  4332   2.3 $  0.01624 $   389.69 $ -1568.47  0.2595  17.08    20p
+  EUR_USD      11   28   2.5  5  7524   1.3 $  0.01623 $   389.61 $ -2052.39  0.2260  19.61    20p
+  EUR_USD      24   48   2.0  5  4749   2.1 $  0.01590 $   381.55 $ -1682.56  0.2634  18.15    20p
+  EUR_USD       8   20   2.5  5  9083   1.1 $  0.01561 $   374.63 $ -1077.00  0.2292  21.84    20p
+  EUR_USD      14   28   2.0  5  6762   1.5 $  0.01558 $   373.85 $ -1814.08  0.2319  19.07    20p
+  EUR_USD      17   34   2.0  5  5861   1.7 $  0.01503 $   360.61 $ -1462.48  0.2304  17.64    20p
+  EUR_USD      20   30   1.5  5  5377   1.8 $  0.01484 $   356.28 $ -1365.94  0.2509  18.40    20p
+  EUR_USD      28   56   2.0  5  4350   2.3 $  0.01456 $   349.47 $ -1555.07  0.2472  16.31    20p
+  EUR_USD      24   36   1.5  5  4861   2.0 $  0.01440 $   345.51 $ -1423.84  0.2388  16.65    20p
+  EUR_USD      32   64   2.0  5  3979   2.5 $  0.01418 $   340.22 $ -1426.01  0.2463  15.54    20p
+  EUR_USD      17   26   1.5  5  6051   1.6 $  0.01407 $   337.69 $ -1585.72  0.2262  17.59    20p
+  EUR_USD      28   42   1.5  5  4416   2.2 $  0.01398 $   335.61 $ -1748.76  0.2382  15.83    20p
+  EUR_USD      14   21   1.5  5  6953   1.4 $  0.01376 $   330.35 $ -1125.27  0.2243  18.71    20p
+  EUR_USD      32  112   3.5  5  3998   2.5 $  0.01361 $   326.56 $ -1624.63  0.2234  14.13    20p
+  EUR_USD      32  128   4.0  5  3979   2.5 $  0.01315 $   315.69 $ -1622.18  0.2148  13.55    20p
+  EUR_USD      32   80   2.5  5  3903   2.5 $  0.01304 $   312.94 $ -1584.11  0.2284  14.27    20p
+  EUR_USD      11   22   2.0  5  7724   1.3 $  0.01295 $   310.79 $ -1267.09  0.1930  16.96    20p
+  EUR_USD      32   96   3.0  5  3903   2.5 $  0.01268 $   304.34 $ -1622.18  0.2163  13.51    20p
+  EUR_USD      28   28   1.0  5  4500   2.2 $  0.01267 $   303.99 $ -1708.89  0.2433  16.32    20p
+  EUR_USD      32   48   1.5  5  3866   2.5 $  0.01154 $   276.90 $ -1705.18  0.2259  14.05    20p
+  EUR_USD       8   16   2.0  5  9459   1.0 $  0.01147 $   275.29 $ -1075.49  0.1813  17.64    20p
+  EUR_USD      24   24   1.0  5  5065   1.9 $  0.01127 $   270.46 $ -1541.19  0.2098  14.93    20p
+  EUR_USD      32   32   1.0  5  3959   2.5 $  0.01091 $   261.92 $ -2097.43  0.2100  13.21    20p
+  EUR_USD      20   20   1.0  5  5515   1.8 $  0.00961 $   230.54 $ -1263.22  0.1776  13.19    20p
+  EUR_USD      11   16   1.5  5  8025   1.2 $  0.00940 $   225.48 $ -1455.77  0.1574  14.10    20p
+  EUR_USD      17   17   1.0  5  6262   1.6 $  0.00864 $   207.36 $ -2368.41  0.1604  12.70    20p
+  EUR_USD      14   14   1.0  5  7323   1.3 $  0.00649 $   155.81 $ -2414.55  0.1208  10.34    20p
+  EUR_USD       8   12   1.5  5 10185   1.0 $  0.00544 $   130.55 $ -1865.33  0.0959   9.68    20p
+  EUR_USD      11   11   1.0  5  9003   1.1 $  0.00269 $    64.54 $ -2739.03  0.0512   4.85    20p
+             ——————————————————————————————————————————————————————————————————————————————————————————————— [289s]
+
+  GBP_USD      10   35   3.5  5  8709   1.1 $  0.02881 $   691.42 $  -701.04  0.3104  28.97    26p ◄ BEST
+  GBP_USD      10   40   4.0  5  8668   1.1 $  0.02870 $   688.82 $ -1537.31  0.2975  27.70    26p
+  GBP_USD      10   30   3.0  5  8762   1.1 $  0.02790 $   669.69 $  -849.36  0.3095  28.97    26p
+  GBP_USD      14   49   3.5  5  7344   1.3 $  0.02780 $   667.29 $ -1259.64  0.3065  26.26    26p
+  GBP_USD      14   56   4.0  5  7281   1.3 $  0.02763 $   663.19 $ -1221.53  0.2975  25.38    26p
+  GBP_USD      14   42   3.0  5  7372   1.3 $  0.02712 $   650.80 $  -801.48  0.3094  26.57    26p
+  GBP_USD      18   72   4.0  5  6423   1.5 $  0.02601 $   624.28 $ -1826.92  0.2912  23.34    26p
+  GBP_USD      18   54   3.0  5  6423   1.5 $  0.02547 $   611.18 $ -1632.83  0.2958  23.71    26p
+  GBP_USD      18   63   3.5  5  6426   1.5 $  0.02546 $   611.15 $ -1826.92  0.2886  23.13    26p
+  GBP_USD      14   35   2.5  5  7411   1.3 $  0.02479 $   594.89 $ -1127.96  0.2873  24.73    26p
+  GBP_USD      22   88   4.0  5  5640   1.7 $  0.02460 $   590.33 $ -1715.15  0.2998  22.51    26p
+  GBP_USD      22   77   3.5  5  5741   1.7 $  0.02397 $   575.39 $ -1408.43  0.2935  22.24    26p
+  GBP_USD      18   45   2.5  5  6417   1.5 $  0.02326 $   558.21 $ -1548.54  0.2840  22.75    26p
+  GBP_USD      10   25   2.5  5  8841   1.1 $  0.02268 $   544.38 $ -1029.80  0.2703  25.42    26p
+  GBP_USD      22   66   3.0  5  5741   1.7 $  0.02257 $   541.67 $ -1491.26  0.2811  21.30    26p
+  GBP_USD      14   28   2.0  5  7431   1.3 $  0.02216 $   531.83 $ -1372.84  0.2768  23.86    26p
+  GBP_USD      26   52   2.0  5  5140   1.9 $  0.02216 $   531.80 $ -1707.05  0.2916  20.90    26p
+  GBP_USD      18   36   2.0  5  6394   1.5 $  0.02171 $   521.14 $ -1229.22  0.2799  22.38    26p
+  GBP_USD      26   91   3.5  5  5149   1.9 $  0.02160 $   518.48 $ -1509.26  0.2843  20.40    26p
+  GBP_USD      26  104   4.0  5  5149   1.9 $  0.02147 $   515.28 $ -1509.26  0.2826  20.28    26p
+  GBP_USD      26   78   3.0  5  5095   1.9 $  0.02143 $   514.25 $ -1881.97  0.2867  20.46    26p
+  GBP_USD      31  108   3.5  5  4513   2.2 $  0.02135 $   512.35 $ -1630.46  0.2968  19.94    26p
+  GBP_USD      31   93   3.0  5  4513   2.2 $  0.02122 $   509.22 $ -1630.46  0.2989  20.08    26p
+  GBP_USD      22   55   2.5  5  5652   1.7 $  0.02115 $   507.49 $ -1582.98  0.2745  20.64    26p
+  GBP_USD      31  124   4.0  5  4683   2.1 $  0.02105 $   505.08 $ -2231.39  0.2782  19.03    26p
+  GBP_USD      26   65   2.5  5  5149   1.9 $  0.02051 $   492.19 $ -1590.55  0.2756  19.78    26p
+  GBP_USD      22   44   2.0  5  5763   1.7 $  0.02041 $   489.92 $ -1907.19  0.2625  19.92    26p
+  GBP_USD      18   27   1.5  5  6574   1.5 $  0.02013 $   483.19 $ -1821.31  0.2738  22.20    26p
+  GBP_USD      31   78   2.5  5  4629   2.1 $  0.02008 $   481.87 $ -2127.97  0.2782  18.93    26p
+  GBP_USD      26   39   1.5  5  5173   1.9 $  0.01977 $   474.39 $ -1271.06  0.2818  20.27    26p
+  GBP_USD      31   62   2.0  5  4614   2.1 $  0.01932 $   463.68 $ -2127.97  0.2773  18.84    26p
+  GBP_USD      36  144   4.0  5  4152   2.4 $  0.01871 $   449.12 $ -2305.66  0.2635  16.98    26p
+  GBP_USD      31   46   1.5  5  4491   2.2 $  0.01853 $   444.78 $ -2095.54  0.2777  18.61    26p
+  GBP_USD      36  126   3.5  5  4152   2.4 $  0.01851 $   444.23 $ -2305.66  0.2653  17.09    26p
+  GBP_USD      36  108   3.0  5  4152   2.4 $  0.01851 $   444.15 $ -2305.66  0.2727  17.57    26p
+  GBP_USD      22   33   1.5  5  5695   1.7 $  0.01843 $   442.28 $ -1500.16  0.2488  18.77    26p
+  GBP_USD      10   20   2.0  5  9110   1.1 $  0.01796 $   431.04 $ -1261.70  0.2350  22.43    26p
+  GBP_USD      42   84   2.0  5  3726   2.6 $  0.01752 $   420.54 $ -2463.69  0.2846  17.38    26p
+  GBP_USD      36   90   2.5  5  4152   2.4 $  0.01728 $   414.81 $ -2305.66  0.2647  17.06    26p
+  GBP_USD      36   54   1.5  5  4203   2.3 $  0.01668 $   400.42 $ -1597.89  0.2571  16.67    26p
+  GBP_USD      42   42   1.0  5  3741   2.6 $  0.01658 $   397.90 $ -1440.21  0.2913  17.82    26p
+  GBP_USD      36   72   2.0  5  4143   2.4 $  0.01650 $   396.07 $ -2926.56  0.2535  16.32    26p
+  GBP_USD      26   26   1.0  5  5216   1.9 $  0.01602 $   384.48 $ -1732.13  0.2464  17.80    26p
+  GBP_USD      42   63   1.5  5  3769   2.6 $  0.01582 $   379.71 $ -1862.90  0.2609  16.02    26p
+  GBP_USD      42  105   2.5  5  3683   2.7 $  0.01570 $   376.77 $ -1574.64  0.2506  15.21    26p
+  GBP_USD      14   21   1.5  5  7602   1.3 $  0.01549 $   371.72 $ -1370.28  0.2115  18.44    26p
+  GBP_USD      31   31   1.0  5  4562   2.2 $  0.01539 $   369.30 $ -1864.24  0.2473  16.70    26p
+  GBP_USD      36   36   1.0  5  4173   2.4 $  0.01498 $   359.58 $ -1745.80  0.2476  16.00    26p
+  GBP_USD      42  126   3.0  5  3683   2.7 $  0.01480 $   355.24 $ -1872.37  0.2347  14.24    26p
+  GBP_USD      42  147   3.5  5  3683   2.7 $  0.01455 $   349.28 $ -1872.37  0.2285  13.87    26p
+  GBP_USD      42  168   4.0  5  3683   2.7 $  0.01455 $   349.28 $ -1872.37  0.2285  13.87    26p
+  GBP_USD      22   22   1.0  5  5912   1.7 $  0.01438 $   345.20 $ -1360.57  0.2199  16.91    26p
+  GBP_USD      18   18   1.0  5  6837   1.4 $  0.01184 $   284.09 $ -2097.12  0.1842  15.23    26p
+  GBP_USD      10   15   1.5  5  9664   1.0 $  0.01157 $   277.58 $ -1131.85  0.1685  16.57    26p
+  GBP_USD      14   14   1.0  5  8281   1.2 $  0.00824 $   197.72 $ -1281.56  0.1325  12.05    26p
+  GBP_USD      10   10   1.0  4 11346   0.9 $  0.00198 $    47.57 $ -2983.18  0.0338   3.60    26p
+             ——————————————————————————————————————————————————————————————————————————————————————————————— [301s]
+
+  AUD_USD       7   28   4.0  5  8386   1.2 $  0.01572 $   377.31 $  -733.24  0.2493  22.83    18p ◄ BEST
+  AUD_USD      10   40   4.0  5  6940   1.4 $  0.01395 $   334.75 $ -1109.63  0.2370  19.74    18p
+  AUD_USD       7   24   3.5  5  8453   1.2 $  0.01385 $   332.48 $  -972.87  0.2259  20.77    18p
+  AUD_USD      13   52   4.0  5  6126   1.6 $  0.01378 $   330.79 $ -1041.28  0.2408  18.84    18p
+  AUD_USD       7   21   3.0  5  8513   1.2 $  0.01344 $   322.61 $ -1059.65  0.2337  21.56    18p
+  AUD_USD      13   39   3.0  5  6135   1.6 $  0.01329 $   318.88 $ -1014.50  0.2391  18.73    18p
+  AUD_USD      10   35   3.5  5  6975   1.4 $  0.01317 $   316.19 $ -1108.47  0.2280  19.04    18p
+  AUD_USD      13   46   3.5  5  6126   1.6 $  0.01292 $   309.99 $ -1014.50  0.2263  17.71    18p
+  AUD_USD      10   30   3.0  5  6975   1.4 $  0.01281 $   307.44 $ -1042.48  0.2263  18.90    18p
+  AUD_USD      10   25   2.5  5  7059   1.4 $  0.01271 $   305.10 $ -1042.48  0.2319  19.48    18p
+  AUD_USD      15   52   3.5  5  5520   1.8 $  0.01242 $   298.05 $ -1545.68  0.2259  16.78    18p
+  AUD_USD      15   60   4.0  5  5520   1.8 $  0.01172 $   281.28 $ -1545.68  0.2095  15.56    18p
+  AUD_USD      13   32   2.5  5  6066   1.6 $  0.01172 $   281.22 $ -1151.62  0.2227  17.34    18p
+  AUD_USD      15   45   3.0  5  5520   1.8 $  0.01165 $   279.61 $ -1545.68  0.2179  16.19    18p
+  AUD_USD      15   38   2.5  5  5596   1.8 $  0.01127 $   270.54 $ -1378.92  0.2133  15.96    18p
+  AUD_USD      18   36   2.0  5  5065   1.9 $  0.01120 $   268.68 $ -1140.18  0.2287  16.28    18p
+  AUD_USD      13   26   2.0  5  6137   1.6 $  0.01113 $   267.04 $ -1002.72  0.2183  17.10    18p
+  AUD_USD       7   18   2.5  5  8575   1.1 $  0.01105 $   265.09 $ -2033.83  0.1999  18.52    18p
+  AUD_USD      18   54   3.0  5  5020   2.0 $  0.01091 $   261.87 $ -1164.49  0.2147  15.21    18p
+  AUD_USD      10   20   2.0  5  7265   1.4 $  0.01089 $   261.28 $  -970.01  0.2088  17.79    18p
+  AUD_USD      18   63   3.5  5  5020   2.0 $  0.01079 $   259.06 $ -1164.49  0.2131  15.10    18p
+  AUD_USD      18   72   4.0  5  5020   2.0 $  0.01076 $   258.20 $ -1199.30  0.2094  14.84    18p
+  AUD_USD      18   45   2.5  5  5023   2.0 $  0.01048 $   251.42 $ -1164.49  0.2087  14.79    18p
+  AUD_USD      15   30   2.0  5  5656   1.7 $  0.01011 $   242.52 $ -1964.55  0.1988  14.95    18p
+  AUD_USD      22   88   4.0  5  4239   2.3 $  0.00985 $   236.47 $ -1675.86  0.2136  13.90    18p
+  AUD_USD      22   77   3.5  5  4239   2.3 $  0.00981 $   235.47 $ -1675.86  0.2133  13.89    18p
+  AUD_USD      22   66   3.0  5  4273   2.3 $  0.00973 $   233.54 $ -1675.86  0.2072  13.54    18p
+  AUD_USD      25   62   2.5  5  4010   2.4 $  0.00955 $   229.30 $ -1232.76  0.2127  13.47    18p
+  AUD_USD      25   75   3.0  5  4010   2.4 $  0.00940 $   225.64 $ -1232.76  0.2090  13.24    18p
+  AUD_USD      15   22   1.5  5  5728   1.7 $  0.00939 $   225.29 $ -1082.41  0.1986  15.03    18p
+  AUD_USD      22   55   2.5  5  4239   2.3 $  0.00934 $   224.12 $ -1675.86  0.1973  12.84    18p
+  AUD_USD      22   44   2.0  5  4267   2.3 $  0.00914 $   219.33 $ -1150.28  0.2069  13.51    18p
+  AUD_USD      13   20   1.5  5  6229   1.6 $  0.00908 $   217.93 $ -1357.09  0.1902  15.02    18p
+  AUD_USD      18   27   1.5  5  5023   2.0 $  0.00900 $   216.11 $ -1529.61  0.2016  14.29    18p
+  AUD_USD      29   58   2.0  5  3704   2.7 $  0.00896 $   215.16 $ -1630.78  0.2202  13.40    18p
+  AUD_USD      29   72   2.5  5  3670   2.7 $  0.00887 $   212.80 $ -1630.78  0.2176  13.18    18p
+  AUD_USD      25  100   4.0  5  3875   2.5 $  0.00882 $   211.72 $ -1358.47  0.1952  12.15    18p
+  AUD_USD      25   88   3.5  5  3875   2.5 $  0.00882 $   211.64 $ -1358.47  0.1952  12.15    18p
+  AUD_USD      22   33   1.5  5  4272   2.3 $  0.00849 $   203.79 $ -1396.20  0.1970  12.88    18p
+  AUD_USD       7   14   2.0  5  8806   1.1 $  0.00813 $   195.23 $ -1391.80  0.1586  14.88    18p
+  AUD_USD      25   50   2.0  5  3875   2.5 $  0.00805 $   193.24 $ -1358.47  0.1874  11.66    18p
+  AUD_USD      25   38   1.5  5  3968   2.5 $  0.00791 $   189.86 $ -1499.86  0.1951  12.29    18p
+  AUD_USD      29   29   1.0  5  3658   2.7 $  0.00788 $   189.16 $ -1294.55  0.2139  12.93    18p
+  AUD_USD      29   44   1.5  5  3686   2.7 $  0.00772 $   185.19 $ -1630.78  0.1991  12.09    18p
+  AUD_USD      10   15   1.5  5  7341   1.3 $  0.00763 $   183.15 $ -1182.58  0.1586  13.59    18p
+  AUD_USD      29  102   3.5  5  3619   2.7 $  0.00759 $   182.12 $ -2363.91  0.1725  10.38    18p
+  AUD_USD      29   87   3.0  5  3619   2.7 $  0.00757 $   181.71 $ -2363.91  0.1727  10.39    18p
+  AUD_USD      29  116   4.0  5  3619   2.7 $  0.00756 $   181.45 $ -2363.91  0.1732  10.42    18p
+  AUD_USD      22   22   1.0  5  4444   2.2 $  0.00752 $   180.48 $ -1611.92  0.1779  11.86    18p
+  AUD_USD      25   25   1.0  5  3996   2.5 $  0.00728 $   174.76 $ -1397.84  0.1833  11.59    18p
+  AUD_USD      18   18   1.0  5  5118   1.9 $  0.00653 $   156.84 $ -1814.14  0.1552  11.10    18p
+  AUD_USD      13   13   1.0  5  6495   1.5 $  0.00640 $   153.72 $ -2128.15  0.1545  12.45    18p
+  AUD_USD      15   15   1.0  5  5807   1.7 $  0.00571 $   136.97 $ -2383.04  0.1307   9.96    18p
+  AUD_USD       7   10   1.5  5  9460   1.0 $  0.00228 $    54.82 $ -2258.82  0.0506   4.92    18p
+  AUD_USD      10   10   1.0  5  7921   1.2 $  0.00150 $    35.95 $ -2326.99  0.0347   3.09    18p
+             ——————————————————————————————————————————————————————————————————————————————————————————————— [340s]
+
+  NZD_USD       7   21   3.0  5  8184   1.2 $  0.01148 $   275.63 $  -930.04  0.2154  19.49    17p ◄ BEST
+  NZD_USD       7   28   4.0  5  8088   1.2 $  0.01143 $   274.39 $ -1300.25  0.2070  18.61    17p
+  NZD_USD       9   36   4.0  5  7067   1.4 $  0.01124 $   269.87 $  -944.13  0.2064  17.35    17p
+  NZD_USD       9   32   3.5  5  7087   1.4 $  0.01077 $   258.39 $ -1033.16  0.2065  17.39    17p
+  NZD_USD       9   27   3.0  5  7081   1.4 $  0.01074 $   257.86 $  -787.81  0.2142  18.03    17p
+  NZD_USD      12   48   4.0  5  6133   1.6 $  0.01058 $   253.82 $ -1016.03  0.2117  16.58    17p
+  NZD_USD       7   18   2.5  5  8200   1.2 $  0.01038 $   249.05 $ -1005.42  0.2055  18.61    17p
+  NZD_USD       7   24   3.5  5  8083   1.2 $  0.01036 $   248.70 $  -968.56  0.1922  17.28    17p
+  NZD_USD      12   36   3.0  5  6058   1.6 $  0.01018 $   244.24 $ -1666.19  0.2073  16.13    17p
+  NZD_USD      12   42   3.5  5  6133   1.6 $  0.01015 $   243.60 $ -1016.03  0.2042  15.99    17p
+  NZD_USD      14   49   3.5  5  5510   1.8 $  0.01005 $   241.16 $ -1015.30  0.2174  16.14    17p
+  NZD_USD      14   42   3.0  5  5538   1.8 $  0.01004 $   240.97 $  -836.87  0.2103  15.65    17p
+  NZD_USD       9   22   2.5  5  7144   1.4 $  0.01004 $   240.92 $  -971.10  0.2006  16.95    17p
+  NZD_USD      14   56   4.0  5  5510   1.8 $  0.00921 $   220.96 $ -1572.22  0.1934  14.35    17p
+  NZD_USD      12   30   2.5  5  6138   1.6 $  0.00920 $   220.77 $ -1064.67  0.1882  14.75    17p
+  NZD_USD      17   60   3.5  5  4842   2.0 $  0.00891 $   213.91 $ -1410.44  0.2007  13.96    17p
+  NZD_USD      17   68   4.0  5  4748   2.1 $  0.00888 $   213.14 $ -1515.75  0.2018  13.91    17p
+  NZD_USD       9   18   2.0  5  7231   1.4 $  0.00881 $   211.39 $  -962.23  0.1840  15.65    17p
+  NZD_USD      14   35   2.5  5  5502   1.8 $  0.00874 $   209.88 $ -1015.30  0.1919  14.23    17p
+  NZD_USD      14   28   2.0  5  5520   1.8 $  0.00838 $   201.22 $ -1281.17  0.1850  13.75    17p
+  NZD_USD      17   51   3.0  5  4748   2.1 $  0.00837 $   200.88 $ -1515.75  0.1911  13.17    17p
+  NZD_USD      20   60   3.0  5  4305   2.3 $  0.00832 $   199.73 $ -1569.94  0.2010  13.19    17p
+  NZD_USD      20   80   4.0  5  4280   2.3 $  0.00805 $   193.15 $ -1503.05  0.1923  12.58    17p
+  NZD_USD      20   70   3.5  5  4280   2.3 $  0.00803 $   192.80 $ -1503.05  0.1927  12.61    17p
+  NZD_USD      20   40   2.0  5  4315   2.3 $  0.00799 $   191.64 $ -1987.37  0.2060  13.53    17p
+  NZD_USD      12   24   2.0  5  6042   1.6 $  0.00795 $   190.89 $ -1447.13  0.1737  13.50    17p
+  NZD_USD      20   30   1.5  5  4249   2.3 $  0.00795 $   190.78 $ -1301.54  0.2074  13.52    17p
+  NZD_USD      17   42   2.5  5  4851   2.0 $  0.00794 $   190.66 $ -1282.85  0.1844  12.85    17p
+  NZD_USD       7   14   2.0  5  8315   1.2 $  0.00777 $   186.45 $ -1188.68  0.1661  15.14    17p
+  NZD_USD      20   50   2.5  5  4315   2.3 $  0.00763 $   183.03 $ -1444.20  0.1885  12.38    17p
+  NZD_USD      24   96   4.0  5  3809   2.6 $  0.00756 $   181.38 $ -1447.16  0.1964  12.12    17p
+  NZD_USD      24   84   3.5  5  3809   2.6 $  0.00756 $   181.38 $ -1447.16  0.1964  12.12    17p
+  NZD_USD      17   34   2.0  5  4858   2.0 $  0.00755 $   181.13 $ -1853.57  0.1809  12.61    17p
+  NZD_USD      24   60   2.5  5  3809   2.6 $  0.00755 $   181.12 $ -1447.16  0.1971  12.17    17p
+  NZD_USD      24   72   3.0  5  3809   2.6 $  0.00753 $   180.75 $ -1447.16  0.1970  12.16    17p
+  NZD_USD      17   26   1.5  5  4785   2.0 $  0.00729 $   175.03 $ -1282.85  0.1774  12.27    17p
+  NZD_USD      14   21   1.5  5  5626   1.7 $  0.00725 $   174.10 $ -2154.64  0.1715  12.87    17p
+  NZD_USD      12   18   1.5  5  6140   1.6 $  0.00721 $   173.11 $ -1487.58  0.1677  13.14    17p
+  NZD_USD      24   48   2.0  5  3835   2.6 $  0.00710 $   170.41 $ -1536.55  0.1880  11.65    17p
+  NZD_USD      24   36   1.5  5  3902   2.5 $  0.00701 $   168.16 $ -2230.24  0.1937  12.10    17p
+  NZD_USD       9   14   1.5  5  7346   1.3 $  0.00686 $   164.70 $ -1063.25  0.1575  13.50    17p
+  NZD_USD      27   40   1.5  5  3384   2.9 $  0.00620 $   148.83 $ -1393.49  0.1876  10.91    17p
+  NZD_USD      20   20   1.0  5  4442   2.2 $  0.00601 $   144.35 $ -1588.12  0.1648  10.98    17p
+  NZD_USD      27   54   2.0  5  3423   2.9 $  0.00580 $   139.29 $ -1998.40  0.1693   9.90    17p
+  NZD_USD      24   24   1.0  5  3878   2.5 $  0.00558 $   133.94 $ -1683.72  0.1569   9.77    17p
+  NZD_USD      17   17   1.0  5  4982   2.0 $  0.00557 $   133.62 $ -1879.65  0.1464  10.34    17p
+  NZD_USD      27   81   3.0  5  3384   2.9 $  0.00542 $   130.07 $ -3382.52  0.1539   8.95    17p
+  NZD_USD      27  108   4.0  5  3384   2.9 $  0.00542 $   130.07 $ -3382.52  0.1539   8.95    17p
+  NZD_USD      27   94   3.5  5  3384   2.9 $  0.00542 $   130.07 $ -3382.52  0.1539   8.95    17p
+  NZD_USD      27   68   2.5  5  3396   2.9 $  0.00531 $   127.36 $ -3382.52  0.1530   8.91    17p
+  NZD_USD      14   14   1.0  5  5746   1.7 $  0.00516 $   123.78 $ -1615.20  0.1328  10.06    17p
+  NZD_USD      27   27   1.0  5  3429   2.9 $  0.00501 $   120.36 $ -1787.32  0.1535   8.99    17p
+  NZD_USD       7   10   1.5  5  8743   1.1 $  0.00339 $    81.25 $ -1708.15  0.0814   7.61    17p
+  NZD_USD      12   12   1.0  5  6306   1.6 $  0.00312 $    74.92 $ -2563.57  0.0799   6.35    17p
+  NZD_USD       9    9   1.0  5  7773   1.3 $  0.00125 $    30.05 $ -3963.22  0.0329   2.90    17p
+             ——————————————————————————————————————————————————————————————————————————————————————————————— [348s]
+
+  EUR_GBP       6   24   4.0  5  7237   1.4 $  0.00468 $   112.43 $ -1778.89  0.0968   8.23    11p ◄ BEST
+  EUR_GBP      18   63   3.5  5  3632   2.7 $  0.00463 $   111.18 $ -2246.63  0.1384   8.34    11p
+  EUR_GBP      18   72   4.0  5  3632   2.7 $  0.00463 $   111.18 $ -2246.63  0.1384   8.34    11p
+  EUR_GBP       6   21   3.5  5  7222   1.4 $  0.00462 $   110.95 $ -1738.71  0.0982   8.34    11p
+  EUR_GBP      18   54   3.0  5  3632   2.7 $  0.00454 $   108.98 $ -2246.63  0.1356   8.17    11p
+  EUR_GBP       8   28   3.5  5  6310   1.6 $  0.00451 $   108.15 $ -1705.65  0.0976   7.75    11p
+  EUR_GBP      18   45   2.5  5  3632   2.7 $  0.00448 $   107.52 $ -2246.63  0.1352   8.15    11p
+  EUR_GBP      15   60   4.0  5  4116   2.4 $  0.00436 $   104.55 $ -2132.31  0.1192   7.65    11p
+  EUR_GBP      13   26   2.0  5  4685   2.1 $  0.00422 $   101.23 $ -2324.72  0.1114   7.63    11p
+  EUR_GBP       6   18   3.0  5  7335   1.3 $  0.00419 $   100.60 $ -2139.71  0.0889   7.61    11p
+  EUR_GBP       9   32   3.5  5  5798   1.7 $  0.00419 $   100.45 $ -2045.65  0.0962   7.33    11p
+  EUR_GBP      13   46   3.5  5  4521   2.2 $  0.00410 $    98.35 $ -1783.89  0.1085   7.29    11p
+  EUR_GBP      11   38   3.5  5  5194   1.9 $  0.00397 $    95.30 $ -3385.74  0.0962   6.93    11p
+  EUR_GBP       5   20   4.0  5  8078   1.2 $  0.00394 $    94.50 $ -1824.00  0.0783   7.04    11p
+  EUR_GBP      15   30   2.0  5  4229   2.3 $  0.00393 $    94.22 $ -2175.63  0.1099   7.14    11p
+  EUR_GBP      15   52   3.5  5  4116   2.4 $  0.00389 $    93.40 $ -2132.31  0.1079   6.92    11p
+  EUR_GBP      15   45   3.0  5  4116   2.4 $  0.00388 $    93.13 $ -2132.31  0.1074   6.89    11p
+  EUR_GBP      13   39   3.0  5  4521   2.2 $  0.00388 $    93.06 $ -1783.89  0.0997   6.71    11p
+  EUR_GBP      13   52   4.0  5  4521   2.2 $  0.00384 $    92.23 $ -1801.62  0.1001   6.73    11p
+  EUR_GBP       8   32   4.0  5  6320   1.6 $  0.00384 $    92.08 $ -2043.93  0.0830   6.60    11p
+  EUR_GBP       9   27   3.0  5  5775   1.7 $  0.00381 $    91.53 $ -2739.83  0.0886   6.73    11p
+  EUR_GBP      18   27   1.5  5  3729   2.6 $  0.00354 $    84.96 $ -1716.82  0.1102   6.73    11p
+  EUR_GBP       9   36   4.0  5  5915   1.7 $  0.00351 $    84.25 $ -2029.04  0.0765   5.88    11p
+  EUR_GBP      18   36   2.0  5  3606   2.7 $  0.00346 $    83.05 $ -2572.10  0.1051   6.31    11p
+  EUR_GBP      11   22   2.0  5  5147   1.9 $  0.00344 $    82.62 $ -3503.42  0.0867   6.22    11p
+  EUR_GBP       8   24   3.0  5  6209   1.6 $  0.00342 $    81.99 $ -4118.10  0.0769   6.06    11p
+  EUR_GBP      15   38   2.5  5  4126   2.4 $  0.00341 $    81.82 $ -2914.78  0.0956   6.14    11p
+  EUR_GBP      15   22   1.5  5  4362   2.3 $  0.00340 $    81.61 $ -1536.91  0.0999   6.60    11p
+  EUR_GBP      11   44   4.0  5  5007   2.0 $  0.00336 $    80.64 $ -3385.74  0.0810   5.73    11p
+  EUR_GBP       6   15   2.5  5  7335   1.3 $  0.00332 $    79.75 $ -2456.21  0.0747   6.40    11p
+  EUR_GBP       9   22   2.5  5  5834   1.7 $  0.00331 $    79.33 $ -2623.30  0.0763   5.83    11p
+  EUR_GBP      11   28   2.5  5  5072   1.9 $  0.00319 $    76.53 $ -3402.38  0.0816   5.81    11p
+  EUR_GBP      11   33   3.0  5  5194   1.9 $  0.00311 $    74.76 $ -3385.74  0.0770   5.55    11p
+  EUR_GBP       5   15   3.0  5  8107   1.2 $  0.00309 $    74.21 $ -2401.96  0.0645   5.81    11p
+  EUR_GBP      13   32   2.5  5  4521   2.2 $  0.00299 $    71.78 $ -1875.93  0.0807   5.43    11p
+  EUR_GBP      13   20   1.5  5  4602   2.1 $  0.00294 $    70.65 $ -1842.73  0.0824   5.59    11p
+  EUR_GBP       5   18   3.5  5  8118   1.2 $  0.00291 $    69.81 $ -2710.28  0.0594   5.36    11p
+  EUR_GBP       9   18   2.0  5  5787   1.7 $  0.00282 $    67.75 $ -2069.36  0.0683   5.20    11p
+  EUR_GBP      18   18   1.0  5  3687   2.7 $  0.00280 $    67.24 $ -1641.06  0.0919   5.58    11p
+  EUR_GBP       8   16   2.0  5  6289   1.6 $  0.00275 $    66.05 $ -2267.96  0.0644   5.11    11p
+  EUR_GBP      11   16   1.5  5  5253   1.9 $  0.00272 $    65.33 $ -3048.70  0.0727   5.27    11p
+  EUR_GBP       8   20   2.5  5  6229   1.6 $  0.00253 $    60.65 $ -4511.32  0.0578   4.56    11p
+  EUR_GBP      15   15   1.0  5  4136   2.4 $  0.00190 $    45.71 $ -1608.79  0.0604   3.88    11p
+  EUR_GBP       9   14   1.5  5  5865   1.7 $  0.00189 $    45.26 $ -3455.40  0.0486   3.72    11p
+  EUR_GBP       5   12   2.5  5  8193   1.2 $  0.00177 $    42.49 $ -3695.98  0.0401   3.63    11p
+  EUR_GBP      13   13   1.0  5  4695   2.1 $  0.00104 $    25.01 $ -2330.08  0.0311   2.13    11p
+  EUR_GBP       8   12   1.5  4  6443   1.5 $  0.00101 $    24.32 $ -4537.18  0.0268   2.15    11p
+  EUR_GBP       6   12   2.0  5  7481   1.3 $  0.00100 $    24.07 $ -3731.52  0.0237   2.05    11p
+             ——————————————————————————————————————————————————————————————————————————————————————————————— [364s]
+
+  USD_JPY      17   68   4.0  5  8084   1.2 $  0.04708 $  1129.89 $ -1573.96  0.3744  33.66    31p ◄ BEST
+  USD_JPY      12   48   4.0  5  9466   1.0 $  0.04559 $  1094.16 $ -1110.78  0.3623  35.25    31p
+  USD_JPY      12   42   3.5  5  9532   1.0 $  0.04261 $  1022.56 $ -1305.56  0.3532  34.49    31p
+  USD_JPY      17   60   3.5  5  8119   1.2 $  0.04257 $  1021.69 $ -1545.52  0.3446  31.05    31p
+  USD_JPY      17   51   3.0  5  8119   1.2 $  0.04196 $  1007.04 $ -1505.46  0.3521  31.73    31p
+  USD_JPY      26   78   3.0  5  6464   1.5 $  0.04147 $   995.37 $ -1901.03  0.3671  29.52    31p
+  USD_JPY      22   66   3.0  5  7085   1.4 $  0.04071 $   977.02 $ -1409.52  0.3524  29.67    31p
+  USD_JPY      22   55   2.5  5  7121   1.4 $  0.04018 $   964.28 $ -1888.40  0.3589  30.29    31p
+  USD_JPY      22   88   4.0  5  6972   1.4 $  0.03932 $   943.60 $ -1384.59  0.3327  27.78    31p
+  USD_JPY      12   36   3.0  5  9574   1.0 $  0.03904 $   936.99 $  -951.40  0.3364  32.91    31p
+  USD_JPY      31  124   4.0  5  5810   1.7 $  0.03848 $   923.55 $ -2506.89  0.3418  26.05    31p
+  USD_JPY      17   42   2.5  5  8150   1.2 $  0.03821 $   917.05 $ -1267.63  0.3394  30.64    31p
+  USD_JPY      26  104   4.0  5  6441   1.5 $  0.03760 $   902.30 $ -1692.31  0.3353  26.91    31p
+  USD_JPY      31  108   3.5  5  5800   1.7 $  0.03752 $   900.45 $ -2299.16  0.3406  25.94    31p
+  USD_JPY      22   77   3.5  5  6974   1.4 $  0.03750 $   899.96 $ -1547.62  0.3224  26.92    31p
+  USD_JPY      26   91   3.5  5  6441   1.5 $  0.03731 $   895.32 $ -2075.61  0.3353  26.91    31p
+  USD_JPY      26   65   2.5  5  6464   1.5 $  0.03705 $   889.21 $ -1518.81  0.3421  27.51    31p
+  USD_JPY      31   93   3.0  5  5848   1.7 $  0.03642 $   874.00 $ -2104.41  0.3330  25.47    31p
+  USD_JPY      22   44   2.0  5  7113   1.4 $  0.03565 $   855.57 $ -2031.46  0.3329  28.08    31p
+  USD_JPY      26   52   2.0  5  6527   1.5 $  0.03545 $   850.73 $ -1594.60  0.3369  27.22    31p
+  USD_JPY      12   30   2.5  5  9810   1.0 $  0.03457 $   829.74 $ -1395.99  0.3160  31.30    31p
+  USD_JPY      31   62   2.0  5  5802   1.7 $  0.03405 $   817.15 $ -2022.73  0.3327  25.34    31p
+  USD_JPY      37  111   3.0  5  5124   1.9 $  0.03377 $   810.50 $ -2451.76  0.3302  23.64    31p
+  USD_JPY      37  130   3.5  5  5150   1.9 $  0.03338 $   801.10 $ -1944.68  0.3171  22.76    31p
+  USD_JPY      37  148   4.0  5  5150   1.9 $  0.03317 $   796.13 $ -2032.70  0.3203  22.99    31p
+  USD_JPY      31   78   2.5  5  5761   1.7 $  0.03290 $   789.70 $ -2022.73  0.3090  23.46    31p
+  USD_JPY      17   34   2.0  5  8259   1.2 $  0.03275 $   785.90 $ -1201.44  0.3154  28.67    31p
+  USD_JPY      37   92   2.5  5  5256   1.9 $  0.03253 $   780.82 $ -1651.50  0.3236  23.46    31p
+  USD_JPY      43  108   2.5  5  4758   2.1 $  0.03232 $   775.62 $ -1848.43  0.3394  23.41    31p
+  USD_JPY      37   74   2.0  5  5256   1.9 $  0.03210 $   770.40 $ -1577.75  0.3251  23.57    31p
+  USD_JPY      43  172   4.0  5  4752   2.1 $  0.03105 $   745.18 $ -1848.43  0.3186  21.96    31p
+  USD_JPY      43   86   2.0  5  4825   2.0 $  0.03090 $   741.65 $ -2704.58  0.3288  22.84    31p
+  USD_JPY      43  150   3.5  5  4752   2.1 $  0.03086 $   740.60 $ -1848.43  0.3188  21.98    31p
+  USD_JPY      43  129   3.0  5  4752   2.1 $  0.03056 $   733.42 $ -1848.43  0.3187  21.97    31p
+  USD_JPY      26   39   1.5  5  6520   1.5 $  0.03033 $   727.99 $ -1469.43  0.3163  25.54    31p
+  USD_JPY      31   46   1.5  5  5875   1.7 $  0.02988 $   717.05 $ -2532.88  0.3138  24.06    31p
+  USD_JPY      22   33   1.5  5  7302   1.3 $  0.02949 $   707.65 $ -1684.69  0.2948  25.19    31p
+  USD_JPY      50   75   1.5  5  4263   2.3 $  0.02893 $   694.23 $ -1974.66  0.3438  22.44    31p
+  USD_JPY      50  125   2.5  5  4244   2.3 $  0.02815 $   675.50 $ -1728.77  0.3112  20.27    31p
+  USD_JPY      37   56   1.5  5  5249   1.9 $  0.02798 $   671.45 $ -1501.90  0.3013  21.83    31p
+  USD_JPY      50  150   3.0  5  4172   2.4 $  0.02735 $   656.41 $ -1728.77  0.3023  19.52    31p
+  USD_JPY      50  200   4.0  5  4239   2.3 $  0.02733 $   655.87 $ -1728.77  0.3011  19.60    31p
+  USD_JPY      50  175   3.5  5  4239   2.3 $  0.02729 $   654.85 $ -1728.77  0.3020  19.66    31p
+  USD_JPY      43   64   1.5  5  4725   2.1 $  0.02707 $   649.77 $ -1698.27  0.3096  21.28    31p

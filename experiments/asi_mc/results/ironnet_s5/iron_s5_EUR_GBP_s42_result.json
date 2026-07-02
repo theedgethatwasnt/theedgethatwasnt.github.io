@@ -1,0 +1,37 @@
+{
+  "pair": "EUR_GBP",
+  "variant": "ironnet_s5",
+  "seed": 42,
+  "gens": 50,
+  "actual_gens": 50,
+  "fitness": 43.847,
+  "baseline_oos": {
+    "n_trades": 5276,
+    "total_pnl": 3421.4,
+    "avg_mae": 2.32,
+    "n_long": 2580,
+    "n_short": 2696,
+    "pips_per_day": 5.8,
+    "dir_ratio": 0.489
+  },
+  "s5ft_is": {
+    "n_trades": 11550,
+    "total_pnl": 9766.3,
+    "avg_mae": 2.38,
+    "n_long": 5694,
+    "n_short": 5856,
+    "pips_per_day": 7.1,
+    "dir_ratio": 0.493
+  },
+  "s5ft_oos": {
+    "n_trades": 5076,
+    "total_pnl": 3483.7,
+    "avg_mae": 2.33,
+    "n_long": 2497,
+    "n_short": 2579,
+    "pips_per_day": 5.9,
+    "dir_ratio": 0.492
+  },
+  "delta_pips": 62.3,
+  "elapsed_s": 3524.9
+}

@@ -1,0 +1,15 @@
+*.parquet
+*.pkl
+*.duckdb
+*.db
+data/
+__pycache__/
+.env
+*.log
+*.pt
+*.pth
+*.npy
+checkpoints/
+*.png
+*.jpg
+*.pdf

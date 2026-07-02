@@ -1,0 +1,21 @@
+SHOCK → SHELF → CONTINUATION BREAKOUT — VERDICT: real structure, sub-spread (2026-06-14)
+
+User idea (Jun-11 USD/JPY S5 zoom): shock → consolidation/shelf → break → CONTINUE. Tested the
+10-15 min post-shock continuation that prior research never isolated (fade=won, straddle=lost,
+but neither conditioned on a consolidation shelf). 6 pairs, net real spread, IS/OOS.
+
+v1 (post-leg shelf breakout, W=10min consol, enter on break of shelf low, hold +10/15min):
+  HYPOTHESIS CONFIRMED STRUCTURALLY — retrace depth orders continuation monotonically:
+    shallow<0.33: -1.43/-0.76   mid: -2.63/-2.97   deep>0.66: -3.60/-3.74  (mean pnl, +10/+15min)
+  Shallow=continuation, deep=reversal → refines "fade wins on avg" (it wins on the DEEP subset).
+  BUT no bucket clears spread; shallow positive only on USD_JPY(+0.19/+3.10) & EUR_JPY(+1.07/1.11),
+  tiny samples (n=18-36); 4/6 pairs negative.
+v2 (early flag-breakout, enter on first 2p-pullback-resume DURING the cascade):
+  DECISIVELY NEGATIVE: -3.5/trade, WR 26-33%, 20811 entries. Early entry chases noise/the tail.
+  (depth bucketing buggy at early entry — leg-so-far tiny — but aggregate is conclusive.)
+
+CONCLUSION: the shock has a REAL depth-conditional continuation tendency at +10-15min (user insight
+validated) — but the move LEFT after you can causally identify shock+shelf+breakout is smaller than
+the round-trip JPY spread (1.7-3.5p). Untradeable net of cost; JPY-specific where positive. Joins the
+'real structure, sub-spread' pile. Fade (009) stays the only deployable shock strategy.
+Files: screen_shock_continuation.py (v1), screen_shock_continuation_v2.py (v2).

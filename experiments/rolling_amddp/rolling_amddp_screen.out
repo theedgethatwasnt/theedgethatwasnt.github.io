@@ -1,0 +1,51 @@
+==============================================================================
+ROLLING-AMDDP5 PREDICTIVITY SCREEN  (W=120 S5 bars = 10 min)
+==============================================================================
+AMDDP5: pnl - 0.05*SUM max(0,-u)*0.0833min  | non-overlapping windows
+
+AUD_JPY  n= 50156 | CONT ic=-0.0229 t=-4.7 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.167 ic(vol)=+0.348 | AC(A)=-0.024 AC(|A|)=+0.243 persist=0.25(base0.10)
+         topABSA: gross_cont=-0.159p net=-2.754p (spread 2.59p, wr_net 0.34) | all: net=-2.538p
+AUD_USD  n= 41937 | CONT ic=-0.0267 t=-4.2 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.132 ic(vol)=+0.315 | AC(A)=-0.034 AC(|A|)=+0.208 persist=0.23(base0.10)
+         topABSA: gross_cont=-0.173p net=-1.590p (spread 1.42p, wr_net 0.37) | all: net=-1.457p
+CAD_JPY  n= 40777 | CONT ic=-0.0261 t=-4.4 mc_p=0.000 wf[----+] | MAG ic(|ret|)=+0.129 ic(vol)=+0.299 | AC(A)=-0.024 AC(|A|)=+0.209 persist=0.24(base0.10)
+         topABSA: gross_cont=-0.505p net=-3.325p (spread 2.82p, wr_net 0.32) | all: net=-2.771p
+CHF_JPY  n= 44608 | CONT ic=-0.0409 t=-5.3 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.132 ic(vol)=+0.292 | AC(A)=-0.034 AC(|A|)=+0.188 persist=0.21(base0.10)
+         topABSA: gross_cont=-0.653p net=-5.488p (spread 4.83p, wr_net 0.29) | all: net=-4.774p
+EUR_GBP  n= 39810 | CONT ic=-0.0458 t=-7.7 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.171 ic(vol)=+0.356 | AC(A)=-0.050 AC(|A|)=+0.224 persist=0.24(base0.10)
+         topABSA: gross_cont=-0.332p net=-1.942p (spread 1.61p, wr_net 0.28) | all: net=-1.613p
+EUR_JPY  n= 43039 | CONT ic=-0.0481 t=-6.7 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.161 ic(vol)=+0.351 | AC(A)=-0.052 AC(|A|)=+0.242 persist=0.24(base0.10)
+         topABSA: gross_cont=-0.711p net=-3.526p (spread 2.81p, wr_net 0.34) | all: net=-3.091p
+EUR_USD  n= 68856 | CONT ic=-0.0258 t=-8.0 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.182 ic(vol)=+0.390 | AC(A)=-0.025 AC(|A|)=+0.236 persist=0.26(base0.10)
+         topABSA: gross_cont=-0.174p net=-1.810p (spread 1.64p, wr_net 0.37) | all: net=-1.678p
+GBP_JPY  n= 43642 | CONT ic=-0.0436 t=-8.7 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.158 ic(vol)=+0.336 | AC(A)=-0.037 AC(|A|)=+0.222 persist=0.24(base0.10)
+         topABSA: gross_cont=-0.575p net=-4.746p (spread 4.17p, wr_net 0.33) | all: net=-4.201p
+GBP_USD  n= 41250 | CONT ic=-0.0277 t=-5.1 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.161 ic(vol)=+0.360 | AC(A)=-0.030 AC(|A|)=+0.215 persist=0.23(base0.10)
+         topABSA: gross_cont=-0.324p net=-2.376p (spread 2.05p, wr_net 0.35) | all: net=-2.172p
+NZD_JPY  n= 41719 | CONT ic=-0.0198 t=-3.6 mc_p=0.000 wf[-----] | MAG ic(|ret|)=+0.120 ic(vol)=+0.277 | AC(A)=-0.016 AC(|A|)=+0.206 persist=0.22(base0.10)
+         topABSA: gross_cont=-0.221p net=-3.472p (spread 3.25p, wr_net 0.29) | all: net=-3.093p
+NZD_USD  n= 40969 | CONT ic=-0.0192 t=-3.7 mc_p=0.000 wf[-+---] | MAG ic(|ret|)=+0.105 ic(vol)=+0.280 | AC(A)=-0.008 AC(|A|)=+0.172 persist=0.21(base0.10)
+         topABSA: gross_cont=-0.085p net=-1.732p (spread 1.65p, wr_net 0.33) | all: net=-1.603p
+USD_JPY  n= 42402 | CONT ic=-0.0162 t=-4.0 mc_p=0.001 wf[-----] | MAG ic(|ret|)=+0.160 ic(vol)=+0.359 | AC(A)=-0.017 AC(|A|)=+0.201 persist=0.23(base0.10)
+         topABSA: gross_cont=-0.376p net=-2.147p (spread 1.77p, wr_net 0.39) | all: net=-1.824p
+
+==============================================================================
+POOLED (all 12 pairs)
+==============================================================================
+TEST 1 CONTINUATION:  IC=-0.0300  t=-11.15  MC_p=0.0000  WF[-----]
+TEST 2 MAGNITUDE:     IC(|A|,|fwd_ret|)=+0.2142 t=+16.3  |  IC(|A|,fwd_vol)=+0.4159 t=+26.5
+TEST 3 PERSISTENCE:   AC(A)=-0.0302  AC(|A|)=+0.2629
+TEST 4 COND EXPECTANCY (top |A| decile): gross_cont=-0.4013p  net=-3.4183p  avg_spread=3.017p  wr_net=0.328
+                       (bottom |A| decile): net=-2.2397p ; (all): net=-2.5449p
+
+CROSS-PAIR: continuation IC sign  +0/-12 of 12 (mean -0.0302); magnitude IC(vol) mean +0.3303 (12/12 positive)
+
+==============================================================================
+VERDICT
+==============================================================================
+CONTINUATION (direction) signal? YES [t=-11.15 mc_p=0.0000 wf=----- crosspair +0/-12]
+   Net-of-spread tradeable in high-A patches? NO [top-decile net -3.4183p vs spread 3.017p]
+MAGNITUDE/VOL signal? YES [IC(|A|,fwd_vol)=+0.4159 t=+26.5 crosspair 12/12]
+
+>>> MAGNITUDE/VOLATILITY ONLY — use as confidence/vol gate on a separate edge, NOT a standalone direction signal
+
+[done in 72s]

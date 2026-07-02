@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "USD_JPY",
+  "seed": 137,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -5.8713026044430965,
+  "is": {
+    "n_trades": 429,
+    "pd": 0.015803876107188114,
+    "dir": 0.4195804195804196
+  },
+  "oos": {
+    "n_trades": 205,
+    "pd": -2.072353559678276,
+    "dir": 0.3951219512195122,
+    "pnl": -848.5999999999251,
+    "cum_mae": 16807.899999999816
+  },
+  "elapsed_s": 30.317190170288086,
+  "gens_run": 100
+}

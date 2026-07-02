@@ -1,0 +1,94 @@
+[
+  {
+    "variant_id": "S1-1",
+    "tf": "M5",
+    "direction": "long",
+    "n_outputs": 2,
+    "pair": "EUR_JPY",
+    "generations": 50,
+    "seed": 42,
+    "is_fitness": 0.4046,
+    "oos": {
+      "n_trades": 243,
+      "total_pnl": 674.0,
+      "sharpe": 0.7111,
+      "win_rate": 54.3,
+      "mean_pnl": 2.77,
+      "avg_mfe": 40.9,
+      "avg_mae": 43.6,
+      "max_dd": 521.4,
+      "avg_bars": 199.3
+    },
+    "elapsed_s": 151.8,
+    "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-1_best.pkl"
+  },
+  {
+    "variant_id": "S1-2",
+    "tf": "M5",
+    "direction": "short",
+    "n_outputs": 2,
+    "pair": "EUR_JPY",
+    "generations": 50,
+    "seed": 42,
+    "is_fitness": -1.3614,
+    "oos": {
+      "n_trades": 244,
+      "total_pnl": -1584.0,
+      "sharpe": -1.7274,
+      "win_rate": 43.0,
+      "mean_pnl": -6.49,
+      "avg_mfe": 40.1,
+      "avg_mae": 44.6,
+      "max_dd": 1959.2,
+      "avg_bars": 199.7
+    },
+    "elapsed_s": 152.0,
+    "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-2_best.pkl"
+  },
+  {
+    "variant_id": "S1-3",
+    "tf": "M5",
+    "direction": "both",
+    "n_outputs": 3,
+    "pair": "EUR_JPY",
+    "generations": 50,
+    "seed": 42,
+    "is_fitness": 0.4128,
+    "oos": {
+      "n_trades": 301,
+      "total_pnl": 450.2,
+      "sharpe": 0.5034,
+      "win_rate": 57.1,
+      "mean_pnl": 1.5,
+      "avg_mfe": 28.8,
+      "avg_mae": 42.6,
+      "max_dd": 577.3,
+      "avg_bars": 159.3
+    },
+    "elapsed_s": 138.4,
+    "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-3_best.pkl"
+  },
+  {
+    "variant_id": "S1-4",
+    "tf": "H1",
+    "direction": "both",
+    "n_outputs": 3,
+    "pair": "EUR_JPY",
+    "generations": 50,
+    "seed": 42,
+    "is_fitness": 1.3317,
+    "oos": {
+      "n_trades": 263,
+      "total_pnl": 9.7,
+      "sharpe": 0.0103,
+      "win_rate": 39.2,
+      "mean_pnl": 0.04,
+      "avg_mfe": 29.5,
+      "avg_mae": 28.6,
+      "max_dd": 600.8,
+      "avg_bars": 15.5
+    },
+    "elapsed_s": 12.8,
+    "genome_file": "/path/to/projects/fx-core/research/experiments/ha/results/stage1/S1-4_best.pkl"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "candidate": "candle_range",
+  "pair": "EUR_USD",
+  "seed": 137,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -17.563298777436206,
+  "activations": [
+    "gauss",
+    "gauss",
+    "gauss",
+    "sin"
+  ],
+  "theta": 0.26975662990770866,
+  "is": {
+    "n_trades": 1141,
+    "pnl": -1907.899999999389,
+    "pd": -1.9969080145216616,
+    "dir": 0.4504820333041192,
+    "cum_mae": 15137.300000000412
+  },
+  "oos": {
+    "n_trades": 220,
+    "pnl": -109.59999999986313,
+    "pd": -0.26766389376445243,
+    "dir": 0.5,
+    "cum_mae": 3371.4999999994375
+  },
+  "elapsed_s": 228.19790506362915,
+  "gens_run": 200
+}

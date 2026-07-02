@@ -1,0 +1,70 @@
+{
+  "n_in": 7,
+  "n_hid": 8,
+  "n_out": 3,
+  "n_params": 109,
+  "pair": "EUR_JPY",
+  "seed": 123,
+  "mode": "inputs_hyper",
+  "passed_hard_gates": false,
+  "is_min_chunk_pps": null,
+  "is_full": {
+    "n_trades": 1427,
+    "total_pnl": 291.2,
+    "pips_per_day": 0.3,
+    "n_long": 882,
+    "n_short": 545,
+    "dir_ratio": 0.382,
+    "win_rate": 0.437,
+    "contrarian_rate": 0.532,
+    "avg_hold": 192.8,
+    "short_hold_pct": 0.424
+  },
+  "oos": {
+    "n_trades": 646,
+    "total_pnl": 1009.7,
+    "pips_per_day": 2.47,
+    "n_long": 392,
+    "n_short": 254,
+    "dir_ratio": 0.393,
+    "win_rate": 0.418,
+    "contrarian_rate": 0.528,
+    "avg_hold": 182.5,
+    "short_hold_pct": 0.429
+  },
+  "hidden_activations": [
+    "sech",
+    "dog",
+    "cos",
+    "gauss",
+    "sin",
+    "sinc",
+    "cos",
+    "tanh"
+  ],
+  "hidden_scales": [
+    1.97,
+    0.74,
+    3.2,
+    2.93,
+    1.48,
+    2.61,
+    2.18,
+    2.95
+  ],
+  "evolved_max_hold": 488,
+  "evolved_threshold": 0.006500550584308482,
+  "elapsed_s": 67.2,
+  "args": {
+    "pair": "EUR_JPY",
+    "mode": "inputs_hyper",
+    "seed": 123,
+    "gens": 200,
+    "popsize": 24,
+    "sigma0": 0.5,
+    "max_hold": 200,
+    "n_chunks": 3,
+    "min_dir_ratio": 0.15,
+    "workers": 14
+  }
+}

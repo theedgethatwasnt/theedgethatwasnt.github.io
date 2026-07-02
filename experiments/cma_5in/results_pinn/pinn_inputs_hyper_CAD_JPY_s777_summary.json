@@ -1,0 +1,70 @@
+{
+  "n_in": 7,
+  "n_hid": 8,
+  "n_out": 3,
+  "n_params": 109,
+  "pair": "CAD_JPY",
+  "seed": 777,
+  "mode": "inputs_hyper",
+  "passed_hard_gates": true,
+  "is_min_chunk_pps": 85.37299747233317,
+  "is_full": {
+    "n_trades": 17391,
+    "total_pnl": 113789.0,
+    "pips_per_day": 119.01,
+    "n_long": 8513,
+    "n_short": 8878,
+    "dir_ratio": 0.49,
+    "win_rate": 0.603,
+    "contrarian_rate": 0.754,
+    "avg_hold": 15.8,
+    "short_hold_pct": 0.437
+  },
+  "oos": {
+    "n_trades": 6994,
+    "total_pnl": 51896.4,
+    "pips_per_day": 126.65,
+    "n_long": 3432,
+    "n_short": 3562,
+    "dir_ratio": 0.491,
+    "win_rate": 0.627,
+    "contrarian_rate": 0.761,
+    "avg_hold": 16.8,
+    "short_hold_pct": 0.428
+  },
+  "hidden_activations": [
+    "tanh",
+    "tanh",
+    "sech",
+    "sin",
+    "gauss",
+    "sin",
+    "morlet",
+    "tanh"
+  ],
+  "hidden_scales": [
+    3.93,
+    0.37,
+    4.93,
+    3.82,
+    4.55,
+    1.6,
+    4.95,
+    4.79
+  ],
+  "evolved_max_hold": 498,
+  "evolved_threshold": 0.35748856264853557,
+  "elapsed_s": 118.7,
+  "args": {
+    "pair": "CAD_JPY",
+    "mode": "inputs_hyper",
+    "seed": 777,
+    "gens": 200,
+    "popsize": 24,
+    "sigma0": 0.5,
+    "max_hold": 200,
+    "n_chunks": 3,
+    "min_dir_ratio": 0.15,
+    "workers": 14
+  }
+}

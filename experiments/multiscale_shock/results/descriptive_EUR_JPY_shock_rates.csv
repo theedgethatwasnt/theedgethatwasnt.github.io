@@ -1,0 +1,17 @@
+source,window,shock_rate_pct
+time,5s,6.0212
+time,10s,5.6431
+time,30s,5.708
+time,1m,5.6982
+time,2m,5.5762
+time,5m,5.2493
+time,15m,4.8858
+time,1h,7.3339
+wavelet,D1,0.0407
+wavelet,D2,0.0538
+wavelet,D3,0.0624
+wavelet,D4,0.0875
+wavelet,D5,0.1867
+wavelet,D6,0.4254
+wavelet,D7,1.2818
+wavelet,D8,1.9591

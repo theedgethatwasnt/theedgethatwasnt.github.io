@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "EUR_USD",
+  "seed": 7,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -2.95205308069177,
+  "is": {
+    "n_trades": 267,
+    "pd": -0.08729080581310396,
+    "dir": 0.49812734082397003
+  },
+  "oos": {
+    "n_trades": 91,
+    "pd": -0.6120125162175207,
+    "dir": 0.43956043956043955,
+    "pnl": -250.59999999994295,
+    "cum_mae": 7996.4999999996335
+  },
+  "elapsed_s": 56.51047706604004,
+  "gens_run": 200
+}

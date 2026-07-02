@@ -1,0 +1,27 @@
+RETRACE EXIT IMPROVEMENTS (1 ESCMA, 2 scratch, 3 trailing) — VERDICT: ALL FAIL (2026-06-12)
+
+Goal: improve live 009 retrace (+8.9 p/d, but 90% of trades timeout, 122 dead-on-arrival
+trades bleed -367p; all profit from 19 TP hits). Tested 3 exit improvements on the raw
+shock-fade entries (thr=2.5 peak=44b, 3 live pairs GBP/USD/AUD_JPY, 45,623 OOS events,
+net real spread, IS/OOS 70/30).
+
+(1) ESCMA learned exit (proven-optimal, sine-warm-started): bails hold=1-3b, OOS ~-1.8p/trade
+    (= spread). Can't manufacture exit-edge from a losing entry population.
+(2) SCRATCH (cut if MFE<W by T bars): ALL configs worse, Δoos -88 to -270 p/d. Cuts the
+    slow-developing retraces before they reach TP.
+(3) TRAILING (activate +A, exit -D from peak): ALL worse, Δoos -87 to -165. Exits near-winners
+    before the fixed 20p TP.
+Baseline TP20/SL30/horizon on raw entries = -386.7 p/d (deeply negative).
+
+DECISIVE FINDING: the EXIT is not the lever. Raw shock-fade entries lose -386 p/d; the live
+retrace is +8.9 p/d ONLY because the Markov entry FILTER selects the ~27% of shocks that
+retrace (turns -386 -> +9). The -367p dead-trade leak is intrinsic to which entries pass the
+filter — NOT recoverable by exit logic (proven 3 independent ways: learned + 2 rule-based).
+
+IMPLICATION: to improve 009, sharpen the ENTRY FILTER (Markov regime / complementary filters),
+not the exit. Caveat: tested on raw (unfiltered) population; the failing mechanisms (early cuts,
+tight trails, optimal-bail) are filter-independent so the conclusion holds. Definitive next step
+if pursued: re-run on the Markov-filtered subset.
+
+Files: chop_retrace_entries.py, backtest_retrace_exits.py, retrace_exit_s42.log,
+meta3_retrace_USD_JPY.parquet.

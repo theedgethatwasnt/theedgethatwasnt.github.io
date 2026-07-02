@@ -1,0 +1,32 @@
+{
+  "candidate": "cvd_divergence_30",
+  "pair": "NZD_USD",
+  "seed": 23,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -20.27476266210528,
+  "activations": [
+    "tanh",
+    "gauss",
+    "gauss",
+    "sin"
+  ],
+  "theta": 0.39662578196561066,
+  "is": {
+    "n_trades": 1399,
+    "pnl": -2518.799999999765,
+    "pd": -2.6389069161704684,
+    "dir": 0.4910650464617584,
+    "cum_mae": 18485.09999999971
+  },
+  "oos": {
+    "n_trades": 720,
+    "pnl": -846.9999999998957,
+    "pd": -2.0705530845751703,
+    "dir": 0.4875,
+    "cum_mae": 12657.100000000155
+  },
+  "elapsed_s": 279.76987957954407,
+  "gens_run": 200
+}

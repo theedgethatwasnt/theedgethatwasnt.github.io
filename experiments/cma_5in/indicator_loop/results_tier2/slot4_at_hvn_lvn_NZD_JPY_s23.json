@@ -1,0 +1,32 @@
+{
+  "candidate": "at_hvn_lvn",
+  "pair": "NZD_JPY",
+  "seed": 23,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -54.28447144708145,
+  "activations": [
+    "tanh",
+    "gauss",
+    "gauss",
+    "gauss"
+  ],
+  "theta": 0.3613268401443243,
+  "is": {
+    "n_trades": 1858,
+    "pnl": -5382.90000000017,
+    "pd": -5.633533560815187,
+    "dir": 0.24058127018299247,
+    "cum_mae": 25645.90000000111
+  },
+  "oos": {
+    "n_trades": 800,
+    "pnl": -2233.700000000052,
+    "pd": -5.454608353541818,
+    "dir": 0.1675,
+    "cum_mae": 8305.10000000001
+  },
+  "elapsed_s": 280.73765754699707,
+  "gens_run": 200
+}

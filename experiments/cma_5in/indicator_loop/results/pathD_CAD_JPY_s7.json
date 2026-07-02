@@ -1,0 +1,31 @@
+{
+  "path": "D1",
+  "pair": "CAD_JPY",
+  "seed": 7,
+  "arch": "meanrev_gate+NN_filter",
+  "n_params": 35,
+  "inputs": [
+    "range_pos_30",
+    "atr_ratio",
+    "trending",
+    "high_vol",
+    "vol_regime",
+    "upnl"
+  ],
+  "h1_stride": 12,
+  "fitness": -4.279994475231394,
+  "is": {
+    "n_trades": 229,
+    "pd": -0.14873072481232932,
+    "dir": 0.48034934497816595
+  },
+  "oos": {
+    "n_trades": 94,
+    "pd": -0.1759594607190119,
+    "dir": 0.4574468085106383,
+    "pnl": -72.09999999996484,
+    "cum_mae": 8885.399999999752
+  },
+  "elapsed_s": 57.051820278167725,
+  "gens_run": 200
+}

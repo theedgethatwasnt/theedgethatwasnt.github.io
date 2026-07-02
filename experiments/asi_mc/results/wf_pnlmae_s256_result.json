@@ -1,0 +1,130 @@
+{
+  "fitness_mode": "wf_pnl_mae",
+  "n_chunks": 3,
+  "freq_exp": 0.5,
+  "gens": 200,
+  "seed": 256,
+  "fitness": 249.6817,
+  "network_size": [
+    17,
+    10
+  ],
+  "oos_total_pnl": 73642.4,
+  "oos_total_trades": 12586,
+  "oos_pairs_profitable": 12,
+  "avg_mae": 4.28,
+  "avg_pnl": 5.85,
+  "trades_per_day": 74.0,
+  "pips_per_day": 433.1,
+  "elapsed_s": 20631.3,
+  "oos": {
+    "EUR_JPY": {
+      "n_trades": 1050,
+      "total_pnl": 8320.8,
+      "avg_mae": 5.19,
+      "avg_pnl": 7.92,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "USD_JPY": {
+      "n_trades": 1074,
+      "total_pnl": 9133.5,
+      "avg_mae": 4.47,
+      "avg_pnl": 8.5,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "GBP_JPY": {
+      "n_trades": 1065,
+      "total_pnl": 10190.3,
+      "avg_mae": 6.76,
+      "avg_pnl": 9.57,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "AUD_JPY": {
+      "n_trades": 1079,
+      "total_pnl": 6640.4,
+      "avg_mae": 4.39,
+      "avg_pnl": 6.15,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "CAD_JPY": {
+      "n_trades": 1061,
+      "total_pnl": 5769.2,
+      "avg_mae": 3.9,
+      "avg_pnl": 5.44,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "CHF_JPY": {
+      "n_trades": 1042,
+      "total_pnl": 8655.9,
+      "avg_mae": 6.55,
+      "avg_pnl": 8.31,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "NZD_JPY": {
+      "n_trades": 987,
+      "total_pnl": 4689.5,
+      "avg_mae": 4.63,
+      "avg_pnl": 4.75,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "EUR_USD": {
+      "n_trades": 1049,
+      "total_pnl": 5604.8,
+      "avg_mae": 3.11,
+      "avg_pnl": 5.34,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "GBP_USD": {
+      "n_trades": 1029,
+      "total_pnl": 6134.9,
+      "avg_mae": 4.35,
+      "avg_pnl": 5.96,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "AUD_USD": {
+      "n_trades": 1035,
+      "total_pnl": 3322.3,
+      "avg_mae": 2.92,
+      "avg_pnl": 3.21,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "NZD_USD": {
+      "n_trades": 991,
+      "total_pnl": 3292.6,
+      "avg_mae": 2.79,
+      "avg_pnl": 3.32,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    },
+    "EUR_GBP": {
+      "n_trades": 1124,
+      "total_pnl": 1888.2,
+      "avg_mae": 2.24,
+      "avg_pnl": 1.68,
+      "win_rate": 0,
+      "n_long": 0,
+      "n_short": 0
+    }
+  }
+}

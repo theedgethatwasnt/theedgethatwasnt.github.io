@@ -1,0 +1,103 @@
+=== AUD_JPY ontick reversion backtest ===
+HistData: /path/to/projects/fx-core/data/HISTDATA_COM_ASCII_AUDJPY_T202604.zip
+OANDA S5 BA: /path/to/projects/fx-core/data/s5_ohlc/AUD_JPY_S5_BA.parquet
+HistData ticks: 1,040,444
+Detected UTC offset: UTC = hist +4h (return-corr 0.971)
+Spread overlay: REAL per-5s OANDA spread  (real-bucket hit rate 98.2%, median spread 2.50p)
+Span: 9.7 calendar days
+
+  [precompute engine states window=900s ...]
+  [precompute engine states window=1800s ...]
+  [precompute engine states window=3600s ...]
+  [precompute engine states window=14400s ...]
+config                                   side        n    t/d     exp     WR       p/d    meat
+-----------------------------------------------------------------------------------------------
+close_beyond w=1800 K=2.5 stop=20        BOTH       99   10.2    0.52  60.6%       5.3    5.40
+close_beyond w=1800 K=2.5 stop=20        LONG       44    4.5    3.86  75.0%      17.5    5.98
+close_beyond w=1800 K=2.5 stop=20        SHORT      55    5.7   -2.16  49.1%     -12.2    3.20
+
+close_beyond w=1800 K=2.5 stop=80        BOTH       86    8.9    0.06  62.8%       0.5    5.02
+close_beyond w=1800 K=2.5 stop=80        LONG       38    3.9    3.55  76.3%      13.9    5.37
+close_beyond w=1800 K=2.5 stop=80        SHORT      48    4.9   -2.70  52.1%     -13.4    4.58
+
+close_beyond w=1800 K=2.5 stop=40        BOTH       87    9.0    0.04  62.1%       0.3    4.95
+close_beyond w=1800 K=2.5 stop=40        LONG       38    3.9    3.55  76.3%      13.9    5.37
+close_beyond w=1800 K=2.5 stop=40        SHORT      49    5.0   -2.69  51.0%     -13.6    4.20
+
+close_beyond w=14400 K=2.5 stop=80       BOTH       51    5.3   -0.02  60.8%      -0.1    7.00
+close_beyond w=14400 K=2.5 stop=80       LONG       21    2.2    5.22  76.2%      11.3    8.20
+close_beyond w=14400 K=2.5 stop=80       SHORT      30    3.1   -3.68  50.0%     -11.4    5.43
+
+close_beyond w=3600 K=2.0 stop=80        BOTH       89    9.2   -0.09  67.4%      -0.8    5.55
+close_beyond w=3600 K=2.0 stop=80        LONG       40    4.1    3.23  80.0%      13.3    5.62
+close_beyond w=3600 K=2.0 stop=80        SHORT      49    5.0   -2.79  57.1%     -14.1    5.00
+
+reenter w=1800 K=2.5 stop=20             BOTH       92    9.5   -0.11  55.4%      -1.0    4.28
+reenter w=1800 K=2.5 stop=20             LONG       38    3.9    3.33  65.8%      13.0    4.60
+reenter w=1800 K=2.5 stop=20             SHORT      54    5.6   -2.53  48.1%     -14.0    3.65
+
+close_beyond w=900 K=2.5 stop=20         BOTH      130   13.4   -0.09  66.2%      -1.2    4.57
+close_beyond w=900 K=2.5 stop=20         LONG       60    6.2    2.05  70.0%      12.7    5.58
+close_beyond w=900 K=2.5 stop=20         SHORT      70    7.2   -1.92  62.9%     -13.8    4.15
+
+reenter w=900 K=2.5 stop=20              BOTH      124   12.8   -0.09  62.9%      -1.2    4.45
+reenter w=900 K=2.5 stop=20              LONG       54    5.6    2.05  72.2%      11.4    5.57
+reenter w=900 K=2.5 stop=20              SHORT      70    7.2   -1.75  55.7%     -12.6    3.95
+
+close_beyond w=1800 K=2.0 stop=80        BOTH       99   10.2   -0.23  69.7%      -2.3    4.45
+close_beyond w=1800 K=2.0 stop=80        LONG       47    4.8    3.22  83.0%      15.6    4.70
+close_beyond w=1800 K=2.0 stop=80        SHORT      52    5.4   -3.34  57.7%     -17.9    4.23
+
+reenter w=1800 K=2.0 stop=40             BOTH      102   10.5   -0.29  64.7%      -3.1    4.17
+reenter w=1800 K=2.0 stop=40             LONG       49    5.0    2.87  73.5%      14.5    4.20
+reenter w=1800 K=2.0 stop=40             SHORT      53    5.5   -3.22  56.6%     -17.6    4.10
+
+reenter w=900 K=2.5 stop=40              BOTH      111   11.4   -0.29  69.4%      -3.3    4.05
+reenter w=900 K=2.5 stop=40              LONG       48    4.9    2.49  75.0%      12.3    4.15
+reenter w=900 K=2.5 stop=40              SHORT      63    6.5   -2.40  65.1%     -15.6    4.05
+
+reenter w=14400 K=2.5 stop=80            BOTH       49    5.0   -0.66  59.2%      -3.3    6.40
+reenter w=14400 K=2.5 stop=80            LONG       20    2.1    4.25  70.0%       8.8    6.55
+reenter w=14400 K=2.5 stop=80            SHORT      29    3.0   -4.04  51.7%     -12.1    5.00
+
+reenter w=900 K=2.5 stop=80              BOTH      108   11.1   -0.31  71.3%      -3.4    3.97
+reenter w=900 K=2.5 stop=80              LONG       48    4.9    2.03  75.0%      10.0    3.60
+reenter w=900 K=2.5 stop=80              SHORT      60    6.2   -2.18  68.3%     -13.5    4.23
+
+close_beyond w=1800 K=1.5 stop=80        BOTH      119   12.3   -0.29  73.1%      -3.6    4.55
+close_beyond w=1800 K=1.5 stop=80        LONG       55    5.7    2.61  81.8%      14.8    3.75
+close_beyond w=1800 K=1.5 stop=80        SHORT      64    6.6   -2.79  65.6%     -18.4    4.62
+
+close_beyond w=900 K=2.5 stop=40         BOTH      109   11.2   -0.32  68.8%      -3.6    4.50
+close_beyond w=900 K=2.5 stop=40         LONG       51    5.3    2.65  74.5%      13.9    5.05
+close_beyond w=900 K=2.5 stop=40         SHORT      58    6.0   -2.93  63.8%     -17.5    4.37
+
+close_beyond w=3600 K=2.0 stop=40        BOTH       93    9.6   -0.38  65.6%      -3.7    5.00
+close_beyond w=3600 K=2.0 stop=40        LONG       41    4.2    2.96  78.0%      12.5    5.30
+close_beyond w=3600 K=2.0 stop=40        SHORT      52    5.4   -3.02  55.8%     -16.2    4.80
+
+reenter w=1800 K=2.5 stop=80             BOTH       82    8.4   -0.44  61.0%      -3.7    4.58
+reenter w=1800 K=2.5 stop=80             LONG       36    3.7    3.47  75.0%      12.9    4.83
+reenter w=1800 K=2.5 stop=80             SHORT      46    4.7   -3.50  50.0%     -16.6    4.35
+
+close_beyond w=3600 K=1.5 stop=80        BOTH      105   10.8   -0.35  68.6%      -3.8    4.45
+close_beyond w=3600 K=1.5 stop=80        LONG       52    5.4    2.72  76.9%      14.6    4.70
+close_beyond w=3600 K=1.5 stop=80        SHORT      53    5.5   -3.37  60.4%     -18.4    4.35
+
+ANTI-ARTIFACT violations across all configs: stop=0 range=0 (both must be 0)
+Reconciliation (exp*n vs p/d*days) on best: residual 0.0000 pips (should be ~0)
+
+--- spot-check 10 trades from best config [close_beyond w=1800 K=2.5 stop=20] ---
+  LONG  target entry=109.6430 stop=109.4430 tgt=109.6621 exit=109.6520 pnl=+0.9p sp=2.20 hold=1615s
+  SHORT target entry=109.6550 stop=109.8550 tgt=109.6041 exit=109.6165 pnl=+3.9p sp=2.50 hold=1581s
+  LONG  target entry=109.5990 stop=109.3990 tgt=109.7013 exit=109.6900 pnl=+9.1p sp=2.50 hold=427s
+  SHORT target entry=109.7000 stop=109.9000 tgt=109.5414 exit=109.5525 pnl=+14.8p sp=2.30 hold=2920s
+  LONG  target entry=109.5500 stop=109.3500 tgt=109.8363 exit=109.8255 pnl=+27.5p sp=2.70 hold=3504s
+  SHORT stop   entry=109.8270 stop=110.0270 tgt=109.5999 exit=110.0405 pnl=-21.3p sp=2.50 hold=4143s
+  SHORT tcap   entry=110.0450 stop=110.2450 tgt=109.7978 exit=110.1165 pnl=-7.2p sp=2.50 hold=14400s
+  SHORT target entry=110.1125 stop=110.3125 tgt=110.0247 exit=110.0375 pnl=+7.5p sp=2.60 hold=1091s
+  LONG  tcap   entry=109.9665 stop=109.7665 tgt=110.2115 exit=110.0915 pnl=+12.5p sp=2.50 hold=14400s
+  LONG  stop   entry=110.0715 stop=109.8715 tgt=110.1337 exit=109.8590 pnl=-21.3p sp=2.50 hold=4055s
+
+BEST by p/d: close_beyond w=1800 K=2.5 stop=20  p/d=5.3  exp=0.52  WR=60.6%  t/d=10.2
+AUDEXIT 0

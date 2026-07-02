@@ -1,0 +1,5 @@
+z_thr,k_bands,n_keep,frac,n_is,n_oos,file
+2.0,2,7802,0.8001230643010974,5461,2341,meta3_USD_JPY_wav_z2_k2.parquet
+2.0,3,6300,0.6460875807609476,4410,1890,meta3_USD_JPY_wav_z2_k3.parquet
+3.0,2,4386,0.4498000205107168,3070,1316,meta3_USD_JPY_wav_z3_k2.parquet
+3.0,3,1863,0.1910573274535945,1304,559,meta3_USD_JPY_wav_z3_k3.parquet

@@ -1,0 +1,363 @@
+{
+  "wf": {
+    "60/40": {
+      "EUR_JPY": {
+        "n_trades": 2349,
+        "total_pnl": 13403.3,
+        "sharpe": 13.9365,
+        "win_rate": 52.4,
+        "n_long": 1270,
+        "n_short": 1079
+      },
+      "USD_JPY": {
+        "n_trades": 2667,
+        "total_pnl": 17096.6,
+        "sharpe": 15.049,
+        "win_rate": 55.0,
+        "n_long": 1445,
+        "n_short": 1222
+      },
+      "GBP_JPY": {
+        "n_trades": 2520,
+        "total_pnl": 15438.6,
+        "sharpe": 13.5321,
+        "win_rate": 54.2,
+        "n_long": 1395,
+        "n_short": 1125
+      },
+      "AUD_JPY": {
+        "n_trades": 2395,
+        "total_pnl": 11007.8,
+        "sharpe": 12.896,
+        "win_rate": 49.2,
+        "n_long": 1272,
+        "n_short": 1123
+      },
+      "CAD_JPY": {
+        "n_trades": 2316,
+        "total_pnl": 9282.9,
+        "sharpe": 12.0381,
+        "win_rate": 45.6,
+        "n_long": 1233,
+        "n_short": 1083
+      },
+      "CHF_JPY": {
+        "n_trades": 2542,
+        "total_pnl": 11957.5,
+        "sharpe": 11.6508,
+        "win_rate": 48.2,
+        "n_long": 1376,
+        "n_short": 1166
+      },
+      "NZD_JPY": {
+        "n_trades": 2121,
+        "total_pnl": 7128.0,
+        "sharpe": 10.0392,
+        "win_rate": 45.7,
+        "n_long": 1119,
+        "n_short": 1002
+      },
+      "EUR_USD": {
+        "n_trades": 2482,
+        "total_pnl": 10135.2,
+        "sharpe": 14.1312,
+        "win_rate": 49.5,
+        "n_long": 1308,
+        "n_short": 1174
+      },
+      "GBP_USD": {
+        "n_trades": 2255,
+        "total_pnl": 11087.7,
+        "sharpe": 14.1578,
+        "win_rate": 49.5,
+        "n_long": 1179,
+        "n_short": 1076
+      },
+      "AUD_USD": {
+        "n_trades": 2151,
+        "total_pnl": 6407.5,
+        "sharpe": 12.0789,
+        "win_rate": 45.1,
+        "n_long": 1116,
+        "n_short": 1035
+      },
+      "NZD_USD": {
+        "n_trades": 1966,
+        "total_pnl": 5352.2,
+        "sharpe": 11.0168,
+        "win_rate": 45.0,
+        "n_long": 1010,
+        "n_short": 956
+      },
+      "EUR_GBP": {
+        "n_trades": 2000,
+        "total_pnl": 3082.0,
+        "sharpe": 8.4228,
+        "win_rate": 39.9,
+        "n_long": 1035,
+        "n_short": 965
+      }
+    },
+    "50/50": {
+      "EUR_JPY": {
+        "n_trades": 3086,
+        "total_pnl": 19314.1,
+        "sharpe": 16.3587,
+        "win_rate": 53.9,
+        "n_long": 1669,
+        "n_short": 1417
+      },
+      "USD_JPY": {
+        "n_trades": 3321,
+        "total_pnl": 23450.9,
+        "sharpe": 16.5051,
+        "win_rate": 56.2,
+        "n_long": 1776,
+        "n_short": 1545
+      },
+      "GBP_JPY": {
+        "n_trades": 3410,
+        "total_pnl": 21913.7,
+        "sharpe": 14.7492,
+        "win_rate": 55.3,
+        "n_long": 1872,
+        "n_short": 1538
+      },
+      "AUD_JPY": {
+        "n_trades": 2976,
+        "total_pnl": 15281.3,
+        "sharpe": 13.7984,
+        "win_rate": 50.5,
+        "n_long": 1566,
+        "n_short": 1410
+      },
+      "CAD_JPY": {
+        "n_trades": 3068,
+        "total_pnl": 13902.0,
+        "sharpe": 14.653,
+        "win_rate": 47.8,
+        "n_long": 1621,
+        "n_short": 1447
+      },
+      "CHF_JPY": {
+        "n_trades": 3104,
+        "total_pnl": 15440.7,
+        "sharpe": 13.0188,
+        "win_rate": 49.6,
+        "n_long": 1701,
+        "n_short": 1403
+      },
+      "NZD_JPY": {
+        "n_trades": 2746,
+        "total_pnl": 10509.3,
+        "sharpe": 11.7841,
+        "win_rate": 47.7,
+        "n_long": 1459,
+        "n_short": 1287
+      },
+      "EUR_USD": {
+        "n_trades": 2991,
+        "total_pnl": 12547.7,
+        "sharpe": 14.9448,
+        "win_rate": 50.3,
+        "n_long": 1599,
+        "n_short": 1392
+      },
+      "GBP_USD": {
+        "n_trades": 2798,
+        "total_pnl": 13934.3,
+        "sharpe": 15.7854,
+        "win_rate": 50.4,
+        "n_long": 1473,
+        "n_short": 1325
+      },
+      "AUD_USD": {
+        "n_trades": 2704,
+        "total_pnl": 8586.5,
+        "sharpe": 13.5644,
+        "win_rate": 46.4,
+        "n_long": 1416,
+        "n_short": 1288
+      },
+      "NZD_USD": {
+        "n_trades": 2444,
+        "total_pnl": 7454.8,
+        "sharpe": 13.1576,
+        "win_rate": 46.0,
+        "n_long": 1271,
+        "n_short": 1173
+      },
+      "EUR_GBP": {
+        "n_trades": 2373,
+        "total_pnl": 3860.2,
+        "sharpe": 8.637,
+        "win_rate": 40.3,
+        "n_long": 1248,
+        "n_short": 1125
+      }
+    },
+    "70/30": {
+      "EUR_JPY": {
+        "n_trades": 1735,
+        "total_pnl": 9427.4,
+        "sharpe": 11.0876,
+        "win_rate": 52.2,
+        "n_long": 930,
+        "n_short": 805
+      },
+      "USD_JPY": {
+        "n_trades": 1967,
+        "total_pnl": 11927.4,
+        "sharpe": 12.5644,
+        "win_rate": 54.3,
+        "n_long": 1061,
+        "n_short": 906
+      },
+      "GBP_JPY": {
+        "n_trades": 1883,
+        "total_pnl": 10880.0,
+        "sharpe": 10.9567,
+        "win_rate": 53.9,
+        "n_long": 1037,
+        "n_short": 846
+      },
+      "AUD_JPY": {
+        "n_trades": 1838,
+        "total_pnl": 8121.5,
+        "sharpe": 10.659,
+        "win_rate": 49.2,
+        "n_long": 972,
+        "n_short": 866
+      },
+      "CAD_JPY": {
+        "n_trades": 1731,
+        "total_pnl": 6964.3,
+        "sharpe": 10.6392,
+        "win_rate": 45.5,
+        "n_long": 918,
+        "n_short": 813
+      },
+      "CHF_JPY": {
+        "n_trades": 1806,
+        "total_pnl": 9595.8,
+        "sharpe": 10.6616,
+        "win_rate": 49.4,
+        "n_long": 966,
+        "n_short": 840
+      },
+      "NZD_JPY": {
+        "n_trades": 1600,
+        "total_pnl": 5024.9,
+        "sharpe": 8.1349,
+        "win_rate": 45.2,
+        "n_long": 846,
+        "n_short": 754
+      },
+      "EUR_USD": {
+        "n_trades": 1769,
+        "total_pnl": 6747.0,
+        "sharpe": 11.7304,
+        "win_rate": 49.4,
+        "n_long": 928,
+        "n_short": 841
+      },
+      "GBP_USD": {
+        "n_trades": 1653,
+        "total_pnl": 7835.5,
+        "sharpe": 11.7214,
+        "win_rate": 49.5,
+        "n_long": 866,
+        "n_short": 787
+      },
+      "AUD_USD": {
+        "n_trades": 1608,
+        "total_pnl": 4456.7,
+        "sharpe": 9.7574,
+        "win_rate": 43.7,
+        "n_long": 823,
+        "n_short": 785
+      },
+      "NZD_USD": {
+        "n_trades": 1376,
+        "total_pnl": 3610.2,
+        "sharpe": 8.9392,
+        "win_rate": 43.5,
+        "n_long": 708,
+        "n_short": 668
+      },
+      "EUR_GBP": {
+        "n_trades": 1531,
+        "total_pnl": 2242.7,
+        "sharpe": 7.1455,
+        "win_rate": 38.7,
+        "n_long": 786,
+        "n_short": 745
+      }
+    }
+  },
+  "mc": {
+    "EUR_JPY": {
+      "n_trades": 1735,
+      "total_pnl": 9429.4,
+      "sign_p": 0.0
+    },
+    "USD_JPY": {
+      "n_trades": 1967,
+      "total_pnl": 11928.1,
+      "sign_p": 0.0
+    },
+    "GBP_JPY": {
+      "n_trades": 1883,
+      "total_pnl": 10883.5,
+      "sign_p": 0.0
+    },
+    "AUD_JPY": {
+      "n_trades": 1838,
+      "total_pnl": 8119.4,
+      "sign_p": 0.0
+    },
+    "CAD_JPY": {
+      "n_trades": 1731,
+      "total_pnl": 6965.2,
+      "sign_p": 0.0
+    },
+    "CHF_JPY": {
+      "n_trades": 1806,
+      "total_pnl": 9594.6,
+      "sign_p": 0.0
+    },
+    "NZD_JPY": {
+      "n_trades": 1600,
+      "total_pnl": 5022.6,
+      "sign_p": 0.0
+    },
+    "EUR_USD": {
+      "n_trades": 1769,
+      "total_pnl": 6747.5,
+      "sign_p": 0.0
+    },
+    "GBP_USD": {
+      "n_trades": 1653,
+      "total_pnl": 7836.7,
+      "sign_p": 0.0
+    },
+    "AUD_USD": {
+      "n_trades": 1608,
+      "total_pnl": 4457.4,
+      "sign_p": 0.0
+    },
+    "NZD_USD": {
+      "n_trades": 1376,
+      "total_pnl": 3606.4,
+      "sign_p": 0.0
+    },
+    "EUR_GBP": {
+      "n_trades": 1531,
+      "total_pnl": 2242.9,
+      "sign_p": 0.0
+    }
+  },
+  "n_wf_pass": 12,
+  "n_mc_pass": 12,
+  "verdict": "\ud83d\udfe2 PASS"
+}

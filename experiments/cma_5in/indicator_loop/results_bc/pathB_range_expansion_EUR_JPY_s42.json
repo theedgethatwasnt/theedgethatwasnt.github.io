@@ -1,0 +1,31 @@
+{
+  "path": "B",
+  "candidate": "range_expansion",
+  "pair": "EUR_JPY",
+  "seed": 42,
+  "core": [
+    "cci",
+    "bb_width",
+    "ema21_ratio",
+    "atr_ratio"
+  ],
+  "n_params": 66,
+  "h1_stride": 1,
+  "fitness": -23.726760644561576,
+  "is": {
+    "n_trades": 1198,
+    "pnl": -900.5999999995165,
+    "pd": -0.9425089209788758,
+    "dir": 0.49081803005008345,
+    "cum_mae": 227554.9999999959
+  },
+  "oos": {
+    "n_trades": 400,
+    "pnl": -294.79999999987285,
+    "pd": -0.7198718003066227,
+    "dir": 0.485,
+    "cum_mae": 211413.59999999704
+  },
+  "elapsed_s": 143.67325234413147,
+  "gens_run": 100
+}

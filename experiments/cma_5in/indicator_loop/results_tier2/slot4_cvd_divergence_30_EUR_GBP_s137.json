@@ -1,0 +1,32 @@
+{
+  "candidate": "cvd_divergence_30",
+  "pair": "EUR_GBP",
+  "seed": 137,
+  "state_mode": 0,
+  "n_params": 59,
+  "topology": "5\u21924\u21923+skip",
+  "fitness": -31.42492386800714,
+  "activations": [
+    "gauss",
+    "gauss",
+    "gauss",
+    "gauss"
+  ],
+  "theta": 0.3217058293631612,
+  "is": {
+    "n_trades": 2976,
+    "pnl": -3838.20000000082,
+    "pd": -4.017056658079113,
+    "dir": 0.4680779569892473,
+    "cum_mae": 23333.000000002474
+  },
+  "oos": {
+    "n_trades": 1153,
+    "pnl": -1559.100000000313,
+    "pd": -3.8074228587425925,
+    "dir": 0.4388551604509974,
+    "cum_mae": 8748.000000000406
+  },
+  "elapsed_s": 265.80539727211,
+  "gens_run": 200
+}

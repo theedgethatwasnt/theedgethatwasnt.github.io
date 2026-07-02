@@ -1,0 +1,7 @@
+pair,b_pips,rev,n_min,k,dwt_filter,total_signals,filtered_out,filter_rate_pct,oos_trades,oos_pd,wr_pct,avg_win,avg_loss,oos_days
+GBP_JPY,5,1,4,1,False,15811,0,0.0,5080,-88.52,5.0,3.99,-8.08,429.2
+GBP_JPY,5,1,4,1,True,24890,24870,99.9,3,-0.06,0.0,0.0,-9.0,429.2
+USD_JPY,5,1,3,1,False,16440,0,0.0,6434,-78.65,9.3,3.82,-6.17,429.0
+USD_JPY,5,1,3,1,True,37029,36980,99.9,9,-0.12,11.1,2.9,-6.55,429.0
+EUR_JPY,5,1,3,1,False,14705,0,0.0,2931,-35.07,10.8,7.68,-6.69,429.0
+EUR_JPY,5,1,3,1,True,29948,29909,99.9,0,0.0,0.0,0.0,0.0,429.0

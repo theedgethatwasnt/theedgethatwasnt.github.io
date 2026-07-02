@@ -1,0 +1,44 @@
+=== variant sweep started 17:36:39 UTC ===
+>>> 17:36:39 training fade_wav_z3k3 on meta3_USD_JPY_wav_z3_k3.parquet
+--- fade_wav_z3k3 (rc=0) ---
+  AMDDP5   sum =  +170.78p   per-sample mean = +0.306p
+  Raw PnL  sum =  +187.08p
+  WR = 48.1%
+    First negative tick     amddp5= +151.13p  pnl=+152.91p  WR=4.5%  hold=243b  causes net/sl/tp/time = 534/0/0/25
+
+>>> 17:37:05 training fade_wav_z3k2 on meta3_USD_JPY_wav_z3_k2.parquet
+--- fade_wav_z3k2 (rc=0) ---
+  AMDDP5   sum =   +66.60p   per-sample mean = +0.051p
+  Raw PnL  sum =  +176.44p
+  WR = 47.7%
+    First negative tick     amddp5=  -82.77p  pnl= -77.67p  WR=4.5%  hold=245b  causes net/sl/tp/time = 1257/0/0/59
+
+>>> 17:38:37 training fade_wav_z2k3 on meta3_USD_JPY_wav_z2_k3.parquet
+--- fade_wav_z2k3 (rc=0) ---
+  AMDDP5   sum =   +92.11p   per-sample mean = +0.049p
+  Raw PnL  sum =  +168.70p
+  WR = 48.9%
+    First negative tick     amddp5=  +31.26p  pnl= +38.14p  WR=4.4%  hold=242b  causes net/sl/tp/time = 1807/0/0/83
+
+>>> 17:39:56 training fade_wav_z2k2 on meta3_USD_JPY_wav_z2_k2.parquet
+--- fade_wav_z2k2 (rc=0) ---
+  AMDDP5   sum =  +269.73p   per-sample mean = +0.115p
+  Raw PnL  sum =  +516.04p
+  WR = 50.7%
+    First negative tick     amddp5=  -56.59p  pnl= -48.53p  WR=4.4%  hold=241b  causes net/sl/tp/time = 2239/0/0/102
+
+>>> 17:40:50 training fade_t3 on meta3_USD_JPY_t3.parquet
+--- fade_t3 (rc=0) ---
+  AMDDP5   sum =   -60.88p   per-sample mean = -0.700p
+  Raw PnL  sum =   +83.40p
+  WR = 55.2%
+    First negative tick     amddp5=  +97.29p  pnl= +97.70p  WR=6.9%  hold=322b  causes net/sl/tp/time = 81/0/0/6
+
+>>> 17:41:09 training fade_base40 on meta3_USD_JPY.parquet
+--- fade_base40 (rc=0) ---
+  AMDDP5   sum =  -211.29p   per-sample mean = -0.072p
+  Raw PnL  sum =   -30.00p
+  WR = 48.3%
+    First negative tick     amddp5= +164.20p  pnl=+173.77p  WR=4.5%  hold=244b  causes net/sl/tp/time = 2795/0/0/131
+
+=== variant sweep DONE 17:43:37 UTC ===

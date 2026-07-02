@@ -1,0 +1,23 @@
+{
+  "path": "D2",
+  "pair": "EUR_USD",
+  "seed": 42,
+  "arch": "dual_extreme+counter_trend gate + NN filter",
+  "n_params": 39,
+  "h1_stride": 12,
+  "fitness": -1.9596026245274274,
+  "is": {
+    "n_trades": 148,
+    "pd": -0.042284754854290174,
+    "dir": 0.49324324324324326
+  },
+  "oos": {
+    "n_trades": 56,
+    "pd": -0.21857589864906704,
+    "dir": 0.44642857142857145,
+    "pnl": -89.49999999996017,
+    "cum_mae": 3738.499999999635
+  },
+  "elapsed_s": 56.86309885978699,
+  "gens_run": 200
+}

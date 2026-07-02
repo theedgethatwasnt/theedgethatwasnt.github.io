@@ -1,0 +1,41 @@
+{
+  "pair": "AUD_USD",
+  "variant": "ironnet",
+  "seed": 42,
+  "pretrain_gens": 50,
+  "evolution_gens": 200,
+  "actual_gens": 147,
+  "min_swing_pips": 36,
+  "n_chunks": 3,
+  "min_dir_ratio": 0.15,
+  "fitness": 199.2775,
+  "network_size": [
+    7,
+    47
+  ],
+  "activations": {
+    "sin": 2,
+    "cos": 3,
+    "tanh": 2
+  },
+  "is": {
+    "n_trades": 1078,
+    "total_pnl": 5968.5,
+    "avg_mae": 1.47,
+    "n_long": 506,
+    "n_short": 572,
+    "pips_per_day": 180.4,
+    "dir_ratio": 0.469
+  },
+  "oos": {
+    "n_trades": 538,
+    "total_pnl": 2563.8,
+    "avg_mae": 1.51,
+    "n_long": 165,
+    "n_short": 373,
+    "pips_per_day": 180.8,
+    "dir_ratio": 0.307
+  },
+  "pretrain_time_s": 85.7,
+  "evolve_time_s": 234.7
+}

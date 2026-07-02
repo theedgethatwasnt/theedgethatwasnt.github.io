@@ -1,0 +1,12 @@
+{
+  "pair": "NZD_USD",
+  "seed": 0,
+  "oos_total_pips": 1046.9,
+  "oos_pips_per_day": 8.04,
+  "oos_n_trades": 53,
+  "oos_n_long": 28,
+  "oos_n_short": 26,
+  "oos_avg_mae": 70.94,
+  "is_best_fitness": 9.35,
+  "training_gens": 200
+}
