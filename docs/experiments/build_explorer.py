@@ -120,6 +120,8 @@ header a.home:hover {{ text-decoration:underline; }}
 .chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; cursor:pointer; user-select:none; }}
 .chip:hover {{ border-color:var(--acc); color:var(--acc); }}
 .chip.alg {{ border-color:var(--acc); }}
+a.term {{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); cursor:help; }}
+a.term:hover {{ border-bottom-color:var(--fg); }}
 code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 .code a {{ display:table; color:var(--acc); text-decoration:none; padding:1px 0; word-break:break-all; }}
 .code a:hover {{ text-decoration:underline; }}
@@ -138,6 +140,7 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 <header>
  <h1>The Edge That Wasn't — Experiment Explorer</h1>
  <p>{n} experiments — data, indicators, algorithms, code, figures, verdicts.</p>
+ <a class="home" href="glossary.html">Glossary</a>
  <a class="home" href="../index.html">&larr; Back to the book</a>
 </header>
 <div class="wrap">
@@ -184,6 +187,39 @@ function render(){{
 }}
 function esc(s){{ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }}
 function sec(title, inner){{ return inner ? `<div class="sec"><h3>${{title}}</h3>${{inner}}</div>` : ''; }}
+// ── Glossary term-marking layer ────────────────────────────────────────
+// Loads glossary.json once, builds ONE compiled regex of all surface forms
+// (longest-first, word-boundary aware), and marks the FIRST occurrence of
+// each term per detail pane. Operates on already-esc()'d prose strings only,
+// so it never touches chips, code paths, or figure captions.
+let GLOSS = null, GRE = null;
+function reEsc(s){{ return s.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&'); }}
+function loadGlossary(){{
+  fetch('glossary.json').then(r=>r.ok?r.json():null).then(d=>{{
+    if(!d||!d.terms) return;
+    GLOSS = {{}};
+    const surf = [];
+    d.terms.forEach(t=>(t.surfaces||[]).forEach(s=>{{
+      if(!s || s.length<2) return;                 // skip 1-char / empty surfaces
+      const key = esc(s).toLowerCase();            // prose is esc()'d, so key must be too
+      if(!(key in GLOSS)){{ GLOSS[key]={{d:t.display,t:t.tooltip,s:t.slug}}; surf.push(esc(s)); }}
+    }}));
+    surf.sort((a,b)=>b.length-a.length);           // longest match first
+    if(surf.length){{
+      GRE = new RegExp('(?<![A-Za-z0-9_])(' + surf.map(reEsc).join('|') + ')(?![A-Za-z0-9_])', 'gi');
+    }}
+    if(sel!=null){{ const e=exps.find(x=>x.id===sel); if(e) show(e); }}  // re-render, now marked
+  }}).catch(()=>{{}});
+}}
+function mark(html, seen){{
+  if(!GRE) return html;
+  return html.replace(GRE, (m)=>{{
+    const info = GLOSS[m.toLowerCase()];
+    if(!info || seen.has(info.s)) return m;        // one mark per term per pane
+    seen.add(info.s);
+    return `<a class="term" href="glossary.html#${{info.s}}" target="_blank" rel="noopener" title="${{esc(info.t)}}">${{m}}</a>`;
+  }});
+}}
 function codeLink(p){{
   const url = PATHMAP[p];
   if (url) return `<a href="${{url}}" target="_blank" rel="noopener">${{esc(p)}}</a>`;
@@ -198,15 +234,16 @@ function show(e){{
   const chips = (arr,cls)=>arr&&arr.length?`<div class="chips">${{arr.map(x=>`<span class="chip ${{cls||''}}" title="Show all experiments using this" onclick="chipFilter(this.textContent)">${{esc(x)}}</span>`).join('<span style="position:absolute;left:-9999px">, </span>')}}</div>`:'';
   const code = (e.code_paths||[]).map(codeLink).join('');
   const figs = (e.figures||[]).map(figBlock).join('');
+  const seen = new Set();                          // first-occurrence-per-pane, shared across prose fields
   detail.innerHTML = `
    <h2>#${{e.id}} — ${{esc(e.name)}}</h2>
    <div class="meta">${{esc(e.verdict)}}${{e.period&&e.period!=='not recorded'?' · '+esc(e.period):''}}${{e.journey_anchor?' · JOURNEY: “'+esc(e.journey_anchor)+'”':''}}</div>
-   <div class="oneline">${{esc(e.one_line)}}</div>
-   ${{sec('What it tests', `<p>${{esc(e.what_it_tests)}}</p>`)}}
-   ${{sec('Description', `<p>${{esc(e.description)}}</p>`)}}
-   ${{sec('Method & materials', `<p>${{esc(e.method_materials)}}</p>`)}}
+   <div class="oneline">${{mark(esc(e.one_line), seen)}}</div>
+   ${{sec('What it tests', `<p>${{mark(esc(e.what_it_tests), seen)}}</p>`)}}
+   ${{sec('Description', `<p>${{mark(esc(e.description), seen)}}</p>`)}}
+   ${{sec('Method & materials', `<p>${{mark(esc(e.method_materials), seen)}}</p>`)}}
    ${{sec('Data used', `<p>${{esc(e.data_used)}}</p>`)}}
-   ${{sec('Key numbers', `<div class="keynum">${{esc(e.key_numbers)}}</div>`)}}
+   ${{sec('Key numbers', `<div class="keynum">${{mark(esc(e.key_numbers), seen)}}</div>`)}}
    ${{sec('Indicators', chips(e.indicators))}}
    ${{sec('Algorithms', chips(e.algorithms,'alg'))}}
    ${{sec('Code', code?`<div class="code">${{code}}</div>`:'')}}
@@ -220,6 +257,7 @@ function chipFilter(term){{
 }}
 render();
 if (exps.length) {{ sel=exps[0].id; render(); show(exps[0]); }}
+loadGlossary();
 </script>
 </body>
 </html>

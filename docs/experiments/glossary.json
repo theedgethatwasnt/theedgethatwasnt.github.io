@@ -1,0 +1,2681 @@
+{
+ "generated": "2026-07-07",
+ "terms": [
+  {
+   "slug": "di-positive-directional",
+   "display": "+DI (Positive Directional)",
+   "surfaces": [
+    "+DI",
+    "Positive Directional"
+   ],
+   "tooltip": "Uptrend strength component",
+   "body": "Uptrend strength component",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "di-negative-directional",
+   "display": "-DI (Negative Directional)",
+   "surfaces": [
+    "-DI",
+    "Negative Directional"
+   ],
+   "tooltip": "Downtrend strength component",
+   "body": "Downtrend strength component",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "16-state-market-regime",
+   "display": "16-State Market Regime",
+   "surfaces": [
+    "16-State Market Regime"
+   ],
+   "tooltip": "Full market state across 20 FX pairs simultaneously.",
+   "body": "Full market state across 20 FX pairs simultaneously. 16 regime categories from combinations.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "4-quadrant-market-regime",
+   "display": "4-Quadrant Market Regime",
+   "surfaces": [
+    "4-Quadrant Market Regime"
+   ],
+   "tooltip": "0=low vol+low dir (dead), 1=high vol+low dir (choppy), 2=low vol+high dir (trending quiet), 3=high vol+high dir (trending loud)",
+   "body": "0=low vol+low dir (dead), 1=high vol+low dir (choppy), 2=low vol+high dir (trending quiet), 3=high vol+high dir (trending loud)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "4-regime-normalization",
+   "display": "4-Regime Normalization",
+   "surfaces": [
+    "4-Regime Normalization"
+   ],
+   "tooltip": "Different normalization windows and methods applied depending on detected market regime.",
+   "body": "Different normalization windows and methods applied depending on detected market regime.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "accumulated-drawdown-amddp",
+   "display": "Accumulated Drawdown (AMDDP)",
+   "surfaces": [
+    "Accumulated Drawdown"
+   ],
+   "tooltip": "Cumulative measure of how much the trade has wandered underwater.",
+   "body": "Cumulative measure of how much the trade has wandered underwater. Increases on every underwater bar, not only when DD deepens.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "accumulative-swing-index-asi",
+   "display": "Accumulative Swing Index (ASI)",
+   "surfaces": [
+    "Accumulative Swing Index",
+    "ASI"
+   ],
+   "tooltip": "Wilder's 1978 swing-momentum indicator: a running, volatility-normalized sum of bar-to-bar swing increments (ASI = Σ SI), where each increment scales the bar's move by how decisively it moved…",
+   "body": "Wilder's 1978 swing-momentum indicator: a running, volatility-normalized sum of bar-to-bar swing increments (ASI = Σ SI), where each increment scales the bar's move by how decisively it moved relative to its own range and to a limit move of 3 × ATR. It behaves like a smoothed, momentum-weighted price, filtering the jitter that raw price carries — which is why swing detection on ASI is cleaner than on price itself.",
+   "source": "glossary"
+  },
+  {
+   "slug": "adverse-selection",
+   "display": "Adverse selection",
+   "surfaces": [
+    "Adverse selection"
+   ],
+   "tooltip": "The systematic tendency for the orders that actually fill to be the ones moving against you.",
+   "body": "The systematic tendency for the orders that actually fill to be the ones moving against you. In grid trading it turns a favorable-looking win probability into a slow bleed.",
+   "source": "glossary"
+  },
+  {
+   "slug": "adx-average-directional-index",
+   "display": "ADX (Average Directional Index)",
+   "surfaces": [
+    "Average Directional Index"
+   ],
+   "tooltip": "Trend strength (>25 trending, <20 ranging)",
+   "body": "Trend strength (>25 trending, <20 ranging)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "adx-adxr",
+   "display": "ADX / ADXR",
+   "surfaces": [
+    "ADX",
+    "ADXR"
+   ],
+   "tooltip": "Average Directional Index (Wilder): a 0–100 measure of trend strength (not direction), above ~25 trending, below ~20 ranging.",
+   "body": "Average Directional Index (Wilder): a 0–100 measure of trend strength (not direction), above ~25 trending, below ~20 ranging. ADXR is the smoothed average of ADX with its value 14 bars ago, used as the trend term inside the Commodity Selection Index.",
+   "source": "glossary"
+  },
+  {
+   "slug": "adx-dmi-ksql-streaming",
+   "display": "ADX/DMI (KSQL Streaming)",
+   "surfaces": [],
+   "tooltip": "Real-time streaming DMI from 5-second bars.",
+   "body": "Real-time streaming DMI from 5-second bars.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "adxr-adx-rating",
+   "display": "ADXR (ADX Rating)",
+   "surfaces": [
+    "ADX Rating"
+   ],
+   "tooltip": "Smoothed ADX for cross-sectional ranking",
+   "body": "Smoothed ADX for cross-sectional ranking",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "amddp-accum-max-drawdown-pips",
+   "display": "AMDDP (Accum. Max-Drawdown-Pips)",
+   "surfaces": [
+    "Accum. Max-Drawdown-Pips"
+   ],
+   "tooltip": "Penalizes trades that wander deep underwater, and penalizes them more the longer they loiter there",
+   "body": "Penalizes trades that wander deep underwater, and penalizes them more the longer they loiter there",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "amddp-amddp1-amddp5-amddp10",
+   "display": "AMDDP (AMDDP1 / AMDDP5 / AMDDP10)",
+   "surfaces": [
+    "AMDDP",
+    "AMDDP1",
+    "AMDDP5",
+    "AMDDP10"
+   ],
+   "tooltip": "Accumulated-Maximum-Drawdown-Pips, the one reward function designed inside this project.",
+   "body": "Accumulated-Maximum-Drawdown-Pips, the one reward function designed inside this project. It is profit minus a penalty for the pain a trade inflicted on the way: AMDDP_k = pnl_pips − β · dd_sum, where dd_sum accrues on every bar the trade sits underwater, deepening or static, not only the bars where the drawdown gets worse. The suffix is the penalty weight as a percentage, so β = N/100: AMDDP1 = β 0.01, AMDDP5 = β 0.05, AMDDP10 = β 0.10. A profit-protection floor keeps a winning trade from ever being penalized into looking like a loss. AMDDP5 scored the project's one clean positive result, the +14,440-pip sine-wave positive control.",
+   "source": "glossary"
+  },
+  {
+   "slug": "aroon",
+   "display": "Aroon",
+   "surfaces": [
+    "Aroon"
+   ],
+   "tooltip": "A trend indicator reading how recently the highest high and lowest low occurred within a window, each scaled 0–100; a high Aroon-Up means a recent new high.",
+   "body": "A trend indicator reading how recently the highest high and lowest low occurred within a window, each scaled 0–100; a high Aroon-Up means a recent new high.",
+   "source": "glossary"
+  },
+  {
+   "slug": "aroon-up-down",
+   "display": "Aroon (Up/Down)",
+   "surfaces": [
+    "Up",
+    "Down"
+   ],
+   "tooltip": "Time since highest high / lowest low as percentage.",
+   "body": "Time since highest high / lowest low as percentage. Aroon_Up near 100 = recent new high (bullish).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-accumulative-swing-index",
+   "display": "ASI (Accumulative Swing Index)",
+   "surfaces": [],
+   "tooltip": "Cumulative swing momentum (Wilder 1978)",
+   "body": "Cumulative swing momentum (Wilder 1978)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-ksql-streaming",
+   "display": "ASI (KSQL Streaming)",
+   "surfaces": [
+    "KSQL Streaming"
+   ],
+   "tooltip": "Real-time streaming ASI from 5-second bars via Kafka/KSQL.",
+   "body": "Real-time streaming ASI from 5-second bars via Kafka/KSQL. Earliest implementation.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-acceleration",
+   "display": "ASI Acceleration",
+   "surfaces": [
+    "ASI Acceleration"
+   ],
+   "tooltip": "Swing momentum change-of-change",
+   "body": "Swing momentum change-of-change",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-bb-position",
+   "display": "ASI BB Position",
+   "surfaces": [
+    "ASI BB Position"
+   ],
+   "tooltip": "Where ASI sits within its own Bollinger Bands.",
+   "body": "Where ASI sits within its own Bollinger Bands. Position near 0 or 1 = ASI at extreme.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-bb-width",
+   "display": "ASI BB Width",
+   "surfaces": [
+    "ASI BB Width"
+   ],
+   "tooltip": "Volatility of the ASI itself — narrow = ASI consolidating, wide = ASI trending strongly",
+   "body": "Volatility of the ASI itself — narrow = ASI consolidating, wide = ASI trending strongly",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-rsi-14",
+   "display": "ASI RSI(14)",
+   "surfaces": [
+    "ASI RSI"
+   ],
+   "tooltip": "RSI of the Accumulative Swing Index — overbought/oversold on the momentum indicator itself",
+   "body": "RSI of the Accumulative Swing Index — overbought/oversold on the momentum indicator itself",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-slope",
+   "display": "ASI Slope",
+   "surfaces": [
+    "ASI Slope"
+   ],
+   "tooltip": "Rate of change of swing momentum",
+   "body": "Rate of change of swing momentum",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-swing-regime-4-channel-one-hot",
+   "display": "ASI Swing Regime (4-channel one-hot)",
+   "surfaces": [
+    "ASI Swing Regime",
+    "4-channel one-hot"
+   ],
+   "tooltip": "calculate_asi_swing_pattern_regime_with_filtered_points().",
+   "body": "calculate_asi_swing_pattern_regime_with_filtered_points(). Regime from ASI-derived swing points. Outputs: swing_regime_uptrend (HHHL), swing_regime_downtrend (LHLL), swing_regime_bullish_divergence (HHLL), swing_regime_bearish_divergence (LHHL).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-usd-normalized",
+   "display": "ASI USD-Normalized",
+   "surfaces": [
+    "ASI USD-Normalized"
+   ],
+   "tooltip": "Cross-instrument-comparable ASI: normalizes swing index to USD terms for multi-pair context",
+   "body": "Cross-instrument-comparable ASI: normalizes swing index to USD terms for multi-pair context",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asi-variants-wilder",
+   "display": "ASI Variants (Wilder)",
+   "surfaces": [
+    "ASI Variants",
+    "Wilder"
+   ],
+   "tooltip": "Advanced momentum/swing analysis",
+   "body": "Advanced momentum/swing analysis",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asian-range-percentile",
+   "display": "Asian Range Percentile",
+   "surfaces": [
+    "Asian Range Percentile"
+   ],
+   "tooltip": "Position within Asian range; entry trigger",
+   "body": "Position within Asian range; entry trigger",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asian-session-high",
+   "display": "Asian Session High",
+   "surfaces": [
+    "Asian Session High"
+   ],
+   "tooltip": "Upper bound of Asian range; fade target",
+   "body": "Upper bound of Asian range; fade target",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asian-session-low",
+   "display": "Asian Session Low",
+   "surfaces": [
+    "Asian Session Low"
+   ],
+   "tooltip": "Lower bound of Asian range; fade target",
+   "body": "Lower bound of Asian range; fade target",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "asimc",
+   "display": "ASIMC",
+   "surfaces": [
+    "ASIMC",
+    "mc_d",
+    "mc_dd"
+   ],
+   "tooltip": "Not four indicators but one composite pipeline: ASI → SMA(5) → MC(D) and MC(dD).",
+   "body": "Not four indicators but one composite pipeline: ASI → SMA(5) → MC(D) and MC(dD). Raw OHLC goes in; a pair of bounded momentum numbers comes out (level and rate-of-change of the smoothed series). It was the central feature for the NEAT and MuZero work — and the multi-timeframe version is exactly where the Part III lookahead bug lived (see lookahead bias, Monte-Carlo).",
+   "source": "glossary"
+  },
+  {
+   "slug": "atr-7-14",
+   "display": "ATR (7, 14)",
+   "surfaces": [
+    "7, 14"
+   ],
+   "tooltip": "Average true range over n bars; the project's sizing baseline for TP/SL.",
+   "body": "Average true range over n bars; the project's sizing baseline for TP/SL. ATR(14) is the standard used unchanged in every live system; ATR(7) is the faster, noisier variant used in the Exit Bot and Hurst work for regime-sensitive scalps.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "atr-average-true-range",
+   "display": "ATR (Average True Range)",
+   "surfaces": [
+    "ATR",
+    "Average True Range"
+   ],
+   "tooltip": "Wilder's volatility measure: the moving average of the true range (the bar's range, extended to include any gap from the prior close), reported in pips.",
+   "body": "Wilder's volatility measure: the moving average of the true range (the bar's range, extended to include any gap from the prior close), reported in pips. The sizing baseline for most take-profits and stops in this project.",
+   "source": "glossary"
+  },
+  {
+   "slug": "atr-percentile",
+   "display": "ATR Percentile",
+   "surfaces": [
+    "ATR Percentile"
+   ],
+   "tooltip": "Volatility regime gate (P20-P90 for Impulse)",
+   "body": "Volatility regime gate (P20-P90 for Impulse)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "auc",
+   "display": "AUC",
+   "surfaces": [
+    "AUC"
+   ],
+   "tooltip": "Area Under the ROC Curve, where ROC is the receiver operating characteristic — a plot, named by wartime radar engineers, of true-positive rate against false-positive rate at every decision threshold.",
+   "body": "Area Under the ROC Curve, where ROC is the receiver operating characteristic — a plot, named by wartime radar engineers, of true-positive rate against false-positive rate at every decision threshold. A 0-to-1 score for how well a model separates two classes: 0.5 is random guessing, 1.0 is perfect, 0.7 or above is real signal. The shock-timing models reached 0.73–0.88.",
+   "source": "glossary"
+  },
+  {
+   "slug": "backtest",
+   "display": "Backtest",
+   "surfaces": [
+    "Backtest"
+   ],
+   "tooltip": "Running a strategy against historical prices to see how it would have done.",
+   "body": "Running a strategy against historical prices to see how it would have done. The most seductive and most easily fooled instrument in the discipline.",
+   "source": "glossary"
+  },
+  {
+   "slug": "bands-on-derived-metrics",
+   "display": "Bands on Derived Metrics",
+   "surfaces": [
+    "Bands on Derived Metrics"
+   ],
+   "tooltip": "Enhanced S/R from derived metric envelopes",
+   "body": "Enhanced S/R from derived metric envelopes",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "bars-held",
+   "display": "Bars Held",
+   "surfaces": [
+    "Bars Held"
+   ],
+   "tooltip": "Time in trade; urgency signal",
+   "body": "Time in trade; urgency signal",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "bb-position-centered",
+   "display": "BB Position (centered)",
+   "surfaces": [
+    "BB Position",
+    "centered"
+   ],
+   "tooltip": "Position within Bollinger Bands: 0=at SMA, ±0.5=at bands, beyond ±0.5=outside bands",
+   "body": "Position within Bollinger Bands: 0=at SMA, ±0.5=at bands, beyond ±0.5=outside bands",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "bb-width-bbw",
+   "display": "BB Width (BBW)",
+   "surfaces": [
+    "BB Width",
+    "BBW",
+    "bb_width",
+    "Bollinger Band Width"
+   ],
+   "tooltip": "Volatility regime (squeeze = low BBW percentile)",
+   "body": "Volatility regime (squeeze = low BBW percentile)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "bollinger-bands",
+   "display": "Bollinger Bands",
+   "surfaces": [
+    "Bollinger Bands",
+    "BB"
+   ],
+   "tooltip": "A band drawn at a moving-average center plus and minus a multiple (usually 2) of the price standard deviation, so the band widens with volatility.",
+   "body": "A band drawn at a moving-average center plus and minus a multiple (usually 2) of the price standard deviation, so the band widens with volatility. BB position maps where price sits inside the band to a bounded number for model input.",
+   "source": "glossary"
+  },
+  {
+   "slug": "bollinger-bands-20-2-0",
+   "display": "Bollinger Bands(20, 2.0)",
+   "surfaces": [
+    "20, 2.0"
+   ],
+   "tooltip": "Range extremes, squeeze detection",
+   "body": "Range extremes, squeeze detection",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "candle-direction",
+   "display": "Candle Direction",
+   "surfaces": [
+    "Candle Direction"
+   ],
+   "tooltip": "Trade direction selector (long if bullish, short if bearish)",
+   "body": "Trade direction selector (long if bullish, short if bearish)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "candle-size",
+   "display": "Candle Size",
+   "surfaces": [
+    "Candle Size"
+   ],
+   "tooltip": "Individual bar range; entry signal when > ATR(14) on both M5 AND H1",
+   "body": "Individual bar range; entry signal when > ATR(14) on both M5 AND H1",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "capture-ratio",
+   "display": "Capture ratio",
+   "surfaces": [
+    "Capture ratio"
+   ],
+   "tooltip": "A reward measure: PnL / (MFE + ε), clipped to [−2, +2].",
+   "body": "A reward measure: PnL / (MFE + ε), clipped to [−2, +2]. It is the share of a trade's best opportunity that the exit actually banked — 1.0 means the trade closed exactly at its peak, below 1.0 means profit was given back, below zero means it closed underwater. Rewards good exit timing.",
+   "source": "glossary"
+  },
+  {
+   "slug": "capture-ratio-real-time",
+   "display": "Capture Ratio (real-time)",
+   "surfaces": [
+    "real-time"
+   ],
+   "tooltip": "How much of the best opportunity we're capturing RIGHT NOW.",
+   "body": "How much of the best opportunity we're capturing RIGHT NOW. 1.0 = holding at peak, <1 = gave back profit, <0 = underwater.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "car25",
+   "display": "CAR25",
+   "surfaces": [
+    "CAR25"
+   ],
+   "tooltip": "Dr.",
+   "body": "Dr. Howard Bandy's 25th-percentile compound annual return — the return you'd still beat 75% of the time as position size scales; a probability-of-ruin-aware sizing test. Run the trade distribution through a Monte-Carlo of many equity paths, sort the annual returns, and read the 25th percentile: if it is negative at every size (as it was for account 010, Entry 66), there is no volume at which the strategy is safe to trade.",
+   "source": "glossary"
+  },
+  {
+   "slug": "cma-es",
+   "display": "CMA-ES",
+   "surfaces": [
+    "CMA-ES"
+   ],
+   "tooltip": "Covariance Matrix Adaptation Evolution Strategy.",
+   "body": "Covariance Matrix Adaptation Evolution Strategy. A gradient-free optimizer for a fixed set of parameters (here, the weights of a fixed-topology network). It draws a population of candidates from a multivariate normal, scores them, then reshapes and reorients that distribution toward the directions that have been improving before drawing the next generation. It optimizes weights only — the network's architecture must be fixed in advance, which is the contrast with NEAT.",
+   "source": "glossary"
+  },
+  {
+   "slug": "column-momentum",
+   "display": "Column Momentum",
+   "surfaces": [
+    "Column Momentum"
+   ],
+   "tooltip": "P&F trend persistence; how many boxes in current column",
+   "body": "P&F trend persistence; how many boxes in current column",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "combo-geometric-range-position",
+   "display": "Combo Geometric (range × position)",
+   "surfaces": [
+    "Combo Geometric",
+    "range × position"
+   ],
+   "tooltip": "Non-linear interaction between volatility regime and range position.",
+   "body": "Non-linear interaction between volatility regime and range position.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "consecutive-loss-count",
+   "display": "Consecutive Loss Count",
+   "surfaces": [
+    "Consecutive Loss Count"
+   ],
+   "tooltip": "Skip 1 signal after 2 consecutive losses",
+   "body": "Skip 1 signal after 2 consecutive losses",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "cost-to-volatility-ratio",
+   "display": "Cost-to-Volatility Ratio",
+   "surfaces": [
+    "Cost-to-Volatility Ratio"
+   ],
+   "tooltip": "Scalping efficiency; lower = better opportunity",
+   "body": "Scalping efficiency; lower = better opportunity",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "cot-commitments-of-traders",
+   "display": "COT (Commitments of Traders)",
+   "surfaces": [
+    "COT",
+    "Commitments of Traders"
+   ],
+   "tooltip": "The weekly positioning report published by the CFTC, the US futures regulator: aggregate long and short futures positions by trader category (commercial hedgers, large speculators, small traders) as…",
+   "body": "The weekly positioning report published by the CFTC, the US futures regulator: aggregate long and short futures positions by trader category (commercial hedgers, large speculators, small traders) as of each Tuesday, released Friday, covering the CME currency futures. The closest public thing to positioning truth in FX, used as a contrarian signal at extremes; its costs are the three-day publication lag and that it measures futures, not spot.",
+   "source": "glossary"
+  },
+  {
+   "slug": "counter-trend-fade",
+   "display": "Counter-trend / fade",
+   "surfaces": [
+    "Counter-trend",
+    "fade"
+   ],
+   "tooltip": "Trading against the prevailing move; the same family as mean reversion.",
+   "body": "Trading against the prevailing move; the same family as mean reversion.",
+   "source": "glossary"
+  },
+  {
+   "slug": "csi",
+   "display": "CSI",
+   "surfaces": [
+    "CSI"
+   ],
+   "tooltip": "two unrelated indicators with the same three letters.",
+   "body": "two unrelated indicators with the same three letters. (1) Currency Strength Index (per-currency): a single strength number for each major currency (USD, EUR, JPY, …), pooled across all the pairs it appears in, so you can pair the strong against the weak. (2) Commodity Selection Index (per-pair), Wilder's classic, adapted for FX as CSI = ADXR × ATR_pips × (V/√M) × (1/(150+C)) × 100: a per-pair tradeability score that blends trendiness, opportunity size, and cost. The first tells you which currency is strong; the second ranks which pairs are worth trading. The surrounding context disambiguates which one is meant — currency-strength work points at the first, factor and tradeability work at the second. In this project's factor study every component of the second scored contrarian (IC below zero).",
+   "source": "glossary"
+  },
+  {
+   "slug": "currency-pair",
+   "display": "Currency pair",
+   "surfaces": [
+    "Currency pair"
+   ],
+   "tooltip": "A quoted exchange rate like EUR/USD.",
+   "body": "A quoted exchange rate like EUR/USD. In FX you always buy one currency by selling another.",
+   "source": "glossary"
+  },
+  {
+   "slug": "currency-rank-top-3-bot-3",
+   "display": "Currency Rank (Top-3/Bot-3)",
+   "surfaces": [
+    "Currency Rank",
+    "Top-3",
+    "Bot-3"
+   ],
+   "tooltip": "Entry: D1 top-3 × bottom-3 must agree with H1",
+   "body": "Entry: D1 top-3 × bottom-3 must agree with H1",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "currency-strength-spread",
+   "display": "Currency Strength Spread",
+   "surfaces": [
+    "Currency Strength Spread"
+   ],
+   "tooltip": "Cross-sectional relative value",
+   "body": "Cross-sectional relative value",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "current-drawdown",
+   "display": "Current Drawdown",
+   "surfaces": [
+    "Current Drawdown"
+   ],
+   "tooltip": "Current underwater distance from entry.",
+   "body": "Current underwater distance from entry. Zero or positive.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "cycle-leg",
+   "display": "Cycle / leg",
+   "surfaces": [
+    "Cycle",
+    "leg"
+   ],
+   "tooltip": "In Zone Recovery, a leg is each added counter-position as price moves against the first entry; a cycle is one complete run from first entry to the moment all positions close.",
+   "body": "In Zone Recovery, a leg is each added counter-position as price moves against the first entry; a cycle is one complete run from first entry to the moment all positions close.",
+   "source": "glossary"
+  },
+  {
+   "slug": "d1-strength-gap",
+   "display": "D1 Strength Gap",
+   "surfaces": [
+    "D1 Strength Gap"
+   ],
+   "tooltip": "Range of currency divergence; entry threshold",
+   "body": "Range of currency divergence; entry threshold",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "daily-range-exhaustion",
+   "display": "Daily Range Exhaustion",
+   "surfaces": [
+    "Daily Range Exhaustion"
+   ],
+   "tooltip": "Fade when daily range exceeds ATR ceiling",
+   "body": "Fade when daily range exceeds ATR ceiling",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "day-of-week-encoding",
+   "display": "Day-of-Week Encoding",
+   "surfaces": [
+    "Day-of-Week Encoding"
+   ],
+   "tooltip": "Weekly cycle; captures Monday/Friday effects",
+   "body": "Weekly cycle; captures Monday/Friday effects",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "delta-price",
+   "display": "Delta Price",
+   "surfaces": [
+    "Delta Price"
+   ],
+   "tooltip": "1-bar momentum normalized by volatility",
+   "body": "1-bar momentum normalized by volatility",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "direction-composite-adx-percentile",
+   "display": "Direction Composite (ADX percentile)",
+   "surfaces": [
+    "Direction Composite",
+    "ADX percentile"
+   ],
+   "tooltip": "Normalized directional strength: 0=no trend, 1=strong trend",
+   "body": "Normalized directional strength: 0=no trend, 1=strong trend",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "dmi-directional-movement-index",
+   "display": "DMI (Directional Movement Index)",
+   "surfaces": [
+    "DMI",
+    "Directional Movement Index"
+   ],
+   "tooltip": "Wilder's +DI / −DI pair, grading up-pressure against down-pressure; ADX is derived from them.",
+   "body": "Wilder's +DI / −DI pair, grading up-pressure against down-pressure; ADX is derived from them. A signal weighted by ADX strength reads as direction with a conviction multiplier.",
+   "source": "glossary"
+  },
+  {
+   "slug": "dmi-signal-weighted",
+   "display": "DMI Signal (weighted)",
+   "surfaces": [
+    "DMI Signal",
+    "weighted"
+   ],
+   "tooltip": "Directional bias weighted by conviction.",
+   "body": "Directional bias weighted by conviction. Strong ADX + clear direction = large signal. Weak ADX dampens signal.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "donchian-channel",
+   "display": "Donchian channel",
+   "surfaces": [
+    "Donchian channel"
+   ],
+   "tooltip": "A band at the highest high and lowest low of the past N bars; a breakout trade enters when price pushes outside it.",
+   "body": "A band at the highest high and lowest low of the past N bars; a breakout trade enters when price pushes outside it. The H4 version caught multi-day trends in backtest (84% WR) — but live it went 0-for-3 and was stopped; on H1 the breaks fire far more often and are mostly false, each capturing only a small hourly move, so the same fixed spread is a far larger fraction of what a trade wins — which is why H1 breakouts lose where H4 filters the noise, and why even H4's backtest promise did not survive contact with live execution.",
+   "source": "glossary"
+  },
+  {
+   "slug": "drawdown-dd",
+   "display": "Drawdown (DD)",
+   "surfaces": [
+    "Drawdown"
+   ],
+   "tooltip": "The peak-to-trough loss of account equity, measured down from its high-water mark.",
+   "body": "The peak-to-trough loss of account equity, measured down from its high-water mark. A drawdown above 100% means the loss exceeded the starting capital itself.",
+   "source": "glossary"
+  },
+  {
+   "slug": "dynamic-program",
+   "display": "Dynamic program",
+   "surfaces": [
+    "Dynamic program"
+   ],
+   "tooltip": "A method that finds the provably optimal sequence of decisions by building it up from the optimal solutions to smaller pieces; used here for the \"best times to buy and sell with a transaction cost\"…",
+   "body": "A method that finds the provably optimal sequence of decisions by building it up from the optimal solutions to smaller pieces; used here for the \"best times to buy and sell with a transaction cost\" oracle that drew the spread wall at its full height.",
+   "source": "glossary"
+  },
+  {
+   "slug": "ecn",
+   "display": "ECN",
+   "surfaces": [
+    "ECN"
+   ],
+   "tooltip": "Electronic Communication Network: a venue that matches orders directly at raw interbank spreads for an explicit commission, rather than embedding its fee inside the spread the way a retail dealer…",
+   "body": "Electronic Communication Network: a venue that matches orders directly at raw interbank spreads for an explicit commission, rather than embedding its fee inside the spread the way a retail dealer does. An ECN or futures spread is roughly half a US retail broker's (OANDA's included), which is why the project notes it would arithmetically resurrect about ten gross-positive edges that died only at the toll — a claim not tested through the apparatus, and one that ignores ECN commission and slippage.",
+   "source": "glossary"
+  },
+  {
+   "slug": "edge",
+   "display": "Edge",
+   "surfaces": [
+    "Edge"
+   ],
+   "tooltip": "A real, repeatable advantage: a way of trading that beats guessing, after every cost.",
+   "body": "A real, repeatable advantage: a way of trading that beats guessing, after every cost. The whole game is whether you have one. Almost no one does.",
+   "source": "glossary"
+  },
+  {
+   "slug": "eff-efficient-filter",
+   "display": "eFF (Efficient Filter)",
+   "surfaces": [
+    "eFF",
+    "Efficient Filter"
+   ],
+   "tooltip": "Noise reduction for noisy instruments (not validated in this project's pipeline)",
+   "body": "Noise reduction for noisy instruments (not validated in this project's pipeline)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "efficiency-path",
+   "display": "Efficiency (path)",
+   "surfaces": [
+    "Efficiency",
+    "path"
+   ],
+   "tooltip": "For a single move, the straight-line distance from entry to exit divided by the total path the price travelled.",
+   "body": "For a single move, the straight-line distance from entry to exit divided by the total path the price travelled. 1.0 is a clean move; lower means the price doubled back. The oracle study found the median optimal trade ran at 0.57 — the reward lives in meandering moves big enough to clear the toll, not in clean little darts.",
+   "source": "glossary"
+  },
+  {
+   "slug": "efficiency-ratio-er-kaufman",
+   "display": "Efficiency Ratio (ER, Kaufman)",
+   "surfaces": [
+    "Efficiency Ratio",
+    "ER, Kaufman",
+    "er_norm"
+   ],
+   "tooltip": "Net distance travelled over a window divided by the total path actually walked, bounded [0, 1]: 1 is a clean one-way move, 0 is pure back-and-forth.",
+   "body": "Net distance travelled over a window divided by the total path actually walked, bounded [0, 1]: 1 is a clean one-way move, 0 is pure back-and-forth. TEC is its signed twin (see TEC), dTEC its bar-to-bar change.",
+   "source": "glossary"
+  },
+  {
+   "slug": "efficiency-ratio-kaufman",
+   "display": "Efficiency Ratio (Kaufman)",
+   "surfaces": [
+    "Kaufman"
+   ],
+   "tooltip": "Trending(≈1) vs choppy(≈0); measures directional efficiency",
+   "body": "Trending(≈1) vs choppy(≈0); measures directional efficiency",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "ema-3-5-8-13-20-21-24-50-200",
+   "display": "EMA (3, 5, 8, 13, 20, 21, 24, 50, 200)",
+   "surfaces": [
+    "3, 5, 8, 13, 20, 21, 24, 50, 200"
+   ],
+   "tooltip": "Exponential moving averages at nine spans.",
+   "body": "Exponential moving averages at nine spans. Fast spans smooth already-smoothed inputs: EMA(3)/EMA(24) ride the Kalman currency strengths in FX-Strength; EMA(8)/EMA(21) form the Auto-Research momentum cross; EMA(13) is a MuZero mid-trend baseline; EMA(20) and EMA(200) are the fast/slow regime pair whose slope (not level) is the signal; EMA(50) is Zone Recovery's medium-term trend.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "ema-diff-z-score",
+   "display": "EMA Diff Z-Score",
+   "surfaces": [
+    "EMA Diff Z-Score"
+   ],
+   "tooltip": "Unusual trend acceleration detection",
+   "body": "Unusual trend acceleration detection",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "ema-slope",
+   "display": "EMA Slope",
+   "surfaces": [
+    "EMA Slope"
+   ],
+   "tooltip": "Rate of trend change (acceleration/deceleration)",
+   "body": "Rate of trend change (acceleration/deceleration)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "equity-curve",
+   "display": "Equity curve",
+   "surfaces": [
+    "Equity curve"
+   ],
+   "tooltip": "The running account balance plotted over time.",
+   "body": "The running account balance plotted over time. A smooth, rising curve is the most seductive image in the discipline — and exactly what a lookahead bug produces.",
+   "source": "glossary"
+  },
+  {
+   "slug": "exhaustion",
+   "display": "Exhaustion",
+   "surfaces": [
+    "Exhaustion"
+   ],
+   "tooltip": "The bet that a move which has run too far is tired and will fade back; the mirror image of momentum.",
+   "body": "The bet that a move which has run too far is tired and will fade back; the mirror image of momentum.",
+   "source": "glossary"
+  },
+  {
+   "slug": "expectancy",
+   "display": "Expectancy",
+   "surfaces": [
+    "Expectancy"
+   ],
+   "tooltip": "A real, repeatable profit after costs.",
+   "body": "A real, repeatable profit after costs. \"Positive expectancy\" means the strategy makes money on average once the spread and every other cost is paid.",
+   "source": "glossary"
+  },
+  {
+   "slug": "expected-value-ev",
+   "display": "Expected value (EV)",
+   "surfaces": [
+    "Expected value",
+    "EV"
+   ],
+   "tooltip": "The long-run average outcome of a trade, the probability-weighted mean of all possible P&Ls.",
+   "body": "The long-run average outcome of a trade, the probability-weighted mean of all possible P&Ls. Positive EV makes money on average; negative loses. The fill-corrected trailing-stop strategies came out at EV = minus-the-spread.",
+   "source": "glossary"
+  },
+  {
+   "slug": "fair-value-multi-scale",
+   "display": "Fair Value (Multi-scale)",
+   "surfaces": [
+    "Fair Value"
+   ],
+   "tooltip": "Fused price target from multiple timeframes",
+   "body": "Fused price target from multiple timeframes",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "fifo",
+   "display": "FIFO",
+   "surfaces": [
+    "FIFO"
+   ],
+   "tooltip": "First-In-First-Out.",
+   "body": "First-In-First-Out. A position-management style in which the oldest open position is closed first.",
+   "source": "glossary"
+  },
+  {
+   "slug": "fill-slippage",
+   "display": "Fill / slippage",
+   "surfaces": [
+    "Fill",
+    "slippage"
+   ],
+   "tooltip": "The fill is the price at which the broker actually executes an order — almost never the price you wanted.",
+   "body": "The fill is the price at which the broker actually executes an order — almost never the price you wanted. Slippage is the gap between the two, and on a tight strategy it is often the entire edge.",
+   "source": "glossary"
+  },
+  {
+   "slug": "firma-fir-moving-average",
+   "display": "FIRMA (FIR Moving Average)",
+   "surfaces": [
+    "FIRMA",
+    "FIR Moving Average"
+   ],
+   "tooltip": "Lower-lag trend filtering (performance not validated in this project's pipeline)",
+   "body": "Lower-lag trend filtering (performance not validated in this project's pipeline)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "fisher-transform",
+   "display": "Fisher transform",
+   "surfaces": [
+    "Fisher transform"
+   ],
+   "tooltip": "An Ehlers reshaping of normalized price that sharpens turning-point timing by stretching extreme values; one of the classic chart-trader oscillators tested and found below the spread.",
+   "body": "An Ehlers reshaping of normalized price that sharpens turning-point timing by stretching extreme values; one of the classic chart-trader oscillators tested and found below the spread.",
+   "source": "glossary"
+  },
+  {
+   "slug": "fixed-std-arctan-z-score",
+   "display": "Fixed-Std Arctan Z-Score",
+   "surfaces": [
+    "Fixed-Std Arctan Z-Score"
+   ],
+   "tooltip": "Uses adaptive mean (rolling) but FIXED std from training data.",
+   "body": "Uses adaptive mean (rolling) but FIXED std from training data. Prevents false extremes during consolidation while detecting TRUE regime changes.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "genome",
+   "display": "Genome",
+   "surfaces": [
+    "Genome"
+   ],
+   "tooltip": "A single evolved network: one candidate produced by the neuroevolution breeding process, scored against the market and kept or discarded on its result.",
+   "body": "A single evolved network: one candidate produced by the neuroevolution breeding process, scored against the market and kept or discarded on its result.",
+   "source": "glossary"
+  },
+  {
+   "slug": "geometric-mean-combo",
+   "display": "Geometric Mean Combo",
+   "surfaces": [
+    "Geometric Mean Combo"
+   ],
+   "tooltip": "Non-linear feature interaction",
+   "body": "Non-linear feature interaction",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "grid-trading",
+   "display": "Grid trading",
+   "surfaces": [
+    "Grid trading"
+   ],
+   "tooltip": "Placing many small orders at regular price intervals above and below current price, harvesting the oscillations.",
+   "body": "Placing many small orders at regular price intervals above and below current price, harvesting the oscillations. High theoretical win rate per cycle; defeated in practice by adverse selection.",
+   "source": "glossary"
+  },
+  {
+   "slug": "h1-swing-range-position",
+   "display": "H1 Swing Range Position",
+   "surfaces": [
+    "H1 Swing Range Position"
+   ],
+   "tooltip": "Position within last H1 swing range: 0=at swing low, 1=at swing high, <0 or >1 = breakout",
+   "body": "Position within last H1 swing range: 0=at swing low, 1=at swing high, <0 or >1 = breakout",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "h1-trend-slope-structure-aware",
+   "display": "H1 Trend Slope (structure-aware)",
+   "surfaces": [
+    "H1 Trend Slope",
+    "structure-aware"
+   ],
+   "tooltip": "Market-structure-aware trend slope: uses the defining swing series for each regime.",
+   "body": "Market-structure-aware trend slope: uses the defining swing series for each regime. In uptrend, lows matter (support); in downtrend, highs matter (resistance).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "halftrend",
+   "display": "HalfTrend",
+   "surfaces": [
+    "HalfTrend"
+   ],
+   "tooltip": "An ATR-banded trend state machine that ratchets a trend line toward the latest extreme and flips state only when price closes far enough through the line.",
+   "body": "An ATR-banded trend state machine that ratchets a trend line toward the latest extreme and flips state only when price closes far enough through the line. Smoother than a moving-average cross, but the ratchet makes it a trailing read, not a leading one.",
+   "source": "glossary"
+  },
+  {
+   "slug": "hmm-regime-filter",
+   "display": "HMM regime filter",
+   "surfaces": [
+    "HMM regime filter"
+   ],
+   "tooltip": "A Hidden Markov Model: it posits a few unobserved market states (e.g.",
+   "body": "A Hidden Markov Model: it posits a few unobserved market states (e.g. trending vs mean-reverting), each emitting returns from its own distribution, with fixed switching probabilities, and trades only in the regime it was tuned for. A principled gate, but the states are statistical, not economic, and labelled only after the fact.",
+   "source": "glossary"
+  },
+  {
+   "slug": "hour-encoding-sin-cos",
+   "display": "Hour Encoding (sin/cos)",
+   "surfaces": [
+    "Hour Encoding",
+    "sin",
+    "cos"
+   ],
+   "tooltip": "Time-of-day cycle; captures session effects",
+   "body": "Time-of-day cycle; captures session effects",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "hour-of-week-filter",
+   "display": "Hour-of-Week Filter",
+   "surfaces": [
+    "Hour-of-Week Filter"
+   ],
+   "tooltip": "Exclude worst trading hours (statistically negative)",
+   "body": "Exclude worst trading hours (statistically negative)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "hsp-lsp",
+   "display": "HSP / LSP",
+   "surfaces": [
+    "HSP",
+    "LSP"
+   ],
+   "tooltip": "High / low swing pivot: a confirmed local top or bottom in the swing structure, the reference levels the TopsBots detector tracks.",
+   "body": "High / low swing pivot: a confirmed local top or bottom in the swing structure, the reference levels the TopsBots detector tracks.",
+   "source": "glossary"
+  },
+  {
+   "slug": "hsp-slope-high-swing-point-slope",
+   "display": "HSP Slope (High Swing Point slope)",
+   "surfaces": [
+    "HSP Slope",
+    "High Swing Point slope"
+   ],
+   "tooltip": "Rate of change between consecutive swing highs; rising HSP slope = strengthening uptrend, falling = weakening",
+   "body": "Rate of change between consecutive swing highs; rising HSP slope = strengthening uptrend, falling = weakening",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "hurst-exponent",
+   "display": "Hurst Exponent",
+   "surfaces": [],
+   "tooltip": "Mean-reverting(H<0.5) vs trending(H>0.5) vs random(H=0.5)",
+   "body": "Mean-reverting(H<0.5) vs trending(H>0.5) vs random(H=0.5)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "hurst-exponent-h",
+   "display": "Hurst exponent (H)",
+   "surfaces": [
+    "Hurst exponent",
+    "H"
+   ],
+   "tooltip": "A regime label estimated by rescaled-range (R/S) analysis: H > 0.5 is a trending (persistent) series, H < 0.5 mean-reverting (anti-persistent), H ≈ 0.5 a random walk.",
+   "body": "A regime label estimated by rescaled-range (R/S) analysis: H > 0.5 is a trending (persistent) series, H < 0.5 mean-reverting (anti-persistent), H ≈ 0.5 a random walk. Noisy on short windows — it classifies the recent past, not the next bar.",
+   "source": "glossary"
+  },
+  {
+   "slug": "in-sample-is-out-of-sample-oos",
+   "display": "In-sample (IS) / out-of-sample (OOS)",
+   "surfaces": [
+    "In-sample",
+    "out-of-sample",
+    "IS",
+    "OOS"
+   ],
+   "tooltip": "IS is the history you may use while designing and tuning.",
+   "body": "IS is the history you may use while designing and tuning. OOS is the slice you may not touch until tuning is done — the test the strategy has never seen. Peek at OOS, tune, and re-run, and you have quietly turned it into IS.",
+   "source": "glossary"
+  },
+  {
+   "slug": "indicator",
+   "display": "Indicator",
+   "surfaces": [
+    "Indicator"
+   ],
+   "tooltip": "A mathematical transform of the price stream, computed from price and fed into the decision logic as a feature.",
+   "body": "A mathematical transform of the price stream, computed from price and fed into the decision logic as a feature. Its job is to summarize the past, which is why leaking future data into one is catastrophic.",
+   "source": "glossary"
+  },
+  {
+   "slug": "information-coefficient-ic",
+   "display": "Information Coefficient (IC)",
+   "surfaces": [
+    "Information Coefficient",
+    "IC"
+   ],
+   "tooltip": "The (often rank) correlation between a signal's value and the next price move: 0 means no predictive power, ±1 would be perfect, and real signals on real markets live in the hundredths.",
+   "body": "The (often rank) correlation between a signal's value and the next price move: 0 means no predictive power, ±1 would be perfect, and real signals on real markets live in the hundredths. IC decay / half-life is how fast that correlation falls off as the forward horizon lengthens — the signal's shelf life.",
+   "source": "glossary"
+  },
+  {
+   "slug": "intraday",
+   "display": "Intraday",
+   "surfaces": [
+    "Intraday"
+   ],
+   "tooltip": "Holding a trade for less than a day.",
+   "body": "Holding a trade for less than a day.",
+   "source": "glossary"
+  },
+  {
+   "slug": "kalman-filter-currency-strength",
+   "display": "Kalman filter (currency-strength)",
+   "surfaces": [
+    "Kalman filter",
+    "currency-strength",
+    "Kalman10"
+   ],
+   "tooltip": "A state-space estimator that decomposes the returns of many pairs into a smaller set of per-currency strength values, updating its estimate each bar from the latest observation.",
+   "body": "A state-space estimator that decomposes the returns of many pairs into a smaller set of per-currency strength values, updating its estimate each bar from the latest observation. The FX-Strength strategy uses it on daily and hourly data to rank currencies strong-to-weak; it is one of the two things this project means by per-currency CSI.",
+   "source": "glossary"
+  },
+  {
+   "slug": "kalman-filter-d1-h1",
+   "display": "Kalman Filter (D1, H1)",
+   "surfaces": [
+    "D1, H1"
+   ],
+   "tooltip": "Decomposes 10 pair returns into 6 currency strengths.",
+   "body": "Decomposes 10 pair returns into 6 currency strengths. The D1 filter is the primary daily-macro read (Q=1e-4, R=1e-2, warmup=100 D1 bars); the H1 filter is the tighter-noise intraday confirmation (Q=1e-5, R=1e-3, warmup=500 H1 bars).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "kama",
+   "display": "KAMA",
+   "surfaces": [
+    "KAMA"
+   ],
+   "tooltip": "Kaufman Adaptive Moving Average: a moving average whose smoothing speed is driven by the Efficiency Ratio — fast in clean trends, slow in chop — to cut the whipsaw a fixed-speed average suffers.",
+   "body": "Kaufman Adaptive Moving Average: a moving average whose smoothing speed is driven by the Efficiency Ratio — fast in clean trends, slow in chop — to cut the whipsaw a fixed-speed average suffers.",
+   "source": "glossary"
+  },
+  {
+   "slug": "kama-kaufman-adaptive-ma",
+   "display": "KAMA (Kaufman Adaptive MA)",
+   "surfaces": [
+    "Kaufman Adaptive MA"
+   ],
+   "tooltip": "Adaptive-speed moving average (fast in trends, slow in chop)",
+   "body": "Adaptive-speed moving average (fast in trends, slow in chop)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "karpathy-llm-discovery-loop",
+   "display": "Karpathy LLM-discovery loop",
+   "surfaces": [
+    "Karpathy LLM-discovery loop"
+   ],
+   "tooltip": "An automated strategy-discovery loop in which a large-language-model agent repeatedly rewrites a generate_signals() function and a fixed harness scores each rewrite by one composite SCORE…",
+   "body": "An automated strategy-discovery loop in which a large-language-model agent repeatedly rewrites a generate_signals() function and a fixed harness scores each rewrite by one composite SCORE (pips-per-day over drawdown-risk). A different search operator — code-space edits — but only as trustworthy as its harness; a harness with a lookahead hole would reward lookahead.",
+   "source": "glossary"
+  },
+  {
+   "slug": "keltner-channel-squeeze",
+   "display": "Keltner Channel / squeeze",
+   "surfaces": [
+    "Keltner Channel",
+    "squeeze"
+   ],
+   "tooltip": "An envelope of EMA ± m · ATR.",
+   "body": "An envelope of EMA ± m · ATR. The squeeze fires when the Bollinger Bands pull inside the Keltner Channel, meaning realized volatility has collapsed below its average range — a coiled-spring timing flag that is silent on which way the spring will release.",
+   "source": "glossary"
+  },
+  {
+   "slug": "lightgbm",
+   "display": "LightGBM",
+   "surfaces": [
+    "LightGBM"
+   ],
+   "tooltip": "A fast gradient-boosting library that builds an ensemble of decision trees.",
+   "body": "A fast gradient-boosting library that builds an ensemble of decision trees. Used here both for feature-importance screening and as a go/no-go entry filter that vetoes a heuristic's trades in conditions where they historically failed. It can only filter the signal it is given, never improve it, and overfits readily.",
+   "source": "glossary"
+  },
+  {
+   "slug": "london-session-range",
+   "display": "London Session Range",
+   "surfaces": [
+    "London Session Range"
+   ],
+   "tooltip": "London session boundaries for NY fade",
+   "body": "London session boundaries for NY fade",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "lookahead-bias",
+   "display": "Lookahead bias",
+   "surfaces": [
+    "Lookahead bias",
+    "compute_mc_on_series"
+   ],
+   "tooltip": "Using information that did not exist at the moment the signal fired — tomorrow's price leaking into today's decision.",
+   "body": "Using information that did not exist at the moment the signal fired — tomorrow's price leaking into today's decision. It produces a clean, smooth, entirely fictional result, indistinguishable from a real edge until the money is down. The project's central failure mode, across three separate incidents: two reached live money (the ~55,000-pip loss in Part III, itself a paired compute-and-curator bug, and a separate TR-Momentum fill artifact), and one — StrengthSpread — was caught by the statistical gates before it ever reached a live account.",
+   "source": "glossary"
+  },
+  {
+   "slug": "lsp-slope-low-swing-point-slope",
+   "display": "LSP Slope (Low Swing Point slope)",
+   "surfaces": [
+    "LSP Slope",
+    "Low Swing Point slope"
+   ],
+   "tooltip": "Rate of change between consecutive swing lows; rising LSP slope = higher lows (uptrend support), falling = lower lows",
+   "body": "Rate of change between consecutive swing lows; rising LSP slope = higher lows (uptrend support), falling = lower lows",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "m1-trend-slope-structure-aware",
+   "display": "M1 Trend Slope (structure-aware)",
+   "surfaces": [
+    "M1 Trend Slope"
+   ],
+   "tooltip": "Fast-timeframe market-structure-aware trend slope",
+   "body": "Fast-timeframe market-structure-aware trend slope",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "macd",
+   "display": "MACD",
+   "surfaces": [
+    "MACD",
+    "macd_hist"
+   ],
+   "tooltip": "Moving Average Convergence Divergence.",
+   "body": "Moving Average Convergence Divergence. The MACD line is EMA(12) minus EMA(26); the signal line is a 9-period EMA of that difference; the histogram is the gap between the two (line minus signal). All three use true exponential moving averages. The Part III curator bug substituted a plain SMA for the EMA and computed the wrong quantity entirely, so the live strategy received a different indicator than the one it was trained on — a concrete reminder that label-matching is not formula-matching.",
+   "source": "glossary"
+  },
+  {
+   "slug": "mae-max-adverse-excursion",
+   "display": "MAE (Max Adverse Excursion)",
+   "surfaces": [
+    "Max Adverse Excursion"
+   ],
+   "tooltip": "Worst unrealized P/L; risk measurement",
+   "body": "Worst unrealized P/L; risk measurement",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "margin-margin-call-marked-to-market",
+   "display": "Margin / margin call / marked to market",
+   "surfaces": [
+    "Margin",
+    "margin call",
+    "marked to market"
+   ],
+   "tooltip": "Margin is the collateral the broker reserves for each open position.",
+   "body": "Margin is the collateral the broker reserves for each open position. Marked to market re-values every open position at the current price on every bar. A margin call (closeout) fires when account equity falls below required margin and the broker force-closes positions automatically. OANDA liquidates at 50% margin.",
+   "source": "glossary"
+  },
+  {
+   "slug": "martingale",
+   "display": "Martingale",
+   "surfaces": [
+    "Martingale"
+   ],
+   "tooltip": "A strategy that doubles down after a loss, hoping a winning streak recovers everything.",
+   "body": "A strategy that doubles down after a loss, hoping a winning streak recovers everything. It wins reliably until the streak it cannot afford arrives, then loses more than every prior win combined.",
+   "source": "glossary"
+  },
+  {
+   "slug": "max-drawdown-intra-trade",
+   "display": "Max Drawdown (intra-trade)",
+   "surfaces": [
+    "Max Drawdown",
+    "intra-trade"
+   ],
+   "tooltip": "Worst point during current trade",
+   "body": "Worst point during current trade",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "mean-reversion-momentum",
+   "display": "Mean reversion / momentum",
+   "surfaces": [
+    "Mean reversion",
+    "momentum"
+   ],
+   "tooltip": "Mean reversion bets price snaps back toward its average; momentum bets it keeps going.",
+   "body": "Mean reversion bets price snaps back toward its average; momentum bets it keeps going.",
+   "source": "glossary"
+  },
+  {
+   "slug": "mfe-max-favorable-excursion",
+   "display": "MFE (Max Favorable Excursion)",
+   "surfaces": [
+    "Max Favorable Excursion"
+   ],
+   "tooltip": "Best unrealized P/L during trade; opportunity measurement",
+   "body": "Best unrealized P/L during trade; opportunity measurement",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "mfe-mae",
+   "display": "MFE / MAE",
+   "surfaces": [
+    "MFE",
+    "MAE"
+   ],
+   "tooltip": "Maximum favorable / adverse excursion: the best and worst unrealized point a trade reaches before it closes.",
+   "body": "Maximum favorable / adverse excursion: the best and worst unrealized point a trade reaches before it closes. The raw material of the path-shape reward functions (capture ratio, path quality, AMDDP).",
+   "source": "glossary"
+  },
+  {
+   "slug": "momentum-strength",
+   "display": "Momentum Strength",
+   "surfaces": [
+    "Momentum Strength"
+   ],
+   "tooltip": "Direction consistency (what fraction of last 10 bars had same-sign momentum) × magnitude.",
+   "body": "Direction consistency (what fraction of last 10 bars had same-sign momentum) × magnitude. High = persistent strong momentum.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "momentum-z-score",
+   "display": "Momentum Z-Score",
+   "surfaces": [
+    "Momentum Z-Score"
+   ],
+   "tooltip": "Unusual price acceleration",
+   "body": "Unusual price acceleration",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "monte-carlo",
+   "display": "Monte-Carlo",
+   "surfaces": [
+    "Monte-Carlo"
+   ],
+   "tooltip": "a resolved same-letters clash.",
+   "body": "a resolved same-letters clash. Earlier printings abbreviated two unrelated things as bare MC; this edition eliminates the clash so a bare MC never appears in the text. (1) Market Condition — the smoothed, ASI-derived momentum reading at the end of the ASIMC pipeline — now always travels qualified: MC(D) is the level (which way the smoothed series leans), MC(dD) whether that lean is strengthening or fading, both bounded to roughly [−1, +1]. (2) Monte-Carlo — the trade-shuffle validation gate — is now written out in full wherever it occurs.",
+   "source": "glossary"
+  },
+  {
+   "slug": "monte-carlo-mc-gate",
+   "display": "Monte-Carlo (MC) gate",
+   "surfaces": [
+    "Monte-Carlo  gate",
+    "MC",
+    "mc_p",
+    "MC p-value",
+    "MC p",
+    "MC gate"
+   ],
+   "tooltip": "Reshuffle your trade results thousands of times and ask how often random does as well or better.",
+   "body": "Reshuffle your trade results thousands of times and ask how often random does as well or better. If random wins most of the time, the \"edge\" is almost certainly noise. The gate can itself be passed by a loss-deferral structure (Part V), which is why a 100% pass rate is a warning, not a reassurance.",
+   "source": "glossary"
+  },
+  {
+   "slug": "moving-average-sma-ema",
+   "display": "Moving average (SMA / EMA)",
+   "surfaces": [
+    "Moving average",
+    "SMA",
+    "EMA"
+   ],
+   "tooltip": "The average of the last N prices, recomputed each bar.",
+   "body": "The average of the last N prices, recomputed each bar. SMA weights them equally; EMA weights recent bars more. A strategy trained on one recipe behaves differently if fed another — the second Part III bug was exactly this substitution.",
+   "source": "glossary"
+  },
+  {
+   "slug": "mtf-swing-alignment",
+   "display": "MTF Swing Alignment",
+   "surfaces": [
+    "MTF Swing Alignment"
+   ],
+   "tooltip": "STRONG_BULLISH: H1=HHHL & M1=HHHL.",
+   "body": "STRONG_BULLISH: H1=HHHL & M1=HHHL. STRONG_BEARISH: H1=LHLL & M1=LHLL. BULL_PULLBACK: H1=HHHL but M1=LHLL/LHHL (buy opportunity). BEAR_RALLY: H1=LHLL but M1=HHHL/LHHL (sell opportunity).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "multi-tf-zigzag-s-r",
+   "display": "Multi-TF ZigZag S/R",
+   "surfaces": [
+    "Multi-TF ZigZag S"
+   ],
+   "tooltip": "Multi-timeframe support/resistance from ZigZag swing points drawn as horizontal lines",
+   "body": "Multi-timeframe support/resistance from ZigZag swing points drawn as horizontal lines",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "muzero",
+   "display": "MuZero",
+   "surfaces": [
+    "MuZero"
+   ],
+   "tooltip": "DeepMind's model-based reinforcement-learning algorithm.",
+   "body": "DeepMind's model-based reinforcement-learning algorithm. It is not handed the rules of its environment; it learns its own world-model (three coupled networks — representation, dynamics, prediction) and then plans by running Monte-Carlo Tree Search through that learned model in latent space. The project's clearest case of capacity overwhelming signal: ~2.5 million parameters, and it never reached positive expectancy on real prices.",
+   "source": "glossary"
+  },
+  {
+   "slug": "neat",
+   "display": "NEAT",
+   "surfaces": [
+    "NEAT"
+   ],
+   "tooltip": "NeuroEvolution of Augmenting Topologies.",
+   "body": "NeuroEvolution of Augmenting Topologies. Small neural networks compete, the best reproduce, and over generations both the weights and the structure of the network evolve, starting minimal and adding nodes and connections. The contrast with CMA-ES is that NEAT searches over architectures; CMA-ES searches over weights of a fixed architecture.",
+   "source": "glossary"
+  },
+  {
+   "slug": "newey-west-hac",
+   "display": "Newey-West / HAC",
+   "surfaces": [
+    "Newey-West",
+    "HAC"
+   ],
+   "tooltip": "A heteroskedasticity-and-autocorrelation-consistent correction to a t-statistic.",
+   "body": "A heteroskedasticity-and-autocorrelation-consistent correction to a t-statistic. FX trades fired on the same day are not independent observations; Newey-West (and the related daily-clustering) widens the error bars so the t-stat is not flattered by serial correlation. It is what dropped the best surviving edge from t ≈ 3.4 to t ≈ 2.25.",
+   "source": "glossary"
+  },
+  {
+   "slug": "noise-ratio",
+   "display": "Noise ratio",
+   "surfaces": [
+    "Noise ratio"
+   ],
+   "tooltip": "The maximum price excursion over a window divided by the median spread over that window — a blunt tradeability gate.",
+   "body": "The maximum price excursion over a window divided by the median spread over that window — a blunt tradeability gate. A low ratio means the path is mostly spread-sized chop not worth touching; it says nothing about direction.",
+   "source": "glossary"
+  },
+  {
+   "slug": "normalization",
+   "display": "Normalization",
+   "surfaces": [
+    "Normalization"
+   ],
+   "tooltip": "Rescaling a raw number into a comparable range (e.g.",
+   "body": "Rescaling a raw number into a comparable range (e.g. dividing a move by recent volatility, or squashing through arctan), so \"big\" and \"small\" mean the same across pairs and regimes. Get it wrong and a familiar-looking number means something different. The lookahead-safe versions in this project freeze the scaling statistics from the training window rather than recomputing them forward.",
+   "source": "glossary"
+  },
+  {
+   "slug": "oanda",
+   "display": "OANDA",
+   "surfaces": [
+    "OANDA"
+   ],
+   "tooltip": "The retail FX broker the project uses: no minimum balance, no minimum trade size, a programmatic v20 API, US-based and US-regulated.",
+   "body": "The retail FX broker the project uses: no minimum balance, no minimum trade size, a programmatic v20 API, US-based and US-regulated. The operational reason the whole methodology could run on minimal capital.",
+   "source": "glossary"
+  },
+  {
+   "slug": "oanda-neat-trendline-slope",
+   "display": "OANDA NEAT Trendline Slope",
+   "surfaces": [
+    "OANDA NEAT Trendline Slope"
+   ],
+   "tooltip": "Simple 12-bar price slope as trend proxy.",
+   "body": "Simple 12-bar price slope as trend proxy. Very basic compared to regression slope.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "oracle-ceiling",
+   "display": "Oracle ceiling",
+   "surfaces": [
+    "Oracle ceiling"
+   ],
+   "tooltip": "The most a perfect, all-seeing trader could extract from a pair, computed by a dynamic program with full hindsight and one spread charged per trade.",
+   "body": "The most a perfect, all-seeing trader could extract from a pair, computed by a dynamic program with full hindsight and one spread charged per trade. On GBP_JPY it came to 2,426 pips/day — but 49% of even the optimal trades net less than a single spread, so the slice a real trader could reach is about a tenth of that. The fullest statement of the spread wall.",
+   "source": "glossary"
+  },
+  {
+   "slug": "p-f-point-figure",
+   "display": "P&F (Point-&-Figure)",
+   "surfaces": [
+    "P&F",
+    "Point-&-Figure"
+   ],
+   "tooltip": "A charting method that discards the time axis: a new \"box\" is marked only when price moves a fixed amount (say 10 pips), so small wiggles are ignored.",
+   "body": "A charting method that discards the time axis: a new \"box\" is marked only when price moves a fixed amount (say 10 pips), so small wiggles are ignored. The reversal is how many boxes the other way start a new column. Its trap is that the box level a strategy claims to decide against is only fixed once future price confirms it — an easy way to leak lookahead.",
+   "source": "glossary"
+  },
+  {
+   "slug": "p-value",
+   "display": "p-value",
+   "surfaces": [
+    "p-value"
+   ],
+   "tooltip": "The probability of a result at least this good by pure chance.",
+   "body": "The probability of a result at least this good by pure chance. Conventionally you want p < 0.05 (random would beat you less than 5% of the time). The first neuroevolution result's p of 0.884 — random beating it 88% of the time — is the cautionary case the whole Monte-Carlo discipline grew from.",
+   "source": "glossary"
+  },
+  {
+   "slug": "paper-test",
+   "display": "Paper test",
+   "surfaces": [
+    "Paper test"
+   ],
+   "tooltip": "Running a strategy on live prices but with simulated rather than real orders.",
+   "body": "Running a strategy on live prices but with simulated rather than real orders.",
+   "source": "glossary"
+  },
+  {
+   "slug": "parabolic-sar-psar",
+   "display": "Parabolic SAR (PSAR)",
+   "surfaces": [
+    "Parabolic SAR",
+    "PSAR"
+   ],
+   "tooltip": "Wilder's stop-and-reverse trailing indicator: a level that accelerates toward price as a trend extends, used as a trailing stop.",
+   "body": "Wilder's stop-and-reverse trailing indicator: a level that accelerates toward price as a trend extends, used as a trailing stop. In this project's bake-off the standard fast acceleration choked winners on FX; a wide, slow variant trailed better, and PSAR overall fared poorly against alternatives like SuperTrend.",
+   "source": "glossary"
+  },
+  {
+   "slug": "parabolic-sar-standard-wide-slow",
+   "display": "Parabolic SAR (standard + wide/slow)",
+   "surfaces": [
+    "standard + wide",
+    "slow"
+   ],
+   "tooltip": "Trend-reversal detector and trailing stop.",
+   "body": "Trend-reversal detector and trailing stop. The standard fast-tightening AF (MuZero Tier 3) chokes winners on FX; the wide/slow variant starts wide and activates only past a profit threshold, and is the live FX-Strength trailing stop.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "path-quality",
+   "display": "Path quality",
+   "surfaces": [
+    "Path quality"
+   ],
+   "tooltip": "A reward measure: MFE / (MFE + MAE + ε).",
+   "body": "A reward measure: MFE / (MFE + MAE + ε). 1.0 means the trade never went underwater; 0.5 means it ran as far against the position as it ran for it. Rewards trades that go right without first going wrong.",
+   "source": "glossary"
+  },
+  {
+   "slug": "phasestate-kama-sma-binary",
+   "display": "PhaseState (KAMA/SMA binary)",
+   "surfaces": [
+    "PhaseState",
+    "SMA binary"
+   ],
+   "tooltip": "Binary trend phase: above or below time-shifted moving average.",
+   "body": "Binary trend phase: above or below time-shifted moving average. Configurable shift.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "pip",
+   "display": "Pip",
+   "surfaces": [
+    "Pip"
+   ],
+   "tooltip": "The smallest standard price increment in FX: 0.0001 of price for most pairs, 0.01 for yen pairs.",
+   "body": "The smallest standard price increment in FX: 0.0001 of price for most pairs, 0.01 for yen pairs. The universal unit; every result here is sized in pips.",
+   "source": "glossary"
+  },
+  {
+   "slug": "pips-from-peak",
+   "display": "Pips from Peak",
+   "surfaces": [
+    "Pips from Peak"
+   ],
+   "tooltip": "How far from best unrealized P/L",
+   "body": "How far from best unrealized P/L",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "pivot-high-low-daily",
+   "display": "Pivot High/Low (Daily)",
+   "surfaces": [
+    "Daily"
+   ],
+   "tooltip": "Daily support/resistance levels",
+   "body": "Daily support/resistance levels",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "pivot-high-low-hourly",
+   "display": "Pivot High/Low (Hourly)",
+   "surfaces": [
+    "Pivot High",
+    "Low",
+    "Hourly"
+   ],
+   "tooltip": "Hourly support/resistance levels",
+   "body": "Hourly support/resistance levels",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "position-efficiency",
+   "display": "Position Efficiency",
+   "surfaces": [
+    "Position Efficiency"
+   ],
+   "tooltip": "How well agent is capturing the move",
+   "body": "How well agent is capturing the move",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "position-side",
+   "display": "Position Side",
+   "surfaces": [
+    "Position Side"
+   ],
+   "tooltip": "Agent's current exposure direction",
+   "body": "Agent's current exposure direction",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "positive-control",
+   "display": "Positive control",
+   "surfaces": [
+    "Positive control"
+   ],
+   "tooltip": "A test on a case where the answer is already known to be yes.",
+   "body": "A test on a case where the answer is already known to be yes. If the instrument finds the planted answer, its \"no\" on real samples can be trusted; if it cannot, every reading is suspect. The sine-wave run was this project's.",
+   "source": "glossary"
+  },
+  {
+   "slug": "ppo",
+   "display": "PPO",
+   "surfaces": [
+    "PPO"
+   ],
+   "tooltip": "Proximal Policy Optimization, a standard policy-gradient reinforcement-learning algorithm used in the earlier new_swt micro effort to train a trading policy directly.",
+   "body": "Proximal Policy Optimization, a standard policy-gradient reinforcement-learning algorithm used in the earlier new_swt micro effort to train a trading policy directly. Like the MuZero work it consumed, it never reached positive expectancy on real prices — a method in the inventory, not an edge.",
+   "source": "glossary"
+  },
+  {
+   "slug": "pre-ny-session-range",
+   "display": "Pre-NY Session Range",
+   "surfaces": [
+    "Pre-NY Session Range"
+   ],
+   "tooltip": "Pre-NY range for breakout detection",
+   "body": "Pre-NY range for breakout detection",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "price-deltas-arctan",
+   "display": "Price Deltas (arctan)",
+   "surfaces": [
+    "Price Deltas",
+    "arctan"
+   ],
+   "tooltip": "Multi-horizon momentum (5-bar, 21-bar, 55-bar)",
+   "body": "Multi-horizon momentum (5-bar, 21-bar, 55-bar)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "prior-day-high-low",
+   "display": "Prior Day High/Low",
+   "surfaces": [
+    "Prior Day High"
+   ],
+   "tooltip": "Psychological barrier levels",
+   "body": "Psychological barrier levels",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "profit-factor-pf",
+   "display": "Profit factor (PF)",
+   "surfaces": [
+    "Profit factor",
+    "PF"
+   ],
+   "tooltip": "Dollars won on winners divided by dollars lost on losers.",
+   "body": "Dollars won on winners divided by dollars lost on losers. Above 1.0 is net-positive; Zone Recovery's 1.10 means \\$1.10 back for every \\$1.00 risked — positive in expectation, and still a structurally losing strategy once the tail is priced in.",
+   "source": "glossary"
+  },
+  {
+   "slug": "psar-acceleration",
+   "display": "PSAR Acceleration",
+   "surfaces": [
+    "PSAR Acceleration"
+   ],
+   "tooltip": "How fast the SAR is converging on price.",
+   "body": "How fast the SAR is converging on price. High acceleration = reversal imminent.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "psar-delta",
+   "display": "PSAR Delta",
+   "surfaces": [
+    "PSAR Delta"
+   ],
+   "tooltip": "Signed distance from Parabolic SAR.",
+   "body": "Signed distance from Parabolic SAR. Positive = above SAR (bullish), negative = below (bearish).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "psar-strength",
+   "display": "PSAR Strength",
+   "surfaces": [
+    "PSAR Strength"
+   ],
+   "tooltip": "Normalized distance from SAR.",
+   "body": "Normalized distance from SAR. Large = strong trend, small = SAR catching up (reversal risk).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "quintile-long-short-factor-portfolio",
+   "display": "Quintile long/short factor portfolio",
+   "surfaces": [
+    "Quintile long",
+    "short factor portfolio"
+   ],
+   "tooltip": "The standard cross-sectional factor construction: each period rank the universe by a factor, go long the top fifth and short the bottom fifth, hold for a fixed horizon.",
+   "body": "The standard cross-sectional factor construction: each period rank the universe by a factor, go long the top fifth and short the bottom fifth, hold for a fixed horizon. It isolates the factor's cross-sectional return but presumes a universe wide enough for quintiles, which is thin in major FX.",
+   "source": "glossary"
+  },
+  {
+   "slug": "r-risk-unit",
+   "display": "R (risk unit)",
+   "surfaces": [
+    "R",
+    "risk unit"
+   ],
+   "tooltip": "The amount you were willing to lose on a trade before placing it.",
+   "body": "The amount you were willing to lose on a trade before placing it. A \"2R win\" made twice what you risked; counting in R compares trades of different sizes on one scale.",
+   "source": "glossary"
+  },
+  {
+   "slug": "random-walk",
+   "display": "Random walk",
+   "surfaces": [
+    "Random walk"
+   ],
+   "tooltip": "A price path with no memory, each step independent of the last.",
+   "body": "A price path with no memory, each step independent of the last. The variance ratio formally tests for departures from it.",
+   "source": "glossary"
+  },
+  {
+   "slug": "range-bars",
+   "display": "Range bars",
+   "surfaces": [
+    "Range bars"
+   ],
+   "tooltip": "A non-time bar that closes when price has moved a fixed distance, so each bar holds equal movement rather than equal time.",
+   "body": "A non-time bar that closes when price has moved a fixed distance, so each bar holds equal movement rather than equal time. It filters quiet periods but makes timestamps irregular, breaking any tool that assumes a fixed clock.",
+   "source": "glossary"
+  },
+  {
+   "slug": "range-position-p-f",
+   "display": "Range Position (P&F)",
+   "surfaces": [],
+   "tooltip": "Position in last 20-column price range",
+   "body": "Position in last 20-column price range",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "range-position-time",
+   "display": "Range Position (Time)",
+   "surfaces": [
+    "Range Position",
+    "range_pos_30"
+   ],
+   "tooltip": "Position in 240-bar HH/LL channel; overbought/oversold",
+   "body": "Position in 240-bar HH/LL channel; overbought/oversold",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "range-size-z-score",
+   "display": "Range Size Z-Score",
+   "surfaces": [
+    "Range Size Z-Score"
+   ],
+   "tooltip": "Unusual bar range detection",
+   "body": "Unusual bar range detection",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "realized-volatility",
+   "display": "Realized Volatility",
+   "surfaces": [
+    "Realized Volatility"
+   ],
+   "tooltip": "Actual return dispersion (vs ATR which uses range)",
+   "body": "Actual return dispersion (vs ATR which uses range)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "regime-4-class",
+   "display": "Regime (4-class)",
+   "surfaces": [
+    "Regime",
+    "4-class"
+   ],
+   "tooltip": "Market microstructure classification",
+   "body": "Market microstructure classification",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "regime-dependent",
+   "display": "Regime-dependent",
+   "surfaces": [
+    "Regime-dependent"
+   ],
+   "tooltip": "Working only under specific market conditions (a trend, a volatility level) and failing when they change.",
+   "body": "Working only under specific market conditions (a trend, a volatility level) and failing when they change.",
+   "source": "glossary"
+  },
+  {
+   "slug": "regression-slope",
+   "display": "Regression Slope",
+   "surfaces": [
+    "Regression Slope"
+   ],
+   "tooltip": "Short-term trend direction and strength",
+   "body": "Short-term trend direction and strength",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "retail-fx",
+   "display": "Retail FX",
+   "surfaces": [
+    "Retail FX"
+   ],
+   "tooltip": "The foreign-exchange market as accessed by an individual through an online broker, rather than by the institutional banks and funds that dominate it.",
+   "body": "The foreign-exchange market as accessed by an individual through an online broker, rather than by the institutional banks and funds that dominate it.",
+   "source": "glossary"
+  },
+  {
+   "slug": "reversal-signal",
+   "display": "Reversal Signal",
+   "surfaces": [
+    "Reversal Signal"
+   ],
+   "tooltip": "Time since last P&F reversal; momentum exhaustion proxy",
+   "body": "Time since last P&F reversal; momentum exhaustion proxy",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rsi-relative-strength-index",
+   "display": "RSI (Relative Strength Index)",
+   "surfaces": [
+    "RSI",
+    "Relative Strength Index"
+   ],
+   "tooltip": "Wilder's 0–100 overbought/oversold oscillator, comparing average gains to average losses.",
+   "body": "Wilder's 0–100 overbought/oversold oscillator, comparing average gains to average losses. Tested across timeframes and framings and found below the spread on its own.",
+   "source": "glossary"
+  },
+  {
+   "slug": "rsi-extreme",
+   "display": "RSI Extreme",
+   "surfaces": [
+    "RSI Extreme"
+   ],
+   "tooltip": "RSI re-centered around zero: -1=oversold extreme, +1=overbought extreme, 0=neutral",
+   "body": "RSI re-centered around zero: -1=oversold extreme, +1=overbought extreme, 0=neutral",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rsi-14",
+   "display": "RSI(14)",
+   "surfaces": [],
+   "tooltip": "Overbought(>70)/oversold(<30) momentum",
+   "body": "Overbought(>70)/oversold(<30) momentum",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-breakout-proximity",
+   "display": "RT Breakout Proximity",
+   "surfaces": [
+    "RT Breakout Proximity"
+   ],
+   "tooltip": "Breakout imminence signal.",
+   "body": "Breakout imminence signal. Near 1 = price at edge of range, breakout likely.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-buy-distance-rt-b1-distance",
+   "display": "RT Buy Distance (rt_b1_distance)",
+   "surfaces": [
+    "RT Buy Distance",
+    "rt_b1_distance"
+   ],
+   "tooltip": "Distance to Wilder's RT buy signal level (support).",
+   "body": "Distance to Wilder's RT buy signal level (support). Small value = near support = potential long.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-mode",
+   "display": "RT Mode",
+   "surfaces": [
+    "RT Mode"
+   ],
+   "tooltip": "Wilder's core regime classification: is the market reacting (oscillating between S/R) or trending (breaking through)?",
+   "body": "Wilder's core regime classification: is the market reacting (oscillating between S/R) or trending (breaking through)?",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-position-signal",
+   "display": "RT Position Signal",
+   "surfaces": [
+    "RT Position Signal"
+   ],
+   "tooltip": "Wilder's RT directional signal combining mode, range position, and momentum",
+   "body": "Wilder's RT directional signal combining mode, range position, and momentum",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-sell-distance-rt-s1-distance",
+   "display": "RT Sell Distance (rt_s1_distance)",
+   "surfaces": [
+    "RT Sell Distance",
+    "rt_s1_distance"
+   ],
+   "tooltip": "Distance to RT sell signal level (resistance).",
+   "body": "Distance to RT sell signal level (resistance). Small value = near resistance = potential short.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-system-reaction-trend",
+   "display": "RT System (Reaction/Trend)",
+   "surfaces": [
+    "RT System",
+    "Reaction",
+    "Trend"
+   ],
+   "tooltip": "Wilder's Reaction/Trend system: detects whether market is in reaction (oscillating between S/R) or trend (breaking through).",
+   "body": "Wilder's Reaction/Trend system: detects whether market is in reaction (oscillating between S/R) or trend (breaking through).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "rt-trailing-distance",
+   "display": "RT Trailing Distance",
+   "surfaces": [
+    "RT Trailing Distance"
+   ],
+   "tooltip": "Distance from Wilder's trailing stop within the RT system",
+   "body": "Distance from Wilder's trailing stop within the RT system",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "s5",
+   "display": "S5",
+   "surfaces": [],
+   "tooltip": "The five-second timeframe — the finest-grained price record the project keeps.",
+   "body": "The five-second timeframe — the finest-grained price record the project keeps.",
+   "source": "glossary"
+  },
+  {
+   "slug": "sb-a-structural-breakout-asi",
+   "display": "SB-A (Structural Breakout — ASI)",
+   "surfaces": [
+    "Structural Breakout — ASI"
+   ],
+   "tooltip": "ASI-based structural breakout state machine.",
+   "body": "ASI-based structural breakout state machine. Leads M1 (price) in 104/145 matched signal pairs — ASI breaks its structural level before price does. Median lead time: M2 fires ~30 min before M1 confirms. Standalone P&L: +1039p/247T/75%WR (EUR/JPY M5, 2016 bars, 0.5p spread).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "sb-a-sb-p-sb-joint",
+   "display": "SB-A / SB-P / SB-Joint",
+   "surfaces": [
+    "SB-A",
+    "SB-P",
+    "SB-Joint",
+    "sb_a",
+    "sb_p"
+   ],
+   "tooltip": "Structural-breakout state features built on the TopsBots swing detector.",
+   "body": "Structural-breakout state features built on the TopsBots swing detector. SB-P runs the detector on raw price; SB-A runs it on the ASI curve (cleaner swings, and it leads price); each encodes position relative to the active swing levels as a five-state machine (+2 broke the swing high … −2 broke the swing low). SB-Joint is their 5×5 product; its value is in disagreement — when price breaks one way while ASI points the other, the \"toxic\" states flag false breakouts to block.",
+   "source": "glossary"
+  },
+  {
+   "slug": "sb-joint-m1-m2-joint-state",
+   "display": "SB-Joint (M1×M2 Joint State)",
+   "surfaces": [
+    "M1×M2 Joint State"
+   ],
+   "tooltip": "25-state joint breakout context map.",
+   "body": "25-state joint breakout context map. Toxic states MUST be hard-coded as entry blocks — not learned by NN (saves NN capacity). HHHL/LHLL/LHHL/HHLL (4-state swing regime from new_swt) describes PATTERN of swing sequence; SB-Joint describes POSITION relative to active swing levels. They are complementary: HHHL/LHLL = trend structure over multiple swings; SB-Joint = real-time position vs nearest swing boundary.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "sb-p-structural-breakout-price",
+   "display": "SB-P (Structural Breakout — Price)",
+   "surfaces": [
+    "Structural Breakout — Price"
+   ],
+   "tooltip": "Price-based structural breakout state machine.",
+   "body": "Price-based structural breakout state machine. Candle-level responsive — fires before ASI-based version in only 17/145 matched pairs (M2 usually leads). Standalone P&L on EUR/JPY M5 (2016 bars, 0.5p spread): +260p/144T/56%WR.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "session-vwap",
+   "display": "Session VWAP",
+   "surfaces": [
+    "Session VWAP"
+   ],
+   "tooltip": "Daily fair value estimate (no volume, uses tick count proxy)",
+   "body": "Daily fair value estimate (no volume, uses tick count proxy)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "shap",
+   "display": "SHAP",
+   "surfaces": [
+    "SHAP"
+   ],
+   "tooltip": "SHapley Additive exPlanations — a game-theoretic feature-importance score for a fitted model.",
+   "body": "SHapley Additive exPlanations — a game-theoretic feature-importance score for a fitted model. In this project SHAP importance on zigzag direction-classification proved orthogonal-to-negatively-correlated with real trading edge: features ranked #1 by SHAP were dead-last by out-of-sample P&L, because classifying direction is a different quantity from knowing when to enter net of spread.",
+   "source": "manual"
+  },
+  {
+   "slug": "sharpe-ratio",
+   "display": "Sharpe ratio",
+   "surfaces": [
+    "Sharpe ratio"
+   ],
+   "tooltip": "Profit divided by the volatility of profit.",
+   "body": "Profit divided by the volatility of profit. Above 1.0 is good, above 2.0 excellent. The +0.53 on the first neuroevolution result should have been the first hint it was not as exciting as it felt.",
+   "source": "glossary"
+  },
+  {
+   "slug": "sic-sar-range",
+   "display": "SIC/SAR Range",
+   "surfaces": [
+    "SIC",
+    "SAR Range"
+   ],
+   "tooltip": "Per-bar range used in Swing Index Calculation context.",
+   "body": "Per-bar range used in Swing Index Calculation context. Captures intra-bar volatility.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "signed-csi",
+   "display": "Signed CSI",
+   "surfaces": [
+    "Signed CSI"
+   ],
+   "tooltip": "Directional CSI for long/short signals",
+   "body": "Directional CSI for long/short signals",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "signed-efficiency-tec",
+   "display": "Signed Efficiency (TEC)",
+   "surfaces": [
+    "Signed Efficiency"
+   ],
+   "tooltip": "Kaufman ER but SIGNED.",
+   "body": "Kaufman ER but SIGNED. +1=perfect uptrend, -1=perfect downtrend, ~0=chop. N=5 best for M5 micro-swings.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "sma-5-20-200",
+   "display": "SMA (5, 20, 200)",
+   "surfaces": [
+    "5, 20, 200"
+   ],
+   "tooltip": "Simple moving averages.",
+   "body": "Simple moving averages. SMA(20) is the mid-trend line and the Bollinger-band centre; SMA(200) is a long-term trend filter; SMA(5) is a short-term average computed but not used live.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "speed-pnl-bars",
+   "display": "Speed (PnL/bars)",
+   "surfaces": [
+    "Speed",
+    "PnL",
+    "bars"
+   ],
+   "tooltip": "Pips earned per bar held.",
+   "body": "Pips earned per bar held. Directly punishes slow trades. +10p in 5 bars = +2.0, +10p in 40 bars = +0.25.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "spot-fx",
+   "display": "Spot FX",
+   "surfaces": [
+    "Spot FX"
+   ],
+   "tooltip": "Plain currency trading: buy one currency, sell another, no expiration — as opposed to futures or options.",
+   "body": "Plain currency trading: buy one currency, sell another, no expiration — as opposed to futures or options.",
+   "source": "glossary"
+  },
+  {
+   "slug": "spread",
+   "display": "Spread",
+   "surfaces": [
+    "Spread"
+   ],
+   "tooltip": "The gap between the price you can buy at and sell at — the unavoidable toll on every round-trip trade; some brokers add a commission on top.",
+   "body": "The gap between the price you can buy at and sell at — the unavoidable toll on every round-trip trade; some brokers add a commission on top. The third wall: every intraday directional bet dies once you pay the realistic cost of getting in and out.",
+   "source": "glossary"
+  },
+  {
+   "slug": "sqn-system-quality-number",
+   "display": "SQN (System Quality Number)",
+   "surfaces": [
+    "SQN",
+    "System Quality Number"
+   ],
+   "tooltip": "Van Tharp's standard score combining edge size, consistency, and trade count into one figure.",
+   "body": "Van Tharp's standard score combining edge size, consistency, and trade count into one figure. Above 1.0 is the threshold for a system worth trading; it is one of the four statistical gates in the validation pipeline.",
+   "source": "glossary"
+  },
+  {
+   "slug": "squeezestate-bb-inside-kc",
+   "display": "SqueezeState (BB inside KC)",
+   "surfaces": [
+    "SqueezeState",
+    "BB inside KC"
+   ],
+   "tooltip": "Bollinger Band squeeze inside Keltner Channels.",
+   "body": "Bollinger Band squeeze inside Keltner Channels. Momentum amplified 2× during squeeze (breakout imminent).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "stochastic-mcts-chance-nodes",
+   "display": "Stochastic MCTS (chance nodes)",
+   "surfaces": [
+    "Stochastic MCTS",
+    "chance nodes"
+   ],
+   "tooltip": "The planner inside the MuZero work, adapted for a market the agent does not control.",
+   "body": "The planner inside the MuZero work, adapted for a market the agent does not control. The search tree alternates decision nodes (the agent chooses) with chance nodes (the market moves — modelled as discrete UP / NEUTRAL / DOWN outcomes with probabilities), so the agent cannot assume its preferred outcome. A faithful model of an adversarial environment, at the cost of a wider tree.",
+   "source": "glossary"
+  },
+  {
+   "slug": "stop-loss-sl-take-profit-tp-trailing-stop",
+   "display": "Stop-loss (SL) / take-profit (TP) / trailing stop",
+   "surfaces": [
+    "Stop-loss",
+    "take-profit",
+    "trailing stop",
+    "SL",
+    "TP"
+   ],
+   "tooltip": "SL closes a losing trade at a fixed loss; TP closes a winner at a fixed gain; a trailing stop follows price as a trade moves in your favor and exits if it retraces by a fixed amount.",
+   "body": "SL closes a losing trade at a fixed loss; TP closes a winner at a fixed gain; a trailing stop follows price as a trade moves in your favor and exits if it retraces by a fixed amount. A strategy with no SL can post a 99% win rate by deferring its losses into open positions.",
+   "source": "glossary"
+  },
+  {
+   "slug": "strengthspread",
+   "display": "StrengthSpread",
+   "surfaces": [
+    "StrengthSpread"
+   ],
+   "tooltip": "The csi_factor_study signal z(Strength_A) − z(Strength_B): the difference between two currencies' standardized strength scores.",
+   "body": "The csi_factor_study signal z(Strength_A) − z(Strength_B): the difference between two currencies' standardized strength scores. Its H4 64-bar-hold version was the study's most durable signal (a real contrarian out-of-sample Sharpe), but its first build carried a 55-minute lookahead leak from cross-timeframe merging and had to be rebuilt causally.",
+   "source": "glossary"
+  },
+  {
+   "slug": "super-smoother-ehlers",
+   "display": "Super Smoother (Ehlers)",
+   "surfaces": [
+    "Super Smoother",
+    "Ehlers"
+   ],
+   "tooltip": "Two-pole Butterworth filter; minimal lag vs MA",
+   "body": "Two-pole Butterworth filter; minimal lag vs MA",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "supertrend",
+   "display": "SuperTrend",
+   "surfaces": [
+    "SuperTrend"
+   ],
+   "tooltip": "An ATR-banded trailing-stop indicator (a per-trade ratchet of hl2 ± m · ATR, exiting on a close through the band).",
+   "body": "An ATR-banded trailing-stop indicator (a per-trade ratchet of hl2 ± m · ATR, exiting on a close through the band). In this project's trailing-stop bake-off it was the standout, positive in- and out-of-sample at H4 and H1 and beating PSAR by a wide margin per trade.",
+   "source": "glossary"
+  },
+  {
+   "slug": "survival-score-exit",
+   "display": "Survival-Score exit",
+   "surfaces": [
+    "Survival-Score exit"
+   ],
+   "tooltip": "A heuristic exit that sums several pressures into one scalar (momentum + atr_expansion − age − giveback) and closes the position when the score drops below a threshold.",
+   "body": "A heuristic exit that sums several pressures into one scalar (momentum + atr_expansion − age − giveback) and closes the position when the score drops below a threshold. Interpretable and tunable, but its weights and threshold are free parameters that overfit readily.",
+   "source": "glossary"
+  },
+  {
+   "slug": "swing-point-range",
+   "display": "Swing Point Range",
+   "surfaces": [
+    "Swing Point Range"
+   ],
+   "tooltip": "Width of current swing range (H1 high swing - H1 low swing); measures structural volatility",
+   "body": "Width of current swing range (H1 high swing - H1 low swing); measures structural volatility",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-range-position",
+   "display": "Swing Range Position",
+   "surfaces": [
+    "Swing Range Position"
+   ],
+   "tooltip": "Structure-aware position between confirmed swing H/L (not arbitrary window).",
+   "body": "Structure-aware position between confirmed swing H/L (not arbitrary window).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-regime-multi-scale",
+   "display": "Swing Regime (multi-scale)",
+   "surfaces": [
+    "Swing Regime",
+    "multi-scale"
+   ],
+   "tooltip": "Multi-scale trend regime classification",
+   "body": "Multi-scale trend regime classification",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-regime-combined-ordinal",
+   "display": "Swing Regime Combined (ordinal)",
+   "surfaces": [
+    "Swing Regime Combined",
+    "ordinal"
+   ],
+   "tooltip": "Final production encoding of swing state regime.",
+   "body": "Final production encoding of swing state regime. Single feature replacing 4 one-hot channels.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-regime-fibonacci-multi-scale",
+   "display": "Swing Regime Fibonacci (multi-scale)",
+   "surfaces": [
+    "Swing Regime Fibonacci"
+   ],
+   "tooltip": "Multi-scale regime: captures swing states at different granularities simultaneously.",
+   "body": "Multi-scale regime: captures swing states at different granularities simultaneously. Fibonacci lookback periods (3,5,8,13).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-slope-linreg-through-hsps-lsps",
+   "display": "Swing Slope (linreg through HSPs/LSPs)",
+   "surfaces": [
+    "Swing Slope",
+    "linreg through HSPs",
+    "LSPs"
+   ],
+   "tooltip": "Rate of change of swing highs (or lows) via linear regression.",
+   "body": "Rate of change of swing highs (or lows) via linear regression. More robust than 2-point slope — uses 2-3 points.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "swing-state-hhhl-lhll-hhll-lhhl",
+   "display": "Swing State (HHHL/LHLL/HHLL/LHHL)",
+   "surfaces": [
+    "Swing State",
+    "HHHL",
+    "LHLL",
+    "HHLL",
+    "LHHL"
+   ],
+   "tooltip": "Market structure regime from price swing points.",
+   "body": "Market structure regime from price swing points. HHHL=strong trend up, LHLL=strong trend down, HHLL=expanding range (breakout), LHHL=contracting range (squeeze).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "t-statistic",
+   "display": "t-statistic",
+   "surfaces": [
+    "t-statistic"
+   ],
+   "tooltip": "How many standard errors an observed effect sits from zero.",
+   "body": "How many standard errors an observed effect sits from zero. Above 2 is \"probably real,\" above 3 strong. Always quote it after the appropriate clustering/HAC correction (see Newey-West).",
+   "source": "glossary"
+  },
+  {
+   "slug": "tail-risk",
+   "display": "Tail risk",
+   "surfaces": [
+    "Tail risk"
+   ],
+   "tooltip": "The rare, large losses that show up only occasionally but can wipe out months or years of small wins.",
+   "body": "The rare, large losses that show up only occasionally but can wipe out months or years of small wins. The Swiss-franc un-peg and the Brexit flash crash are the canonical examples; none appears in the 5.5-year backtest window.",
+   "source": "glossary"
+  },
+  {
+   "slug": "tbp-relative-h1",
+   "display": "TBP Relative (H1)",
+   "surfaces": [],
+   "tooltip": "Where price sits between RT system's support and resistance.",
+   "body": "Where price sits between RT system's support and resistance. 0=at support, 1=at resistance.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "tbp-relative-m5",
+   "display": "TBP Relative (M5)",
+   "surfaces": [
+    "TBP Relative"
+   ],
+   "tooltip": "Position within bar range adjusted by trend slope.",
+   "body": "Position within bar range adjusted by trend slope. Rising trend amplifies range position.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "tcn-temporal-convolutional-network",
+   "display": "TCN (Temporal Convolutional Network)",
+   "surfaces": [
+    "TCN",
+    "Temporal Convolutional Network"
+   ],
+   "tooltip": "A sequence encoder built from dilated causal convolutions — convolutions that only look backward in time (no future leak) and skip an exponentially growing number of steps between taps, giving a wide…",
+   "body": "A sequence encoder built from dilated causal convolutions — convolutions that only look backward in time (no future leak) and skip an exponentially growing number of steps between taps, giving a wide receptive field with few layers. A lookahead-safe alternative to a recurrent network; its value depends entirely on whether the signal it is asked to encode exists.",
+   "source": "glossary"
+  },
+  {
+   "slug": "tcn-ae-latent-18d",
+   "display": "TCN-AE Latent (18D)",
+   "surfaces": [
+    "TCN-AE Latent",
+    "18D"
+   ],
+   "tooltip": "Compressed market state; 99.7% reconstruction accuracy",
+   "body": "Compressed market state; 99.7% reconstruction accuracy",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "tec-trend-efficiency-coefficient",
+   "display": "TEC (Trend-Efficiency Coefficient)",
+   "surfaces": [
+    "TEC",
+    "Trend-Efficiency Coefficient",
+    "TEC_5",
+    "dTEC"
+   ],
+   "tooltip": "A signed efficiency ratio from the scalper repo: net displacement over the last n bars divided by total distance travelled, bounded [−1, +1].",
+   "body": "A signed efficiency ratio from the scalper repo: net displacement over the last n bars divided by total distance travelled, bounded [−1, +1]. Near +1 price marched straight up, near −1 straight down, near 0 it wandered. dTEC is its bar-to-bar change — whether the path is becoming more or less efficient.",
+   "source": "glossary"
+  },
+  {
+   "slug": "timeframe",
+   "display": "Timeframe",
+   "surfaces": [
+    "Timeframe"
+   ],
+   "tooltip": "The bar size a strategy computes on: S5 (five seconds), M1/M5/M15/M30 (minutes), H1/H4 (hours), D1 (daily).",
+   "body": "The bar size a strategy computes on: S5 (five seconds), M1/M5/M15/M30 (minutes), H1/H4 (hours), D1 (daily).",
+   "source": "glossary"
+  },
+  {
+   "slug": "topsbots",
+   "display": "TopsBots",
+   "surfaces": [
+    "TopsBots"
+   ],
+   "tooltip": "The project's swing-detection method: a three-stage filter that flags one-bar local extremes, keeps only the most extreme of each same-type run, and accepts a new pivot only if it extends prior…",
+   "body": "The project's swing-detection method: a three-stage filter that flags one-bar local extremes, keeps only the most extreme of each same-type run, and accepts a new pivot only if it extends prior structure (a higher high, a lower low) or follows a confirmed opposite pivot (a genuine reversal). The third stage is what separates real structure from noise without an arbitrary pip threshold. It carries a one-bar confirmation lag, so it is a context signal, not a leading one.",
+   "source": "glossary"
+  },
+  {
+   "slug": "topsbots-s-r-time-decayed",
+   "display": "TopsBots S/R (time-decayed)",
+   "surfaces": [
+    "TopsBots S",
+    "time-decayed"
+   ],
+   "tooltip": "Time-decayed support/resistance profile: recent inflections weighted more than old ones",
+   "body": "Time-decayed support/resistance profile: recent inflections weighted more than old ones",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "topsbots-swing-detection",
+   "display": "TopsBots Swing Detection",
+   "surfaces": [
+    "TopsBots Swing Detection"
+   ],
+   "tooltip": "Detect swing highs/lows for market-structure analysis",
+   "body": "Detect swing highs/lows for market-structure analysis",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "trend-acceleration-dtec",
+   "display": "Trend Acceleration (dTEC)",
+   "surfaces": [
+    "Trend Acceleration"
+   ],
+   "tooltip": "Is trend quality improving or degrading?",
+   "body": "Is trend quality improving or degrading? Positive = momentum building (leg starting). Negative = momentum fading.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "trend-quality",
+   "display": "Trend Quality",
+   "surfaces": [
+    "Trend Quality"
+   ],
+   "tooltip": "SMA alignment (directional) weighted by ADX (strength).",
+   "body": "SMA alignment (directional) weighted by ADX (strength). High value = aligned MAs AND strong trend. Zero = misaligned or weak.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "trend-strength",
+   "display": "Trend Strength",
+   "surfaces": [
+    "Trend Strength"
+   ],
+   "tooltip": "Trend dominance over noise",
+   "body": "Trend dominance over noise",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "trend-strength-slope-adx",
+   "display": "Trend Strength (slope+ADX)",
+   "surfaces": [
+    "slope+ADX"
+   ],
+   "tooltip": "Combined slope direction + ADX magnitude into single trend strength signal",
+   "body": "Combined slope direction + ADX magnitude into single trend strength signal",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "trix",
+   "display": "TRIX",
+   "surfaces": [
+    "TRIX"
+   ],
+   "tooltip": "A momentum oscillator: the bar-to-bar rate of change of a triple-smoothed exponential moving average of price.",
+   "body": "A momentum oscillator: the bar-to-bar rate of change of a triple-smoothed exponential moving average of price. Smoothing the price through three successive EMAs strips out short-cycle noise, and reading the slope of that thrice-smoothed line gives a signal that is positive when the smoothed trend is accelerating up and negative when it is accelerating down. Tested in this project across timeframes and framings; its forward-return information coefficient sat at roughly zero, so it carried no spread-clearing directional edge on its own.",
+   "source": "glossary"
+  },
+  {
+   "slug": "true-range",
+   "display": "True Range",
+   "surfaces": [
+    "True Range"
+   ],
+   "tooltip": "Single-bar volatility; base component of ATR",
+   "body": "Single-bar volatility; base component of ATR",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "units-u",
+   "display": "Units (`u`)",
+   "surfaces": [
+    "Units",
+    "`u`"
+   ],
+   "tooltip": "The size of a position, in the broker's smallest tradable increment: 25u means 25 units, 50u means 50 units.",
+   "body": "The size of a position, in the broker's smallest tradable increment: 25u means 25 units, 50u means 50 units. On OANDA a unit is one unit of the base currency, and one unit is the minimum trade size. On the tiny out-of-sample research accounts used here, position sizes of 1–50 units are typical, which is why each pip is worth only a fraction of a cent (see pips).",
+   "source": "glossary"
+  },
+  {
+   "slug": "unrealized-p-l-position",
+   "display": "Unrealized P/L (position)",
+   "surfaces": [
+    "Unrealized P",
+    "L",
+    "position"
+   ],
+   "tooltip": "Real-time trade P/L normalized by volatility.",
+   "body": "Real-time trade P/L normalized by volatility. Zero when flat. Spread deducted from bar 0.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "unrealized-pnl-p-f",
+   "display": "Unrealized PnL (P&F)",
+   "surfaces": [],
+   "tooltip": "Position P/L in box-size units",
+   "body": "Position P/L in box-size units",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "unrealized-pnl-time",
+   "display": "Unrealized PnL (Time)",
+   "surfaces": [
+    "Unrealized PnL"
+   ],
+   "tooltip": "Real-time P/L feedback; 0 when flat",
+   "body": "Real-time P/L feedback; 0 when flat",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "variance-ratio",
+   "display": "Variance Ratio",
+   "surfaces": [],
+   "tooltip": "MR(<1) vs trending(>1) vs random(=1) at specific lags",
+   "body": "MR(<1) vs trending(>1) vs random(=1) at specific lags",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "variance-ratio-vr",
+   "display": "Variance Ratio (VR)",
+   "surfaces": [
+    "Variance Ratio",
+    "VR"
+   ],
+   "tooltip": "A formal random-walk test: VR(q) = Var(q-period return) / (q · Var(1-period return)).",
+   "body": "A formal random-walk test: VR(q) = Var(q-period return) / (q · Var(1-period return)). Under a random walk it equals 1; above 1 signals trending (positive autocorrelation), below 1 mean reversion. A single q probes one horizon; the rigorous version sweeps several.",
+   "source": "glossary"
+  },
+  {
+   "slug": "vidya-adaptive-ma",
+   "display": "VIDYA (Adaptive MA)",
+   "surfaces": [
+    "VIDYA",
+    "Adaptive MA"
+   ],
+   "tooltip": "Kaufman ER-based adaptive MA",
+   "body": "Kaufman ER-based adaptive MA",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "vol-pips",
+   "display": "Vol-pips",
+   "surfaces": [
+    "Vol-pips"
+   ],
+   "tooltip": "Pips divided by the pair's recent volatility, so calm-market and wild-market moves count on the same scale.",
+   "body": "Pips divided by the pair's recent volatility, so calm-market and wild-market moves count on the same scale.",
+   "source": "glossary"
+  },
+  {
+   "slug": "volatility-composite-atr-percentile",
+   "display": "Volatility Composite (ATR percentile)",
+   "surfaces": [
+    "Volatility Composite"
+   ],
+   "tooltip": "Normalized volatility regime: 0=historically quiet, 1=historically loud",
+   "body": "Normalized volatility regime: 0=historically quiet, 1=historically loud",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "volatility-expansion",
+   "display": "Volatility Expansion",
+   "surfaces": [
+    "Volatility Expansion"
+   ],
+   "tooltip": "ATR relative to its own 20-period average.",
+   "body": "ATR relative to its own 20-period average. Positive = expanding volatility (breakout), negative = contracting (squeeze).",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "volatility-regime-percentile",
+   "display": "Volatility Regime (percentile)",
+   "surfaces": [
+    "Volatility Regime",
+    "percentile"
+   ],
+   "tooltip": "100-bar rolling percentile rank of ATR.",
+   "body": "100-bar rolling percentile rank of ATR. -1 = historically quiet, +1 = historically loud.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "vortex-indicator",
+   "display": "Vortex indicator",
+   "surfaces": [
+    "Vortex indicator"
+   ],
+   "tooltip": "A pair of lines (VI+, VI−) flagging directional trend from the relationship between consecutive bars' ranges; conceptually a cousin of the DMI.",
+   "body": "A pair of lines (VI+, VI−) flagging directional trend from the relationship between consecutive bars' ranges; conceptually a cousin of the DMI. Tested across timeframes and framings and found below the spread on its own.",
+   "source": "glossary"
+  },
+  {
+   "slug": "vortex-indicator-risk-reward",
+   "display": "Vortex Indicator Risk/Reward",
+   "surfaces": [
+    "Vortex Indicator Risk",
+    "Reward"
+   ],
+   "tooltip": "Volatility + direction composite: log ratio of positive to negative vortex movement.",
+   "body": "Volatility + direction composite: log ratio of positive to negative vortex movement. Strong positive = dominant bullish pressure, negative = bearish.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "walk-forward-wf",
+   "display": "Walk-forward (WF)",
+   "surfaces": [
+    "Walk-forward",
+    "WF"
+   ],
+   "tooltip": "Split history into time-ordered chunks and require the strategy to be positive in each separately.",
+   "body": "Split history into time-ordered chunks and require the strategy to be positive in each separately. A single lucky year then cannot carry the verdict; this project's NEAT runs demanded profitability in every chunk via a min(chunk_scores) fitness.",
+   "source": "glossary"
+  },
+  {
+   "slug": "wavelet-scattering-transform-wst-swt",
+   "display": "Wavelet Scattering Transform (WST / SWT)",
+   "surfaces": [
+    "Wavelet Scattering Transform",
+    "WST",
+    "SWT"
+   ],
+   "tooltip": "A multi-scale time-frequency decomposition of the price window (computed with kymatio's Scattering1D) that cascades wavelet transforms and modulus operations into a translation-invariant…",
+   "body": "A multi-scale time-frequency decomposition of the price window (computed with kymatio's Scattering1D) that cascades wavelet transforms and modulus operations into a translation-invariant, deformation-stable representation of ~128 coefficients. Disambiguation: in this project the abbreviation WST means this transform; SWT is the name of the repository (new_swt) that used it, not a separate \"stationary wavelet transform.\" A principled feature extractor — but a wide input that invites overfitting, and neither RL pipeline that consumed it ever reached positive expectancy on real prices.",
+   "source": "glossary"
+  },
+  {
+   "slug": "wilder-asi-incremental",
+   "display": "Wilder ASI (Incremental)",
+   "surfaces": [
+    "Wilder ASI",
+    "Incremental"
+   ],
+   "tooltip": "Accumulative Swing Index — Wilder's 1978 formula.",
+   "body": "Accumulative Swing Index — Wilder's 1978 formula. HSP/LSP detected on ASI curve rather than raw price for noise filtering.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "wilder-csi-commodity-selection-index",
+   "display": "Wilder CSI (Commodity Selection Index)",
+   "surfaces": [
+    "Wilder CSI",
+    "Commodity Selection Index"
+   ],
+   "tooltip": "Cross-sectional pair ranking (trend + volatility + cost)",
+   "body": "Cross-sectional pair ranking (trend + volatility + cost)",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "williams-r",
+   "display": "Williams %R",
+   "surfaces": [
+    "Williams %R"
+   ],
+   "tooltip": "An overbought/oversold oscillator reading where the close sits within the recent high-low range, scaled to [−100, 0].",
+   "body": "An overbought/oversold oscillator reading where the close sits within the recent high-low range, scaled to [−100, 0].",
+   "source": "glossary"
+  },
+  {
+   "slug": "win-rate-wr",
+   "display": "Win rate (WR)",
+   "surfaces": [
+    "Win rate",
+    "WR"
+   ],
+   "tooltip": "The share of trades that closed in profit.",
+   "body": "The share of trades that closed in profit. A high win rate with no stop-loss is an accounting choice, not an achievement.",
+   "source": "glossary"
+  },
+  {
+   "slug": "wpctl-windowed-winsorized-percentile",
+   "display": "WPCTL (windowed / winsorized percentile)",
+   "surfaces": [
+    "WPCTL",
+    "windowed",
+    "winsorized percentile"
+   ],
+   "tooltip": "A robust house normalizer: map a value to its percentile within a rolling window after clipping the extreme tails, then optionally squash through arctan.",
+   "body": "A robust house normalizer: map a value to its percentile within a rolling window after clipping the extreme tails, then optionally squash through arctan. More robust than a z-score for fat-tailed financial data.",
+   "source": "glossary"
+  },
+  {
+   "slug": "wpctl-winsorized-percentile",
+   "display": "WPCTL (Winsorized Percentile)",
+   "surfaces": [],
+   "tooltip": "Robust normalization: clips extreme outliers at 0.1th/99.9th percentile, then maps to [-1,1].",
+   "body": "Robust normalization: clips extreme outliers at 0.1th/99.9th percentile, then maps to [-1,1].",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "wst-features-128d",
+   "display": "WST Features (128D)",
+   "surfaces": [
+    "WST Features",
+    "128D"
+   ],
+   "tooltip": "Wavelet-based multiscale representation",
+   "body": "Wavelet-based multiscale representation",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "zigzag",
+   "display": "ZigZag",
+   "surfaces": [
+    "ZigZag"
+   ],
+   "tooltip": "A pivot detector that marks a new swing only when price has reversed by at least a minimum threshold (about 30 pips here), filtering smaller wiggles.",
+   "body": "A pivot detector that marks a new swing only when price has reversed by at least a minimum threshold (about 30 pips here), filtering smaller wiggles. Like all swing detectors the final pivot is only confirmed in hindsight, so it is a context signal; in the swing-method bake-off its thresholded form lost money at every threshold tested.",
+   "source": "glossary"
+  },
+  {
+   "slug": "zigzag-indicator",
+   "display": "ZigZag Indicator",
+   "surfaces": [
+    "ZigZag Indicator"
+   ],
+   "tooltip": "Price-based swing detection with minimum swing filter.",
+   "body": "Price-based swing detection with minimum swing filter. Foundation for HSP/LSP detection.",
+   "source": "encyclopedia"
+  },
+  {
+   "slug": "zone-recovery-zr",
+   "display": "Zone Recovery (ZR)",
+   "surfaces": [
+    "Zone Recovery",
+    "ZR"
+   ],
+   "tooltip": "A grid/martingale hybrid: as price moves against the first entry, larger counter-positions are layered so any sufficient reversal closes the whole stack at a profit.",
+   "body": "A grid/martingale hybrid: as price moves against the first entry, larger counter-positions are layered so any sufficient reversal closes the whole stack at a profit. The place where the edge and the tail are the same thing — 96% of the backtested profit lived in the rare deep (5+ leg) cycles, and every leg-cap that bounded the tail also destroyed the edge.",
+   "source": "glossary"
+  },
+  {
+   "slug": "zsarctan-normalizer",
+   "display": "zsarctan normalizer",
+   "surfaces": [
+    "zsarctan normalizer"
+   ],
+   "tooltip": "A two-step bounded normalizer: a rolling z-score taken against a fixed historical standard deviation (frozen, not recomputed forward), then squashed through arctan(x) · 2/π into [−1, +1].",
+   "body": "A two-step bounded normalizer: a rolling z-score taken against a fixed historical standard deviation (frozen, not recomputed forward), then squashed through arctan(x) · 2/π into [−1, +1]. The fixed-std choice is the load-bearing detail — recomputing the std over a growing window would leak the future.",
+   "source": "glossary"
+  }
+ ]
+}
