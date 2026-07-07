@@ -46,11 +46,15 @@ Layered by where jurisdiction actually bites:
 - Site inherits the book's rules: no "honest", figure-text correspondence, receipts posture,
   not-financial-advice footer, OANDA named only positively (deficiencies = "retail FX").
 
-## Decisions pending (user)
-- Include the interactive indicator viewer (chart_eur_jpy.html family) as a bonus page. [rec: yes]
-- Living explorer: post-book experiments appended with a "post-publication" badge. [rec: yes]
-- Analytics: none. [rec: none]
-- Optional .ch mirror domain.
+## Decisions RULED (user, 2026-07-08)
+- Interactive indicator viewer as a bonus page: **YES**.
+- Living explorer: **frozen at 81** — post-book experiments added ONLY if genuinely positive
+  ("gold and diamonds"); routine negatives do not accrete. The book↔site correspondence stays exact.
+- Analytics: **quiet cookieless aggregate counts** (visitors/country/pages), zero banners —
+  Cloudflare Web Analytics if hosted on CF Pages, else GoatCounter (both store nothing on-device,
+  track no individuals; no consent required because there is nothing to consent to). Wire at
+  hosting step.
+- Optional .ch mirror domain: still open.
 
 ## Remaining QA before launch (claude)
 Mobile/responsive pass (two-pane explorer on small screens), dark-mode consistency ×3 pages,
