@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "checks": {
+    "enough_trades": true,
+    "fade_gross_not_distinguishable_from_zero": true,
+    "coin_gross_not_distinguishable_from_zero": true,
+    "fade_approx_coin": true,
+    "net_coin_negative": true,
+    "net_coin_cost_dominated_sane_scale": true
+  },
+  "event_stats": {
+    "n_candidate_days": 1095,
+    "n_missing_grid": 0,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 735,
+    "n_signal": 360
+  },
+  "n_fade": 360,
+  "n_coin": 360,
+  "mean_gross_fade": 0.13203978435212385,
+  "se_gross_fade": 0.25439668225242507,
+  "mean_gross_coin": -0.338791661272591,
+  "se_gross_coin": 0.25386318196627855,
+  "mean_net_coin": -1.8387916612735362,
+  "mean_spread_coin": 1.5000000000009448
+}

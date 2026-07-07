@@ -1,0 +1,8 @@
+{
+  "carry_gated_is_net": -34.1363692384255,
+  "null_mean": -15.992608893546121,
+  "null_p95": 15.470452115984036,
+  "n_rebalances_carry_gated": 44,
+  "wf_first_half_mean": -39.37417366417537,
+  "wf_second_half_mean": -28.898564812675605
+}

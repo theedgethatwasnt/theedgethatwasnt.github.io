@@ -1,0 +1,6 @@
+month,pool_n,on_n,on_set
+2026-03,7,7,"asi_mc_008,ensemble_short,range_neat,retrace,sma_stack,wf_pnlmae,zr_random"
+2026-04,19,19,"asi_mc_008,asi_mc_v3,ensemble_long,ensemble_short,ironnet_s1_h1_009,ironnet_s5ft_001,ironnet_s5ft_er_002,ironnet_v3_er_003,ironnet_v3_h1_002,ironnet_v3_perpair,ironnet_v7_h1_003,perpair_a,pnl_mae_a,range_neat,retrace,sma_stack,strength_rev3_short,wf_pnlmae,zr_random"
+2026-05,16,13,"exhaust_cont_a,exhaust_cont_b,fifo_live,fifo_paper__paper,h4_donchian,post_shock_retrace,post_shock_retrace__paper,price_mom_confluence,price_mom_h1m30,sma16_m30m15,sma_momentum,tr_live,zr_paper__paper"
+2026-06,18,15,"bb_fade_H1,bb_fade_M15,bb_fade_M5,exhaust_cont_a,exhaust_cont_b,post_shock_retrace,post_shock_retrace__paper,price_mom_confluence,price_mom_h1m30,sma16_m30m15,sma_momentum,sma_psar__paper,sma_scratch__paper,sma_stack,zr_paper__paper"
+2026-07,5,4,"post_shock_retrace__paper,sma_fade,sma_psar__paper,sma_scratch__paper"

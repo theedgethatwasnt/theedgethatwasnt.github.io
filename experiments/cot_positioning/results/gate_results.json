@@ -1,0 +1,69 @@
+{
+  "gate1_data_integrity": {
+    "pass": true,
+    "per_currency_continuity": {
+      "AUD": 1.0009,
+      "CAD": 1.0009,
+      "CHF": 1.0009,
+      "EUR": 1.0009,
+      "GBP": 1.0009,
+      "JPY": 1.0009,
+      "NZD": 0.9703
+    }
+  },
+  "gate2_null_selftest": {
+    "pass": true,
+    "overall_null_mean": -4.142897667800762,
+    "overall_null_std_across_replicates": 2.9874564883272297,
+    "contrarian_mean": 1.0063196573032784,
+    "momentum_mean": -9.321740793641142,
+    "signal_scale": 9.321740793641142
+  },
+  "gate3_contrarian_vs_null_and_momentum": {
+    "pass": true,
+    "contrarian_mean": 1.0063196573032784,
+    "momentum_mean": -9.321740793641142,
+    "null_95pct_of_replicate_means": 0.4051186407256545,
+    "null_replicate_means_summary": {
+      "mean": -4.142897667800762,
+      "p5": -9.366459495738367,
+      "p50": -4.022192792265719,
+      "p95": 0.4051186407256545
+    }
+  },
+  "gate4_walk_forward": {
+    "pass": true,
+    "thirds": [
+      {
+        "third": 1,
+        "start": "2008-10-25 00:00:00+00:00",
+        "end": "2012-11-26 16:00:00+00:00",
+        "n": 214,
+        "mean_contrarian_net": 3.8307685735543275
+      },
+      {
+        "third": 2,
+        "start": "2012-11-26 16:00:00+00:00",
+        "end": "2016-12-29 08:00:00+00:00",
+        "n": 213,
+        "mean_contrarian_net": -2.9235157586738527
+      },
+      {
+        "third": 3,
+        "start": "2016-12-29 08:00:00+00:00",
+        "end": "2021-01-31 00:00:00+00:00",
+        "n": 214,
+        "mean_contrarian_net": 2.0933424401322682
+      }
+    ],
+    "n_pos": 2
+  },
+  "bootstrap": {
+    "n_boot": 2000,
+    "seed": 20260707,
+    "p_le_zero": 0.354,
+    "boot_mean": 0.9158728191915465,
+    "ci_2p5": -3.7004695681871396,
+    "ci_97p5": 5.483410586657566
+  }
+}

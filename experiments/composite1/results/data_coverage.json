@@ -1,0 +1,28 @@
+{
+  "pairs": [
+    "EUR_USD",
+    "GBP_USD",
+    "AUD_USD",
+    "NZD_USD",
+    "USD_JPY",
+    "USD_CHF",
+    "USD_CAD"
+  ],
+  "is_cot_rows": 5830,
+  "is_cot_span": [
+    "2005-01-04",
+    "2021-01-26"
+  ],
+  "axis1_is_entry_cutoff": "2021-02-01 00:00:00+00:00",
+  "data_load_ceiling": "2021-03-03 00:00:00+00:00",
+  "n_raw_signals_all_pairs": 268,
+  "n_fifo_all_pairs_all_time": 256,
+  "n_axis1_alone_is_trades": 254,
+  "n_composite_is_trades": 54,
+  "n_coin_is_trades": 54,
+  "n_shuffle_replicates": 200,
+  "shuffle_null_mean": 21.249598899226186,
+  "shuffle_null_p95": 58.67596615035028,
+  "shuffle_null_avg_n": 41.435,
+  "markup_mult": 1.0
+}

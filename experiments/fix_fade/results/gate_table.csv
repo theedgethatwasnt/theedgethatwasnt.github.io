@@ -1,0 +1,4 @@
+gate,name,pass,detail
+2,IS net>0 AND > coin,False,fade_net=-1.627p coin_net=-1.895p
+3,WF 3 thirds >=2/3 net-positive,False,"n_pos=0/3 thirds=[-0.914, -2.676, -1.155]"
+4,breadth >=6/12 pairs gross-positive,True,n_gross_pos=8/12

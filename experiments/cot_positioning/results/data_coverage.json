@@ -1,0 +1,51 @@
+{
+  "cot_rows": 7811,
+  "cot_currencies": [
+    "AUD",
+    "CAD",
+    "CHF",
+    "EUR",
+    "GBP",
+    "JPY",
+    "NZD"
+  ],
+  "cot_span": [
+    "2005-01-04",
+    "2026-06-30"
+  ],
+  "price_pairs": [
+    "AUD_USD",
+    "EUR_USD",
+    "GBP_USD",
+    "NZD_USD",
+    "USD_CAD",
+    "USD_CHF",
+    "USD_JPY"
+  ],
+  "price_ceiling": "2026-05-21",
+  "full_joint_schedule_weeks": 916,
+  "full_joint_schedule_span": [
+    "2008-10-25 00:00:00+00:00",
+    "2026-05-10 00:00:00+00:00"
+  ],
+  "is_weeks": 641,
+  "is_span": [
+    "2008-10-25 00:00:00+00:00",
+    "2021-01-31 00:00:00+00:00"
+  ],
+  "is_resolved_weeks": 641,
+  "is_dropped_weeks": 0,
+  "is_fraction_of_joint_window": 0.6997816593886463,
+  "spread_medians_is_only_pips": {
+    "AUD_USD": 3.7999999999993594,
+    "EUR_USD": 2.6999999999999247,
+    "GBP_USD": 5.00000000000167,
+    "NZD_USD": 5.199999999999649,
+    "USD_CAD": 4.999999999999449,
+    "USD_CHF": 4.00000000000178,
+    "USD_JPY": 3.1999999999996476
+  },
+  "n_null_replicates": 200,
+  "spread_mult": 1.0,
+  "markup_mult": 1.0
+}

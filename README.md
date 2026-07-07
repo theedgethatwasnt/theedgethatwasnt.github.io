@@ -11,7 +11,11 @@ For fifteen years one developer set out to build a rigorous, professional system
 
 The subject is retail foreign exchange — currency trading from a laptop, via the OANDA v20 API — but the harder problem is universal. The difficulty is not coming up with ideas; it is knowing whether the thing you have built works, or only looks as though it does. A backtest can be made to show almost anything. A winning streak feels exactly like skill. A smooth, rising equity curve looks like proof — and it is also exactly what a subtle lookahead-bias bug produces. The apparatus in this book was built to keep human judgment out of the scoring.
 
-Sixty-seven experiments. Multi-pair walk-forward validation. Monte-Carlo gates. Causal-consistency checks. Realistic fill models. Finite-margin closeout simulation. Three families of machine learning (LightGBM, NEAT neuroevolution, CMA-ES). The answer the apparatus gave is this: intraday directional retail spot FX, across every technique the project tried, does not produce a spread-net edge that survives rigorous validation — and the few strategies that looked large were either statistical illusions, fill-model artifacts, or martingales with unbounded tails. The code in this repository is the evidence base behind that conclusion.
+Eighty-one experiments. Multi-pair walk-forward validation. Monte-Carlo gates. Causal-consistency checks. Realistic fill models. Finite-margin closeout simulation. Three families of machine learning (LightGBM, NEAT neuroevolution, CMA-ES). The answer the apparatus gave is this: intraday directional retail spot FX, across every technique the project tried, does not produce a spread-net edge that survives rigorous validation — and the few strategies that looked large were either statistical illusions, fill-model artifacts, or martingales with unbounded tails. The code in this repository is the evidence base behind that conclusion.
+
+> **Not financial advice.** This repository and the book it accompanies are a record of research and a memoir of method. Nothing here is financial, investment, or trading advice, or a solicitation to trade. Trading foreign exchange carries substantial risk of loss; past results — including every figure shown — do not indicate future performance.
+
+An interactive drill-down of all 81 experiments (search, verdict filters, per-experiment code links and figures) is published as the companion website — see `docs/index.html` and `docs/experiments/index.html`, or `COMPANION_URL.md`.
 
 ---
 
@@ -31,7 +35,7 @@ You do not need to run the experiments to follow the book's argument. The script
 
 ## Experiment Map
 
-*67 experiments, one row each. Verdicts: ✅ positive · ⛔ negative · 🟡 mixed or inconclusive. Key results are rounded to the precision used in the book.*
+*81 experiments, one row each. Verdicts: ✅ positive · ⛔ negative · 🟡 mixed or inconclusive. Key results are rounded to the precision used in the book.*
 
 ### Theme — Lookahead bias (the apparatus saw the future)
 
@@ -135,17 +139,38 @@ You do not need to run the experiments to follow the book's argument. The script
 | 58 | Indicator screen → momentum×eff → regime-gated MR | 🟡 | Only daily MR positive (+4.7 p/trade); regime-gated +13.0p t=2.25, p=0.025 | `experiments/regime_mr/` |
 | 64 | FX stat-arb (Avellaneda-Lee eigen-residual) | ⛔ | Residual reversion non-stationary (2022 +0.19 → 2024-25 −0.13); naked t=−1.24 | `experiments/fx_statarb/` |
 
+### Theme — Cost floor, factor premia & the composite (entries 68–81)
+
+*The final program: pre-registered against-drift entries, classic FX factor premia, positioning data, the spread clock, and the book's own recommended composite — each run to its sealed conclusion at real retail cost.*
+
+| # | Experiment | Verdict | Key result | Path in this repo |
+|---|------------|---------|------------|-------------------|
+| 68 | First-touch H4 low-volume reversion | ✅ | Thin-volume fade of a fresh H4 swing touch: OOS +9.49 p/trade, WR 54%, MC p=0.018, 7/12 pairs | `experiments/touch_ladder/` |
+| 69 | ESCMA exit-learner (shock-entry + CMA-NN exit) | ⛔ | CMA-NN exit converges to "bail in 1–3 bars"; loses to trivial first-red-tick baseline — no exit alpha | `experiments/escma_exit/` |
+| 70 | Trailing-stop bake-off (SuperTrend vs PSAR et al.) | 🟡 | SuperTrend per-trade ATR-band ratchet wins IS+OOS (H4 +17.5) and beats PSAR by ~20 p/trade | `experiments/trailing_bakeoff/` |
+| 71 | Regime-conditioned entry Phase A (triple-barrier, against-drift) | ⛔ | Gross signal real (12/12 pairs +) but 5–10× below the ECN floor; information PASS / money FAIL | `experiments/regime_entry/` |
+| 72 | Multi-day contrarian program + first-touch H4 bar-grid refutation | ⛔ | 0/4 IS gates; the earlier +9.49p first-touch edge was a bar-grid artifact | `experiments/multiday_contrarian/` |
+| 73 | SMA-scratch tail-bounding test + restart-censoring discovery | ⛔ | Equity overlay + 3×ATR stop AMPLIFIES drawdown; restart-censoring in the ledger uncovered | `experiments/scratch_tail/` |
+| 74 | London-fix fade (16:00 pre-fix drift reversion) | ⛔ | Gross reversion real (fade −1.63p vs coin −1.89p) but net dead at spread | `experiments/fix_fade/` |
+| 75 | FX factor suite (carry / value / momentum / composite) | ⛔ | Classic FX risk premia do not survive OANDA retail cost; carry IS net −34.1 p/rebalance | `experiments/fx_factors/` |
+| 76 | Momentum confirmation Stage 1 (deep-history 12-1) | ⛔ | The lone +27.4 was a window artifact — FX momentum decayed pre-2013; net −8.25 p/rebalance | `experiments/momentum_confirm/` |
+| 77 | CFTC COT positioning-extremes signal | 🟡 | Contrarian COT signal clears all 4 pre-registered IS gates but its bootstrap CI spans zero | `experiments/cot_positioning/` |
+| 78 | Spread clock — hour-of-week toll profiles + guard | ✅ | Spread flat 00–20 UTC, spikes 2–8× at rollover; a live blackout guard would COST, not save | `experiments/spread_clock/` |
+| 79 | Core-pricing arithmetic (OANDA core tier re-pricing) | ✅ | Core (commission+razor) tier is +0.3p WORSE all-in; the real unlock is a ~0.7p ECN venue | `experiments/core_pricing/` |
+| 80 | Meta-allocation — equity-MA strategy switching | ✅ | Causal equity-MA switch nets −1,949p vs −3,792p equal-weight — a defensive risk-reducer, not alpha | `experiments/meta_allocation/` |
+| 81 | Composite 1 — D1 displacement fade × COT vote | ⛔ | The book's own Appendix-E composite: conjunction too rare, vote no better than a random gate | `experiments/composite1/` |
+
 ---
 
 ## Results Summary
 
 | Outcome | Count |
 |---------|-------|
-| ✅ Positive edge confirmed (OOS + MC) | 10 |
+| ✅ Positive edge confirmed (or engineering success) | 17 |
 | 🟡 Mixed / inconclusive / sub-spread | 22 |
-| ⛔ / 🔴 Negative — no deployable edge | 35 |
+| ⛔ / 🔴 Negative — no deployable edge | 42 |
 
-The ten positives are not victories in the usual sense. Six (entries 49, 50, and the four portfolio variants in 56) did not survive finite-margin re-validation once a realistic stop-loss was added. Two (23, 37) worked in simulation but failed live execution. The surviving deployable positives were post-shock retrace + Markov gate (51/52), Zone Recovery at large leg counts (27), and selected P&F variants — all contrarian, all at longer holding horizons, all constrained by the same retail spread toll.
+The positives are not victories in the usual sense. Several (entries 49, 50, and the four portfolio variants in 56) did not survive finite-margin re-validation once a realistic stop-loss was added; two (23, 37) worked in simulation but failed live execution; and the late-program "successes" (78, 79, 80) are cost-accounting and risk-reduction findings, not edges. The surviving deployable positives were post-shock retrace + Markov gate (51/52), Zone Recovery at large leg counts (27), and selected P&F variants — all contrarian, all at longer holding horizons, all constrained by the same retail spread toll.
 
 ---
 

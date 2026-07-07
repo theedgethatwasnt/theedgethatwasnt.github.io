@@ -1,0 +1,4 @@
+gate,name,pass,detail
+3,Arm A reproduces sign/pathology (open-book excursions visible),True,A: n=849 net=+3.709p WR=64% worst_excursion=-7100.3p open_at_end=6 open_book_unrealized=-12420.1p
+4,Arm D: 3 H1 criteria + WF thirds >=2/3,False,"crit1(net>0,CI excl 0)=False [boot_mean=-2.842p CI=(-3.675,-2.033)] | crit2(beats coin_D,CI excl 0)=False [diff_CI=(-1.336,+0.797)] | crit3(floatDD<=50% of A)=False [ddA=14258.6p ddD=33319.6p] | WF=False [0/3, thirds=[-1.975, -3.156, -3.234]]"
+5,"Overlay-on-coin control clean (no sign-flip, no worse DD)",False,coin_A net=+2.545p (n=704) vs coin_overlay net=+2.167p (n=445) | ddCoin=17904.5p ddOverlay=18941.4p | no_sign_flip=True dd_not_worse=False

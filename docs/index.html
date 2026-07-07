@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Edge That Wasn't</title>
+<style>
+:root {
+  --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da;
+  --acc:#0f6b4f; --acc-fg:#fff; --chip:#eef2ee; --rule:#d8d5cd;
+  --neg:#a23b2c; --pos:#0f6b4f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f;
+    --acc:#5ec89f; --acc-fg:#10231b; --chip:#2a2e2a; --rule:#37352f;
+    --neg:#e08b7d; --pos:#5ec89f;
+  }
+}
+* { box-sizing:border-box; margin:0; }
+html { scroll-behavior:smooth; }
+body {
+  font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif;
+  background:var(--bg); color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:720px; margin:0 auto; padding:0 24px; }
+main { padding:0 0 40px; }
+
+/* Hero */
+.hero { padding:72px 0 40px; border-bottom:1px solid var(--rule); }
+.kicker { font:600 .72rem/1.4 ui-monospace,Menlo,monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--acc); }
+h1 { font-size:2.7rem; line-height:1.08; font-weight:700; margin:14px 0 12px; letter-spacing:-.01em; }
+.sub { font-size:1.22rem; font-style:italic; color:var(--muted); line-height:1.4; }
+.byline { margin-top:20px; font-size:.95rem; color:var(--muted); }
+
+/* Lead copy */
+.lead { padding:34px 0 8px; }
+.lead p { margin:0 0 18px; }
+.lead p.first { font-size:1.18rem; }
+.lead p.first::first-letter {
+  font-size:3.3rem; line-height:.8; float:left; padding:6px 10px 0 0; font-weight:700; color:var(--acc);
+}
+
+/* Three numbers */
+.numbers { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:30px 0 12px; }
+.num { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 16px; text-align:center; }
+.num .v { font:700 1.9rem/1 Georgia,serif; letter-spacing:-.01em; }
+.num.neg .v { color:var(--neg); }
+.num.pos .v { color:var(--pos); }
+.num .l { display:block; margin-top:8px; font-size:.82rem; color:var(--muted); line-height:1.4; }
+@media (max-width:560px){ .numbers{ grid-template-columns:1fr; } }
+
+/* CTAs */
+.cta { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin:34px 0 8px; }
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font:600 1rem/1 Georgia,serif; text-decoration:none;
+  padding:14px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer;
+}
+.btn.primary { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
+.btn.primary:hover { filter:brightness(1.06); }
+.btn.ghost { background:transparent; color:var(--fg); border-color:var(--line); }
+.btn.ghost:hover { background:var(--chip); }
+.buy { display:inline-flex; align-items:center; gap:8px; font-size:.98rem; color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--rule); padding-bottom:2px; }
+.buy:hover { color:var(--acc); border-color:var(--acc); }
+
+/* Inside list */
+.inside { padding:40px 0 8px; border-top:1px solid var(--rule); margin-top:36px; }
+.inside h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-bottom:16px; font-weight:600; }
+.inside ul { list-style:none; }
+.inside li { padding:12px 0 12px 26px; border-bottom:1px solid var(--line); position:relative; font-size:1rem; }
+.inside li:last-child { border-bottom:0; }
+.inside li::before { content:"—"; position:absolute; left:0; color:var(--acc); }
+
+/* Footer */
+footer { border-top:1px solid var(--rule); padding:28px 0 60px; margin-top:24px; }
+footer p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); text-decoration:underline; }
+footer a:hover { color:var(--acc); }
+.disclaimer { font-style:italic; }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">A Memoir of Retail FX, and What the Receipts Showed</div>
+    <h1>The Edge That Wasn't</h1>
+    <p class="sub">A Machine Built to Tell Me Whether My Edge Was Real, and the Answer It Gave</p>
+    <p class="byline">by Aharon Zbaida</p>
+  </section>
+
+  <section class="lead">
+    <p class="first">Most books with "algorithmic trading" on the cover sell a system that prints money. This one hands you the losses. The central artifact of the book is a table of broker-verified results — its own — and the frozen snapshot of every recorded trade ships with it, so any per-strategy row reproduces from the raw file. Foot the table yourself.</p>
+
+    <p>It is the record of fx-core, a containerized retail FX research project. No single strategy ever ran on more than about a hundred dollars, and most on far less; roughly two hundred dollars was funded across the thirteen broker sub-accounts over the project's life, peaking near a hundred and ninety-nine. The methodology is the subject, not the size of the account.</p>
+
+    <p>One question runs through it: is there a repeatable, statistically real edge available to a retail trader in spot FX, and if so, is it large enough — after costs, after tail risk, after the capital required to hold open positions through their drawdowns — to beat a stock-index fund? Roughly seventy real experiments answer it, and one strategy survives.</p>
+
+    <div class="numbers">
+      <div class="num neg">
+        <span class="v">−55,000</span>
+        <span class="l">pips of bad signals from one lookahead bug, across sixteen strategies</span>
+      </div>
+      <div class="num">
+        <span class="v">~$200</span>
+        <span class="l">funded across thirteen broker sub-accounts, peaking near $199</span>
+      </div>
+      <div class="num pos">
+        <span class="v">+171</span>
+        <span class="l">pips — the lifetime record of the one live survivor, in the broker's own ledger</span>
+      </div>
+    </div>
+
+    <p>What the apparatus taught outlasts the trading. Pre-registration, a sealed out-of-sample set touched exactly once, a working taxonomy of lookahead bias, the coin-flip control that separates skill from luck, and the cost floors that sink most edges: a full research-methods spine, demonstrated on live results rather than lectured. It is meant to be useful to a data scientist or engineer who will never place a trade.</p>
+
+    <div class="cta">
+      <a class="btn primary" href="experiments/index.html">Explore the 81 experiments &rarr;</a>
+      <a class="btn ghost" href="https://github.com/roni762583/the-edge-that-wasnt" target="_blank" rel="noopener">Browse the code</a>
+      <a class="buy" href="#" data-todo="buy-link">Buy the book (coming soon)</a>
+    </div>
+  </section>
+
+  <section class="inside">
+    <h2>Inside</h2>
+    <ul>
+      <li>A live and paper strategy catalogue with a frozen snapshot of every recorded trade — the receipt behind every number in the book.</li>
+      <li>The 9 rules of the apparatus — causality, sealed out-of-sample, Monte-Carlo, fill modeling, account modeling — and the specific failure each rule was written to prevent.</li>
+      <li>The lookahead error that produced 55,000 pips of bad signals across sixteen strategies, and the root-cause analysis that followed.</li>
+      <li>The negative-result library: thousands of backtests across twelve currency pairs and five and a half years of data, mapped by the structural reason each one failed.</li>
+      <li>The momentum book that passed Monte-Carlo at a 100% rate, then was shown by a closeout-aware simulation to liquidate six of six accounts under finite margin.</li>
+      <li>Zone Recovery: the martingale whose tail cannot be capped without killing the edge.</li>
+      <li>The three walls — direction is unpredictable, volatility is forecastable, spread is the toll — and the narrow escape they leave open.</li>
+      <li>The regime-gated mean-reversion that is the project's surviving high-water mark: t = 2.25, p = 0.025.</li>
+      <li>A 161-entry indicator encyclopedia with a visual reference panel computed on real EUR/USD M5 data.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="disclaimer">This site and the book it accompanies are a record of research and a memoir of method. Nothing here is financial, investment, or trading advice, or a solicitation to trade. Trading foreign exchange carries substantial risk of loss. Past results — including every figure shown here — do not indicate future performance.</p>
+    <p>Companion repository: <a href="https://github.com/roni762583/the-edge-that-wasnt" target="_blank" rel="noopener">github.com/roni762583/the-edge-that-wasnt</a> · &copy; 2026 Aharon Zbaida</p>
+  </footer>
+
+</main>
+</body>
+</html>

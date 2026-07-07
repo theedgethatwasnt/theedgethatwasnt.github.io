@@ -1,0 +1,15 @@
+{
+  "n_live": 112,
+  "n_harness": 111,
+  "count_ratio": 0.9910714285714286,
+  "count_pass": true,
+  "count_tolerance_frac": 0.1,
+  "live_expectancy_pips": 8.70357142857143,
+  "harness_expectancy_pips": 4.563714115388962,
+  "expectancy_diff_pips": -4.139857313182467,
+  "expectancy_pass": false,
+  "expectancy_tolerance_pips": 1.0,
+  "gate2_pass": false,
+  "live_window_start": "2026-06-18 22:02:38+00:00",
+  "live_window_end": "2026-07-06 16:05:54+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "portfolio_fade_net": -1.6272437357630927,
+  "portfolio_fade_gross": 0.2033599088838217,
+  "portfolio_coin_net": -1.8945102505694635,
+  "portfolio_coin_gross": -0.0639066059225491,
+  "portfolio_continuation_net": -2.0339635535307354,
+  "portfolio_continuation_gross": -0.2033599088838217,
+  "wf_thirds": [
+    {
+      "third": 1,
+      "start": "2020-11-11 16:00:00+00:00",
+      "end": "2022-02-25 01:51:40+00:00",
+      "n": 2820,
+      "mean_net": -0.9143794326240974
+    },
+    {
+      "third": 2,
+      "start": "2022-02-25 01:51:40+00:00",
+      "end": "2023-06-10 11:43:20+00:00",
+      "n": 3171,
+      "mean_net": -2.676190476190478
+    },
+    {
+      "third": 3,
+      "start": "2023-06-10 11:43:20+00:00",
+      "end": "2024-09-22 21:35:00+00:00",
+      "n": 2789,
+      "mean_net": -1.1554141269272118
+    }
+  ],
+  "mc_p_le_zero_supplementary": 1.0,
+  "mc_boot_mean_supplementary": -1.6291252752809573,
+  "mc_boot_ci_2p5_supplementary": -2.3895721849831766,
+  "mc_boot_ci_97p5_supplementary": -0.8860012923162057,
+  "breadth_n_gross_pos": 8,
+  "worst_mae_pips_fade": 380.6000000000012,
+  "mean_mae_pips_fade": 10.766343963553544,
+  "mean_mfe_pips_fade": 11.05731207289291,
+  "worst_mae_trade_pair": "USD_JPY",
+  "worst_mae_trade_date": "2022-10-21",
+  "worst_mae_trade_D_pips": -125.10000000000048
+}

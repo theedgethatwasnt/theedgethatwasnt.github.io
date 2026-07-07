@@ -1,0 +1,98 @@
+[
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 265,
+    "n_signal": 737,
+    "pair": "AUD_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 327,
+    "n_signal": 675,
+    "pair": "AUD_USD"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 249,
+    "n_signal": 753,
+    "pair": "CAD_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 210,
+    "n_signal": 792,
+    "pair": "CHF_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 440,
+    "n_signal": 562,
+    "pair": "EUR_GBP"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 409,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 212,
+    "n_signal": 791,
+    "pair": "EUR_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 283,
+    "n_signal": 719,
+    "pair": "EUR_USD"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 156,
+    "n_signal": 846,
+    "pair": "GBP_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 409,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 203,
+    "n_signal": 800,
+    "pair": "GBP_USD"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 296,
+    "n_signal": 706,
+    "pair": "NZD_JPY"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 410,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 347,
+    "n_signal": 655,
+    "pair": "NZD_USD"
+  },
+  {
+    "n_candidate_days": 1412,
+    "n_missing_grid": 409,
+    "n_exit_out_of_range": 0,
+    "n_below_threshold": 259,
+    "n_signal": 744,
+    "pair": "USD_JPY"
+  }
+]

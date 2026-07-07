@@ -1,0 +1,204 @@
+{
+  "snapshot_date": "2026-07-06/07",
+  "snapshot_time_utc": "2026-07-06T23:09:01.231367+00:00",
+  "source_account": "010",
+  "pairs": {
+    "EUR_USD": {
+      "longRate": -0.0248,
+      "shortRate": 0.0045,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 1.14457
+    },
+    "GBP_USD": {
+      "longRate": -0.0101,
+      "shortRate": -0.0103,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 1.33996
+    },
+    "AUD_USD": {
+      "longRate": -0.0047,
+      "shortRate": -0.0159,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 0.6958949999999999
+    },
+    "NZD_USD": {
+      "longRate": -0.0242,
+      "shortRate": 0.0026,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 4,
+        "WEDNESDAY": 1,
+        "THURSDAY": 0,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 0.57039
+    },
+    "EUR_GBP": {
+      "longRate": -0.0254,
+      "shortRate": 0.004,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 0.854195
+    },
+    "USD_JPY": {
+      "longRate": 0.0181,
+      "shortRate": -0.0386,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 162.03050000000002
+    },
+    "EUR_JPY": {
+      "longRate": 0.0034,
+      "shortRate": -0.024,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 185.4545
+    },
+    "GBP_JPY": {
+      "longRate": 0.0179,
+      "shortRate": -0.039,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 217.1165
+    },
+    "AUD_JPY": {
+      "longRate": 0.0231,
+      "shortRate": -0.045,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 112.7575
+    },
+    "CAD_JPY": {
+      "longRate": 0.0009,
+      "shortRate": -0.0234,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 114.069
+    },
+    "NZD_JPY": {
+      "longRate": 0.0042,
+      "shortRate": -0.0262,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 4,
+        "WEDNESDAY": 1,
+        "THURSDAY": 0,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 92.41749999999999
+    },
+    "CHF_JPY": {
+      "longRate": -0.0229,
+      "shortRate": -0.0009,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 201.3245
+    },
+    "USD_CAD": {
+      "longRate": 0.0057,
+      "shortRate": -0.0276,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 1,
+        "THURSDAY": 3,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 1.4218
+    },
+    "USD_CHF": {
+      "longRate": 0.0287,
+      "shortRate": -0.0499,
+      "financingDaysOfWeek": {
+        "MONDAY": 1,
+        "TUESDAY": 1,
+        "WEDNESDAY": 3,
+        "THURSDAY": 1,
+        "FRIDAY": 1,
+        "SATURDAY": 0,
+        "SUNDAY": 0
+      },
+      "mid_price_snapshot": 0.80556
+    }
+  },
+  "note": "Base 12-pair snapshot pulled 2026-07-06 (copied from multiday_contrarian). USD_CAD/USD_CHF added 2026-07-07 (cot_positioning-specific direct legs, not in multiday_contrarian pair set) -- one calendar day later, negligible rate drift, documented per R9."
+}

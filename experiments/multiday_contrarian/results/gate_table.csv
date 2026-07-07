@@ -1,0 +1,5 @@
+gate,name,pass,detail
+3,IS net>0 @1.0x AND > coin,False,signal_net=-7.307p coin_net=+3.525p
+4,"WF 3 thirds >=2/3 net-positive, none<-2p",False,"n_pos=1/3 thirds=[1.502, -10.788, -9.87]"
+5,day-block bootstrap P(net<=0)<0.05,False,P(net<=0)=0.9650 boot_mean=-7.345p n_boot=2000
+6,breadth >=6/12 pairs gross-positive,False,n_gross_pos=4/12

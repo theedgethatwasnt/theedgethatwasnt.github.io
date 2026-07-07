@@ -13,3 +13,16 @@ checkpoints/
 *.png
 *.jpg
 *.pdf
+
+# --- Companion website (docs/) exceptions ---
+# The explorer embeds the book's result figures locally; keep them.
+!docs/experiments/figures/
+!docs/experiments/figures/*.png
+
+# --- Small data "receipts" cited by the experiments (all < 1 MB) ---
+# Weekly COT positioning, FRED rate history, and PPP reference rates are
+# tiny inputs the book references directly, not bulk market data.
+!experiments/cot_positioning/cot_weekly.parquet
+!experiments/cot_positioning/fred_rates.parquet
+!experiments/multiday_contrarian/fred_rates.parquet
+!experiments/fx_factors/ppp_rates.parquet

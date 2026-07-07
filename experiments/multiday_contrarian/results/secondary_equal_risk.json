@@ -1,0 +1,10 @@
+{
+  "candidate_means_net_pips": {
+    "first_touch_signal": -9.965935130330417,
+    "strengthspread": -143.0125871626661,
+    "rsi2_d1": -43.387446885042905
+  },
+  "qualifying": [],
+  "portfolio_built": false,
+  "note": "No signal was IS-positive at base cost; equal-risk portfolio not constructed."
+}

@@ -1,0 +1,117 @@
+{
+  "gate1_rw_selftest": {
+    "pass": true,
+    "stdout_tail": "...                                                                      [100%]\n3 passed in 14.30s\n",
+    "stderr_tail": ""
+  },
+  "gate2_axis3_parity": {
+    "pass": true,
+    "fresh_mean_p_per_wk": 1.0063196573032784,
+    "recorded_mean_p_per_wk": 1.0063196573032784,
+    "abs_diff_p_per_wk": 0.0,
+    "tolerance_p_per_wk": 0.1,
+    "fresh_n_weeks": 641
+  },
+  "gate3_composite_is": {
+    "pass": false,
+    "criterion1_money": {
+      "pass": false,
+      "mean_net_pips": 23.259775690489686,
+      "boot_ci_2p5": -43.28623825058391,
+      "boot_ci_97p5": 87.6643331303301
+    },
+    "criterion2_vs_coin": {
+      "pass": false,
+      "mean_diff_pips": -18.64042765685494,
+      "boot_ci_2p5": -100.41107837503563,
+      "boot_ci_97p5": 58.93665395121111,
+      "n_paired": 54
+    },
+    "criterion3_vs_shuffled_null": {
+      "pass": false,
+      "composite_mean_pips": 23.259775690489686,
+      "null_p95_pips": 58.67596615035028,
+      "null_mean_pips": 21.249598899226186
+    },
+    "n_composite_trades": 54
+  },
+  "gate4_walk_forward": {
+    "pass": true,
+    "thirds": [
+      {
+        "third": 1,
+        "start": "2008-09-01 00:00:00+00:00",
+        "end": "2012-10-22 00:00:00+00:00",
+        "n": 18,
+        "mean_net_pips": 83.22491954825705
+      },
+      {
+        "third": 2,
+        "start": "2012-10-22 00:00:00+00:00",
+        "end": "2016-12-12 00:00:00+00:00",
+        "n": 20,
+        "mean_net_pips": 1.4340534124822284
+      },
+      {
+        "third": 3,
+        "start": "2016-12-12 00:00:00+00:00",
+        "end": "2021-02-01 00:00:00+00:00",
+        "n": 16,
+        "mean_net_pips": -16.918858301989303
+      }
+    ],
+    "n_pos": 2
+  },
+  "gate5_breadth": {
+    "pass": true,
+    "n_gross_pos": 4,
+    "min_required": 4,
+    "per_pair": {
+      "EUR_USD": {
+        "n": 8,
+        "gross_mean_pips": -121.2787357737427,
+        "net_mean_pips": -121.76948976004407
+      },
+      "GBP_USD": {
+        "n": 8,
+        "gross_mean_pips": 232.2882394030723,
+        "net_mean_pips": 233.14784668759285
+      },
+      "AUD_USD": {
+        "n": 8,
+        "gross_mean_pips": -39.298962954769635,
+        "net_mean_pips": -35.92307058226031
+      },
+      "NZD_USD": {
+        "n": 8,
+        "gross_mean_pips": 10.891275420083922,
+        "net_mean_pips": 9.438343632412682
+      },
+      "USD_JPY": {
+        "n": 14,
+        "gross_mean_pips": 16.041336220656174,
+        "net_mean_pips": 15.919068195607254
+      },
+      "USD_CHF": {
+        "n": 5,
+        "gross_mean_pips": 97.64914948335267,
+        "net_mean_pips": 98.15697038459295
+      },
+      "USD_CAD": {
+        "n": 3,
+        "gross_mean_pips": -45.97619147863461,
+        "net_mean_pips": -45.59098639887754
+      }
+    }
+  },
+  "gate6_trade_count": {
+    "pass": false,
+    "n_composite_is_trades": 54,
+    "min_required": 150
+  },
+  "_summary": {
+    "n_pass": 4,
+    "n_gates": 6,
+    "all_pass": false
+  }
+}

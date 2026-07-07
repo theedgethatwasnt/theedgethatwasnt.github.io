@@ -1,0 +1,5 @@
+gate,name,pass,detail
+1,"harness self-test: null mean approx -costs (<0, |.|<50p)",True,null_mean=-15.9926p/rebal (n_seeds=200); rigorous check in test_rebalance_engine.py
+2,carry-accrual parity vs carry_model (+-5%),,"proven in test_rebalance_engine.py::test_carry_accrual_parity (see pytest output, not re-derived here)"
+3,gated carry IS net>0 AND > null p95,False,carry_gated_net=-34.1364p null_p95=+15.4705p null_mean=-15.9926p
+4,WF halves both net-positive,False,first_half(n=22)=-39.3742p second_half(n=22)=-28.8986p
