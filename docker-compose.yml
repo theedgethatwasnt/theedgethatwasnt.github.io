@@ -1,0 +1,1229 @@
+version: "3.9"
+
+x-common: &common
+  restart: always
+  env_file: .env
+  networks: [fx-net]
+  dns:
+    - 8.8.8.8
+    - 8.8.4.4
+  # 2026-06-10: Docker embedded DNS forwarder at 127.0.0.11 returned SERVFAIL
+  # for fx-core_fx-net containers after the daemon ran for ~10h. Fresh
+  # containers on the same network resolved fine; existing ones could not.
+  # Hardcoding OANDA's CloudFlare CDN IPs in /etc/hosts bypasses DNS entirely
+  # for our hot path. CloudFlare IPs are stable for OANDA's edge — re-resolve
+  # from host (`getent hosts api-fxtrade.oanda.com`) if they ever change.
+  extra_hosts:
+    - "api-fxtrade.oanda.com:172.64.153.184"
+    - "stream-fxtrade.oanda.com:104.18.35.163"
+  logging:
+    driver: json-file
+    options:
+      max-size: "50m"
+      max-file: "3"
+
+x-strategy: &strategy
+  <<: *common
+  build:
+    context: .
+    dockerfile: Dockerfile.strategy
+  environment:
+  volumes:
+    - fx-db:/data/db
+    - fx-zmq:/tmp/zmq
+    - fx-logs:/data/logs
+    - ./lib:/app/lib:ro
+  depends_on:
+    fx-data-curator:
+      condition: service_healthy
+  healthcheck:
+    test: ["CMD", "python3", "-c", "import os; exit(0 if os.path.exists('/tmp/alive') else 1)"]
+    interval: 30s
+    timeout: 5s
+    retries: 3
+    start_period: 60s
+  deploy:
+    resources:
+      limits:
+        memory: 256M
+
+x-neat: &neat
+  <<: *strategy
+  command: ["python3", "-m", "services.strategy_neat.main"]
+  volumes:
+    - fx-db:/data/db
+    - fx-zmq:/tmp/zmq
+    - fx-logs:/data/logs
+    - ./lib:/app/lib:ro
+    - ./models:/data/models:ro
+  deploy:
+    resources:
+      limits:
+        memory: 512M
+
+volumes:
+  fx-db:
+  fx-zmq:
+  fx-logs:
+  fx-ticks:
+  autoresearch_cache:
+  openclaw_config:
+  openclaw_workspace:
+
+networks:
+  fx-net:
+    driver: bridge
+
+services:
+
+  # ═══════════════════════════════════════════════════════════════════
+  # DATA CURATOR — single source of truth for all market data
+  # ═══════════════════════════════════════════════════════════════════
+  fx-data-curator:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.curator
+    volumes:
+      - fx-db:/data/db
+      - fx-zmq:/tmp/zmq
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+      - ./data:/data/parquet:ro
+    healthcheck:
+      test: ["CMD", "python3", "-c",
+        "import zmq; c=zmq.Context(); s=c.socket(zmq.REQ); s.connect('ipc:///tmp/zmq/health.ipc'); s.setsockopt(zmq.RCVTIMEO,5000); s.send(b'ping'); r=s.recv(); exit(0 if r==b'pong' else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  # ═══════════════════════════════════════════════════════════════════
+  # PORTFOLIO MANAGER — centralized allocation + account monitoring
+  # ═══════════════════════════════════════════════════════════════════
+  fx-portfolio-mgr:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    command: ["python3", "-m", "services.portfolio_mgr.main"]
+    volumes:
+      - fx-db:/data/db
+      - fx-zmq:/tmp/zmq
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    depends_on:
+      fx-data-curator:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TRADITIONAL STRATEGIES (1 container each, multi-pair)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-strategy-impulse:
+    <<: *strategy
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    command: ["python3", "-m", "services.strategy_impulse.main"]
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-001
+      - STRATEGY_NAME=impulse
+
+  # IronNet S5-FT per-pair on account 001 (replaces inactive Impulse)
+  # EUR_GBP: +3,484p S5 OOS dir=0.49 | CAD_JPY: +13,811p S5 OOS dir=0.49
+  # MC sign_p=0.0000 both pairs. Fixed topology, gauss activation.
+  fx-ironnet-s5ft-001:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-001
+      - STRATEGY_NAME=ironnet_s5ft_001
+      - NEAT_GENOME=asi_mc_v3_best.pkl
+      - NEAT_GENOME_MAP=EUR_GBP:iron_s5ft_EUR_GBP.pkl,CAD_JPY:iron_s5ft_CAD_JPY.pkl
+      - NEAT_INPUT_MODE=asi_mc_v3
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - NEAT_PAIRS=EUR_GBP,CAD_JPY
+      - FX_VALIDATION_UNITS=1
+
+  fx-strategy-strength:
+    <<: *strategy
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    command: ["python3", "-m", "services.strategy_strength.main"]
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-002
+      - STRATEGY_NAME=strength
+
+  fx-strategy-fade:
+    <<: *strategy
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    command: ["python3", "-m", "services.strategy_fade.main"]
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-003
+      - STRATEGY_NAME=session_fade
+
+  # ─── A/B TEST: ER-ranging gate vs raw (accounts 002/003) ────────────────────
+  # Control: 001 (IronNet S5-FT raw), 009 (IronNet V3 raw)
+  # Filtered: 002 (IronNet S5-FT + ER gate), 003 (IronNet V3 + ER gate)
+  # ER_GATE_THRESHOLD=0.35: only enter when er_norm ≤ 0.35 (ranging market)
+  # Filter study result: ER ranging = best single gate (+ve delta on all 5 genomes)
+
+  fx-ironnet-v3-h1-002:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-002
+      - STRATEGY_NAME=ironnet_v3_h1_002
+      - NEAT_GENOME=asi_mc_v3_best.pkl
+      - NEAT_GENOME_MAP=EUR_JPY:iron_v3_H1_EUR_JPY_s42_best.pkl,USD_JPY:iron_v3_H1_USD_JPY_s42_best.pkl,GBP_JPY:iron_v3_H1_GBP_JPY_s42_best.pkl,AUD_JPY:iron_v3_H1_AUD_JPY_s42_best.pkl,CAD_JPY:iron_v3_H1_CAD_JPY_s42_best.pkl,CHF_JPY:iron_v3_H1_CHF_JPY_s42_best.pkl,NZD_JPY:iron_v3_H1_NZD_JPY_s42_best.pkl,EUR_USD:iron_v3_H1_EUR_USD_s42_best.pkl,GBP_USD:iron_v3_H1_GBP_USD_s42_best.pkl,AUD_USD:iron_v3_H1_AUD_USD_s42_best.pkl,NZD_USD:iron_v3_H1_NZD_USD_s42_best.pkl,EUR_GBP:iron_v3_H1_EUR_GBP_s42_best.pkl
+      - NEAT_INPUT_MODE=asi_mc_v3_h1
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=17
+      - FX_VALIDATION_UNITS=1
+
+  fx-ironnet-v7-h1-003:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-003
+      - STRATEGY_NAME=ironnet_v7_h1_003
+      - NEAT_GENOME=asi_mc_v3_best.pkl
+      - NEAT_GENOME_MAP=EUR_JPY:iron_v7_H1_EUR_JPY_s42_best.pkl,USD_JPY:iron_v7_H1_USD_JPY_s42_best.pkl,GBP_JPY:iron_v7_H1_GBP_JPY_s42_best.pkl,AUD_JPY:iron_v7_H1_AUD_JPY_s42_best.pkl,CAD_JPY:iron_v7_H1_CAD_JPY_s42_best.pkl,CHF_JPY:iron_v7_H1_CHF_JPY_s42_best.pkl,NZD_JPY:iron_v7_H1_NZD_JPY_s42_best.pkl,EUR_USD:iron_v7_H1_EUR_USD_s42_best.pkl,GBP_USD:iron_v7_H1_GBP_USD_s42_best.pkl,AUD_USD:iron_v7_H1_AUD_USD_s42_best.pkl,NZD_USD:iron_v7_H1_NZD_USD_s42_best.pkl,EUR_GBP:iron_v7_H1_EUR_GBP_s42_best.pkl
+      - NEAT_INPUT_MODE=asi_mc_v7_h1
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=17
+      - FX_VALIDATION_UNITS=1
+
+  # ═══════════════════════════════════════════════════════════════════
+  # NEAT STRATEGIES (1 container per account, 12 pairs each)
+  # ═══════════════════════════════════════════════════════════════════
+  # Ensemble Gate SHORT (S3): 7 frozen experts + evolved gate. Sharpe 0.40, +53,500p OOS.
+  fx-ensemble-short:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    command: ["python3", "-m", "services.strategy_ensemble.main"]
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-004
+      - STRATEGY_NAME=ensemble_short
+      - ENSEMBLE_GENOME=ensemble_gate_short.pkl
+      - ENSEMBLE_DIRECTION=short
+      - FX_VALIDATION_UNITS=1
+
+  # Ensemble Gate LONG (S4): 7 frozen experts + evolved gate. Sharpe 0.32, +55,439p OOS.
+  fx-ensemble-long:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    command: ["python3", "-m", "services.strategy_ensemble.main"]
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-005
+      - STRATEGY_NAME=ensemble_long
+      - ENSEMBLE_GENOME=ensemble_gate_long.pkl
+      - ENSEMBLE_DIRECTION=long
+      - FX_VALIDATION_UNITS=1
+
+  fx-neat-str-r3s:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-006
+      - STRATEGY_NAME=strength_rev3_short
+      - NEAT_GENOME=strength_15pip_rev3_short.pkl
+      - NEAT_INPUT_MODE=strength
+      - NEAT_BOX_SIZE=15
+      - NEAT_REVERSAL=3
+      - NEAT_DIRECTION=short
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - NEAT_PAIRS=GBP_USD,NZD_JPY
+      - FX_VALIDATION_UNITS=1
+
+  # ASI-MC v1 (007) — REMOVED: replaced by fx-range-neat-007 (range bar variant)
+  # Old service was causing account conflict with fx-range-neat-007 on same account.
+
+  # ASI-MC v2: SMA5(ASI(M5)) → MC(D)/MC(dD). Validated WF+MC 12/12. BIDIRECTIONAL.
+  fx-asi-mc-008:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-008
+      - STRATEGY_NAME=asi_mc_008
+      - NEAT_GENOME=asi_mc_v2_best.pkl
+      - NEAT_INPUT_MODE=asi_mc
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - FX_VALIDATION_UNITS=1
+
+  # IronNet V3 per-pair: Fixed-topology (4→4→3), 3-phase trained (2026-04-03/05)
+  # Per-pair genomes — all MC validated sign_p=0.0000, avg OOS 42.0p/day across 10 pairs
+  # A/B vs 003 (same genomes + ER_GATE_THRESHOLD=0.35)
+  # NZD_JPY + NZD_USD genomes TBD — fallback to global asi_mc_v3_best.pkl meanwhile
+  fx-ironnet-s1-h1-009:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=${OANDA_ACCOUNT_ID_009}
+      - STRATEGY_NAME=ironnet_s1_h1_009
+      - NEAT_GENOME=asi_mc_v3_best.pkl
+      - NEAT_GENOME_MAP=EUR_JPY:iron_s1_H1_EUR_JPY_s42_best.pkl,USD_JPY:iron_s1_H1_USD_JPY_s42_best.pkl,GBP_JPY:iron_s1_H1_GBP_JPY_s42_best.pkl,AUD_JPY:iron_s1_H1_AUD_JPY_s42_best.pkl,CAD_JPY:iron_s1_H1_CAD_JPY_s42_best.pkl,CHF_JPY:iron_s1_H1_CHF_JPY_s42_best.pkl,NZD_JPY:iron_s1_H1_NZD_JPY_s42_best.pkl,EUR_USD:iron_s1_H1_EUR_USD_s42_best.pkl,GBP_USD:iron_s1_H1_GBP_USD_s42_best.pkl,AUD_USD:iron_s1_H1_AUD_USD_s42_best.pkl,NZD_USD:iron_s1_H1_NZD_USD_s42_best.pkl,EUR_GBP:iron_s1_H1_EUR_GBP_s42_best.pkl
+      - NEAT_INPUT_MODE=s1_h1
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=17
+      - FX_VALIDATION_UNITS=1
+
+  fx-neat-str-long:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-009
+      - STRATEGY_NAME=strength_long
+      - NEAT_GENOME=strength_15pip_rev2_long.pkl
+      - NEAT_INPUT_MODE=strength
+      - NEAT_BOX_SIZE=15
+      - NEAT_REVERSAL=2
+      - NEAT_DIRECTION=long
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - NEAT_PAIRS=EUR_JPY,USD_JPY,GBP_JPY,AUD_JPY,CAD_JPY,CHF_JPY,NZD_JPY
+
+  fx-neat-str-rev3:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=001-001-${OANDA_CUSTOMER_ID}-010
+      - STRATEGY_NAME=strength_rev3
+      - NEAT_GENOME=strength_15pip_rev3_long.pkl
+      - NEAT_INPUT_MODE=strength
+      - NEAT_BOX_SIZE=15
+      - NEAT_REVERSAL=3
+      - NEAT_DIRECTION=long
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - NEAT_PAIRS=EUR_JPY,USD_JPY,GBP_JPY,AUD_JPY,CAD_JPY,CHF_JPY,NZD_JPY
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TEST ACCOUNTS (011-013) — validated strategies under live testing
+  # ═══════════════════════════════════════════════════════════════════
+  fx-perpair-011:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=${OANDA_ACCOUNT_ID_011}
+      - STRATEGY_NAME=perpair_a
+      - NEAT_GENOME=asi_mc_v2_best.pkl
+      - NEAT_GENOME_MAP=EUR_JPY:asi_mc_perpair_EUR_JPY.pkl,USD_JPY:asi_mc_perpair_USD_JPY.pkl,GBP_JPY:asi_mc_perpair_GBP_JPY.pkl,AUD_JPY:asi_mc_perpair_AUD_JPY.pkl,CAD_JPY:asi_mc_perpair_CAD_JPY.pkl,CHF_JPY:asi_mc_perpair_CHF_JPY.pkl,NZD_JPY:asi_mc_perpair_NZD_JPY.pkl,EUR_USD:asi_mc_perpair_EUR_USD.pkl,GBP_USD:asi_mc_perpair_GBP_USD.pkl,AUD_USD:asi_mc_perpair_AUD_USD.pkl,NZD_USD:asi_mc_perpair_NZD_USD.pkl,EUR_GBP:asi_mc_perpair_EUR_GBP.pkl
+      - NEAT_INPUT_MODE=asi_mc
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_DIRECTION=long
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - FX_VALIDATION_UNITS=1
+
+  fx-pnlmae-012:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=${OANDA_ACCOUNT_ID_012}
+      - STRATEGY_NAME=pnl_mae_a
+      - NEAT_GENOME=asi_mc_pnl_mae_best.pkl
+      - NEAT_INPUT_MODE=asi_mc
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_DIRECTION=long
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - FX_VALIDATION_UNITS=1
+
+  # fx-wfpnlmae-013 DISABLED — genome trained with lookahead bias (RCA 2026-04-12)
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SB_A IRONNET — 12 pairs, account 013, range-10 bars
+  #   First causal strategy post-RCA: 5/5 gates all pairs, perm_p=0.0000
+  #   Swing signal (TopsBots on range bars) + IronNet 5→5→2 fixed-topology
+  #   Per-trade Sharpe 87–120, OOS 378–450 p/d, fixed 1-lot per trade
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sba-ironnet-013:
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: services/strategy_sba_ironnet/Dockerfile
+    restart: unless-stopped
+    environment:
+      - OANDA_ACCOUNT=${OANDA_ACCOUNT_ID_013}
+      - OANDA_API_KEY=${OANDA_API_KEY}
+      - OANDA_ENV=${OANDA_ENV:-live}
+      - BASE_UNITS=20
+      - STATE_FILE=/data/logs/sba_ironnet_013_state.json
+      - LOG_LEVEL=INFO
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - fx-logs:/data/logs
+      - fx-zmq:/tmp/zmq
+      - ./lib:/app/lib:ro
+      - ./research/experiments/sb_a_ironnet/results:/app/research/experiments/sb_a_ironnet/results:ro
+    command: python3 services/strategy_sba_ironnet/main.py
+    depends_on:
+      - fx-data-curator
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # ZONE RECOVERY — split-account ping-pong, EUR_USD M5
+  #   011 = LONG legs, 012 = SHORT legs
+  # ═══════════════════════════════════════════════════════════════════
+  fx-zone-recovery:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_LONG=${OANDA_ACCOUNT_ID_011}
+      - OANDA_ACCOUNT_SHORT=${OANDA_ACCOUNT_ID_012}
+      - BASE_UNITS=20
+      - STATE_FILE=/data/logs/zone_recovery_state.json
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_zone_recovery/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/zone_recovery_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  fx-zr-random:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_LONG=${OANDA_ACCOUNT_ID_011}
+      - OANDA_ACCOUNT_SHORT=${OANDA_ACCOUNT_ID_012}
+      - ZR_PAIRS=GBP_USD          # 2026-05-10: EUR_USD → GBP_USD absorption (body=0.5 PF=1.10, 3044 p/d IS=3/3 OOS=3/3 P5=929 CumL5=161 ta=6 B=2)
+      - ZR_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-zmq:/tmp/zmq
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_zr_random/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/zr_random_GBP_USD_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # ZR PAPER TRADER — all 6 validated ZR strategies on live OANDA data
+  # No real orders — simulated fills at bar close / stop price.
+  # Status: /data/logs/zr_paper_status.json | Trades: zr_paper_trades.jsonl
+  # ═══════════════════════════════════════════════════════════════════
+  fx-zr-paper:
+    <<: *common
+    profiles: ["off"]   # 2026-06-11: STOPPED by user — martingale fat tail, off paper
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_LONG=${OANDA_ACCOUNT_ID_011}
+      - OANDA_ACCOUNT_SHORT=${OANDA_ACCOUNT_ID_012}
+      - ZR_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_zr_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/zr_paper_status.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA16 Scratch-Exit Paper — 3-pair overlay (USD_JPY composite,
+  # NZD_USD + GBP_USD scratch-only). No real orders. IS+OOS-validated
+  # 2026-06-01: 6mo OOS net +2,340p across 3 pairs, worst-DD -240p.
+  # Trades written to trades.duckdb with label='sma_scratch_<pair>'.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma-scratch-paper:
+    <<: *common
+    profiles: ["off"]   # STOPPED 2026-07-07 — ledger restart-censored (17 orphaned opens, 16 neg, ~-592p erased; scratch_tail Amendment 2); +975p closed was ~+190p full-population
+    # 2026-06-11 cut for 🔴 unbounded live risk (no hard SL; an SL flips edge +27→−206 p/d).
+    # 2026-06-18 RE-ENABLED for PAPER data collection only (the amddp1 write bug had suppressed
+    # all its trades). Paper = no real orders, so the live-risk concern doesn't apply here.
+    # LIVE STILL BLOCKED until the loss-cap/SL problem is solved.
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_011=${OANDA_ACCOUNT_ID_011}
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_sma_scratch_paper/main.py
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA16 PSAR-trail Paper — H13 winner (per-pair best configs)
+  # 7 pairs (USD_JPY, GBP_USD, EUR_USD, AUD_USD, NZD_USD, GBP_JPY, CAD_JPY)
+  # Entry: same SMA16 lags=(8,10,15) H1+M30 as sma-live (012).
+  # Exit:  PSAR(H1) trail, armed after activate_pips of MFE. No fixed TP.
+  # Trades written to trades.duckdb with label='sma_psar_<pair>'.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma-psar-paper:
+    <<: *common
+    profiles: ["off"]   # STOPPED 2026-07-06 — paper prune (first-touch basis refuted by multiday A5; psar bake-off decision already settled; retrace A/B broken since 6/19 + realized ~0.2p/t vs +79p/d promise)
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_011=${OANDA_ACCOUNT_ID_011}
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_sma_psar_paper/main.py
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA Stack-Alignment LIVE v2 — H17f/H17g mixed-exit on acct 010
+  # 5 pairs, each with H17 stack-alignment + novelty entry, per-pair exit:
+  #   EUR_JPY  S5/M2/M10  SMA 5/15/35  TP=20p  hard SL=200p
+  #   EUR_USD  S5/M1/M5   SMA 5/15/35  TP=30p  PSAR(M1) trail act=20p +SL=200p
+  #   GBP_JPY  S5/M30/H1  SMA 5/15/35  no-TP   PSAR(M30) trail act=20p +SL=200p
+  #   GBP_USD  S5/S30/M1  SMA 7/22/50  TP=30p  outer-fence SL=200p
+  #   USD_JPY  S5/M1/M5   SMA 5/10/22  TP=15p  outer-fence SL=200p
+  # Backtest aggregate: Σ +61.7 p/d on 5 pairs at 77-99% WR.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma-stack-live:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_010=${OANDA_ACCOUNT_ID_010}
+      - LOG_LEVEL=INFO
+      - FLAT_UNITS=0       # 2026-07-01: de-risk cap lifted for the VPS move — back to balance×1.25 sizing (cap MAX_UNITS=500)
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+      - ./services:/app/services:ro
+    command: python3 services/strategy_sma_stack_live/main.py
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA-Stack FADE variant — LIVE on account 001 (2026-07-01, user-directed).
+  # Same SMA-stack ENTRY as 010, but FADE exit (TP150/SL150 hard SL, no PSAR) via
+  # EXIT_PROFILE=fade — halts the bleed + eliminates the -2000p catastrophic tail
+  # (risk-capped live A/B vs 010's PSAR/fence exit). 1.25x equity sizing (code default).
+  # research/experiments/conservative_010/baseline_fade_exit.py.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma-fade-live:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_001=${OANDA_ACCOUNT_ID_001}
+      - ACCOUNT_ENV=OANDA_ACCOUNT_ID_001
+      - EXIT_PROFILE=fade
+      - LABEL_PREFIX=sma_fade
+      - LOG_LEVEL=INFO
+      - FLAT_UNITS=0
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+      - ./services:/app/services:ro
+    command: python3 services/strategy_sma_stack_live/main.py
+
+  # ═══════════════════════════════════════════════════════════════════
+  # BB re-entry fade — 4 timeframe-accounts (001=M5 002=M15 003=H1 004=H4), 12 pairs each.
+  # Validated +43.7 pips/day backtest (OOS +39.7), R7-green (lib/bb_fade.py = one code path).
+  # DRY_RUN=true => logs intended orders only. Set BB_FADE_DRY_RUN=false to arm (real money).
+  # ═══════════════════════════════════════════════════════════════════
+  fx-bb-fade-live:
+    <<: *common
+    profiles: ["off"]   # STOPPED 2026-06-30: all trading on 001-004 halted (user kill-switch). Do not auto-start.
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_API_KEY=${OANDA_API_KEY}
+      - OANDA_ACCOUNT_ID_001=${OANDA_ACCOUNT_ID_001}
+      - OANDA_ACCOUNT_ID_002=${OANDA_ACCOUNT_ID_002}
+      - OANDA_ACCOUNT_ID_003=${OANDA_ACCOUNT_ID_003}
+      - OANDA_ACCOUNT_ID_004=${OANDA_ACCOUNT_ID_004}
+      - DRY_RUN=${BB_FADE_DRY_RUN:-true}
+      - DD_FRAC=0.10
+      - LOG_LEVEL=INFO
+      - BB_PROBE=${BB_PROBE:-}
+      - BB_PROBE_FORCE=${BB_PROBE_FORCE:-}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - fx-zmq:/tmp/zmq
+      - ./lib:/app/lib:ro
+      - ./services:/app/services:ro
+    command: python3 services/strategy_bb_fade_live/main.py
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FIFO-Trends Paper — top 4 P&F trend-follow configs (no real orders)
+  # Status: /data/logs/fifo_paper_status.json | Trades: fifo_paper_trades.jsonl
+  # R7 test: tests/test_fifo_r7.py (all 4 configs pass)
+  # ═══════════════════════════════════════════════════════════════════
+  # STOPPED 2026-06-19 (Session 087): paper bled −627.3p across 849 trades.
+  # Every config negative except USD_JPY_ft (+70.8p). 2-box trail (ft2) worst
+  # (GBP_JPY_ft2 −274p, USD_JPY_ft2 −156p). Confirms live ft/ft2 failure was not
+  # bad luck — 1- and 2-box trails are consumed by JPY/GBP spread. Do NOT redeploy.
+  fx-fifo-paper:
+    <<: *common
+    profiles: ["off"]
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      # Silence paper-trade Telegram alerts (override .env → notify guard returns).
+      - TELEGRAM_BOT_TOKEN=
+      - TELEGRAM_CHAT_ID=
+      - OANDA_ACCOUNT_FIFO_PAPER=${OANDA_ACCOUNT_ID_011}
+      - FIFO_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_fifo_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/fifo_paper_status.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TR Momentum Paper — 8 configs, no real orders (Session 066)
+  # Signal: TR > threshold → enter close in bar direction. Exit: trail=2p.
+  # Status: /data/logs/tr_paper_status.json | Trades: tr_paper_trades.jsonl
+  # ═══════════════════════════════════════════════════════════════════
+  fx-tr-paper:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      # Silence paper-trade Telegram alerts (override .env → notify guard returns).
+      - TELEGRAM_BOT_TOKEN=
+      - TELEGRAM_CHAT_ID=
+      - OANDA_ACCOUNT_TR_PAPER=${OANDA_ACCOUNT_ID_011}
+      - TR_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_tr_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/tr_paper_status.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TR LIVE — All 8 configs on Account 011, 50 units/trade
+  #   USD_JPY_tr 94.9p/d  EUR_JPY_tr 75.8p/d  GBP_JPY_tr 71.6p/d
+  #   AUD_JPY_tr 48.8p/d  EUR_USD_tr 38.9p/d  CAD_JPY_tr 31.2p/d
+  #   GBP_USD_tr 23.8p/d  AUD_USD_tr 15.1p/d  (OOS refs, Session 066)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-tr-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_TR_LIVE=${OANDA_ACCOUNT_ID_011}
+      - TR_LIVE_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # 2026-06-09: adopt + manage existing positions only
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_tr_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/tr_live_status.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FIFO LIVE — GBP_JPY_ft on Account 013 (10 units fixed, n4, sp_gate=4.0p, OOS=71.6p/d)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-fifo-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - FIFO_LIVE_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_fifo_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/fifo_live_status.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # H4 DONCHIAN TREND — Account 010, 4 pairs, 10 units each
+  #   GBP_JPY 24.8p/d  USD_JPY 24.0p/d  EUR_JPY 20.2p/d  GBP_USD 16.4p/d
+  #   DON_N=10, ATR_TRAIL=1×, ATR_SL_INIT=2×, MaxDD ≤100p (Session 053)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-h4-donchian:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_010=${OANDA_ACCOUNT_ID_010}
+      - H4_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_h4_donchian/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/h4_donchian_GBP_JPY_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA MOMENTUM — Account 012, 10 pairs, 25 units each (Session 072)
+  #   SMA16 lags=(8,10,15) TP=20p  strict 6/6 H1+M30
+  #   USD_JPY +6.8p/d  EUR_JPY +4.6p/d  GBP_JPY +4.2p/d  AUD_JPY +3.2p/d
+  #   EUR_USD +3.0p/d  GBP_USD +2.3p/d  CAD_JPY +1.8p/d  AUD_USD +0.9p/d
+  #   EUR_GBP +0.3p/d  NZD_USD +0.2p/d   Portfolio mc_p=0.0000
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_012=${OANDA_ACCOUNT_ID_012}
+      - SMA_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # halted 2026-06-07 per user; existing positions managed
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_sma_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/sma_live_USD_JPY_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # PRICE MOMENTUM — Account 011, 12 pairs, 50 units each (Session 073)
+  #   M15+M5 raw close momentum lags=(1,3,8) TP=10p  strict 6/6
+  #   GBP_JPY +4.5p/d  CAD_JPY +4.4p/d  EUR_JPY +4.0p/d  AUD_JPY +3.2p/d
+  #   USD_JPY +3.1p/d  NZD_USD +2.6p/d  NZD_JPY +2.6p/d  EUR_USD +2.1p/d
+  #   AUD_USD +1.7p/d  GBP_USD +1.2p/d  CHF_JPY +0.6p/d  EUR_GBP +0.3p/d
+  #   12/12 IS3+MC  Portfolio mc_p=0.0000  WR=99.1%
+  # ═══════════════════════════════════════════════════════════════════
+  fx-price-mom-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_011=${OANDA_ACCOUNT_ID_011}
+      - PM_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # halted 2026-06-07 per user; existing positions managed
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_price_mom_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/pm_live_USD_JPY_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # POST-SHOCK RETRACE — Account 009, 4 JPY pairs, 25 units (Session 074)
+  #   thr=2.5  peak=44b (~220s)  TP=20p  SL=30p  HORIZON=600b
+  #   OOS +56p/d portfolio  WF=12/12  MC p=0.0000  Markov mw=10 mt=0.002 sig_thr=0.20
+  #   GBP_JPY + USD_JPY + EUR_JPY + AUD_JPY
+  # ═══════════════════════════════════════════════════════════════════
+  fx-retrace-live:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_009=${OANDA_ACCOUNT_ID_009}
+      - RETRACE_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_retrace_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/retrace_USD_JPY_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FX-RETRACE-PAPER — REMOVED 2026-06-21 (Session 088). Duplicate: it wrote
+  # only label='retrace_nofilter', which fx-retrace-atr-paper already emits as
+  # the B-leg of its ATR-gate A/B. Use fx-retrace-atr-paper for the no-filter
+  # baseline. Service code retained at services/strategy_retrace_paper/.
+  # ═══════════════════════════════════════════════════════════════════
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FX-RETRACE-ATR-PAPER (2026-06-19) — retrace + M5-ATR(14)>=5 entry gate
+  #   Validated +79.4 p/d OOS, WF 11/12, mc_p=0 (backtest_retrace_atr.py).
+  #   Same params as retrace_nofilter EXCEPT the ATR gate → clean live A/B of
+  #   the gate's value. 009 stays OFFLINE (pulled for vol-compression decay);
+  #   this paper-tests the proposed fix before any live restart.
+  #   label='retrace_atr', is_paper=TRUE, account_id='paper-009-atr'
+  # ═══════════════════════════════════════════════════════════════════
+  fx-retrace-atr-paper:
+    <<: *common
+    profiles: ["off"]   # STOPPED 2026-07-06 — paper prune (first-touch basis refuted by multiday A5; psar bake-off decision already settled; retrace A/B broken since 6/19 + realized ~0.2p/t vs +79p/d promise)
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_009=${OANDA_ACCOUNT_ID_009}
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_retrace_atr_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FIRST-TOUCH LOW-VOLUME REVERSION PAPER (2026-06-18)
+  #   Fade the first touch of an H4 swing level when tick-volume is low;
+  #   ATR target/SL, ~48h hold. Validated loVol OOS +9.49p/trade, MC p=0.018,
+  #   WF +ve all 3 thirds, 7/12 pairs. Paper-only → trades.duckdb
+  #   label='first_touch_lv', account_id='paper-ftlv'.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-first-touch-paper:
+    <<: *common
+    profiles: ["off"]   # STOPPED 2026-07-06 — paper prune (first-touch basis refuted by multiday A5; psar bake-off decision already settled; retrace A/B broken since 6/19 + realized ~0.2p/t vs +79p/d promise)
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      # Silence paper-trade Telegram alerts (override .env).
+      - TELEGRAM_BOT_TOKEN=
+      - TELEGRAM_CHAT_ID=
+      - OANDA_ACCOUNT_ID_009=${OANDA_ACCOUNT_ID_009}
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs:rw
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_first_touch_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # PORTFOLIO PAPER — SMA-Stack portfolio framework reps (paper-only)
+  #   No real OANDA orders; writes simulated trades to trades.duckdb
+  #   with label='portfolio_paper_<candidate_id>' for the dashboard
+  #   "Portfolio Paper" tab. Reps loaded from research/portfolio/portfolio.csv.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-portfolio-paper:
+    <<: *common
+    profiles: ["off"]   # 2026-06-11: CUT — 🔴 unbounded (5/6 reps can't take an SL without killing edge; h17g)
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      # Silence paper-trade Telegram alerts (override .env → notify guard returns).
+      - TELEGRAM_BOT_TOKEN=
+      - TELEGRAM_CHAT_ID=
+      - OANDA_ACCOUNT_ID_001=${OANDA_ACCOUNT_ID_001}
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-db:/data/db:rw
+      - ./lib:/app/lib:ro
+      - ./research/portfolio:/app/portfolio:ro
+    command: python3 services/strategy_portfolio_paper/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # PMOM H1+M30 — Account 001, 12 pairs (Session 079, Portfolio variant 2)
+  #   Raw close momentum lags=(8,10,20) H1+M30 TP=15p  strict 6/6
+  #   Portfolio mc_p=0.0095  portf_pd=+33.3 p/d  11/12 IS3
+  # ═══════════════════════════════════════════════════════════════════
+  fx-pmom-h1m30-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_001=${OANDA_ACCOUNT_ID_001}
+      - PMOM_H1M30_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # halted 2026-06-07 per user; existing positions managed
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_pmom_h1m30_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # SMA16 M30+M15 — Account 002, 12 pairs (Session 079, Portfolio variant 3)
+  #   SMA16 momentum lags=(1,10,20) M30+M15 TP=20p  strict 6/6
+  #   Portfolio mc_p=0.0140  portf_pd=+33.0 p/d  10/12 IS3
+  # ═══════════════════════════════════════════════════════════════════
+  fx-sma16-m30m15-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_002=${OANDA_ACCOUNT_ID_002}
+      - SMA16_M30M15_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # halted 2026-06-07 per user; existing positions managed
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_sma16_m30m15_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # EXHAUST CONT A — Account 003, 12 pairs (Session 079, Portfolio variant 4)
+  #   n_consec=4 dist_mult=2.0 TP=15p  momentum continuation
+  #   Portfolio mc_p=0.0080  portf_pd=+32.4 p/d  11/12 IS3
+  # ═══════════════════════════════════════════════════════════════════
+  fx-exhaust-a-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_003=${OANDA_ACCOUNT_ID_003}
+      - EXHAUST_A_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # halted 2026-06-07 per user; existing positions managed
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_exhaust_a_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # EXHAUST CONT B — Account 004, 12 pairs (Session 079, Portfolio variant 5)
+  #   n_consec=2 dist_mult=1.0 TP=10p  momentum continuation
+  #   Portfolio mc_p=0.0005  portf_pd=+32.0 p/d  12/12 IS3
+  # ═══════════════════════════════════════════════════════════════════
+  fx-exhaust-b-live:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: halted account — never auto-start
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - OANDA_ACCOUNT_ID_004=${OANDA_ACCOUNT_ID_004}
+      - EXHAUST_B_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+      - NO_NEW_ENTRIES=1   # paused 2026-06-04 after $17.98 deposit; existing positions managed normally
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/strategy_exhaust_b_live/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # FX-SIGNALS — rolling-window pips/min + CSI for 12 pairs (Session 067)
+  # Warm-up: fetches last 290 M5 bars from OANDA on start.
+  # Writes /data/logs/signals_state.json every 30s (read by dashboard).
+  # ═══════════════════════════════════════════════════════════════════
+  fx-signals:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - SIGNALS_STATE_DIR=/data/logs
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-logs:/data/logs
+      - ./lib:/app/lib:ro
+    command: python3 services/fx_signals/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/signals_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TICK MOMENTUM — live tick-resolution momentum + spread from v20 stream
+  #   5s rolling window, per-tick (~250ms). Writes tick_momentum_state.json
+  #   for the dashboard /tick_mom tab. Captures raw bid/ask to /data/ticks
+  #   (per-UTC-day JSONL) for replay.
+  # ═══════════════════════════════════════════════════════════════════
+  fx-tick-mom:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    environment:
+      - TICK_STATE_DIR=/data/logs
+      - TICK_CAPTURE_DIR=/data/ticks
+      - TICK_CAPTURE=1
+      # 28-pair major matrix drives the currency-strength ladder; cards = subset
+      - TICK_PAIRS=EUR_USD,EUR_GBP,EUR_AUD,EUR_NZD,EUR_CAD,EUR_CHF,EUR_JPY,GBP_USD,GBP_AUD,GBP_NZD,GBP_CAD,GBP_CHF,GBP_JPY,AUD_USD,AUD_NZD,AUD_CAD,AUD_CHF,AUD_JPY,NZD_USD,NZD_CAD,NZD_CHF,NZD_JPY,USD_CAD,USD_CHF,USD_JPY,CAD_CHF,CAD_JPY,CHF_JPY
+      - TICK_CARD_PAIRS=EUR_USD,USD_JPY,GBP_USD,AUD_USD
+      - TICK_WINDOWS=5,30
+      # capture retention — RAISED 2026-06-25 to build a tick-replay corpus for the on_tick reversion
+      # rebuild (validation = replay recorded ticks + forward paper, no deep bar-history). ~6MB/h => 15GB
+      # ~= 100 days; age-prune effectively off (1yr), size cap is the real bound, leaves ~26GB free disk.
+      - TICK_CAPTURE_RETENTION_HOURS=8760
+      - TICK_CAPTURE_MAX_MB=15000
+      - LOG_LEVEL=INFO
+    volumes:
+      - fx-logs:/data/logs
+      - fx-ticks:/data/ticks
+      - ./lib:/app/lib:ro
+    command: python3 services/fx_tick_mom/main.py
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; os.path.exists('/data/logs/tick_momentum_state.json') or exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════
+  # DASHBOARD — unified drill-down UI (internet-exposed via nginx)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-dashboard:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    command: ["python3", "-m", "services.dashboard.main"]
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-zmq:/tmp/zmq
+      - fx-logs:/data/logs:ro
+      - ./lib:/app/lib:ro
+      - ./research/portfolio:/app/portfolio:ro
+      - ./services:/app/services:ro
+    expose:
+      - "5558"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  # ═══════════════════════════════════════════════════════════════════
+  # TELEGRAM BOT — commands + kill switch via Docker API
+  # ═══════════════════════════════════════════════════════════════════
+  fx-telegram-bot:
+    <<: *common
+    build:
+      context: .
+      dockerfile: Dockerfile.strategy
+    command: ["python3", "-m", "services.telegram_bot.main"]
+    volumes:
+      - fx-db:/data/db:rw
+      - fx-logs:/data/logs:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./lib:/app/lib:ro
+      - ./services:/app/services:ro
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  # ═══════════════════════════════════════════════════════════════════
+  # NGINX — HTTPS reverse proxy for dashboard (internet access)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-nginx:
+    <<: *common
+    image: nginx:alpine
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - fx-dashboard
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+
+  # ═══════════════════════════════════════════════════════════════════
+  # AUTORESEARCH — autonomous strategy discovery (sandboxed)
+  # ═══════════════════════════════════════════════════════════════════
+  fx-autoresearch:
+    restart: "no"  # Disabled - burning API credits
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    build:
+      context: ../auto_research
+      dockerfile: docker/Dockerfile.agent
+    tmpfs:
+      - /tmp:size=1G
+    command: >
+      bash -c 'cd /home/researcher/workspace;
+      while true; do
+        claude -p "Read program.md then run 10 experiments using prepare.py" --dangerously-skip-permissions 2>&1 | tee -a /tmp/autoresearch.log;
+        sleep 30;
+      done'
+    volumes:
+      - ../auto_research/karpathy:/home/researcher/workspace
+      - ../auto_research:/home/researcher/auto_research:ro
+      - ./lib:/home/researcher/fx-core/lib:ro
+      - ./data/asi_mc_indicators:/data/indicators:ro
+      - ./research/reports:/data/reports:ro
+      - autoresearch_cache:/home/researcher/scalper/data/cache
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN_HERMES}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY_CLAUDE}
+      - DISABLE_AUTOUPDATE=1
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: "4"
+
+  # ═══════════════════════════════════════════════════════════════════
+  # HERMES AGENT — self-improving AI assistant (Telegram via c_bot)
+  # Replaces OpenClaw: GEPA self-improving loop, auto skill creation
+  # ═══════════════════════════════════════════════════════════════════
+  fx-hermes:
+    <<: *common
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    image: hermes-agent:local
+    volumes:
+      - ${HOME}/.hermes:/opt/data
+      - ${HOME}/projects/auto_research/karpathy:/opt/data/workspace
+      - ${HOME}/projects/fx-core/lib:/opt/data/fx-core-lib:ro
+      - ${HOME}/projects/fx-core/data/asi_mc_indicators:/opt/data/indicators:ro
+    command: ["gateway", "run"]
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "2"
+
+  # NEAT Range Bar strategy — MC validated +12,292p OOS
+  fx-range-neat-007:
+    <<: *neat
+    profiles: ["off"]   # 2026-06-10: lockdown — never auto-start on compose up
+    environment:
+      - OANDA_ACCOUNT=${OANDA_ACCOUNT_ID_007}
+      - STRATEGY_NAME=range_neat
+      - NEAT_GENOME=range_neat_best.pkl
+      - NEAT_INPUT_MODE=asi_mc
+      - NEAT_BOX_SIZE=5
+      - NEAT_REVERSAL=3
+      - NEAT_DIRECTION=long
+      - NEAT_EMERGENCY_SL=20
+      - NEAT_EMERGENCY_TP=75
+      - NEAT_MAX_HOLD_HOURS=7
+      - NEAT_RANGE_BAR_PIPS=10
+      - FX_VALIDATION_UNITS=1

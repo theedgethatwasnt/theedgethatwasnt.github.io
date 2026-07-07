@@ -26,3 +26,5 @@ checkpoints/
 !experiments/cot_positioning/fred_rates.parquet
 !experiments/multiday_contrarian/fred_rates.parquet
 !experiments/fx_factors/ppp_rates.parquet
+!docs/data/
+!docs/data/trades_snapshot_2026-05-31.csv
