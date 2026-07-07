@@ -117,7 +117,8 @@ header a.home:hover {{ text-decoration:underline; }}
 .sec {{ margin:16px 0; }}
 .sec h3 {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }}
 .chips {{ display:flex; flex-wrap:wrap; gap:6px; }}
-.chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; }}
+.chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; cursor:pointer; user-select:none; }}
+.chip:hover {{ border-color:var(--acc); color:var(--acc); }}
 .chip.alg {{ border-color:var(--acc); }}
 code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 .code a {{ display:block; color:var(--acc); text-decoration:none; padding:1px 0; word-break:break-all; }}
@@ -194,7 +195,7 @@ function figBlock(p){{
   return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(p)}}"></a><figcaption>${{esc(p)}}</figcaption></figure>`;
 }}
 function show(e){{
-  const chips = (arr,cls)=>arr&&arr.length?`<div class="chips">${{arr.map(x=>`<span class="chip ${{cls||''}}">${{esc(x)}}</span>`).join('')}}</div>`:'';
+  const chips = (arr,cls)=>arr&&arr.length?`<div class="chips">${{arr.map(x=>`<span class="chip ${{cls||''}}" title="Show all experiments using this" onclick="chipFilter(this.textContent)">${{esc(x)}}</span>`).join('<span style="position:absolute;left:-9999px">, </span>')}}</div>`:'';
   const code = (e.code_paths||[]).map(codeLink).join('');
   const figs = (e.figures||[]).map(figBlock).join('');
   detail.innerHTML = `
@@ -212,6 +213,10 @@ function show(e){{
    ${{sec('Figures', figs?`<div class="figs">${{figs}}</div>`:'')}}
   `;
   detail.scrollTop=0;
+}}
+function chipFilter(term){{
+  const qEl = document.getElementById('q');
+  qEl.value = term.trim(); q = term.trim().toLowerCase(); render();
 }}
 render();
 if (exps.length) {{ sel=exps[0].id; render(); show(exps[0]); }}
