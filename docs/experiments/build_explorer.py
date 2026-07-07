@@ -85,6 +85,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't — Explore the 81 Experiments</title>
+<meta name="description" content="Drill into all 81 documented experiments behind the book — method, data, indicators, algorithms, key numbers, figures, and links to the exact code, positive and negative results alike.">
+<meta property="og:title" content="The Edge That Wasn't — Explore the 81 Experiments">
+<meta property="og:description" content="Drill into all 81 documented experiments behind the book — method, data, indicators, algorithms, key numbers, figures, and links to the exact code, positive and negative results alike.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
 :root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }}
 @media (prefers-color-scheme: dark) {{
@@ -93,10 +98,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 * {{ box-sizing:border-box; margin:0; }}
 body {{ font:15px/1.55 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
 header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }}
-header h1 {{ font-size:1.2rem; font-weight:600; }}
+header .brand {{ font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }}
+header .brand:hover {{ color:var(--acc); }}
 header p {{ color:var(--muted); font-size:.85rem; }}
-header a.home {{ color:var(--acc); text-decoration:none; font-size:.85rem; margin-left:auto; }}
-header a.home:hover {{ text-decoration:underline; }}
+nav.sitenav {{ margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }}
+nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
+nav.sitenav a:hover {{ color:var(--acc); }}
+nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
 .wrap {{ display:flex; height:calc(100vh - 62px); }}
 #side {{ width:400px; min-width:280px; border-right:1px solid var(--line); display:flex; flex-direction:column; }}
 #controls {{ padding:10px 12px; border-bottom:1px solid var(--line); }}
@@ -117,9 +125,13 @@ header a.home:hover {{ text-decoration:underline; }}
 .sec {{ margin:16px 0; }}
 .sec h3 {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }}
 .chips {{ display:flex; flex-wrap:wrap; gap:6px; }}
-.chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; cursor:pointer; user-select:none; }}
-.chip:hover {{ border-color:var(--acc); color:var(--acc); }}
+.chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; cursor:pointer; user-select:none; display:inline-flex; align-items:center; gap:5px; text-decoration:none; color:inherit; }}
+a.chip {{ padding-right:4px; }}
+a.chip:hover {{ border-color:var(--acc); color:var(--acc); }}
 .chip.alg {{ border-color:var(--acc); }}
+.chip.nogloss {{ border-style:dashed; }}
+.chip .chipfilter {{ opacity:.5; font-size:.95em; padding:0 2px 0 6px; border-left:1px solid var(--line); cursor:pointer; }}
+.chip .chipfilter:hover {{ opacity:1; color:var(--acc); }}
 a.term {{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); cursor:help; }}
 a.term:hover {{ border-bottom-color:var(--fg); }}
 code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
@@ -138,10 +150,13 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 </head>
 <body>
 <header>
- <h1>The Edge That Wasn't — Experiment Explorer</h1>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
  <p>{n} experiments — data, indicators, algorithms, code, figures, verdicts.</p>
- <a class="home" href="glossary.html">Glossary</a>
- <a class="home" href="../index.html">&larr; Back to the book</a>
+ <nav class="sitenav">
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+ </nav>
 </header>
 <div class="wrap">
  <div id="side">
@@ -225,13 +240,39 @@ function codeLink(p){{
   if (url) return `<a href="${{url}}" target="_blank" rel="noopener">${{esc(p)}}</a>`;
   return `<span class="dead" title="not included in the curated companion">${{esc(p)}}</span>`;
 }}
+// A chip's PRIMARY action is the glossary entry (if the term resolves there);
+// a small trailing ⌕ glyph is the secondary action (filter the experiment
+// list by this term). Terms with no glossary entry fall back to filter-only,
+// visually marked with a dashed border. Resolution reuses the exact same
+// surface-matching data as prose term-marking (GLOSS/GRE): most chip labels
+// are full descriptive phrases ("ATR(14, H4) target/stop (2.0x)"), not bare
+// glossary headwords, so a whole-chip exact lookup would resolve almost none
+// of them — searching for a known surface form ANYWHERE in the label (same
+// regex as mark()) is what actually makes the chips useful.
+function glossFor(term){{
+  if(!GLOSS || !GRE) return null;
+  GRE.lastIndex = 0;
+  const m = GRE.exec(esc(term));
+  return m ? GLOSS[m[1].toLowerCase()] : null;
+}}
+function chips(arr, cls){{
+  if(!arr || !arr.length) return '';
+  const parts = arr.map(x=>{{
+    const label = esc(x);
+    const g = glossFor(x);
+    if(g){{
+      return `<a class="chip ${{cls||''}}" href="glossary.html#${{g.s}}" target="_blank" rel="noopener" title="${{esc(g.t)}}">${{label}}<span class="chipfilter" data-term="${{label}}" title="Filter experiments by this term" onclick="event.preventDefault();event.stopPropagation();chipFilter(this.dataset.term)">&#8981;</span></a>`;
+    }}
+    return `<span class="chip ${{cls||''}} nogloss" data-term="${{label}}" title="No glossary entry for this term — click to filter experiments by it" onclick="chipFilter(this.dataset.term)">${{label}}</span>`;
+  }});
+  return `<div class="chips">${{parts.join('<span style="position:absolute;left:-9999px">, </span>')}}</div>`;
+}}
 function figBlock(p){{
   const src = FIGMAP[p];
   if (!src) return `<figure><figcaption>${{esc(p)}} (figure not included)</figcaption></figure>`;
   return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(p)}}"></a><figcaption>${{esc(p)}}</figcaption></figure>`;
 }}
 function show(e){{
-  const chips = (arr,cls)=>arr&&arr.length?`<div class="chips">${{arr.map(x=>`<span class="chip ${{cls||''}}" title="Show all experiments using this" onclick="chipFilter(this.textContent)">${{esc(x)}}</span>`).join('<span style="position:absolute;left:-9999px">, </span>')}}</div>`:'';
   const code = (e.code_paths||[]).map(codeLink).join('');
   const figs = (e.figures||[]).map(figBlock).join('');
   const seen = new Set();                          // first-occurrence-per-pane, shared across prose fields
@@ -259,6 +300,7 @@ render();
 if (exps.length) {{ sel=exps[0].id; render(); show(exps[0]); }}
 loadGlossary();
 </script>
+<!-- analytics: cookieless counter goes here at hosting step (CF Web Analytics or GoatCounter) — no cookies, no banners -->
 </body>
 </html>
 """

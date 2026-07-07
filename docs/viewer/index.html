@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Edge That Wasn't — Indicator Viewer</title>
+<meta name="description" content="Three interactive charts from the research behind the book: EUR/JPY and EUR/GBP price with live-togglable indicators, and the Wilder swing-point / ASI system.">
+<meta property="og:title" content="The Edge That Wasn't — Indicator Viewer">
+<meta property="og:description" content="Three interactive charts from the research behind the book: EUR/JPY and EUR/GBP price with live-togglable indicators, and the Wilder swing-point / ASI system.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:20px 24px 80px; }
+.count { color:var(--muted); font-size:.9rem; margin:6px 0 26px; }
+.cards { display:flex; flex-direction:column; gap:16px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; text-decoration:none; color:inherit; display:block; }
+.card:hover { border-color:var(--acc); }
+.card h2 { font-size:1.1rem; margin-bottom:6px; }
+.card h2 .arrow { color:var(--acc); margin-left:6px; }
+.card p { color:var(--muted); font-size:.92rem; margin:0; }
+.note { margin-top:30px; font-size:.85rem; color:var(--muted); font-style:italic; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:18px; }
+footer p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); text-decoration:underline; }
+footer a:hover { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../experiments/index.html">Experiments</a>
+  <a href="../experiments/glossary.html">Glossary</a>
+  <a href="index.html" class="cur" aria-current="page">Indicator Viewer</a>
+ </nav>
+</header>
+<main>
+ <h1 style="font-size:1.4rem;margin-bottom:6px;">Indicator Viewer</h1>
+ <div class="count">Three interactive charts pulled straight from the research — real EUR/JPY and EUR/GBP M5 price with live-togglable indicators, built on TradingView's Lightweight Charts. Bonus material, not referenced by any experiment page.</div>
+ <div class="cards">
+  <a class="card" href="eur_jpy_indicators.html">
+   <h2>EUR/JPY M5 — Indicator Viewer<span class="arrow">&rarr;</span></h2>
+   <p>3,000 bars of EUR/JPY M5 with the widest toolset of the three: a full bank of togglable overlay and sub-panel indicators, click-to-toggle with right-click parameter editing.</p>
+  </a>
+  <a class="card" href="eur_gbp_indicators.html">
+   <h2>EUR/GBP M5 — Indicators + Aroon<span class="arrow">&rarr;</span></h2>
+   <p>EUR/GBP M5 price with a curated indicator set including the Aroon oscillator, stacked in separate panels beneath the candles.</p>
+  </a>
+  <a class="card" href="eur_gbp_swing_asi.html">
+   <h2>EUR/GBP M5 — Wilder Swing System<span class="arrow">&rarr;</span></h2>
+   <p>Wilder's HSP/LSP swing-point detection and the Accumulative Swing Index (ASI) — the swing-structure engine referenced throughout the book — drawn live over price.</p>
+  </a>
+ </div>
+ <p class="note">Dense, dark, built for a desktop screen — these read best on a laptop or larger.</p>
+</main>
+<footer>
+ <p class="disclaimer">Nothing on this page is financial, investment, or trading advice, or a solicitation to trade. Past results — including every chart shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/roni762583/the-edge-that-wasnt" target="_blank" rel="noopener">github.com/roni762583/the-edge-that-wasnt</a> &middot; &copy; 2026 Aharon Zbaida</p>
+</footer>
+<!-- analytics: cookieless counter goes here at hosting step (CF Web Analytics or GoatCounter) — no cookies, no banners -->
+</body>
+</html>

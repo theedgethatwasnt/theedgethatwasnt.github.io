@@ -435,6 +435,11 @@ HTML = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't — Glossary</title>
+<meta name="description" content="257 terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
+<meta property="og:title" content="The Edge That Wasn't — Glossary">
+<meta property="og:description" content="257 terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
 :root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; }}
 @media (prefers-color-scheme: dark) {{
@@ -443,9 +448,12 @@ HTML = """<!DOCTYPE html>
 * {{ box-sizing:border-box; margin:0; }}
 body {{ font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
 header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; position:sticky; top:0; background:var(--bg); z-index:5; }}
-header h1 {{ font-size:1.2rem; font-weight:600; }}
-header a.home {{ color:var(--acc); text-decoration:none; font-size:.85rem; }}
-header a.home:hover {{ text-decoration:underline; }}
+header .brand {{ font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }}
+header .brand:hover {{ color:var(--acc); }}
+nav.sitenav {{ display:flex; gap:14px; flex-wrap:wrap; }}
+nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
+nav.sitenav a:hover {{ color:var(--acc); }}
+nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
 #q {{ margin-left:auto; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:.9rem; min-width:220px; }}
 main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
 .count {{ color:var(--muted); font-size:.85rem; margin:6px 0 18px; }}
@@ -467,8 +475,12 @@ main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
 </head>
 <body>
 <header>
- <h1>Glossary</h1>
- <a class="home" href="index.html">&larr; Back to the explorer</a>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="index.html">Experiments</a>
+  <a href="glossary.html" class="cur" aria-current="page">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+ </nav>
  <input id="q" type="search" placeholder="Filter terms…" autocomplete="off">
 </header>
 <main>
@@ -504,6 +516,7 @@ q.addEventListener('input',()=>{{
 // deep-link highlight
 if(location.hash){{ const el=document.querySelector(location.hash); if(el){{ el.style.background='var(--chip)'; el.scrollIntoView(); }} }}
 </script>
+<!-- analytics: cookieless counter goes here at hosting step (CF Web Analytics or GoatCounter) — no cookies, no banners -->
 </body>
 </html>
 """
