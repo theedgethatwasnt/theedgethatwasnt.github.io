@@ -218,9 +218,14 @@ def fisher(p=10):
         hh = med[i - p + 1:i + 1].max()
         ll = med[i - p + 1:i + 1].min()
         rng = max(hh - ll, 1e-9)
-        val[i] = 0.66 * (2 * (med[i] - ll) / rng - 0.5) + 0.34 * val[i - 1]
-        v = min(max(val[i], -0.999), 0.999)
-        out[i] = 0.5 * np.log((1 + v) / (1 - v)) + 0.5 * out[i - 1]
+        raw = 0.66 * (2 * (med[i] - ll) / rng - 0.5) + 0.34 * val[i - 1]
+        # Clamp the *recursive state itself* (Ehlers' canonical form), not
+        # just a local copy used for the log call. Clamping only the copy
+        # let val[i-1] feed back unbounded (up to ~1.5), which kept val
+        # pinned above the clamp for extra bars each swing and dragged the
+        # output into an artificially wide, flat-topped plateau.
+        val[i] = min(max(raw, -0.999), 0.999)
+        out[i] = 0.5 * np.log((1 + val[i]) / (1 - val[i])) + 0.5 * out[i - 1]
     return out
 
 
@@ -235,11 +240,19 @@ def williams_r(p=14):
 
 
 def rolling_hurst(win=128):
-    lr = np.diff(np.log(C), prepend=np.log(C[0]))
+    """Generalized Hurst exponent via the aggregated-variance / structure-
+    function method: regress log(sqrt(E[(logP[t+lag]-logP[t])^2])) on
+    log(lag). Must run on the *cumulative* log-price level series, not on
+    the once-differenced returns -- returns are already ~white noise, so
+    differencing them again measures the scaling of a second difference,
+    which is flat in lag regardless of the underlying process (H≈0
+    always). Operating on the level series recovers the real exponent
+    (≈0.5 for a random walk, <0.5 mean-reverting, >0.5 trending)."""
+    logp = np.log(C)
     out = np.full(N, np.nan)
     lags = np.array([2, 4, 8, 16, 32])
     for i in range(win, N):
-        w = lr[i - win:i]
+        w = logp[i - win:i]
         tau = []
         for lag in lags:
             d = w[lag:] - w[:-lag]
@@ -336,7 +349,7 @@ def fig_adx_dmi():
     a2.plot(x, pdi[sl], color=TEAL, lw=1.3, ls="--", label="+DI")
     a2.plot(x, mdi[sl], color=RED, lw=1.3, ls="-.", label="−DI")
     a2.axhline(25, color=GREY, lw=0.9, ls=":")
-    a2.text(1, 26, "ADX > 25 = trending", color=GREY, fontsize=8)
+    a2.text(0.98, 0.55, "ADX > 25 = trending", color=GREY, fontsize=8, ha="right", va="bottom", transform=a2.transAxes)
     a2.set_ylabel("0–100"); a2.set_xticks([])
     a2.legend(loc="upper left", ncol=3)
     finish(fig, "gen_adx_dmi.png")
@@ -454,7 +467,12 @@ def fig_currency_strength():
     usdjpy = roll(lr["USD_JPY"])
     # USD strength ≈ −(EUR/USD, GBP/USD, AUD/USD moves) + USD/JPY move
     usd = (-(eur + gbp + aud) + usdjpy) / 4
-    jpy = -usdjpy - usd  # JPY weakens when USD/JPY up
+    # JPY appears in exactly one pair (USD_JPY, as the quote currency), so
+    # its strength is just the sign-flipped pair return -- same pattern as
+    # EUR/GBP above. Subtracting `usd` here was double-counting: usd is
+    # itself built from usdjpy plus eur/gbp/aud, so it re-injected EUR/GBP
+    # into JPY's own series and glued JPY's line to EUR/GBP's on the chart.
+    jpy = -usdjpy  # JPY weakens when USD/JPY up
     def z(a):
         return (a - np.nanmean(a)) / (np.nanstd(a) + 1e-12)
     zeur, zusd, zgbp, zjpy = z(eur), z(usd), z(gbp), z(jpy)
@@ -521,11 +539,15 @@ def fig_meanrev_stats():
     axes[0].set_ylabel("EUR/USD"); axes[0].set_xticks([])
     axes[1].axhline(0.5, color=GREY, lw=0.9, ls=":")
     axes[1].plot(x, hu[sl], color=BLUE, lw=1.4)
-    axes[1].text(1, 0.52, "0.5 = random walk; <0.5 mean-revert; >0.5 trend", color=GREY, fontsize=8)
+    # A real (post-fix) Hurst series oscillates through the full panel
+    # height, so no axes-fraction corner is reliably clear of the line --
+    # give the caption an opaque backing patch rather than chase empty space.
+    note_box = dict(facecolor=BG, edgecolor="none", alpha=0.85, pad=2.0)
+    axes[1].text(0.98, 0.06, "0.5 = random walk; <0.5 mean-revert; >0.5 trend", color=GREY, fontsize=8, ha="right", va="bottom", transform=axes[1].transAxes, bbox=note_box, zorder=5)
     axes[1].set_ylabel("Hurst H"); axes[1].set_xticks([])
     axes[2].axhline(1.0, color=GREY, lw=0.9, ls=":")
     axes[2].plot(x, vr[sl], color=GOLD, lw=1.4)
-    axes[2].text(1, 1.02, "VR<1 = mean-reverting; VR>1 = trending", color=GREY, fontsize=8)
+    axes[2].text(0.98, 0.06, "VR<1 = mean-reverting; VR>1 = trending", color=GREY, fontsize=8, ha="right", va="bottom", transform=axes[2].transAxes, bbox=note_box, zorder=5)
     axes[2].set_ylabel("VR(4)"); axes[2].set_xticks([])
     finish(fig, "gen_meanrev_stats.png")
 
