@@ -7,10 +7,10 @@ The companion website for *The Edge That Wasn't* is built into this repository u
 
 Once Pages is enabled, the site will be served at:
 
-**https://roni762583.github.io/the-edge-that-wasnt/**
+**https://theedgethatwasnt.github.io/**
 
-- Landing page: `https://roni762583.github.io/the-edge-that-wasnt/`
-- Experiment explorer: `https://roni762583.github.io/the-edge-that-wasnt/experiments/`
+- Landing page: `https://theedgethatwasnt.github.io/`
+- Experiment explorer: `https://theedgethatwasnt.github.io/experiments/`
 
 ## What's in `docs/`
 

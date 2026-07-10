@@ -9,7 +9,7 @@ reader repository*. Two differences from the fx-core original:
    its location in the curated companion (`research/experiments/X` ->
    `experiments/X`; `lib/`, `services/`, `docs/` unchanged) and checks whether
    the file/dir actually exists here. Curated files become deep links into
-   `github.com/roni762583/the-edge-that-wasnt`; non-curated paths render as
+   `github.com/theedgethatwasnt/theedgethatwasnt.github.io`; non-curated paths render as
    plain text with a "not included in the curated companion" tooltip. The
    resulting PATHMAP (orig path -> URL or null) is embedded in the page.
 
@@ -38,8 +38,8 @@ INDEX_HTML = HERE / "index.html"
 FIGURES_DIR = HERE / "figures"
 
 # Public base URLs for the (eventually public) reader repo.
-BLOB = "https://github.com/roni762583/the-edge-that-wasnt/blob/main/"
-TREE = "https://github.com/roni762583/the-edge-that-wasnt/tree/main/"
+BLOB = "https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/"
+TREE = "https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/tree/main/"
 
 
 def map_code_path(p: str) -> str:
