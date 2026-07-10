@@ -64,6 +64,9 @@ code, .code a, .code span { font:13px/1.5 ui-monospace,Menlo,monospace; }
 .figs figcaption { font-size:.75rem; color:var(--muted); word-break:break-all; }
 .keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; }
 #empty { color:var(--muted); padding:40px; }
+#crumbs{display:none;position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 10px;gap:8px}
+#crumbs a{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:3px 12px}
+#crumbs a:active{color:var(--acc);border-color:var(--acc)}
 @media (max-width:760px){
   .wrap{flex-direction:column;height:auto}
   #side{width:100%;max-height:none;border-right:none;border-bottom:1px solid var(--line)}
@@ -71,9 +74,7 @@ code, .code a, .code span { font:13px/1.5 ui-monospace,Menlo,monospace; }
   #detail{overflow:visible;padding:20px 16px 60px}
   #crumbs{display:flex}
 }
-#crumbs{display:none;position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 10px;gap:8px}
-#crumbs a{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:3px 12px}
-#crumbs a:active{color:var(--acc);border-color:var(--acc)}
+
 </style>
 </head>
 <body>
