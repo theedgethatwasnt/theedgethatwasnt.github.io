@@ -34,13 +34,18 @@ body{background:#131722;color:#d1d4dc;font-family:'Trebuchet MS',system-ui,sans-
 .sitenav a{color:#787b86;text-decoration:none;font-size:11px;border:1px solid #363a45;padding:2px 8px;border-radius:3px}
 .sitenav a:hover{color:#fff;border-color:#5ec89f}
 .sitenav a.cur{color:#5ec89f;border-color:#5ec89f}
+#tbtoggle{display:none;width:calc(100% - 20px);margin:6px 10px;padding:8px;background:#2a2e39;color:#d1d4dc;border:1px solid #363a45;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+body.tb-open #tbtoggle{color:#5ec89f;border-color:#5ec89f}
 @media (max-width:600px){
   .hdr{flex-wrap:wrap;gap:6px;padding:6px 10px}
   .hdr .pair{font-size:15px}
   .hdr h1{flex-basis:100%;order:3;font-size:10px;line-height:1.35}
   .sitenav{margin-left:auto;gap:5px}
   .sitenav a{font-size:10px;padding:2px 6px}
-  .tb{max-height:none;overflow-y:visible;padding:4px 10px}
+  body{overflow-y:auto}
+  #tbtoggle{display:block}
+  .tb{display:none}
+  body.tb-open .tb{display:flex;max-height:none;overflow-y:visible;padding:4px 10px}
   .ib{padding:3px 9px;font-size:11px}
   .leg{padding:1px 10px}
 }
@@ -53,6 +58,7 @@ body{background:#131722;color:#d1d4dc;font-family:'Trebuchet MS',system-ui,sans-
 <span class="sitenav"><a href="../index.html">The Edge That Wasn't</a><a href="../experiments/index.html">Experiments</a><a href="../experiments/glossary.html">Glossary</a><a href="index.html" class="cur" aria-current="page">Viewer</a></span>
 <button class="cb" onclick="clearAll()">Clear All</button>
 </div>
+<button id="tbtoggle" onclick="document.body.classList.toggle('tb-open')">&#9776; Indicators &mdash; tap to choose</button>
 <div class="tb" id="ovbar"><label>Overlay:</label></div>
 <div class="tb" id="pnbar"><label>Panel:</label></div>
 <div class="leg" id="leg"></div>
