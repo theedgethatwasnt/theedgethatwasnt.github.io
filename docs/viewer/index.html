@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't — Indicator Viewer</title>
-<meta name="description" content="Three interactive charts from the research behind the book: EUR/JPY and EUR/GBP price with live-togglable indicators, and the Wilder swing-point / ASI system.">
+<meta name="description" content="Interactive charts of the book's indicators on real EUR/JPY and EUR/GBP M5 data — SMA, Bollinger, Donchian, PSAR, SuperTrend, ASI and more — drawn by the site's own chart engine.">
 <meta property="og:title" content="The Edge That Wasn't — Indicator Viewer">
-<meta property="og:description" content="Three interactive charts from the research behind the book: EUR/JPY and EUR/GBP price with live-togglable indicators, and the Wilder swing-point / ASI system.">
+<meta property="og:description" content="Interactive charts of the book's indicators on real EUR/JPY and EUR/GBP M5 data — SMA, Bollinger, Donchian, PSAR, SuperTrend, ASI and more — drawn by the site's own chart engine.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
-:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; }
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; }
 @media (prefers-color-scheme: dark) {
  :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; }
 }
@@ -49,22 +49,22 @@ footer a:hover { color:var(--acc); }
 </header>
 <main>
  <h1 style="font-size:1.4rem;margin-bottom:6px;">Indicator Viewer</h1>
- <div class="count">Three interactive charts pulled straight from the research — real EUR/JPY and EUR/GBP M5 price with live-togglable indicators, built on TradingView's Lightweight Charts. Bonus material, not referenced by any experiment page.</div>
+ <div class="count">Interactive charts of the indicators the book leans on, drawn over real EUR/JPY and EUR/GBP M5 data by the site's own chart engine. Toggle each indicator on or off; a crosshair reads out price and indicator values; drag to pan, scroll or use the +/&minus; buttons to zoom.</div>
  <div class="cards">
   <a class="card" href="eur_jpy_indicators.html">
    <h2>EUR/JPY M5 — Indicator Viewer<span class="arrow">&rarr;</span></h2>
-   <p>3,000 bars of EUR/JPY M5 with the widest toolset of the three: a full bank of togglable overlay and sub-panel indicators, click-to-toggle with right-click parameter editing.</p>
+   <p>3,000 bars of EUR/JPY M5 with the book's core indicator set: SMA, EMA, Bollinger, Donchian, Keltner, PSAR and SuperTrend over the candles, with ATR, RSI and Efficiency Ratio in panels below.</p>
   </a>
   <a class="card" href="eur_gbp_indicators.html">
-   <h2>EUR/GBP M5 — Indicators + Aroon<span class="arrow">&rarr;</span></h2>
-   <p>EUR/GBP M5 price with a curated indicator set including the Aroon oscillator, stacked in separate panels beneath the candles.</p>
+   <h2>EUR/GBP M5 — Indicator Viewer<span class="arrow">&rarr;</span></h2>
+   <p>The same curated indicator set on EUR/GBP M5 — a slower, tighter-ranged pair, useful for comparing how the indicators behave in quieter conditions.</p>
   </a>
   <a class="card" href="eur_gbp_swing_asi.html">
    <h2>EUR/GBP M5 — Wilder Swing System<span class="arrow">&rarr;</span></h2>
-   <p>Wilder's HSP/LSP swing-point detection and the Accumulative Swing Index (ASI) — the swing-structure engine referenced throughout the book — drawn live over price.</p>
+   <p>Wilder's HSP/LSP swing-point detection and the Accumulative Swing Index (ASI) with its 5-bar SMA and MC(D) — the swing-structure engine referenced throughout the book — drawn over price.</p>
   </a>
  </div>
- <p class="note">Dense, dark, built for a desktop screen — these read best on a laptop or larger.</p>
+ <p class="note">The charts work on phones as well as desktops — touch-drag to pan, and the indicator list folds into a drawer on small screens.</p>
 </main>
 <footer>
  <p class="disclaimer">Nothing on this page is financial, investment, or trading advice, or a solicitation to trade. Past results — including every chart shown here — do not indicate future performance.</p>
