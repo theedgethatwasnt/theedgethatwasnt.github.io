@@ -63,3 +63,11 @@ og:/meta tags + favicon, 404 page, final link sweep on the live host.
 ## Ops notes
 Domain renewal = the single point of continuity — set auto-renew + calendar reminder.
 Site backups: the repo IS the site (docs/); repo mirrored → site trivially recoverable.
+
+
+## VISION v2 (author, 2026-07-13) — supersedes page architecture decisions above
+1. ONE-PAGE PROGRESSIVE DRILL-DOWN: a single continuous page that teaches as it scrolls; experiments and indicators drill down in place (verdict -> story -> figures -> code; indicator -> what/why/formula -> live chart). The current three-separate-rooms structure (explorer / glossary / viewer) is NOT the vision — unify.
+2. SELF-STANDING: fully comprehensible + engaging to someone in the algo-trading space who has NOT read the book. Thin teaching layer at the top of each drill-down (no assumed knowledge).
+3. COHESIVE WITH THE BOOK: cream/serif/green design language site-wide (BookChart engine already complies; explorer partially doesn't).
+4. BOOK KEEPS ITS MOAT: site = what happened + interactive receipts (museum you can touch); book = narrative + deeply taught method + worked mechanics (the master class). Site should sell the book, not substitute it.
+SEQUENCING: rebuild AFTER the 2026-07-13 book depth-audit + reading-experience audit synthesis, as ONE combined content-placement decision (book-taught / site-interactive / both).
