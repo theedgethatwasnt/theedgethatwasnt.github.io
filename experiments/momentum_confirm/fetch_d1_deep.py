@@ -12,7 +12,7 @@ Deep D1 is a SHARED resource (data/d1_deep/<PAIR>_D1.parquet, full history, no s
 filtering) — Stage 1's own hard <=2020-10-31 filter lives in stage1_data.py, not here.
 
 Usage:
-  ssh aharon@87.99.154.24 'docker exec -i fx-core-fx-data-curator-1 python3 -' \
+  ssh <user>@<vps-host> 'docker exec -i fx-core-fx-data-curator-1 python3 -' \
       < <(python3 fetch_d1_deep.py --emit-remote) > /tmp/d1_deep_raw.txt
   python3 fetch_d1_deep.py --reconstruct /tmp/d1_deep_raw.txt
 """

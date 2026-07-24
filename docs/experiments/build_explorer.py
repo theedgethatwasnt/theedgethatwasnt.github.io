@@ -56,12 +56,15 @@ def build_pathmap(data: dict) -> dict:
     pathmap: dict[str, str | None] = {}
     for p in paths:
         mapped = map_code_path(p)
-        is_dir = p.endswith("/")
         target = REPO_ROOT / mapped.rstrip("/")
-        if is_dir:
-            pathmap[p] = (TREE + mapped) if target.is_dir() else None
+        # trust the filesystem, not the trailing slash: several experiments.json
+        # entries list directories without one
+        if target.is_dir():
+            pathmap[p] = TREE + mapped.rstrip("/") + "/"
+        elif target.is_file():
+            pathmap[p] = BLOB + mapped
         else:
-            pathmap[p] = (BLOB + mapped) if target.is_file() else None
+            pathmap[p] = None
     return pathmap
 
 

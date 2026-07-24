@@ -5,7 +5,7 @@ layer, generalizing the WF-validated equity-MA overlay
 (`research/experiments/conservative_010/bb_equity_switch.py` / `bb_equity_switch_validate.py`)
 from a single strategy's own trade stream to a portfolio of strategy-columns?
 
-Data: `trades.duckdb` dump on the Hetzner R&D box (`root@5.161.247.214:/root/work/trades_2026-07-06.duckdb`),
+Data: `trades.duckdb` dump on the Hetzner R&D box (`root@<rnd-box>:/root/work/trades_2026-07-06.duckdb`),
 8,426 rows, live + paper, 2026-03-25 → 2026-07-06. All computation ran on that box (`build_matrix.py`,
 `meta_alloc.py` in this directory, rsynced to `/root/work/code_meta/`).
 

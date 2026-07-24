@@ -4,7 +4,7 @@ Two-part fetch, extending the pattern of multiday_contrarian/fetch_cross_asset.p
 (OANDA token lives only in the VPS curator container):
 
   1. REMOTE (inside fx-core-fx-data-curator-1): REMOTE_SNIPPET piped via
-     `ssh aharon@87.99.154.24 'docker exec -i fx-core-fx-data-curator-1 python3 -'`,
+     `ssh <user>@<vps-host> 'docker exec -i fx-core-fx-data-curator-1 python3 -'`,
      prints ###BEGIN/###END-delimited CSV per pair to stdout.
   2. LOCAL: `reconstruct(raw_text)` parses that stream into
      data/d1_deep/<PAIR>_D1.parquet (mid OHLC + bid_c/ask_c close + tick volume).
@@ -27,7 +27,7 @@ USD_CAD/USD_CHF — that set has no direct CAD or CHF vs USD leg, which this exp
 requires. Documented, not silently diverged.
 
 Usage to refresh:
-  ssh aharon@87.99.154.24 'docker exec -i fx-core-fx-data-curator-1 python3 -' \\
+  ssh <user>@<vps-host> 'docker exec -i fx-core-fx-data-curator-1 python3 -' \\
       < <(python3 fetch_d1.py --emit-remote) > /tmp/d1_deep_raw.txt
   python3 fetch_d1.py --reconstruct /tmp/d1_deep_raw.txt
 """

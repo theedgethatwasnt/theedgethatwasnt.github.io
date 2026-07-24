@@ -1,5 +1,5 @@
 #!/bin/bash
-# run_all.sh — London-Fix Fade full IS battery, run on Hetzner (root@5.161.247.214).
+# run_all.sh — London-Fix Fade full IS battery, run on Hetzner (root@<rnd-box>).
 #   code:    /root/work/code_fix/  (this directory, rsynced)
 #   data:    /root/work/data/m5_ba/
 # Usage: cd /root/work/code_fix && ./run_all.sh

@@ -3,7 +3,7 @@
 Two-part fetch, because the OANDA token lives only in the VPS curator container:
 
   1. REMOTE (inside fx-core-fx-data-curator-1): the `REMOTE_SNIPPET` below is piped
-     via  `ssh aharon@87.99.154.24 'docker exec -i fx-core-fx-data-curator-1 python3 -'`
+     via  `ssh <user>@<vps-host> 'docker exec -i fx-core-fx-data-curator-1 python3 -'`
      and prints ###BEGIN/###END-delimited CSV per instrument to stdout.
   2. LOCAL: `reconstruct(raw_text)` parses that stream into
      data/cross_asset/<INSTRUMENT>_D1.parquet  (mid OHLC + tick volume, complete bars
@@ -17,7 +17,7 @@ Fetched 2026-07-07 coverage (paginated by `to=` + `includeLast=false`, 5000/page
 Total 936 KB — committed (gitignore negation for data/cross_asset/).
 
 Usage to refresh:
-  ssh aharon@87.99.154.24 'docker exec -i fx-core-fx-data-curator-1 python3 -' \
+  ssh <user>@<vps-host> 'docker exec -i fx-core-fx-data-curator-1 python3 -' \
       < <(python3 fetch_cross_asset.py --emit-remote) > /tmp/cross_asset_raw.txt
   python3 fetch_cross_asset.py --reconstruct /tmp/cross_asset_raw.txt
 """

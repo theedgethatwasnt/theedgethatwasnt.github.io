@@ -484,7 +484,7 @@ main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
  <input id="q" type="search" placeholder="Filter terms…" autocomplete="off">
 </header>
 <main>
- <div class="count">{count} terms — indicators, formulas, reward functions, statistics, and the project's own coinages. Hover a term anywhere in the explorer to preview; click through to here.</div>
+ <div class="count">{count} terms — indicators, formulas, reward functions, statistics, and the project's own coinages, drawn from the book's Complete Glossary and Master Indicator Encyclopedia. Hover a term anywhere in the explorer to preview; click through to here.</div>
  <div class="jump">{jump}</div>
  <dl id="glist">
 {items}
@@ -549,8 +549,8 @@ def build_html(data: dict) -> str:
         key = _h((t["display"] + " " + " ".join(t["surfaces"]) + " " + t["body"]).lower())
         items.append(
             f'  <div class="term" id="{t["slug"]}" data-k="{key}">'
-            f'<dt>{_h(t["display"])}{alias_html}'
-            f'<span class="src">{t["source"]}</span></dt>'
+            f'<dt title="from the book\'s {_h(t["source"])} section">'
+            f'{_h(t["display"])}{alias_html}</dt>'
             f'<dd>{_h(t["body"])}</dd>{chart_html(t["slug"])}</div>'
         )
     n_charts = sum(1 for t in terms if t["slug"] in CHART_SLUGS)
