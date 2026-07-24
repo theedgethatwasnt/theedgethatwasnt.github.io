@@ -15,9 +15,9 @@ Sixty-seven experiments. Multi-pair walk-forward validation. Monte-Carlo gates. 
 
 ---
 
-## A Note on Repository Access
+## Code Availability
 
-> The principal repositories for this project — fx-core, scalper, auto-research, csi-factor-study, and the earlier neuroevolution and MuZero pipelines — were made private following a doxxing incident that occurred while this project was in progress. Selected repositories have been released publicly as they have been reviewed and prepared. This companion repository contains the curated code, experiment scripts, and reading guides that illuminate the book's argument. The full fx-core trading system, live-strategy containers, and OANDA account configuration are not included.
+> The code behind this book's experiments is being released publicly as it is reviewed and prepared. This companion repository contains the curated experiment scripts, library code, and reading guides that illuminate the book's argument, and additional project repositories are copied in as they are cleaned for release. The only permanent exclusions are broker credentials and account configuration.
 
 ---
 
