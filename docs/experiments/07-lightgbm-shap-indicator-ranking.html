@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#7 LightGBM/SHAP indicator ranking — The Edge That Wasn't</title>
+<meta name="description" content="SHAP importance on zigzag labels ranked indicators cheaply (Aroon #1 at M5, bb_width #1 in the 33-indicator study) — but SHAP rank turned out orthogonal to actual trading edge: TEC_5 was SHAP #1 yet ranked #36/43 in the CMA slot-4 sweep, while dead-l">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/07-lightgbm-shap-indicator-ranking.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #7</div>
+ <h1>#7 — LightGBM/SHAP indicator ranking</h1>
+ <div class="meta">2026-04-08 to 2026-04-09</div>
+ <div class="verdict"><strong>Verdict: mixed</strong> · 🟡 SHAP rank and trading edge orthogonal</div>
+ <div class="oneline">SHAP importance on zigzag labels ranked indicators cheaply (Aroon #1 at M5, bb_width #1 in the 33-indicator study) — but SHAP rank turned out orthogonal to actual trading edge: TEC_5 was SHAP #1 yet ranked #36/43 in the CMA slot-4 sweep, while dead-last sb_a drove the biggest NEAT gains.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether SHAP importance from a LightGBM classifier on zigzag swing labels can cheaply rank indicators by their usefulness as NEAT trading inputs, avoiding brute-force combinatorial training.</p></div>
+ <div class="sec"><h2>Description</h2><p>With 11+ candidate indicators and ~3h of NEAT training per combination, testing all 165 triplets was impossible, so a LightGBM multiclass classifier was trained on zigzag BUY/SELL/FLATTEN labels and SHAP values used to rank features, pairs and triplets. The first pass (12 indicators including a newly added Aroon Oscillator, 12 pairs) put aroon_osc #1 at M5 (SHAP 0.430) and er_norm #1 at H1, and showed M5 and H1 are different signal regimes (swing structure vs momentum). A comprehensive follow-up (33 classic indicators x 12 pairs x 393K M5 bars over 5 years) ranked bb_width #1 (0.427) with classic oscillators beating the ASI-MC derivatives. But the ranking failed as a guide to trading: TEC_5, SHAP #1 (0.490), scored fitness −10 as a NEAT input and ranked #36 of 43 in the later CMA slot-4 sweep, while sb_a — SHAP dead last at #33 (0.004) — was the key feature in the (lookahead-era) 747 p/d S1 run. Verdict: SHAP measures classification power on labels, not entry-timing profitability — the two are orthogonal.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">M5: aroon_osc SHAP 0.430 #1 (1.6x next); H1: er_norm 0.238 #1; 33-indicator study: bb_width 0.427 #1; TEC_5 SHAP #1 (0.490) but NEAT fitness −10 and CMA slot-4 rank #36/43; sb_a SHAP #33 (dead last) yet key feature of the 747 p/d S1 run (later shown lookahead)</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">Aroon Oscillator</span><span class="chip">Bollinger band width</span><span class="chip">Stochastic</span><span class="chip">MACD histogram</span><span class="chip">RSI(14)</span><span class="chip">ROC(10)</span><span class="chip">range position</span><span class="chip">EMA ratios</span><span class="chip">SuperTrend</span><span class="chip">ADX</span><span class="chip">MC(D)</span><span class="chip">MC(dD)</span><span class="chip">Kaufman Efficiency Ratio</span><span class="chip">SB_A (ASI swing breakout)</span><span class="chip">hh_asi / hl_asi</span><span class="chip">TEC_5</span><span class="chip">zigzag (labels)</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">LightGBM multiclass classification</span><span class="chip">SHAP importance + interaction analysis</span><span class="chip">zigzag labeling</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/rank_indicators_lgbm.py" target="_blank" rel="noopener">research/experiments/asi_mc/rank_indicators_lgbm.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/rank_indicators_comprehensive.py" target="_blank" rel="noopener">research/experiments/asi_mc/rank_indicators_comprehensive.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/rank_remaining_indicators.py" target="_blank" rel="noopener">research/experiments/asi_mc/rank_remaining_indicators.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="06-spread-at-entry-fix-vmax.html">&larr; #6 Spread-at-entry fix + Vmax</a><a href="08-h1-v3-eur-gbp-cad-jpy.html">#8 H1 V3 (EUR_GBP + CAD_JPY) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

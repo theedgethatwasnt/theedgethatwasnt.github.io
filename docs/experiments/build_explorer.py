@@ -42,6 +42,38 @@ BLOB = "https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main
 TREE = "https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/tree/main/"
 
 
+def slugify(name: str) -> str:
+    """Stable URL slug from an experiment name (shared with scripts/gen_experiment_pages.py)."""
+    import re
+    s = name.lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s[:60].rstrip("-")
+
+
+def page_filename(e: dict) -> str:
+    """Static per-experiment page filename, e.g. 01-project-genesis-architecture.html."""
+    return f"{e['id']:02d}-{slugify(e['name'])}.html"
+
+
+def _esc(s: str) -> str:
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace('"', "&quot;")
+
+
+def build_static_list(data: dict) -> str:
+    """Server-rendered experiment list: works with no JS (links to the static
+    per-experiment pages); the interactive layer replaces it on load."""
+    items = []
+    for e in data["experiments"]:
+        one = e.get("one_line", "")
+        short = one[:110] + ("…" if len(one) > 110 else "")
+        items.append(
+            f'<a class="item" href="{page_filename(e)}">'
+            f'<div class="t">#{e["id"]} {_esc(e["name"])}</div>'
+            f'<div class="s">{_esc(e["verdict"])} — {_esc(short)}</div></a>'
+        )
+    return "\n".join(items)
+
+
 def map_code_path(p: str) -> str:
     """fx-core-relative path -> reader-repo-relative path."""
     prefix = "research/experiments/"
@@ -117,6 +149,7 @@ nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
 .vbtn.on {{ background:var(--acc); color:#fff; border-color:var(--acc); }}
 #list {{ overflow-y:auto; flex:1; }}
 .item {{ padding:10px 14px; border-bottom:1px solid var(--line); cursor:pointer; }}
+a.item {{ display:block; color:inherit; text-decoration:none; }}
 .item:hover {{ background:var(--chip); }}
 .item.sel {{ background:var(--chip); border-left:3px solid var(--acc); padding-left:11px; }}
 .item .t {{ font-weight:600; font-size:.9rem; }}
@@ -156,9 +189,13 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
  <a class="brand" href="../index.html">The Edge That Wasn't</a>
  <p>{n} experiments — data, indicators, algorithms, code, figures, verdicts.</p>
  <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
   <a href="index.html" class="cur" aria-current="page">Experiments</a>
   <a href="glossary.html">Glossary</a>
   <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
  </nav>
 </header>
 <div class="wrap">
@@ -167,9 +204,11 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
    <input id="q" type="search" placeholder="Search name, description, indicator, algorithm…">
    <div id="verds"></div>
   </div>
-  <div id="list"></div>
+  <div id="list">
+{staticlist}
+  </div>
  </div>
- <div id="detail"><div id="empty">Select an experiment.</div></div>
+ <div id="detail"><div id="empty">Select an experiment. Every experiment also has a stable static page of its own — the list on the left links to them.</div></div>
 </div>
 <script>
 const DATA = {data};
@@ -318,6 +357,7 @@ def build() -> str:
         data=json.dumps(data, ensure_ascii=False),
         pathmap=json.dumps(pathmap, ensure_ascii=False),
         figmap=json.dumps(figmap, ensure_ascii=False),
+        staticlist=build_static_list(data),
     )
     INDEX_HTML.write_text(html, encoding="utf-8")
     n_map = sum(1 for v in pathmap.values() if v)

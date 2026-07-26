@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#67 Structural fade at hourly S/R — The Edge That Wasn't</title>
+<meta name="description" content="Fading the first approach to an hourly swing S/R level on high volume produced the project's cleanest broad directional edge (+1.09p gross, 12/12 pairs, MC p=0) — and the 1.3–3.9 pip spread ate all of it (net −0.89p, 0/12).">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/67-structural-fade-at-hourly-s-r.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #67</div>
+ <h1>#67 — Structural fade at hourly S/R</h1>
+ <div class="meta">2026-06-21/22</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ real gross direction, spread-blocked net</div>
+ <div class="oneline">Fading the first approach to an hourly swing S/R level on high volume produced the project's cleanest broad directional edge (+1.09p gross, 12/12 pairs, MC p=0) — and the 1.3–3.9 pip spread ate all of it (net −0.89p, 0/12).</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether giving a contrarian entry its direction from market structure — fading the first approach to an hourly swing support/resistance level on heavy volume — yields a directional edge that survives the retail spread.</p></div>
+ <div class="sec"><h2>Description</h2><p>The culmination of a long random-entry → spread-band → exit-investigation research arc on S5 data with real per-bar spread. Random coin-flip entries first established the floor (no exit or spread band rescues a coin flip; deep-loss tails peak at the median spread band), then giving the entry direction from structure — fading the last confirmed H1 swing high (resistance) or low (support), gated by high tick-volume and a calm spread band, with ATR-scaled distance/trail/TP — produced a gross directional edge of +1.089 pips/trade with Monte Carlo P=0.0000, positive on all 12 pairs and in all 3 walk-forward thirds: the cleanest broad positive-direction result in the project. Net of the real 1.3–3.9 pip spread it is −0.890 pips/trade, negative on all 12 pairs. Follow-ups showed level clustering/strength adds nothing, the edge is timeframe-invariant, an MFE oracle would clear spread easily (+6.44p mean) but eight exit families all converge to only ~+1.3–1.5p capturable drift (the rest is uncatchable wiggle), and the optimal hold is ~2h. The gap to the deployable first-touch H4 cousin (entry #68) is selectivity, not exit cleverness.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">Gross +1.089 p/trade, MC P=0.0000, 12/12 pairs positive, all 3 WF thirds positive; NET −0.890 p/trade, 0/12 pairs (spread 1.3–3.9p); oracle mean MFE_net +6.44p but 8 exit families converge to ~+1.3–1.5p capturable; 2h optimal hold (gross +1.50, net −0.50)</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">H1 swing high/low (TopsBots swing features)</span><span class="chip">ATR</span><span class="chip">tick volume</span><span class="chip">spread band</span><span class="chip">MFE/MAE excursion</span><span class="chip">trailing stop</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">random-entry baseline control</span><span class="chip">grid search over exits/stops/TP</span><span class="chip">Monte Carlo bootstrap</span><span class="chip">temporal walk-forward (thirds)</span><span class="chip">perfect-foresight MFE oracle</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/validate_structural_fade_scaled.py" target="_blank" rel="noopener">research/experiments/spread_band_random/validate_structural_fade_scaled.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/validate_structural_fade.py" target="_blank" rel="noopener">research/experiments/spread_band_random/validate_structural_fade.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/random_trail5_tp_sweep.py" target="_blank" rel="noopener">research/experiments/spread_band_random/random_trail5_tp_sweep.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/random_tp1_spreadband.py" target="_blank" rel="noopener">research/experiments/spread_band_random/random_tp1_spreadband.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/level_strength_fade.py" target="_blank" rel="noopener">research/experiments/spread_band_random/level_strength_fade.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/tf_sweep_structural.py" target="_blank" rel="noopener">research/experiments/spread_band_random/tf_sweep_structural.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/oracle_mfe.py" target="_blank" rel="noopener">research/experiments/spread_band_random/oracle_mfe.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/trade_trajectory.py" target="_blank" rel="noopener">research/experiments/spread_band_random/trade_trajectory.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/hold_sweep.py" target="_blank" rel="noopener">research/experiments/spread_band_random/hold_sweep.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/stops_tp_sweep.py" target="_blank" rel="noopener">research/experiments/spread_band_random/stops_tp_sweep.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/vol_direction_ic.py" target="_blank" rel="noopener">research/experiments/spread_band_random/vol_direction_ic.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_band_random/RESULTS.md" target="_blank" rel="noopener">research/experiments/spread_band_random/RESULTS.md</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="66-sma-stack-robustness-conservative-real-spread-backtest-of-li.html">&larr; #66 SMA-Stack robustness (conservative real-spread backtest of live 010)</a><a href="68-first-touch-h4-low-volume-reversion.html">#68 First-touch H4 low-volume reversion &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

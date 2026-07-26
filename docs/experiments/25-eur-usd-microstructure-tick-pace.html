@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#25 EUR/USD microstructure / tick-pace — The Edge That Wasn't</title>
+<meta name="description" content="Tick-rate (tpm) predicts big-bar occurrence with a 4× lift ~7 times/day, but carries no directional information — magnitude, not direction.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/25-eur-usd-microstructure-tick-pace.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #25</div>
+ <h1>#25 — EUR/USD microstructure / tick-pace</h1>
+ <div class="meta">2026-05-13 (Session 049; 90-day S5/S30/M1 + 5-yr M5 data)</div>
+ <div class="verdict"><strong>Verdict: mixed</strong> · 🟡 mixed — predicts big bars, not direction</div>
+ <div class="oneline">Tick-rate (tpm) predicts big-bar occurrence with a 4× lift ~7 times/day, but carries no directional information — magnitude, not direction.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Does the within-bar tick distribution (tick-pace, book thinness, velocity) predict EUR/USD price action — and is that prediction directional or magnitude-only?</p></div>
+ <div class="sec"><h2>Description</h2><p>A deep statistical-physics dive into how EUR/USD bars form across timeframes, built from seven purpose-written scripts. It measured True-Range distributions (big bars are a fractal-constant ~1.4% of bars at every TF), shock propagation upward across timeframes (22–46× conditional lifts), velocity scaling that matches Brownian 1/√TF exactly, and three rolling microstructure metrics — pips/min (ppm), ticks/min (tpm), pips/tick (ppt). The headline: rising tick-rate (z_tpm) predicts an imminent big M5 bar with a 4× lift (Q5 4.9% vs Q1 1.2%), firing ~7 signals/day, and market-makers measurably withdraw liquidity (+10.3% spread spike) in the 30 seconds before the move — but none of it says which WAY price will go, and raw forward returns after the signal are negative even before spread (−1.90p net at +1 bar). This became one of the project's recurring walls: volatility/timing/magnitude are forecastable, direction is not. Filed 'not exploitable standalone'; the tick-pace idea survives only as a volatility gate on a separate directional edge.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">z_tpm→big-M5 4× lift (Q5 4.9% vs Q1 1.2%), ~7 signals/day; cross-TF shock lifts 22–46×; velocity ratios match 1/√TF at every step; corr(log volume, log TR)=0.763; spread spikes +10.3% at T−30s; forward returns net −1.90p at +1 bar — not exploitable standalone</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">tpm (ticks/minute)</span><span class="chip">ppm (pips/minute)</span><span class="chip">ppt (pips/tick)</span><span class="chip">True Range</span><span class="chip">rolling z-scores</span><span class="chip">bid-ask spread</span><span class="chip">candle body/range ratio</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">rolling z-score computation</span><span class="chip">event study</span><span class="chip">predictive quintile analysis</span><span class="chip">cross-timeframe conditional-probability (shock cascade)</span><span class="chip">velocity scaling law fit</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_bar_stats.py" target="_blank" rel="noopener">research/eurusd_bar_stats.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/fetch_eurusd_lower_tf.py" target="_blank" rel="noopener">research/fetch_eurusd_lower_tf.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_shock_propagation.py" target="_blank" rel="noopener">research/eurusd_shock_propagation.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_velocity_orderflow.py" target="_blank" rel="noopener">research/eurusd_velocity_orderflow.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_multitf_alignment.py" target="_blank" rel="noopener">research/eurusd_multitf_alignment.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_rolling_microstructure.py" target="_blank" rel="noopener">research/eurusd_rolling_microstructure.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/research/eurusd_spread_signal_analysis.py" target="_blank" rel="noopener">research/eurusd_spread_signal_analysis.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="24-fifo-trends-body-filter.html">&larr; #24 FIFO-Trends body filter</a><a href="26-h4-donchian-breakout-backtest.html">#26 H4 Donchian breakout (backtest) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#79 Core-pricing arithmetic — re-pricing the gross-positive family at OANDA core tier — The Edge That Wasn't</title>
+<meta name="description" content="OANDA US core (commission+razor-spread) tier is +0.3p worse all-in than spread-only on USD-quote majors and +1.0p worse on JPY crosses, plus a $10,000 minimum balance incompatible with the project's $8-$100 test accounts, so structural fade (+1.089p ">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/79-core-pricing-arithmetic-re-pricing-the-gross-positive-family.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #79</div>
+ <h1>#79 — Core-pricing arithmetic — re-pricing the gross-positive family at OANDA core tier</h1>
+ <div class="meta">2026-07-07</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ core tier is WORSE, not better — the real cost unlock is a different venue entirely (~0.7p ECN)</div>
+ <div class="oneline">OANDA US core (commission+razor-spread) tier is +0.3p worse all-in than spread-only on USD-quote majors and +1.0p worse on JPY crosses, plus a $10,000 minimum balance incompatible with the project's $8-$100 test accounts, so structural fade (+1.089p gross) and BB re-entry fade both stay net-negative or worse — the only real cost unlock found is an IC-Markets-style ECN account (~0.7p all-in, $200 min, 0.01 lot).</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether re-pricing the project's gross-positive-but-net-spread-blocked strategies (structural fade, BB re-entry fade, regime-entry contrarian tilt) at OANDA US's core commission+raw-spread pricing tier flips any of their net verdicts from negative to positive.</p></div>
+ <div class="sec"><h2>Description</h2><p>Pure measurement/arithmetic study, not a hypothesis test with gates: takes OANDA US's currently-published core-tier terms (commission $0.70 per 10,000 units per leg = $14/100k round-turn, core raw spread 'as low as 0.0', $10,000 minimum balance) and re-prices the project's family of strategies that were gross-positive but net-spread-blocked under the standard spread-only pricing assumption — structural fade (+1.089p gross, -0.890p net) and BB re-entry fade (+0.5-1.1p net margin) — using recorded per-trade figures only, with no backtests re-run. Finding: the flat USD commission converts to ~2.06 pips on JPY-quote pairs, more than eating back the ~1.1p spread markup OANDA removes, so all-in core-tier cost is higher than measured spread-only medians on every traded pair (+0.3p USD-quote majors, +1.0p JPY crosses); structural fade worsens from -0.89 to about -1.49p/trade and BB re-entry fade's thin margin shrinks and flips negative on JPY legs. No verdict flips from negative to positive under OANDA's own core tier, and the tier isn't even accessible at the project's live account sizes ($8-$100 vs the $10k minimum). The one identified real cost unlock is a different broker/venue entirely — an IC-Markets-style ECN account (~0.7p all-in, $200 minimum, 0.01 lot size) — not OANDA's own core tier.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">Commission $0.70/10k units/leg = $14/100k round-turn current (legacy $5/side = $10 RT); core raw spread 'as low as 0.0', measured EUR/USD 0.4p; all-in RT current vs spread-only median: EUR_USD 1.80 vs 1.5 (+0.30), AUD_USD 1.60 vs 1.3 (+0.30), GBP_USD 2.10 vs 1.8 (+0.30), EUR_GBP 1.34 vs 1.4 (~flat), USD_JPY 2.56 vs 1.6 (+0.96), EUR_JPY 2.96 vs 2.0 (+0.96), GBP_JPY 3.96 vs 3.0 (+0.96), CHF_JPY 3.66 vs 2.7 (+0.96); structural fade gross +1.089p / net -0.890p (spread-only, implied RT cost 1.979p) -&gt; net -1.49p at core current / -1.00p at legacy $5; BB re-entry fade net +0.5-1.1p -&gt; ~+0.1-0.2p EUR_USD at core current, JPY legs flip negative; regime-entry contrarian tilt gross +0.01-0.20p -- cost floor 7-130x the signal, hopeless at any tier; eligibility requires $10,000 maintained balance vs live accounts $8-$100 (010~$100, 001~$8.34); ECN alternative ~0.7p all-in, $200 minimum, 0.01 lot -- the only identified cost unlock.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">bid-ask spread (ask_c-bid_c)/pip</span><span class="chip">commission per 100,000 units (USD)</span><span class="chip">pip value by quote currency</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">pip-equivalent commission conversion</span><span class="chip">all-in round-trip cost arithmetic (raw spread + commission)</span><span class="chip">net-margin re-pricing of recorded trade results</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/core_pricing/RESULTS.md" target="_blank" rel="noopener">research/experiments/core_pricing/RESULTS.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_clock/RESULTS.md" target="_blank" rel="noopener">research/experiments/spread_clock/RESULTS.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/spread_clock/spread_clock.py" target="_blank" rel="noopener">research/experiments/spread_clock/spread_clock.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="78-spread-clock-hour-of-week-toll-profiles-guard-cost-benefit.html">&larr; #78 Spread clock — hour-of-week toll profiles + guard cost-benefit</a><a href="80-meta-allocation-equity-ma-strategy-switching-vs-equal-weight.html">#80 Meta-allocation — equity-MA strategy switching vs equal-weight &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

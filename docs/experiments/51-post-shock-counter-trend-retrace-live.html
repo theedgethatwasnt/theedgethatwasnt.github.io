@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#51 Post-shock counter-trend retrace live — The Edge That Wasn't</title>
+<meta name="description" content="Large S5 velocity shocks (z&gt;2.5) are followed by a tradeable counter-trend retrace after a ~44-bar (220s) peak window: 72 OOS-positive configs, WF 12/12, all mc_p=0.0000, +56 p/d at the zero-inflation fill model.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/51-post-shock-counter-trend-retrace-live.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #51</div>
+ <h1>#51 — Post-shock counter-trend retrace live</h1>
+ <div class="meta">2026-05-25 (Session 074) backtest + live deploy on account 009; taken offline 2026-06-17, container stopped 2026-06-21</div>
+ <div class="verdict"><strong>Verdict: positive</strong> · ✅ validated &amp; deployed live (edge later decayed live; offline)</div>
+ <div class="oneline">Large S5 velocity shocks (z&gt;2.5) are followed by a tradeable counter-trend retrace after a ~44-bar (220s) peak window: 72 OOS-positive configs, WF 12/12, all mc_p=0.0000, +56 p/d at the zero-inflation fill model.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether large S5 velocity shocks (z-score &gt; 2.5) systematically overshoot and retrace, so that fading the move from its peak after a ~220-second observation window is a bounded-risk, spread-surviving edge.</p></div>
+ <div class="sec"><h2>Description</h2><p>The hypothesis: after a sharp price shock (30-second velocity z-score above threshold), price retraces counter-trend from the shock peak. The backtest detects a shock, waits up to 44 S5 bars (~220s) for the peak, then enters opposite the shock direction with TP=20p and SL=30p. A three-phase pipeline (OOS sweep of 225 configs → walk-forward over 3 sub-chunks → 1000-shuffle Monte Carlo) produced 72 OOS-positive configs, with the top 40 all passing WF 12/12 and all 20 WF-passers at mc_p=0.0000; the honest sd=3 (zero fill inflation) benchmark gave +56 p/d. The 44-bar window independently matched the MSP wavelet study's D3→D5 cross-scale correlation peak at 110–220s. Deployed straight to live money (fx-retrace-live, 4 JPY pairs, eventually account 009) with a causal rolling-deque z-scorer and an IDLE→MONITORING→IN_POSITION state machine. Live it accumulated roughly +110p over ~250 trades (~+0.44 p/trade) but decayed to ~+3–4 p/d versus the +56–70 OOS estimate as volatility compressed, and was taken offline 2026-06-17; a validated M5-ATR≥5 entry-gate rescue (+79.4 p/d OOS) was kept paper-only.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">72 OOS+ configs / 225; WF 12/12 on top 40; all 20 WF-passers mc_p=0.0000; +56 p/d OOS at sd=3 (zero inflation), +337 p/d at sd=1 (~2-pip inflated); live ~250 trades +110.3p (+0.44 p/trade) then decay to ~+3-4 p/d; ATR≥5 gate rescue +79.4 p/d OOS, WF 11/12, mc_p=0 (paper-only)</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">S5 velocity z-score (30s velocity, MAD-normalized)</span><span class="chip">shock-peak detection window</span><span class="chip">IS-P90 spread gate</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">grid search sweep</span><span class="chip">walk-forward validation (3 sub-chunks)</span><span class="chip">Monte Carlo sign-shuffle (1000 shuffles)</span><span class="chip">causal rolling-deque state machine</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/shock_straddle/backtest_shock_straddle.py" target="_blank" rel="noopener">research/experiments/shock_straddle/backtest_shock_straddle.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/shock_straddle/backtest_post_shock_retrace.py" target="_blank" rel="noopener">research/experiments/shock_straddle/backtest_post_shock_retrace.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/shock_straddle/backtest_retrace_atr.py" target="_blank" rel="noopener">research/experiments/shock_straddle/backtest_retrace_atr.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/strategy_retrace_live/main.py" target="_blank" rel="noopener">services/strategy_retrace_live/main.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/strategy_retrace_paper/main.py" target="_blank" rel="noopener">services/strategy_retrace_paper/main.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/strategy_retrace_atr_paper/main.py" target="_blank" rel="noopener">services/strategy_retrace_atr_paper/main.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="50-price-momentum-m15-m5-live.html">&larr; #50 Price momentum M15+M5 live</a><a href="52-markov-d1-regime-filter.html">#52 Markov D1 regime filter &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

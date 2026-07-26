@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#72 Multi-day contrarian program + first-touch H4 bar-grid refutation — The Edge That Wasn't</title>
+<meta name="description" content="The pre-registered multi-day contrarian program (first-touch H4 low-vol fade, frozen live params, net of spread AND carry) failed all 4 IS gates — signal -7.31p/trade vs its own coin-flip null +3.52p/trade, WF 1/3, bootstrap P=0.965, breadth 4/12 — a">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/72-multi-day-contrarian-program-first-touch-h4-bar-grid-refutat.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #72</div>
+ <h1>#72 — Multi-day contrarian program + first-touch H4 bar-grid refutation</h1>
+ <div class="meta">2026-07-06 (A1-A5)</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ 0/4 IS gates; bar-grid artifact refutes prior +9.49p edge</div>
+ <div class="oneline">The pre-registered multi-day contrarian program (first-touch H4 low-vol fade, frozen live params, net of spread AND carry) failed all 4 IS gates — signal -7.31p/trade vs its own coin-flip null +3.52p/trade, WF 1/3, bootstrap P=0.965, breadth 4/12 — and its A4 parity check along the way discovered that entry #68's earlier +9.49p OOS edge was measured on a non-OANDA UTC-midnight H4 bar grid the live paper service never actually traded, refuting that prior &quot;first significant + stationary&quot; finding once re-run on the correct NY-17:00 grid (-6.03p on the same IS window).</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether the first-touch H4 low-volume fade (frozen deployed-service parameters) survives a rigorous multi-day IS gate battery net of spread AND carry against a coin-flip null, and whether the original study's backtest actually matches the OANDA H4 bar grid the live paper service trades.</p></div>
+ <div class="sec"><h2>Description</h2><p>H1 tested the first-touch H4 low-volume fade with parameters frozen verbatim from the deployed paper service (L=25 swing lookback, EPS=12p, VW=20-bar volume gate, 2x ATR target/stop, 48h cap) across 12 pairs on 5.5yr M5 bid/ask data, net of spread AND carry, against a coin-flip control arm on identical timestamps. The A4 parity gate reproduced the original 2026-06-18 study exactly (loVol OOS +9.49p, n=303, WR54%, MC P=0.018) but a faithful new harness on OANDA's actual H4 grid (NY-17:00 anchor) diverged sharply on the same IS window (-6.03p, n=425, vs the original's IS-loVol +4.00p, n=434); isolating only the H4 bar-aggregation function and swapping to the original's naive UTC-midnight resample closed ~86% of the gap (+2.61p, n=506), proving the bar-grid convention was the dominant cause — and critically, the deployed fx-first-touch-paper live service itself reads OANDA's native NY-17:00-anchored H4 candles, so the original backtest never matched the grid it was meant to validate. Run anyway for completeness, the full A5 IS gate battery (1,518 trades, 12 pairs x 3 arms, Hetzner) on the correct grid went 0/4: signal -7.31p/trade vs coin +3.52p/trade, walk-forward 1/3 thirds positive, day-block bootstrap P(net&lt;=0)=0.965, breadth 4/12 pairs gross-positive; secondaries (CSI StrengthSpread H4 port, D1 RSI(2)) were also negative. The coin-flip arm's own +3.52p is flagged as a structural exit-machinery/carry tailwind for a future study, not an entry edge. Net effect: this program's diagnostic work downgrades/refutes entry #68's earlier '+9.49p, first significant + stationary edge' — it was measured on a bar grid inconsistent with the live service, and the properly-anchored, fully-controlled gate battery is decisively negative.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">A4 parity: original first_touch_v2.py reproduced verbatim = loVol OOS +9.49p/trade (n=303, WR54%, MC P=0.018), IS-loVol +4.00p (n=434); new harness on OANDA-correct NY-17:00 H4 grid, same IS window = -6.03p (n=425, WR49.2%) — FAILS tolerance (+-0.5p/+-5%); swapping only the bar-aggregation fn to naive UTC-midnight resample recovers +2.61p (n=506), ~86% of gap closed, isolating bar-grid anchor as dominant cause. A5 full IS battery (1,518 trades, 12 pairs x 3 arms, Hetzner): signal net -7.31p/trade (gross -3.36p, n=506) vs coin +3.52p/trade (gross +7.23p) vs continuation -0.44p/trade (gross +3.27p); WF thirds +1.50p/-10.79p/-9.87p (1/3 positive, none catastrophic); day-block bootstrap P(net&lt;=0)=0.965, boot mean -7.35p, 95% CI [-15.07p, +0.61p]; breadth 4/12 pairs gross-positive (best NZD_USD +25.7p gross/+23.0p net WR70%, worst EUR_JPY -17.7p gross/-21.8p net WR38%). Secondaries (IS-only, exploratory): CSI StrengthSpread H4/64-bar port -23.84p/leg (n=558 legs, 93 rebalances, 43.5% net-positive); D1 RSI(2) -16.31p/trade (n=1631, WR52%, 5/12 pairs gross-positive). 0/4 of gates 3-6 pass; OOS (sealed final 30%) never opened.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">H4 swing high/low levels (L=25)</span><span class="chip">tick-volume gate (VW=20-bar mean, low-volume only, VREL_MAX=1.16)</span><span class="chip">ATR(14, H4) target/stop (2.0x)</span><span class="chip">carry/financing rate (OANDA + FRED policy-rate differential)</span><span class="chip">D1 RSI(2), Wilder smoothing (secondary)</span><span class="chip">CSI StrengthSpread H4 (secondary)</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">event-driven multi-day fade backtest, 3 arms (signal / coin-flip / continuation)</span><span class="chip">H4/D1 bar aggregation — OANDA NY-17:00 anchor vs naive UTC-midnight pandas.resample diagnostic</span><span class="chip">walk-forward (3 IS thirds)</span><span class="chip">day-block bootstrap Monte Carlo (2000 resamples)</span><span class="chip">D1 RSI(2) mean-reversion backtest (secondary)</span><span class="chip">CSI StrengthSpread H4/64-bar rebalance portfolio (secondary)</span><span class="chip">equal-risk portfolio combiner (not constructed — no IS-positive candidate)</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/PREREGISTRATION.md" target="_blank" rel="noopener">research/experiments/multiday_contrarian/PREREGISTRATION.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/harness.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/bars.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/bars.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/carry_model.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/carry_model.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/is_data.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/is_data.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/run_is_battery.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/run_is_battery.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/compute_gates.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/compute_gates.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/secondary_rsi2.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/secondary_rsi2.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/secondary_strengthspread.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/secondary_strengthspread.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/equal_risk_portfolio.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/equal_risk_portfolio.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/test_harness.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/test_harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/test_bars.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/test_bars.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/test_carry_model.py" target="_blank" rel="noopener">research/experiments/multiday_contrarian/test_carry_model.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/multiday_contrarian/results/is_summary.md" target="_blank" rel="noopener">research/experiments/multiday_contrarian/results/is_summary.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/touch_ladder/first_touch_v2.py" target="_blank" rel="noopener">research/experiments/touch_ladder/first_touch_v2.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/strategy_first_touch_paper/main.py" target="_blank" rel="noopener">services/strategy_first_touch_paper/main.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="71-regime-conditioned-entry-phase-a-triple-barrier-against-drif.html">&larr; #71 Regime-conditioned entry Phase A (triple-barrier, against-drift)</a><a href="73-sma-scratch-tail-bounding-test-restart-censoring-discovery.html">#73 SMA-scratch tail-bounding test + restart-censoring discovery &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

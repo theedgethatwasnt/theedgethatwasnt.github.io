@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#44 ATR-adaptive P&amp;F box sweep — The Edge That Wasn't</title>
+<meta name="description" content="Volatility-adaptive P&amp;F box sizing (box = mult x ATR) just converges back to the fixed 5-pip box and underperforms it on 3 of 4 pairs.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/44-atr-adaptive-p-f-box-sweep.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #44</div>
+ <h1>#44 — ATR-adaptive P&amp;F box sweep</h1>
+ <div class="meta">2026-05-20 (Session 064)</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ closed negative — adaptive boxes worse than fixed on all JPY pairs</div>
+ <div class="oneline">Volatility-adaptive P&amp;F box sizing (box = mult x ATR) just converges back to the fixed 5-pip box and underperforms it on 3 of 4 pairs.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Does a volatility-adaptive P&amp;F box size (ATR x multiplier, frozen per column) adapt to regimes better than a fixed 5-pip box?</p></div>
+ <div class="sec"><h2>Description</h2><p>A test of whether the FIFO-Trends Point &amp; Figure charts should size their boxes dynamically from volatility (box = atr_mult x Wilder ATR, re-anchored and frozen at each new column) instead of using a fixed 5-pip box. The backtest swept 3,600 configs per pair (3 ATR periods x 5 multipliers x 3 reversals x 5 n_min x 8 exits) on 4 pairs through the standard 3-stage pipeline (IS walk-forward, Monte Carlo, OOS). Every pair's best adaptive config converged to mult=0.5 — roughly the 5-pip fixed box for JPY pairs — meaning ATR added no adaptive value, and OOS results were worse than fixed boxes on all three JPY pairs. The one apparent gain, GBP_USD (+9.5 p/d), turned out to be a sub-5-pip box discovery rather than an ATR benefit, and it spawned the follow-up small-box sweep (entry 45). Verdict: 5 pips is the noise floor; adaptivity doesn't beat it.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">OOS p/d adaptive vs fixed: GBP_JPY 39.3 vs 71.6 (-32.3), USD_JPY 52.1 vs 68.5 (-16.4), EUR_JPY 19.0 vs 39.9 (-20.9), GBP_USD 24.9 vs 15.4 (+9.5); all best configs converge to mult=0.5 ≈ 5-pip box</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">P&amp;F</span><span class="chip">Wilder ATR</span><span class="chip">column-SMA exit</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">grid search</span><span class="chip">walk-forward validation</span><span class="chip">Monte Carlo shuffle test</span><span class="chip">Numba JIT backtest</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/atr_pnf/backtest_atr_pnf.py" target="_blank" rel="noopener">research/experiments/atr_pnf/backtest_atr_pnf.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/atr_pnf/results/summary.csv" target="_blank" rel="noopener">research/experiments/atr_pnf/results/summary.csv</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="43-daily-range-regime-pdh-pdl.html">&larr; #43 Daily range regime (PDH/PDL)</a><a href="45-gbp-usd-small-box-p-f-sweep.html">#45 GBP_USD small-box P&amp;F sweep &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

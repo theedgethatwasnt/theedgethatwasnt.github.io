@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#4 IronNet fixed-topology NEAT — The Edge That Wasn't</title>
+<meta name="description" content="Fixing the network topology (4→4→3, weights/activations only) cured NEAT's one-direction output collapse and posted EUR_GBP +3,421p / CAD_JPY +12,287p with MC sign_p=0 — all later invalidated as lookahead.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/04-ironnet-fixed-topology-neat.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #4</div>
+ <h1>#4 — IronNet fixed-topology NEAT</h1>
+ <div class="meta">2026-04-03 — refuted by RCA 2026-04-12</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ lookahead-contaminated</div>
+ <div class="oneline">Fixing the network topology (4→4→3, weights/activations only) cured NEAT's one-direction output collapse and posted EUR_GBP +3,421p / CAD_JPY +12,287p with MC sign_p=0 — all later invalidated as lookahead.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether fixing the network topology (no topology mutations, no connection disabling) prevents NEAT's degenerate one-direction output collapse while preserving the apparent edge.</p></div>
+ <div class="sec"><h2>Description</h2><p>Standard NEAT kept producing degenerate genomes with dead outputs — the V3 general genome had BUY stuck at a constant 0.9445 and went 100% LONG live (−791p in 10 days). IronNet fixed the architecture at 4 inputs → 4 hidden → 3 outputs, fully connected with skip connections (40 always-enabled connections), letting NEAT mutate only weights, biases and activations from {tanh, sin, cos, gauss} — dead outputs became impossible. A 3-phase pipeline (sine pretrain 30 gens → zigzag pretrain 50 gens → walk-forward P&amp;L evolution 200 gens with a &gt;=15% minority-direction hard gate) trained pilot pairs EUR_GBP and CAD_JPY. Evaluated at S5 cadence the M5-trained genomes reached EUR_GBP +3,421p and CAD_JPY +12,287p OOS (40%/74% more than at M5 eval), all passing Monte Carlo sign-shuffle at sign_p=0.0000, and were deployed head-to-head on accounts 001 (S5 fine-tuned) and 009 (M5). The topology fix itself was sound engineering, but the inputs came from the compute_asi_mc pipeline, so the RCA verdict applies: the backtest numbers were lookahead artifacts.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">S5-cadence OOS: EUR_GBP +3,421p (+40% vs M5 eval), CAD_JPY +12,287p (+74%); M5: +2,435p / +7,074p; MC sign_p=0.0000 (10K shuffles); architecture 4→4→3, 40 connections, 47 continuous + 7 discrete params</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">ASI</span><span class="chip">MC(D)</span><span class="chip">MC(dD)</span><span class="chip">Kaufman Efficiency Ratio</span><span class="chip">zigzag (labels)</span><span class="chip">unrealized P&amp;L (UPnL)</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">NEAT neuroevolution (fixed topology, weights/activations only)</span><span class="chip">supervised zigzag-label pretraining</span><span class="chip">sine-wave positive-control pretraining</span><span class="chip">walk-forward-in-fitness evaluation</span><span class="chip">Monte Carlo sign-shuffle validation</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/train_ironnet_perpair.py" target="_blank" rel="noopener">research/experiments/asi_mc/train_ironnet_perpair.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/finetune_ironnet_s5.py" target="_blank" rel="noopener">research/experiments/asi_mc/finetune_ironnet_s5.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/export_s5_training_data.py" target="_blank" rel="noopener">research/experiments/asi_mc/export_s5_training_data.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/asi_mc/mc_validate_ironnet.py" target="_blank" rel="noopener">research/experiments/asi_mc/mc_validate_ironnet.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/fast_eval.py" target="_blank" rel="noopener">lib/fast_eval.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="03-asi-mc-v3-efficiency-ratio-gate.html">&larr; #3 ASI-MC V3 efficiency-ratio gate</a><a href="05-per-pair-ironnet-v3-12-pairs.html">#5 Per-pair IronNet V3, 12 pairs &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

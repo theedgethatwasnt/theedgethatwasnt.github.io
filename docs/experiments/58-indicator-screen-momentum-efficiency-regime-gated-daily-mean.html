@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#58 Indicator screen → momentum×efficiency → regime-gated daily mean-reversion — The Edge That Wasn't</title>
+<meta name="description" content="An honest spread-deducted screen of new indicators found only daily-horizon mean-reversion positive; a wiggle/vol regime gate produced the project's high-water mark, +13.0p/trade daily-clustered, t=2.25, p=0.025 — later retracted at the premise: the ">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/58-indicator-screen-momentum-efficiency-regime-gated-daily-mean.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #58</div>
+ <h1>#58 — Indicator screen → momentum×efficiency → regime-gated daily mean-reversion</h1>
+ <div class="meta">Session 079, 2026-05-28/29</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ closed negative — the regime-gated survivor was retracted at the premise (Coda)</div>
+ <div class="oneline">An honest spread-deducted screen of new indicators found only daily-horizon mean-reversion positive; a wiggle/vol regime gate produced the project's high-water mark, +13.0p/trade daily-clustered, t=2.25, p=0.025 — later retracted at the premise: the Coda's field-scan re-run (2026-07-17, Markov gate) re-measured the underlying daily-MR signal at +1.1p gross, negative net of the daily rollover financing cost.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether any new indicator (TRIX, Vortex, Fisher, momentum×efficiency) carries a spread-net directional edge at any timeframe or bar type — and, once only daily mean-reversion survived, whether a volatility/choppiness regime gate can turn that unstable effect into a stable, statistically defensible edge.</p></div>
+ <div class="sec"><h2>Description</h2><p>The user asked to explain and test TRIX and Vortex and brainstorm new indicators. A deliberately honest test harness — spread-deducted average P&amp;L per trade at a bounded fixed hold, avoiding the TP-only loss-deferral trap that fooled the momentum book — showed TRIX, Vortex and Fisher have no spread-net edge at any timeframe (M15–D1) or bar type; the only positive was daily-horizon mean-reversion (RSI2 contrarian, +4.73 p/trade net, IC +0.137, 10/12 pairs). Deepening it (z-score vs SMA10, ±2σ, 3-day hold) exposed regime dependence — walk-forward folds went +6.8/−1.8/+8.6/+23.0 — while the user's momentum(pips/min)×efficiency idea died in all three roles (continuation entry, fade entry, exit overlay). The redemption was using efficiency as a REGIME gate: trade the daily MR only when the market is both calm (low realized-vol percentile) and choppy (low intraday efficiency), which made all four walk-forward folds positive. Hardening with daily-clustered statistics and block bootstrap gave the honest number: +13.0p/trade, t=2.25, p=0.025 — the only signal of the session to clear overlap-robust significance, all-folds-positive WF, bounded margin and an economic rationale, but marginal (5%, not 1%) and thin (~63 trades/yr), so it earned a paper-test spec rather than live deployment.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">TRIX/Vortex/Fisher: −1.6 to −12 p/trade at every TF/bar type; daily MR (RSI2): +4.73 p/trade net, IC +0.137, 10/12 pairs; ungated WF folds +6.8/−1.8/+8.6/+23.0; G6 wiggle gate (eff&lt;0.5 &amp; vol&lt;0.6): all 4 folds positive, sealed OOS +31.9p t=3.43 62% WR 8/12 pairs; honest daily-clustered +13.0p, t=2.25, bootstrap p=0.025; ~63 trades/yr, max 9 concurrent; any stop halves the edge (worst MAE −592p) | Coda re-run 2026-07-17 (Markov gate, not this weighted-sum config): underlying daily-MR signal +1.1p gross — negative net of daily rollover cost; the flag for a paper test was closed at the premise.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">TRIX</span><span class="chip">Vortex</span><span class="chip">Fisher Transform</span><span class="chip">RSI(2)</span><span class="chip">z-score vs SMA(10)</span><span class="chip">Kaufman Efficiency Ratio</span><span class="chip">realized-volatility percentile</span><span class="chip">lag-1 return autocorrelation (ac60)</span><span class="chip">momentum (pips/min)</span><span class="chip">path efficiency (|net|/path)</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">grid search</span><span class="chip">4-fold walk-forward</span><span class="chip">block bootstrap</span><span class="chip">daily-clustered t-statistics</span><span class="chip">event-bar (volume/tick) sampling</span><span class="chip">regime conditioning</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/test_indicators.py" target="_blank" rel="noopener">research/experiments/new_indicators/test_indicators.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/alt_bars_test.py" target="_blank" rel="noopener">research/experiments/new_indicators/alt_bars_test.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/deepen_mean_reversion.py" target="_blank" rel="noopener">research/experiments/new_indicators/deepen_mean_reversion.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/regime_time_mr.py" target="_blank" rel="noopener">research/experiments/new_indicators/regime_time_mr.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/stage1_momentum_efficiency.py" target="_blank" rel="noopener">research/experiments/new_indicators/stage1_momentum_efficiency.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/stage2_fade.py" target="_blank" rel="noopener">research/experiments/new_indicators/stage2_fade.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/stage3_exit_overlay.py" target="_blank" rel="noopener">research/experiments/new_indicators/stage3_exit_overlay.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/mr_wiggle_gate.py" target="_blank" rel="noopener">research/experiments/new_indicators/mr_wiggle_gate.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/mr_gate_tune.py" target="_blank" rel="noopener">research/experiments/new_indicators/mr_gate_tune.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/new_indicators/mr_harden.py" target="_blank" rel="noopener">research/experiments/new_indicators/mr_harden.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="57-finite-margin-re-validation-of-the-live-momentum-book.html">&larr; #57 Finite-margin re-validation of the live momentum book</a><a href="59-oracle-optimal-trade-ceiling-gbp-jpy-s5.html">#59 Oracle optimal-trade ceiling (GBP_JPY S5) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#75 FX factor suite (carry / value / momentum / composite) at OANDA-retail cost — The Edge That Wasn't</title>
+<meta name="description" content="Carry-gated (PRIMARY) IS net -34.1 p/rebalance (ungated -53.4) vs R10-null p95 +15.5 across 44 monthly rebalances (2020-11 to 2024-08) - gates 3-4 fail, program closed, OOS sealed.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/75-fx-factor-suite-carry-value-momentum-composite-at-oanda-reta.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #75</div>
+ <h1>#75 — FX factor suite (carry / value / momentum / composite) at OANDA-retail cost</h1>
+ <div class="meta">2026-07-07</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ classic FX risk premia do not survive retail costs</div>
+ <div class="oneline">Carry-gated (PRIMARY) IS net -34.1 p/rebalance (ungated -53.4) vs R10-null p95 +15.5 across 44 monthly rebalances (2020-11 to 2024-08) - gates 3-4 fail, program closed, OOS sealed.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether the classic academic FX risk premia - carry, momentum(12-1), PPP value, and an equal-weight composite - survive OANDA-retail spread and broker-truth carry costs at a monthly cross-sectional rebalance horizon across 8 currencies.</p></div>
+ <div class="sec"><h2>Description</h2><p>Pre-registered (locked 2026-07-07) academic-style monthly FX risk-premia test on 8 currencies (via 12 pairs): carry (PRIMARY, broker-truth carry_model cross-sectional ranks, SPX500 SMA(200) risk-off gate as the confirmatory cell) plus three exploratory secondaries - momentum(12-1), PPP-value, and an equal-weight composite - each long top-3/short bottom-3 currencies, equal-risk 63-day-vol sized, monthly rebalanced, benchmarked against an R10 null of 200 random-weight portfolios on identical rebalance dates. Over 44 IS monthly rebalances (2020-11-11 to 2024-08-30, small-N disclosed in the pre-reg), gated carry nets -34.1 p/rebalance (ungated -53.4) versus the null's p95 of +15.5 - gate 3 fails, and WF halves (-39.4 / -28.9) both stay negative - gate 4 fails. Value is worse (-60.0 p/rebalance) and the composite -54.2; momentum(12-1) is the lone positive secondary at +27.4 p/rebalance but is flagged exploratory/single-pass and explicitly not promotable without its own pre-registration - a caveat borne out when the dedicated momentum_confirm follow-up study later found the +27.4 was a decade-stale window artifact. Apparatus gates (harness self-test, carry-accrual parity vs carry_model) both passed clean, so the failure is attributed to the factors themselves, not the test rig. Per the pre-registration's own decision rule, the program stopped at IS - OOS was never touched and remains sealed for one future amended shot.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">carry_gated: n=44, mean=-34.136 p/rebal, cum=-1502.0p, maxDD=-1640.3p; carry_ungated: mean=-53.418p, cum=-2350.4p; composite: mean=-54.226p, cum=-2386.0p; momentum: mean=+27.448p, cum=+1207.7p, maxDD=-874.1p (secondary, unconfirmed); value: mean=-59.958p, cum=-2638.1p; R10 null (n_seeds=200): mean=-15.993p, p95=+15.471p, p5=-48.410p, std=17.887p; WF halves: first(n=22)=-39.374p, second(n=22)=-28.899p; gates: 1=PASS, 2=PASS, 3=FAIL, 4=FAIL.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">Carry rank (broker-truth carry_model)</span><span class="chip">SPX500 SMA(200) risk-off gate</span><span class="chip">12-month minus 1-month currency momentum</span><span class="chip">PPP real-exchange-rate deviation (value)</span><span class="chip">63-day realized volatility (position sizing)</span><span class="chip">Equal-weight composite rank</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">Monthly cross-sectional rebalance engine (rebalance_engine.py)</span><span class="chip">R10 null: 200 random-weight portfolios on identical rebalance dates</span><span class="chip">Walk-forward IS-halves split</span><span class="chip">8-currency USD-numeraire triangulation (currency_index.py)</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/PREREGISTRATION.md" target="_blank" rel="noopener">research/experiments/fx_factors/PREREGISTRATION.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/factors.py" target="_blank" rel="noopener">research/experiments/fx_factors/factors.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/currency_index.py" target="_blank" rel="noopener">research/experiments/fx_factors/currency_index.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/rebalance_engine.py" target="_blank" rel="noopener">research/experiments/fx_factors/rebalance_engine.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/run_is_battery.py" target="_blank" rel="noopener">research/experiments/fx_factors/run_is_battery.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/null_r10.py" target="_blank" rel="noopener">research/experiments/fx_factors/null_r10.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/is_data.py" target="_blank" rel="noopener">research/experiments/fx_factors/is_data.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/ppp_fetch.py" target="_blank" rel="noopener">research/experiments/fx_factors/ppp_fetch.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/compute_gates.py" target="_blank" rel="noopener">research/experiments/fx_factors/compute_gates.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/make_summary.py" target="_blank" rel="noopener">research/experiments/fx_factors/make_summary.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/test_rebalance_engine.py" target="_blank" rel="noopener">research/experiments/fx_factors/test_rebalance_engine.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/test_currency_index.py" target="_blank" rel="noopener">research/experiments/fx_factors/test_currency_index.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/test_factors.py" target="_blank" rel="noopener">research/experiments/fx_factors/test_factors.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/results/is_summary.md" target="_blank" rel="noopener">research/experiments/fx_factors/results/is_summary.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/results/gate_table.csv" target="_blank" rel="noopener">research/experiments/fx_factors/results/gate_table.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/results/gate_extra.json" target="_blank" rel="noopener">research/experiments/fx_factors/results/gate_extra.json</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/results/is_per_factor_summary.csv" target="_blank" rel="noopener">research/experiments/fx_factors/results/is_per_factor_summary.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fx_factors/results/null_r10.csv" target="_blank" rel="noopener">research/experiments/fx_factors/results/null_r10.csv</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="74-london-fix-fade-16-00-pre-fix-drift-reversion.html">&larr; #74 London-fix fade (16:00 pre-fix drift reversion)</a><a href="76-momentum-confirmation-stage-1-deep-history-fx-momentum-12-1.html">#76 Momentum confirmation Stage 1 (deep-history FX momentum(12-1)) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

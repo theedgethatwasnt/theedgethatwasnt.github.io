@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#1 Project genesis + architecture — The Edge That Wasn't</title>
+<meta name="description" content="Rebuilt the scalper's 116 systemd services as ~16 Docker containers with a central data curator, DuckDB storage and ZMQ IPC — 49 unit tests passing and 4 strategies fully ported.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/01-project-genesis-architecture.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #1</div>
+ <h1>#1 — Project genesis + architecture</h1>
+ <div class="meta">2026-03-25 (Session 1) through Sessions 2-3</div>
+ <div class="verdict"><strong>Verdict: positive</strong> · ✅ engineering success</div>
+ <div class="oneline">Rebuilt the scalper's 116 systemd services as ~16 Docker containers with a central data curator, DuckDB storage and ZMQ IPC — 49 unit tests passing and 4 strategies fully ported.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether collapsing 116 duplicated systemd services into ~16 containers with one central indicator curator cuts resource use and kills backtest-vs-live code divergence.</p></div>
+ <div class="sec"><h2>Description</h2><p>The predecessor 'scalper' system had grown to 116 systemd services across 10 OANDA accounts, holding 99 concurrent API connections, wasting ~7.4 GB of RAM on duplicated data, and running separate indicator code in research versus live (no training/live parity). FX-Core was designed in one session as its containerized successor: a single data curator computes every indicator centrally and publishes over ZMQ to ~16 strategy containers, with DuckDB as storage and a Docker-socket Telegram kill switch. Sessions 1-3 delivered the shared library (pair config, DB schema, ZMQ protocol, broker adapter, indicators extracted verbatim from scalper for bit-identical output), all 4 legacy strategies (Impulse, Strength, Session Fade, NEAT), dashboard, telegram bot, and the full Docker stack. This is an engineering milestone, not a market experiment — its theme in the audit table is 'Measurement: the apparatus itself can lie', because a unified apparatus was the precondition for every later experiment.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">116 systemd services → ~16 containers; 99 OANDA connections → 1 curator; ~7.4 GB duplicated RAM eliminated; 49/49 unit tests passing; curator smoke test green; 4 strategies fully ported</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">P&amp;F</span><span class="chip">ZigZag S/R</span><span class="chip">ATR(14)</span><span class="chip">MTF Momentum Confluence (MTFMC)</span><span class="chip">Asian Range</span><span class="chip">Kalman currency strength</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">Docker Compose containerization</span><span class="chip">ZMQ pub/sub IPC</span><span class="chip">DuckDB storage</span><span class="chip">Kalman filter (currency strength)</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/pair_config.py" target="_blank" rel="noopener">lib/pair_config.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/db.py" target="_blank" rel="noopener">lib/db.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/zmq_protocol.py" target="_blank" rel="noopener">lib/zmq_protocol.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/broker_adapter.py" target="_blank" rel="noopener">lib/broker_adapter.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/oanda_adapter.py" target="_blank" rel="noopener">lib/oanda_adapter.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/indicators.py" target="_blank" rel="noopener">lib/indicators.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/strategy_base.py" target="_blank" rel="noopener">lib/strategy_base.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/lib/sizing.py" target="_blank" rel="noopener">lib/sizing.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/curator/main.py" target="_blank" rel="noopener">services/curator/main.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/portfolio_mgr/main.py" target="_blank" rel="noopener">services/portfolio_mgr/main.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/dashboard/main.py" target="_blank" rel="noopener">services/dashboard/main.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/docker-compose.yml" target="_blank" rel="noopener">docker-compose.yml</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/tests/unit/test_indicators.py" target="_blank" rel="noopener">tests/unit/test_indicators.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/tests/unit/test_pair_config.py" target="_blank" rel="noopener">tests/unit/test_pair_config.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/tests/unit/test_db_schema.py" target="_blank" rel="noopener">tests/unit/test_db_schema.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/tests/unit/test_zmq_protocol.py" target="_blank" rel="noopener">tests/unit/test_zmq_protocol.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><span></span><a href="02-jpy-exposure-bug-fix.html">#2 JPY exposure bug fix &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

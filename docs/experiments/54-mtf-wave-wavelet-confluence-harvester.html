@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#54 MTF/wave/wavelet confluence + Harvester — The Edge That Wasn't</title>
+<meta name="description" content="Every S5 multi-lag confluence variant (trend, counter-trend, wave-break exit, strided Haar-wavelet exit) produced 0 walk-forward survivors, and the Harvester SMA-fade's genuine 70–89% win rate sits 5–9% below the spread-adjusted break-even at every R">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/54-mtf-wave-wavelet-confluence-harvester.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #54</div>
+ <h1>#54 — MTF/wave/wavelet confluence + Harvester</h1>
+ <div class="meta">2026-05-27 (Sessions 076-077)</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ closed — 0 WF survivors everywhere; spread is the wall</div>
+ <div class="oneline">Every S5 multi-lag confluence variant (trend, counter-trend, wave-break exit, strided Haar-wavelet exit) produced 0 walk-forward survivors, and the Harvester SMA-fade's genuine 70–89% win rate sits 5–9% below the spread-adjusted break-even at every R:R.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether multi-timeframe/multi-lag agreement (confluence), wavelet-scale decomposition, or an SMA-distance + bar-exhaustion fade can generate an edge that clears OANDA retail spread on S5–M15 bars.</p></div>
+ <div class="sec"><h2>Description</h2><p>A broad campaign testing whether multi-view agreement clears the OANDA retail spread. The S5 multi-lag momentum confluence was tested trend-following (0/3 pairs WF), then flipped counter-trend on the '78% WR' intuition (also 0/3 — win rate turned out ~22% in BOTH directions, so the signal predicts neither continuation nor reversal). Exit-side variants — a wave-break exit on fast-lag reversal (WR=6%, pure S5 noise) and a strided Haar wavelet exit at S30/M1/M2 effective scales (756 configs x 4 pairs, 0 WF, statistically dead at 9–14 IS trades) — also failed. The Harvester (SMA mean-reversion + bar-exhaustion + ATR gate on M5, then M15, then M15+Markov filter; ~24,000 configs total) revealed the campaign's cleanest lesson, the 'WR gap theorem': the bar-exhaustion fade signal is genuinely directional (70–85% raw WR) but its win rate is invariably ~5% below the break-even WR at every R:R tested — that gap IS the OANDA spread, and no TP/SL geometry can close it. The one v1 'success' (89% WR) survived only because a spread&lt;1p filter reduced it to 55 trades clustered in the 2020–2022 low-spread era.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">S5 confluence 0/3 WF both directions (WR ~22% either way, EV ≈ −1.03 p/trade); wave-break WR=6%; strided wavelet 0/4 WF (9–14 IS trades); Harvester v1 USD_JPY WR=89.1% but n=55/1204 days (spread&lt;1p era only); WR gap 5–9% below break-even at every R:R — the OANDA spread in WR form</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">Multi-lag S5 momentum confluence (short/mid/long close deltas)</span><span class="chip">Haar wavelet details (D3/D4/D5, strided S30/M1/M2)</span><span class="chip">SMA distance (mean-reversion stretch)</span><span class="chip">Bar-exhaustion (n consecutive same-direction bodies)</span><span class="chip">ATR magnitude gate</span><span class="chip">Markov D1 regime filter</span><span class="chip">IS-P90 spread gate</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">grid search sweep (Numba prange)</span><span class="chip">walk-forward validation (3 chunks)</span><span class="chip">Monte Carlo sign-shuffle</span><span class="chip">Haar discrete wavelet transform</span><span class="chip">Markov chain regime filter</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/s5_momentum_sweep/backtest_s5_mtf_mom.py" target="_blank" rel="noopener">research/experiments/s5_momentum_sweep/backtest_s5_mtf_mom.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/s5_momentum_sweep/backtest_s5_ctr_mom.py" target="_blank" rel="noopener">research/experiments/s5_momentum_sweep/backtest_s5_ctr_mom.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/wave_exit/backtest_wave_exit.py" target="_blank" rel="noopener">research/experiments/wave_exit/backtest_wave_exit.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/wave_exit/backtest_wave_wavelet.py" target="_blank" rel="noopener">research/experiments/wave_exit/backtest_wave_wavelet.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/harvester/backtest_harvester.py" target="_blank" rel="noopener">research/experiments/harvester/backtest_harvester.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/harvester/backtest_harvester_v2.py" target="_blank" rel="noopener">research/experiments/harvester/backtest_harvester_v2.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/harvester/backtest_harvester_m15.py" target="_blank" rel="noopener">research/experiments/harvester/backtest_harvester_m15.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/harvester/backtest_harvester_m15_markov.py" target="_blank" rel="noopener">research/experiments/harvester/backtest_harvester_m15_markov.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="53-h4-donchian-fifo-stopped-live-check.html">&larr; #53 H4 Donchian + FIFO stopped (live check)</a><a href="55-dynamic-position-sizing.html">#55 Dynamic position sizing &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

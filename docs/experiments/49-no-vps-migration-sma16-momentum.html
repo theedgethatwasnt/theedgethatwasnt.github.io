@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#49 No-VPS migration + SMA16 momentum — The Edge That Wasn't</title>
+<meta name="description" content="A 5-phase sweep finds SMA16 momentum with lags (8,10,15) on H1+M30 agreement, TP=20p: +29.8 p/d OOS, 10/12 pairs pass IS and Monte Carlo, deployed live on account 012.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/49-no-vps-migration-sma16-momentum.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #49</div>
+ <h1>#49 — No-VPS migration + SMA16 momentum</h1>
+ <div class="meta">2026-05-24 (Session 072)</div>
+ <div class="verdict"><strong>Verdict: positive</strong> · ✅ positive — validated and deployed live (later drained with the momentum book)</div>
+ <div class="oneline">A 5-phase sweep finds SMA16 momentum with lags (8,10,15) on H1+M30 agreement, TP=20p: +29.8 p/d OOS, 10/12 pairs pass IS and Monte Carlo, deployed live on account 012.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Is a multi-lag SMA-momentum agreement signal across H1+M30 (all 6 momentum values same sign) a tradeable cross-pair entry with a fixed take-profit?</p></div>
+ <div class="sec"><h2>Description</h2><p>A two-part session: the Hetzner CX43 VPS was decommissioned with all fx-core containers moved to the local 24/7 'trader' box, and an SMA momentum signal was researched from scratch and deployed. The signal computes SMA(N) on H1 and M30 closes and takes momentum at three lags on each; a trade fires only when all 6 values agree in sign (LONG all &gt;0, SHORT all &lt;0), exiting at a fixed broker-side take-profit. Five phases ran: a single-pair exit sweep on GBP_JPY (simple TP=20p beat every trailing stop), a 12-pair sweep with Monte Carlo, a TP feasibility frontier (5-100p), the key lag+period sweep (all 56 lag triplets from {1,2,3,5,8,10,15,20} x SMA periods {16,22,34,55} = 224 configs x 12 pairs), and MC validation of the winner with 2,000 sign-shuffles per pair. The winner — SMA16, lags (8,10,15), TP=20p — delivered +29.8 p/d OOS portfolio (627 OOS trades, 99.5% WR, mc_p=0.0000, 10/12 pairs passing both gates), +40% over the initial SMA22 guess. It went live as fx-sma-live on account 012 (25u/trade, 10 pairs). Two caveats recorded: the 7 JPY crosses fire nearly simultaneously (one JPY bet x7, not diversification), and the TP-only/no-SL design later proved to hide a catastrophic finite-margin tail (entry 57: +27.3 -&gt; -206 p/d once any stop is added); the momentum book was drained 2026-06-10.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">Winner SMA16 lags=(8,10,15) TP=20p: +29.8 p/d OOS, 1.47 t/d, IS3 10/12, portfolio 627 OOS trades / 99.5% WR / mc_p=0.0000; +40% p/d vs SMA22 (1,5,10) baseline (+21.3); best pairs USD_JPY +6.8, EUR_JPY +4.6, GBP_JPY +4.2 p/d; deployed acct 012 @ 25u/trade</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">SMA(16)</span><span class="chip">multi-lag SMA momentum (lags 8,10,15)</span><span class="chip">H1+M30 timeframe agreement</span><span class="chip">fixed take-profit</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">grid search (lag/period/TP sweeps)</span><span class="chip">walk-forward validation (IS 3/3 chunks)</span><span class="chip">Monte Carlo sign-shuffle test (2000/pair)</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/backtest_sma22_momentum.py" target="_blank" rel="noopener">research/experiments/sma_momentum/backtest_sma22_momentum.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/backtest_sma22_sweep.py" target="_blank" rel="noopener">research/experiments/sma_momentum/backtest_sma22_sweep.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/feasibility_study.py" target="_blank" rel="noopener">research/experiments/sma_momentum/feasibility_study.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/lag_sweep.py" target="_blank" rel="noopener">research/experiments/sma_momentum/lag_sweep.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/mc_validate_winner.py" target="_blank" rel="noopener">research/experiments/sma_momentum/mc_validate_winner.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/results/sma_lag_sweep.csv" target="_blank" rel="noopener">research/experiments/sma_momentum/results/sma_lag_sweep.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/results/sma_mc_validation.csv" target="_blank" rel="noopener">research/experiments/sma_momentum/results/sma_mc_validation.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/services/strategy_sma_live/main.py" target="_blank" rel="noopener">services/strategy_sma_live/main.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="48-multiscale-shock-phase-10-joint-timing-direction-model.html">&larr; #48 Multiscale shock Phase 10 + joint timing-direction model</a><a href="50-price-momentum-m15-m5-live.html">#50 Price momentum M15+M5 live &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

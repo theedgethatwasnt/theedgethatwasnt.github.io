@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#63 Three measurement failures inverting verdicts (ledger, test proxy, risk arithmetic) — The Edge That Wasn't</title>
+<meta name="description" content="In one day, three independent measurement errors were caught, each inverting a decision: a P&amp;L-recording bug made a +287p live pair look dead, a TP-proxy backtest made a dead pair look alive, and a JPY pip value 110× too large had driven a wrong risk">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/63-three-measurement-failures-inverting-verdicts-ledger-test-pr.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #63</div>
+ <h1>#63 — Three measurement failures inverting verdicts (ledger, test proxy, risk arithmetic)</h1>
+ <div class="meta">2026-06-17</div>
+ <div class="verdict"><strong>Verdict: mixed</strong> · 🟡 mixed — meta-finding: the apparatus itself lied three ways</div>
+ <div class="oneline">In one day, three independent measurement errors were caught, each inverting a decision: a P&amp;L-recording bug made a +287p live pair look dead, a TP-proxy backtest made a dead pair look alive, and a JPY pip value 110× too large had driven a wrong risk cap.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether the project's own measurement layers — the live trade ledger, backtest exit proxies, and position-risk arithmetic — report the truth; each of the three was found capable of inverting a keep/drop or sizing decision on its own.</p></div>
+ <div class="sec"><h2>Description</h2><p>A cluster of same-day discoveries showing that the measurement apparatus — not the market — can invert a verdict. (1) Ledger: the live SMA-Stack's PSAR-exit close handler discarded the broker fill price, so 17 GBP_USD trail-winners were logged as 'closed_unknown' / 0 pips; an OANDA backfill recovered +256.8p, revealing GBP_USD's true live record as +286.8p at 61% WR (the strategy's #2 pair) when the ledger had shown +30p/6% WR — a drop candidate. (2) Test proxy: a TF-separation sweep using a TP20 testbed exit crowned GBP_JPY H1/H4 as a winner (+2.04 OOS p/d), but re-running with the EXACT live PSAR exit over ~2.85 years gave OOS −3.41 p/d — the proxy exit faked the edge, and GBP_JPY proved dead at every speed and exit (it was dropped; GBP_USD was kept). (3) Risk arithmetic: risk documents had used a JPY pip value of ~$0.0069/unit/pip when the broker-verified truth is $0.0000626 — 110× too large — making the 200-pip emergency fence look like a 2×-NAV account-killer when it is really ~1.9% of NAV, which had motivated an unnecessary MAX_UNITS=30 cap. The audit table's script link points at research/experiments/gbpusd_regime; the actual fix/evidence scripts live in research/experiments/sma_exits.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">Ledger backfill recovered +256.8p → GBP_USD true live +286.8p @ 61% WR (had shown +30p/6% WR); GBP_JPY TP20-testbed 'winner' +2.04 OOS p/d → −3.41 OOS p/d under the real PSAR exit (dead at every TF ratio and exit); JPY pip value error 110× ($0.0069 vs true $0.0000626/unit/pip) — 200p fence is ~1.9% NAV, not 2× NAV; GBP_USD S30/M1 PSAR OOS +2.67 p/d @ 92% WR (keep, don't widen)</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">SMA stack (multi-TF alignment)</span><span class="chip">PSAR trailing stop</span><span class="chip">fixed TP (20p testbed proxy)</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">broker-ledger backfill/reconciliation</span><span class="chip">walk-forward backtesting</span><span class="chip">TF-ratio grid sweep</span><span class="chip">exact live-exit (PSAR) replay</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/gbpusd_regime/diagnostic.py" target="_blank" rel="noopener">research/experiments/gbpusd_regime/diagnostic.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_exits/gbpusd_oanda_backfill.py" target="_blank" rel="noopener">research/experiments/sma_exits/gbpusd_oanda_backfill.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_exits/gbpusd_psar.py" target="_blank" rel="noopener">research/experiments/sma_exits/gbpusd_psar.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_exits/gbpjpy_h1h4_psar.py" target="_blank" rel="noopener">research/experiments/sma_exits/gbpjpy_h1h4_psar.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_exits/gbpjpy_fast.py" target="_blank" rel="noopener">research/experiments/sma_exits/gbpjpy_fast.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_exits/tf_separation_sweep.py" target="_blank" rel="noopener">research/experiments/sma_exits/tf_separation_sweep.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="62-money-management-cannot-manufacture-edge-random-vs-trend-ent.html">&larr; #62 Money management cannot manufacture edge (random vs trend entries)</a><a href="64-fx-stat-arb-avellaneda-lee-eigen-residual.html">#64 FX stat-arb (Avellaneda-Lee eigen-residual) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

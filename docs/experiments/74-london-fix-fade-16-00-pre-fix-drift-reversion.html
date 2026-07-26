@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#74 London-fix fade (16:00 pre-fix drift reversion) — The Edge That Wasn't</title>
+<meta name="description" content="Fading |D|&gt;=5p pre-fix drift at the DST-aware London 16:00 fix: fade net -1.63p vs coin -1.89p (beats coin, not &gt;0), gross +0.20p real and monotonic, only 2/4 IS gates pass -- closes the corpus's own flagged lead as a clean negative.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/74-london-fix-fade-16-00-pre-fix-drift-reversion.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #74</div>
+ <h1>#74 — London-fix fade (16:00 pre-fix drift reversion)</h1>
+ <div class="meta">2026-07-07</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ gross real reversion, net dead at spread</div>
+ <div class="oneline">Fading |D|&gt;=5p pre-fix drift at the DST-aware London 16:00 fix: fade net -1.63p vs coin -1.89p (beats coin, not &gt;0), gross +0.20p real and monotonic, only 2/4 IS gates pass -- closes the corpus's own flagged lead as a clean negative.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether fading the pre-London-fix (16:00 Europe/London, DST-aware) directional drift on 12 FX pairs produces a net-of-spread edge, versus coin-flip and continuation controls.</p></div>
+ <div class="sec"><h2>Description</h2><p>H1 (pre-registered, locked 2026-07-07): fade the pre-fix drift D = mid(16:00 London) - mid(15:00 London) when |D|&gt;=5 pips, entering at the first M5 open after the fix bar closes and exiting 60 minutes later at close (no TP/SL, single threshold, single horizon, no sweeps), against coin-flip (seed=20260708) and with-drift continuation control arms on identical timestamps (R10). Full IS battery run on Hetzner: 12 pairs, real per-trade M5 BA spread, DST-aware Europe/London fix time verified never ambiguous/nonexistent across 2021-2024 transitions, IS = first 70% of 2020-11-11-&gt;2026-05-21 (hard boundary 2024-09-22T21:35:00 UTC), 8,780 fade-arm signal trades out of 16,944 candidate fix-days, 30 TDD tests all passing. Result: gross reversion is real and monotonic across arms (fade +0.20p &gt; coin -0.06p &gt; continuation -0.20p) and breadth is broad (8/12 pairs gross-positive), but net collapses to approximately minus the spread (-1.63p) and fails both the net-positive and the 3-thirds walk-forward gates (0/3), landing at 2/4 gates passed -- exactly the pre-registration's own stated prior. A pre-declared (not searched) month-end split shows stronger reversion on the last trading day (gross +1.72p/net -0.13p, n=452) versus the rest of the month (gross +0.12p/net -1.71p, n=8328), consistent with the WM/R rebalancing-flow framing, but still net-negative either way. Worst single-trade adverse excursion was -380.6p on USD_JPY, 2022-10-21 (the BOJ intervention day; no SL, correctly captured by the 60-minute cap, not a data artifact). This formally closes the corpus's own flagged-untested lead (the indicator-screen memory's 'FX-fix session-fade'); OOS was never opened (IS gate failure stops the run per the pre-registration's decision rule).</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">8,780 fade-arm trades (16,944 candidate fix-days scanned, 12 pairs); portfolio fade: gross +0.20p / net -1.63p, WR 45%; coin: gross -0.06p / net -1.89p; continuation: gross -0.20p / net -2.03p; gates 1-2-3-4 = PASS/FAIL/FAIL/PASS (2/4); WF thirds net = -0.91p/-2.68p/-1.16p (0/3 positive); breadth 8/12 pairs gross-positive; RW self-test PASS (fade_gross=+0.13p se=0.254, coin_gross=-0.34p se=0.254, n=360 each); day-block bootstrap P(net&lt;=0)=1.0000, 95% CI=[-2.39p,-0.89p]; month-end last-trading-day gross +1.72p/net -0.13p (n=452) vs rest gross +0.12p/net -1.71p (n=8328); worst MAE -380.6p (USD_JPY 2022-10-21 BOJ intervention day, D=-125.1p); mean MAE 10.77p, mean MFE 11.06p; IS window 2020-11-11 -&gt; 2024-09-22T21:35:00 UTC (first 70% of 2020-11-11-&gt;2026-05-21); 30 TDD tests pass.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">pre-fix drift D (mid(16:00 London) - mid(15:00 London))</span><span class="chip">DST-aware Europe/London fix-time bar index (zoneinfo)</span><span class="chip">M5 bid/ask spread cost</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">fade-the-drift entry rule (|D|&gt;=5p, 60-min fixed-horizon exit, no TP/SL)</span><span class="chip">coin-flip control arm (seed=20260708)</span><span class="chip">with-drift continuation control arm</span><span class="chip">R10 identical-timestamp null design</span><span class="chip">RW (random-walk) self-test</span><span class="chip">day-block bootstrap (2000 resamples)</span><span class="chip">walk-forward thirds split</span><span class="chip">pre-declared month-end (last-trading-day) split</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/PREREGISTRATION.md" target="_blank" rel="noopener">research/experiments/fix_fade/PREREGISTRATION.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/fixtime.py" target="_blank" rel="noopener">research/experiments/fix_fade/fixtime.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/harness.py" target="_blank" rel="noopener">research/experiments/fix_fade/harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/data_loader.py" target="_blank" rel="noopener">research/experiments/fix_fade/data_loader.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/rw_selftest.py" target="_blank" rel="noopener">research/experiments/fix_fade/rw_selftest.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/run_is_battery.py" target="_blank" rel="noopener">research/experiments/fix_fade/run_is_battery.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/compute_gates.py" target="_blank" rel="noopener">research/experiments/fix_fade/compute_gates.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/make_summary.py" target="_blank" rel="noopener">research/experiments/fix_fade/make_summary.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/run_all.sh" target="_blank" rel="noopener">research/experiments/fix_fade/run_all.sh</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/test_fixtime.py" target="_blank" rel="noopener">research/experiments/fix_fade/test_fixtime.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/test_harness.py" target="_blank" rel="noopener">research/experiments/fix_fade/test_harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/is_summary.md" target="_blank" rel="noopener">research/experiments/fix_fade/results/is_summary.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/event_stats.json" target="_blank" rel="noopener">research/experiments/fix_fade/results/event_stats.json</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/month_end_split.csv" target="_blank" rel="noopener">research/experiments/fix_fade/results/month_end_split.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/rw_selftest_result.json" target="_blank" rel="noopener">research/experiments/fix_fade/results/rw_selftest_result.json</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/gate_table.csv" target="_blank" rel="noopener">research/experiments/fix_fade/results/gate_table.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fix_fade/results/gate_extra.json" target="_blank" rel="noopener">research/experiments/fix_fade/results/gate_extra.json</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="73-sma-scratch-tail-bounding-test-restart-censoring-discovery.html">&larr; #73 SMA-scratch tail-bounding test + restart-censoring discovery</a><a href="75-fx-factor-suite-carry-value-momentum-composite-at-oanda-reta.html">#75 FX factor suite (carry / value / momentum / composite) at OANDA-retail cost &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

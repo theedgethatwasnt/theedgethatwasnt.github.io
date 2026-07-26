@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#57 Finite-margin re-validation of the live momentum book — The Edge That Wasn't</title>
+<meta name="description" content="Re-testing the deployed TP-only momentum book under a realistic margin-closeout model showed the +27 p/d 'edge' flips to −206 p/d the moment any stop is added, and all 6 live accounts would have been liquidated inside the very OOS window that validat">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/57-finite-margin-re-validation-of-the-live-momentum-book.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #57</div>
+ <h1>#57 — Finite-margin re-validation of the live momentum book</h1>
+ <div class="meta">Session 079, 2026-05-28/29</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ closed negative — book taken down</div>
+ <div class="oneline">Re-testing the deployed TP-only momentum book under a realistic margin-closeout model showed the +27 p/d 'edge' flips to −206 p/d the moment any stop is added, and all 6 live accounts would have been liquidated inside the very OOS window that validated them.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether the live momentum strategies' backtested +30 p/d edge survives when losses must actually be realized — i.e. under a hard stop, finite margin, and OANDA's closeout mechanics — and whether the entry signal beats random entry under the identical exit rules.</p></div>
+ <div class="sec"><h2>Description</h2><p>After the portfolio-variation campaign put a TP-only / no-stop-loss momentum book live on six OANDA accounts (001-004, 011, 012), a critical review asked the question the validation pipeline had never asked: is the backtested edge realizable with finite margin? A re-validation script replayed each deployed config through the same out-of-sample window with the account's actual balance, units and OANDA's 45%/50% margin-closeout rules, plus an entry-randomization Monte Carlo and forward-return IC. The answer was devastating: the positive expectancy was loss-deferral, not prediction — adding even a 30-pip stop flips +27.3 p/d (99.5% WR) to −206 p/d; all 6 accounts hit margin closeout during the 'validated' OOS window and 5 of 6 went NAV-negative; random entries under the same exits earn most of the headline p/d; and forward IC of the signals is slightly negative everywhere. The book was wound down and the lesson became a standing rule: gate on realizable-under-finite-margin risk, not just statistical significance.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">No-SL +27.3 p/d @ 99.5% WR → 30p SL −206 p/d @ 56% WR (15p −327, 3p −821); 6/6 accounts hit margin closeout, 5/6 wiped (011 reached −$15.66 on $17.79 = 188% loss); dropped open positions hid −8,000 to −11,700p unrealized loss per account; random entry earns +19 to +28 of the +30 p/d; forward IC −0.006 to −0.042; worst MAE −1,300 to −1,630p; max hold 8,228h ≈ 343 days</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">SMA(16) momentum triplet</span><span class="chip">raw price momentum (multi-lag)</span><span class="chip">bar-exhaustion / SMA-distance</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">finite-margin closeout simulation</span><span class="chip">entry-randomization Monte Carlo</span><span class="chip">stop-loss (MAE) sweep</span><span class="chip">forward-return information coefficient</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/portfolio_sweep/risk_revalidation.py" target="_blank" rel="noopener">research/experiments/portfolio_sweep/risk_revalidation.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/portfolio_sweep/results/risk_revalidation.csv" target="_blank" rel="noopener">research/experiments/portfolio_sweep/results/risk_revalidation.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/sma_momentum/results/mae_stop_sweep.csv" target="_blank" rel="noopener">research/experiments/sma_momentum/results/mae_stop_sweep.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/portfolio_sweep/portfolio_rank.py" target="_blank" rel="noopener">research/experiments/portfolio_sweep/portfolio_rank.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="56-portfolio-variation-campaign-8-variants.html">&larr; #56 Portfolio variation campaign (8 variants)</a><a href="58-indicator-screen-momentum-efficiency-regime-gated-daily-mean.html">#58 Indicator screen → momentum×efficiency → regime-gated daily mean-reversion &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

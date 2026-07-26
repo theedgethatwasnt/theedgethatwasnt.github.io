@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#73 SMA-scratch tail-bounding test + restart-censoring discovery — The Edge That Wasn't</title>
+<meta name="description" content="Testing whether a floating-NAV equity overlay + 3xATR disaster stop could bound the SMA-scratch momentum book's unbounded open-position tail, the fix instead made floating max-drawdown 2.3x WORSE than baseline (-33,320p vs -14,259p) and flipped posit">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/73-sma-scratch-tail-bounding-test-restart-censoring-discovery.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #73</div>
+ <h1>#73 — SMA-scratch tail-bounding test + restart-censoring discovery</h1>
+ <div class="meta">2026-07-07</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ overlay+stop AMPLIFIES drawdown; restart-censoring ledger found</div>
+ <div class="oneline">Testing whether a floating-NAV equity overlay + 3xATR disaster stop could bound the SMA-scratch momentum book's unbounded open-position tail, the fix instead made floating max-drawdown 2.3x WORSE than baseline (-33,320p vs -14,259p) and flipped positive expectancy negative, while the gate-2 parity check uncovered a new apparatus-lies mechanism: the live paper ledger was restart-censored, silently orphaning 17 open positions (16 negative, ~-592p erased) across 3 container restarts, deflating the true full-population expectancy from a flattered +8.70p/trade to ~+3.0p/trade.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether a floating-NAV equity-curve overlay combined with a hard per-trade disaster stop can bound the unbounded open-position tail risk of a TP-only/no-stop momentum-scratch exit structure without destroying its positive expectancy, and, as a byproduct, whether the live paper ledger used as the R7 parity reference is itself trustworthy.</p></div>
+ <div class="sec"><h2>Description</h2><p>H1 tested whether a floating-NAV equity-curve overlay (block new entries while floating equity &lt; its own moving average) plus a hard 3.0xATR(14,H1) per-trade disaster stop could bound the unbounded open-position tail of the live fx-sma-scratch-paper momentum book (SMA16 scratch-exit, 6 pairs) without destroying its positive expectancy. Gate 2 (R7 parity vs the live paper trail) failed on expectancy (+8.70p/trade live vs +4.56p/trade harness) and was root-caused (Amendment 2) to restart-censoring: the live PairState is memory-only with no persistence, and 3 in-window container restarts (2026-06-21, 06-30, VPS migration 07-02) silently orphaned 17 open positions (16/17 negative, ~-591.6p erased) because the ledger only records trades that both open AND close within a single container lifetime -- the famous &quot;+975p closed&quot; collapses to ~+383p with orphans added back and to ~+190p / ~+3.0p-per-trade once the still-open book is marked too; fx-sma-scratch-paper was stopped as a result. Gate 2 was then re-scoped (Amendment 3) to count-parity-only (PASS, 111 vs 112) and the harness adopted as authoritative for gates 3-5. The full IS battery (4yr, 6 pairs, 64,621 trades across 9 arms) then falsified H1 outright: gate 3 passed (arm A's tail pathology reproduced cleanly -- 6 never-closed positions, -12,420p unrealized, worst single excursion -7,100p) but gate 4 failed on all four sub-criteria -- arm D (floating-overlay+stop) nets -2.85p/trade (bootstrap CI (-3.67,-2.03), wrong side of zero), does not beat its own coin_D control, and floating maxDD is 2.3x arm A's, with walk-forward thirds 0/3 positive; arm E (bare stop, no overlay) independently replicates project_validation_gap's no-SL-book finding on a second strategy (+3.71 -&gt; -2.47p/trade). OOS was never unsealed -- the program stopped at the IS gate per the pre-registered decision rule.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">Gate 2: 112 live closed trades vs 111 harness (ratio 0.991, count PASS) but +8.70p/trade live vs +4.56p/trade harness (diff -4.14p, FAIL vs +-1.0p tol). Restart-censoring: 4 container lifetimes (start 2026-06-18, restarts 06-21 and 06-30, VPS migration 07-02); 17 orphaned positions (5+6+6 across the 3 resets), 16/17 negative, ~-591.6p total; worst orphan USD_JPY -176p, GBP_JPY +1 at -102p, GBP_JPY -1 at -95p, GBP_USD -1 at -62p. Corrected ledger: +975p closed -&gt; ~+383p with orphans -&gt; ~+190p full-population including open marks (~+3.0p/trade vs the flattered +8.70p/trade headline). Gate 3 PASS: arm A n=849, WR 64%, net +3.71p/trade, 6 never-closed positions, open-book unrealized -12,420.1p, worst single excursion -7,100.3p. Gate 4 FAIL on all 4 sub-criteria: arm D n=11,666, net -2.85p/trade, bootstrap CI (-3.675,-2.033); vs coin_D (net -2.59p/trade, n=9,468) diff CI (-1.336,+0.797) spans zero; floating maxDD arm D -33,319.6p vs arm A -14,258.6p = 2.3x worse (claim required &lt;=50%); walk-forward thirds 0/3 positive (-1.98p/-3.16p/-3.23p per trade, n=3,330/4,420/3,916). Arm E (stop-only, no overlay) n=20,290, net -2.47p/trade vs arm A's +3.71p/trade -- replicates project_validation_gap's no-SL-book finding on a second strategy. Gate 5 FAIL narrowly: coin_A +2.55p/trade (n=704) vs coin_overlay +2.17p/trade (n=445), no sign flip, but floating maxDD -18,941.4p vs -17,904.5p (~5.8% worse, tolerance was &lt;=5%). Full IS battery: 6 pairs, IS 2020-11-11 to 2024-09-25, 64,621 trades across 9 arms, ~74s wall-clock on Hetzner. OOS (final 30%, 2024-09-25 to 2026-05-21) never unsealed.</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">SMA16 (lags 8,10,15)</span><span class="chip">ATR(14,H1)</span><span class="chip">H1/M30 broker-grid bar aggregation from M5 mid</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">day-block bootstrap confidence interval</span><span class="chip">3-way walk-forward split</span><span class="chip">coin-flip null control</span><span class="chip">floating-NAV equity-curve SMA overlay gate</span><span class="chip">restart/orphan census reconciliation</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/PREREGISTRATION.md" target="_blank" rel="noopener">research/experiments/scratch_tail/PREREGISTRATION.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/bars.py" target="_blank" rel="noopener">research/experiments/scratch_tail/bars.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/signal.py" target="_blank" rel="noopener">research/experiments/scratch_tail/signal.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/harness.py" target="_blank" rel="noopener">research/experiments/scratch_tail/harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/is_data.py" target="_blank" rel="noopener">research/experiments/scratch_tail/is_data.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/gate2_parity.py" target="_blank" rel="noopener">research/experiments/scratch_tail/gate2_parity.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/fetch_recent_m5_ba.py" target="_blank" rel="noopener">research/experiments/scratch_tail/fetch_recent_m5_ba.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/run_is_battery.py" target="_blank" rel="noopener">research/experiments/scratch_tail/run_is_battery.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/compute_gates.py" target="_blank" rel="noopener">research/experiments/scratch_tail/compute_gates.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/make_summary.py" target="_blank" rel="noopener">research/experiments/scratch_tail/make_summary.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/test_harness.py" target="_blank" rel="noopener">research/experiments/scratch_tail/test_harness.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/test_bars.py" target="_blank" rel="noopener">research/experiments/scratch_tail/test_bars.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/test_signal.py" target="_blank" rel="noopener">research/experiments/scratch_tail/test_signal.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/results/is_summary.md" target="_blank" rel="noopener">research/experiments/scratch_tail/results/is_summary.md</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/results/gate2_summary.json" target="_blank" rel="noopener">research/experiments/scratch_tail/results/gate2_summary.json</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/results/gate_table.csv" target="_blank" rel="noopener">research/experiments/scratch_tail/results/gate_table.csv</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/results/gate_extra.json" target="_blank" rel="noopener">research/experiments/scratch_tail/results/gate_extra.json</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/scratch_tail/results/gate2_per_pair.csv" target="_blank" rel="noopener">research/experiments/scratch_tail/results/gate2_per_pair.csv</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="72-multi-day-contrarian-program-first-touch-h4-bar-grid-refutat.html">&larr; #72 Multi-day contrarian program + first-touch H4 bar-grid refutation</a><a href="74-london-fix-fade-16-00-pre-fix-drift-reversion.html">#74 London-fix fade (16:00 pre-fix drift reversion) &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>

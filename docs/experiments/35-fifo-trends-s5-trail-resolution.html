@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#35 FIFO-Trends S5 trail resolution — The Edge That Wasn't</title>
+<meta name="description" content="Replacing FIFO-Trends' coarse P&amp;F-box high-water mark with a 5-second price HWM flipped EUR_USD from +45.2 to −69.2 p/d — proving the 5-pip box step is the strategy's noise filter, not a limitation.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/35-fifo-trends-s5-trail-resolution.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }
+header { padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+header .brand { font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }
+header .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:760px; margin:0 auto; padding:26px 24px 80px; }
+.crumbs { font-size:.85rem; color:var(--muted); margin-bottom:16px; }
+.crumbs a { color:var(--muted); }
+.crumbs a:hover { color:var(--acc); }
+h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
+.meta { color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.verdict { display:inline-block; background:var(--chip); border:1px solid var(--line); border-radius:14px; padding:3px 12px; font-size:.9rem; margin-bottom:14px; }
+.oneline { font-style:italic; font-size:1.05rem; border-left:3px solid var(--acc); padding:6px 12px; margin:14px 0 20px; background:var(--card); }
+.sec { margin:18px 0; }
+.sec h2 { font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
+.keynum { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.95rem; }
+.code a { display:table; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; word-break:break-all; }
+.code a:hover { text-decoration:underline; }
+.code span.dead { display:block; font:13px/1.6 ui-monospace,Menlo,monospace; color:var(--dead); word-break:break-all; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.82rem; }
+.pn { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }
+.pn a { color:var(--acc); text-decoration:none; }
+.pn a:hover { text-decoration:underline; }
+footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
+  <a href="index.html" class="cur" aria-current="page">Experiments</a>
+  <a href="glossary.html">Glossary</a>
+  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
+ </nav>
+</header>
+<main>
+ <div class="crumbs"><a href="index.html">All 81 experiments</a> &rsaquo; #35</div>
+ <h1>#35 — FIFO-Trends S5 trail resolution</h1>
+ <div class="meta">2026-05-21 (Session 068)</div>
+ <div class="verdict"><strong>Verdict: negative</strong> · ⛔ closed negative — box quantization IS the edge</div>
+ <div class="oneline">Replacing FIFO-Trends' coarse P&amp;F-box high-water mark with a 5-second price HWM flipped EUR_USD from +45.2 to −69.2 p/d — proving the 5-pip box step is the strategy's noise filter, not a limitation.</div>
+ <div class="sec"><h2>Hypothesis — what it tests</h2><p>Whether 5-second (S5) trail monitoring with a raw-price high-water mark beats the slow M5 P&amp;F box-level trail on FIFO-Trends.</p></div>
+ <div class="sec"><h2>Description</h2><p>A natural 'improvement' to the FIFO-Trends P&amp;F trend-follower: instead of the high-water mark advancing only in 5-pip Point &amp; Figure box steps (M5 polling), track the actual price HWM every 5 seconds so the trail hugs intra-box peaks. The backtest compared the two trail modes directly on EUR_USD (Feb 2024 → May 2026 M5/S5 overlap) and EUR_JPY (Oct 2025 → Apr 2026). The result was decisively negative: the S5 price-HWM trail collapsed EUR_USD from +45.2 p/d OOS at 60% win rate (baseline) to −69.2 p/d at 19% win rate. With the HWM advancing on every 5-second tick, the trail becomes too tight for normal tick noise and stops out nearly every trade. The lesson inverted the premise: the P&amp;F box quantization deliberately filters sub-5-pip noise and is the edge mechanism itself — the strategy requires coarse-grained HWM tracking.</p></div>
+ <div class="sec"><h2>Key result</h2><div class="keynum">EUR_USD OOS: M5 P&amp;F-level trail +45.2 p/d / 60.0% WR vs S5 price-HWM trail −69.2 p/d / 19.0% WR (avg win +11.0p→+10.2p, avg loss −6.6p→−4.5p)</div></div>
+ <div class="sec"><h2>Indicators</h2><div class="chips"><span class="chip">P&amp;F (Point &amp; Figure, 5-pip box)</span><span class="chip">high-water-mark trailing stop</span></div></div>
+ <div class="sec"><h2>Algorithms</h2><div class="chips"><span class="chip">A/B backtest comparison (two fill/trail modes, one code path)</span><span class="chip">IS/OOS split validation</span></div></div>
+ <div class="sec"><h2>Code</h2><div class="code"><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fifo_trends/backtest_fifo_s5trail.py" target="_blank" rel="noopener">research/experiments/fifo_trends/backtest_fifo_s5trail.py</a><a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io/blob/main/experiments/fifo_trends/backtest_fifo_pnf.py" target="_blank" rel="noopener">research/experiments/fifo_trends/backtest_fifo_pnf.py</a></div></div>
+ <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
+ <div class="pn"><a href="34-s5-velocity-acceleration-sweep.html">&larr; #34 S5 velocity/acceleration sweep</a><a href="36-fifo-trends-bar-close-fill-correction.html">#36 FIFO-Trends bar-close fill correction &rarr;</a></div>
+</main>
+<footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida · <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">companion repository</a></p>
+</footer>
+</body>
+</html>
