@@ -477,9 +477,13 @@ main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
 <header>
  <a class="brand" href="../index.html">The Edge That Wasn't</a>
  <nav class="sitenav">
+  <a href="../verify.html">Verify</a>
   <a href="index.html">Experiments</a>
   <a href="glossary.html" class="cur" aria-current="page">Glossary</a>
   <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../retractions.html">Retractions</a>
+  <a href="../ledger.html">Ledger</a>
+  <a href="../about.html">About</a>
  </nav>
  <input id="q" type="search" placeholder="Filter terms…" autocomplete="off">
 </header>

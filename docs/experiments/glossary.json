@@ -1244,7 +1244,7 @@
     "Martingale"
    ],
    "tooltip": "A strategy that doubles down after a loss, hoping a winning streak recovers everything.",
-   "body": "A strategy that doubles down after a loss, hoping a winning streak recovers everything. It wins reliably until the streak it cannot afford arrives, then loses more than every prior win combined.",
+   "body": "A strategy that doubles down after a loss, hoping a winning streak recovers everything. It wins reliably until the streak it cannot afford arrives. Whether any single terminal loss exceeds every prior win combined is a matter of luck; the point is that the expectation is negative and the size of the tail loss grows without bound.",
    "source": "glossary"
   },
   {
@@ -1332,7 +1332,7 @@
     "MC gate"
    ],
    "tooltip": "Reshuffle your trade results thousands of times and ask how often random does as well or better.",
-   "body": "Reshuffle your trade results thousands of times and ask how often random does as well or better. If random wins most of the time, the \"edge\" is almost certainly noise. The gate can itself be passed by a loss-deferral structure (Part V), which is why a 100% pass rate is a warning, not a reassurance.",
+   "body": "Reshuffle your trade results thousands of times and ask how often random does as well or better. If random wins most of the time, the \"edge\" is almost certainly noise. The gate can itself be passed by a loss-deferral structure (Chapter V), which is why a 100% pass rate is a warning, not a reassurance.",
    "source": "glossary"
   },
   {
@@ -1643,7 +1643,7 @@
     "PF"
    ],
    "tooltip": "Dollars won on winners divided by dollars lost on losers.",
-   "body": "Dollars won on winners divided by dollars lost on losers. Above 1.0 is net-positive; Zone Recovery's 1.10 means \\$1.10 back for every \\$1.00 risked — positive in expectation, and still a structurally losing strategy once the tail is priced in.",
+   "body": "Dollars won on winners divided by dollars lost on losers. Above 1.0 is net-positive; Zone Recovery's 1.10 means \\$1.10 back for every \\$1.00 lost — positive in expectation, and still a structurally losing strategy once the tail is priced in.",
    "source": "glossary"
   },
   {
