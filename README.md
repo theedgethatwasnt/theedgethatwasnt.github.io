@@ -3,6 +3,8 @@
 
 **Companion repository to the book by Aharon Zbaida (2026)**
 
+> **Companion website: [theedgethatwasnt.com](https://theedgethatwasnt.com)** — the interactive 81-experiment explorer, glossary, indicator viewer, the frozen trade ledger, the broker-reconciled account table, and the retractions page. The book is [available in paperback on Amazon](https://www.amazon.com/dp/B0H8MNYTRF).
+
 ---
 
 ## About the Book
@@ -35,7 +37,7 @@ You do not need to run the experiments to follow the book's argument. The script
 
 ## Experiment Map
 
-*81 experiments, one row each. Verdicts: ✅ positive · ⛔ negative · 🟡 mixed or inconclusive. Key results are rounded to the precision used in the book.*
+*81 experiments, one row each, verdicts re-derived from the book's Experiment Audit Table (the source of truth). Legend: ✅ positive on its own terms · 🟡 mixed · ⛔ negative · 🔴 one-time survivor, retracted. Key results are rounded to the precision used in the book.*
 
 ### Theme — Lookahead bias (the apparatus saw the future)
 
@@ -66,7 +68,7 @@ You do not need to run the experiments to follow the book's argument. The script
 |---|------------|---------|------------|-------------------|
 | 6 | Spread-at-entry fix + Vmax | 🟡 | Corrected V3 s42 failed to converge — realistic spread changes dynamics | `experiments/spread_at_entry_fix/` |
 | 23 | FIFO-Trends 12-pair P&F sweep | ✅ | GBP_JPY 71.6, USD_JPY 68.5 p/d OOS — but 1-box trail failed live | `experiments/fifo_trends_pnf_sweep/` |
-| 26 | H4 Donchian breakout live | ✅ | OOS 16–25 p/d/pair; live 84% WR, +41p win / −12p loss | `experiments/h4_donchian/` |
+| 26 | H4 Donchian breakout (backtest) | ✅ | Backtest OOS 16–25 p/d/pair, 84% WR, +41p win / −12p loss — refuted live (see 53: 3 trades, −61.6p, 0% WR, stopped) | `experiments/h4_donchian/` |
 | 33 | TR Momentum strategy | ⛔ | Phase-1 12/12 WF, but corrected bar-close fill = 0/12 — fill artifact | `experiments/tr_momentum/` |
 | 35 | FIFO-Trends S5 trail resolution | ⛔ | EUR_USD +45.2 → −69.2 p/d; box quantization IS the edge | `experiments/fifo_s5_trail/` |
 | 36 | FIFO-Trends bar-close fill correction | ⛔ | WR 70→34%, ΔOOS −54 to −230 p/d, 0/8 configs survive | `experiments/fifo_barclose_fill/` |
@@ -136,7 +138,7 @@ You do not need to run the experiments to follow the book's argument. The script
 | 32 | P&F momentum vs counter-trend | 🟡 | Counter-trend wins 8/12 pairs but ~+5 p/d, 10–15× weaker than FIFO | `experiments/pnf_counter_trend/` |
 | 51 | Post-shock counter-trend retrace live | ✅ | 72 OOS+ configs, IS WF 40/40, MC all mc_p=0.0000, +56 p/d OOS | `experiments/post_shock_retrace/` |
 | 52 | Markov D1 regime filter | ✅ | All ICs counter-trend; Phase-3 filter +70.4 p/d, WF 9/12, mc_p=0.0000 | `experiments/markov_d1/` |
-| 58 | Indicator screen → momentum×eff → regime-gated MR | 🟡 | Only daily MR positive (+4.7 p/trade); regime-gated +13.0p t=2.25, p=0.025 | `experiments/regime_mr/` |
+| 58 | Indicator screen → momentum×eff → regime-gated MR | ⛔ | Regime-gated +13.0p t=2.25, p=0.025 — retracted at the premise: the Coda's re-run found the daily-MR signal +1.1p gross, negative net of rollover | `experiments/regime_mr/` |
 | 64 | FX stat-arb (Avellaneda-Lee eigen-residual) | ⛔ | Residual reversion non-stationary (2022 +0.19 → 2024-25 −0.13); naked t=−1.24 | `experiments/fx_statarb/` |
 
 ### Theme — Cost floor, factor premia & the composite (entries 68–81)
@@ -145,7 +147,7 @@ You do not need to run the experiments to follow the book's argument. The script
 
 | # | Experiment | Verdict | Key result | Path in this repo |
 |---|------------|---------|------------|-------------------|
-| 68 | First-touch H4 low-volume reversion | ✅ | Thin-volume fade of a fresh H4 swing touch: OOS +9.49 p/trade, WR 54%, MC p=0.018, 7/12 pairs | `experiments/touch_ladder/` |
+| 68 | First-touch H4 low-volume reversion | ⛔ | Recorded OOS +9.49 p/trade (MC p=0.018) — refuted as a bar-grid artifact: on the true NY-17:00 H4 grid, −7.31 p/trade vs coin +3.52 | `experiments/touch_ladder/` |
 | 69 | ESCMA exit-learner (shock-entry + CMA-NN exit) | ⛔ | CMA-NN exit converges to "bail in 1–3 bars"; loses to trivial first-red-tick baseline — no exit alpha | `experiments/escma_exit/` |
 | 70 | Trailing-stop bake-off (SuperTrend vs PSAR et al.) | 🟡 | SuperTrend per-trade ATR-band ratchet wins IS+OOS (H4 +17.5) and beats PSAR by ~20 p/trade | `experiments/trailing_bakeoff/` |
 | 71 | Regime-conditioned entry Phase A (triple-barrier, against-drift) | ⛔ | Gross signal real (12/12 pairs +) but 5–10× below the ECN floor; information PASS / money FAIL | `experiments/regime_entry/` |
@@ -154,23 +156,26 @@ You do not need to run the experiments to follow the book's argument. The script
 | 74 | London-fix fade (16:00 pre-fix drift reversion) | ⛔ | Gross reversion real (fade −1.63p vs coin −1.89p) but net dead at spread | `experiments/fix_fade/` |
 | 75 | FX factor suite (carry / value / momentum / composite) | ⛔ | Classic FX risk premia do not survive OANDA retail cost; carry IS net −34.1 p/rebalance | `experiments/fx_factors/` |
 | 76 | Momentum confirmation Stage 1 (deep-history 12-1) | ⛔ | The lone +27.4 was a window artifact — FX momentum decayed pre-2013; net −8.25 p/rebalance | `experiments/momentum_confirm/` |
-| 77 | CFTC COT positioning-extremes signal | 🟡 | Contrarian COT signal clears all 4 pre-registered IS gates but its bootstrap CI spans zero | `experiments/cot_positioning/` |
-| 78 | Spread clock — hour-of-week toll profiles + guard | ✅ | Spread flat 00–20 UTC, spikes 2–8× at rollover; a live blackout guard would COST, not save | `experiments/spread_clock/` |
-| 79 | Core-pricing arithmetic (OANDA core tier re-pricing) | ✅ | Core (commission+razor) tier is +0.3p WORSE all-in; the real unlock is a ~0.7p ECN venue | `experiments/core_pricing/` |
-| 80 | Meta-allocation — equity-MA strategy switching | ✅ | Causal equity-MA switch nets −1,949p vs −3,792p equal-weight — a defensive risk-reducer, not alpha | `experiments/meta_allocation/` |
+| 77 | CFTC COT positioning-extremes signal | ⛔ | 4/4 IS gates but bootstrap CI spans zero; one-shot OOS −3.2 p/wk over 275 weeks, below the null p95 — refuted, seal spent | `experiments/cot_positioning/` |
+| 78 | Spread clock — hour-of-week toll profiles + guard | 🟡 | Spread flat 00–20 UTC, spikes 2–8× at rollover; a live blackout guard would COST, not save | `experiments/spread_clock/` |
+| 79 | Core-pricing arithmetic (OANDA core tier re-pricing) | ⛔ | Core (commission+razor) tier is +0.3p WORSE all-in; the real unlock is a ~0.7p ECN venue | `experiments/core_pricing/` |
+| 80 | Meta-allocation — equity-MA strategy switching | 🟡 | Causal equity-MA switch nets −1,949p vs −3,792p equal-weight — a defensive risk-reducer, not alpha | `experiments/meta_allocation/` |
 | 81 | Composite 1 — D1 displacement fade × COT vote | ⛔ | The book's own Appendix-E composite: conjunction too rare, vote no better than a random gate | `experiments/composite1/` |
 
 ---
 
 ## Results Summary
 
+*Counted row-by-row from the book's Experiment Audit Table. Legend: ✅ positive on its own terms · 🟡 mixed · ⛔ negative · 🔴 one-time survivor, retracted.*
+
 | Outcome | Count |
 |---------|-------|
-| ✅ Positive edge confirmed (or engineering success) | 17 |
+| ✅ Positive on its own terms (incl. engineering milestones) | 13 |
 | 🟡 Mixed / inconclusive / sub-spread | 22 |
-| ⛔ / 🔴 Negative — no deployable edge | 42 |
+| ⛔ Negative — no deployable edge | 45 |
+| 🔴 One-time survivor, later retracted | 1 |
 
-The positives are not victories in the usual sense. Several (entries 49, 50, and the four portfolio variants in 56) did not survive finite-margin re-validation once a realistic stop-loss was added; two (23, 37) worked in simulation but failed live execution; and the late-program "successes" (78, 79, 80) are cost-accounting and risk-reduction findings, not edges. The surviving deployable positives were post-shock retrace + Markov gate (51/52), Zone Recovery at large leg counts (27), and selected P&F variants — all contrarian, all at longer holding horizons, all constrained by the same retail spread toll.
+The positives are not victories in the usual sense. Several (entries 49, 50, and the four portfolio variants in 56) did not survive finite-margin re-validation once a realistic stop-loss was added; two (23, 37) worked in simulation but failed live execution; and the late-program successes are cost-accounting and risk-reduction findings, not edges (78–80). The once-deployable positives — post-shock retrace + Markov gate (51/52), Zone Recovery at large leg counts (27), selected P&F variants — were all contrarian, all at longer holding horizons, all constrained by the same retail spread toll, and all ultimately wound down. The one account that ended lifetime-positive (+171 pips, account 010) ran the strategy entry 66 records as 🔴 — refuted at real spread and stopped. Nothing on this map is live; the three retracted headline results are published at [theedgethatwasnt.com/retractions.html](https://theedgethatwasnt.com/retractions.html).
 
 ---
 
@@ -182,7 +187,9 @@ The positives are not victories in the usual sense. Several (entries 49, 50, and
 pip install numpy pandas numba pyarrow lightgbm duckdb python-dotenv v20
 ```
 
-**Data not included.** The generating scripts expect OANDA S5 OHLC Parquet files with bid/ask columns. Bring your own data via the OANDA v20 API:
+The complete trade ledger IS included: [`docs/data/trades_snapshot_2026-05-31.csv`](docs/data/trades_snapshot_2026-05-31.csv) — every closed trade (5,556 rows) behind the book's tables.
+
+**Price history not included.** The generating scripts expect OANDA S5 OHLC Parquet files with bid/ask columns. Bring your own data via the OANDA v20 API:
 
 ```python
 import v20, os
