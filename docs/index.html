@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't</title>
-<meta name="description" content="A memoir of retail FX algorithmic-trading research: 81 documented experiments, a 55,000-pip lookahead bug, and the one strategy that survived out-of-sample. Broker-verified receipts, not backtests.">
+<meta name="description" content="A memoir of retail FX algorithmic-trading research: 81 audited experiments, a 55,000-pip lookahead bug, three retractions, and a broker-reconciled answer: no. Receipts, not backtests.">
 <meta property="og:title" content="The Edge That Wasn't">
-<meta property="og:description" content="A memoir of retail FX algorithmic-trading research: 81 documented experiments, a 55,000-pip lookahead bug, and the one strategy that survived out-of-sample. Broker-verified receipts, not backtests.">
+<meta property="og:description" content="A memoir of retail FX algorithmic-trading research: 81 audited experiments, a 55,000-pip lookahead bug, three retractions, and a broker-reconciled answer: no. Receipts, not backtests.">
 <meta property="og:type" content="book">
 <meta property="og:image" content="experiments/figures/glossary/gen_trend_overlays.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
@@ -88,6 +88,18 @@ h1 { font-size:2.7rem; line-height:1.08; font-weight:700; margin:14px 0 12px; le
 .inside li:last-child { border-bottom:0; }
 .inside li::before { content:"—"; position:absolute; left:0; color:var(--acc); }
 
+/* Dataset note */
+.datanote { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc); border-radius:8px; padding:14px 18px; font-size:.95rem; }
+.datanote a { color:var(--acc); }
+
+/* "Not victories" quote */
+.notvictories { border-top:1px solid var(--rule); margin-top:24px; padding:32px 0 8px; }
+.notvictories blockquote { border-left:3px solid var(--neg); padding:4px 0 4px 18px; }
+.notvictories p { font-style:italic; font-size:1.02rem; margin:0 0 10px; }
+.notvictories cite { font-style:normal; font-size:.85rem; color:var(--muted); }
+.notvictories cite a { color:var(--muted); }
+.notvictories cite a:hover { color:var(--acc); }
+
 /* Footer */
 footer { border-top:1px solid var(--rule); padding:28px 0 60px; margin-top:24px; }
 footer p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
@@ -100,9 +112,13 @@ footer a:hover { color:var(--acc); }
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
  <nav class="sitenav">
+  <a href="verify.html">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="retractions.html">Retractions</a>
+  <a href="ledger.html">Ledger</a>
+  <a href="about.html">About</a>
  </nav>
 </header>
 <main class="wrap">
@@ -117,9 +133,11 @@ footer a:hover { color:var(--acc); }
   <section class="lead">
     <p class="first">Most books with "algorithmic trading" on the cover sell a system that prints money. This one hands you the losses. The central artifact of the book is a table of broker-verified results — its own — and the frozen snapshot of every recorded trade ships with it, so any per-strategy row reproduces from the raw file.</p>
 
+    <p class="datanote">The trade ledger — every closed trade, 5,556 rows — is committed here: <a href="data/trades_snapshot_2026-05-31.csv">trades_snapshot_2026-05-31.csv</a>. The raw S5 price history is not redistributable; the analysis scripts pull it from the OANDA v20 API. See <a href="verify.html">Verify</a> for what's in the file and how to query it.</p>
+
     <p>It is the record of fx-core, a containerized retail FX research project. No single strategy ever ran on more than about a hundred dollars, and most on far less; roughly two hundred dollars was funded across the thirteen broker sub-accounts over the project's life, peaking near a hundred and ninety-nine. The methodology is the subject, not the size of the account.</p>
 
-    <p>One question runs through it: is there a repeatable, statistically real edge available to a retail trader in spot FX, and if so, is it large enough — after costs, after tail risk, after the capital required to hold open positions through their drawdowns — to beat a stock-index fund? Roughly seventy real experiments answer it, and one strategy survives.</p>
+    <p>One question runs through it: is there a repeatable, statistically real edge available to a retail trader in spot FX, and if so, is it large enough — after costs, after tail risk, after the capital required to hold open positions through their drawdowns — to beat a stock-index fund? Eighty-one audited experiments answer it: thirteen positive on their own terms, twenty-two mixed, forty-five negative, and one late survivor retracted.</p>
 
     <div class="numbers">
       <div class="num neg">
@@ -132,7 +150,7 @@ footer a:hover { color:var(--acc); }
       </div>
       <div class="num pos">
         <span class="v">+171</span>
-        <span class="l">pips — the lifetime record of the one live survivor, in the broker's own ledger</span>
+        <span class="l">pips lifetime, the best of thirteen accounts — later wound down like the rest</span>
       </div>
     </div>
 
@@ -140,8 +158,8 @@ footer a:hover { color:var(--acc); }
 
     <div class="cta">
       <a class="btn primary" href="experiments/index.html">Explore the 81 experiments &rarr;</a>
-      <a class="btn ghost" href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">Browse the code</a>
-      <a class="buy" href="#" data-todo="buy-link">Buy the book (coming soon)</a>
+      <a class="btn ghost" href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">Browse the repository — code released as it is reviewed</a>
+      <a class="buy" href="https://www.amazon.com/dp/B0H8MNYTRF" target="_blank" rel="noopener">Buy the book</a>
     </div>
   </section>
 
@@ -155,9 +173,16 @@ footer a:hover { color:var(--acc); }
       <li>The momentum book that passed Monte-Carlo at a 100% rate, then was shown by a closeout-aware simulation to liquidate six of six accounts under finite margin.</li>
       <li>Zone Recovery: the martingale whose tail cannot be capped without killing the edge.</li>
       <li>The three walls — direction is unpredictable, volatility is forecastable, spread is the toll — and the narrow escape they leave open.</li>
-      <li>The regime-gated mean-reversion that is the project's surviving high-water mark: t = 2.25, p = 0.025.</li>
-      <li>A 161-entry indicator encyclopedia with a visual reference panel computed on real EUR/USD M5 data.</li>
+      <li>The regime-gated mean-reversion that was the project's high-water mark — t = 2.25, p = 0.025 — and the Coda that retracts it at the premise: the daily rollover financing cost consumes the gross edge six times over.</li>
+      <li>A 161-entry indicator encyclopedia with a visual reference panel computed on real EUR/USD M5 data, plus an interactive indicator viewer drawn on EUR/JPY and EUR/GBP M5.</li>
     </ul>
+  </section>
+
+  <section class="notvictories">
+    <blockquote>
+      <p>"The positives are not victories in the usual sense. Several did not survive finite-margin re-validation once a realistic stop-loss was added; two worked in simulation but failed live execution; and the late-program successes are cost-accounting and risk-reduction findings, not edges."</p>
+      <cite>— from the <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io#results-summary" target="_blank" rel="noopener">repository's experiment map</a>. Three headline results were later retracted outright — <a href="retractions.html">the corrections are published here</a>.</cite>
+    </blockquote>
   </section>
 
   <footer>
