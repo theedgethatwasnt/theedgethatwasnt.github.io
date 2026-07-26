@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ledger — The Edge That Wasn't</title>
+<meta name="description" content="The complete ledger of record, reconciled to the broker: all thirteen OANDA accounts, 8,687 lifetime trades, ≈−82,000 pips, $140.72 ending NAV. The whole book on one page.">
+<link rel="canonical" href="https://theedgethatwasnt.com/ledger.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --rule:#d8d5cd; --neg:#a23b2c; --pos:#0f6b4f; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --rule:#37352f; --neg:#e08b7d; --pos:#5ec89f; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
+header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
+header.sitehdr .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:860px; margin:0 auto; padding:40px 24px 80px; }
+h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; }
+p { margin:0 0 16px; max-width:720px; }
+a { color:var(--acc); }
+.tblwrap { overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+table { border-collapse:collapse; width:100%; font:13.5px/1.5 ui-monospace,Menlo,monospace; }
+th, td { padding:6px 10px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+th:first-child, td:first-child { text-align:left; }
+th { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+tr.total td { font-weight:700; border-top:2px solid var(--rule); border-bottom:0; }
+td.pos { color:var(--pos); font-weight:700; }
+td.neg { color:var(--neg); }
+.note { font-size:.88rem; color:var(--muted); font-style:italic; max-width:720px; }
+footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
+footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header class="sitehdr">
+ <a class="brand" href="index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="verify.html">Verify</a>
+  <a href="experiments/index.html">Experiments</a>
+  <a href="experiments/glossary.html">Glossary</a>
+  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="retractions.html">Retractions</a>
+  <a href="ledger.html" class="cur" aria-current="page">Ledger</a>
+  <a href="about.html">About</a>
+ </nav>
+</header>
+<main>
+ <h1>The complete ledger of record, reconciled to the broker</h1>
+ <p>Every transaction and every closed trade for all thirteen OANDA accounts, pulled <em>directly from the broker with no database in the loop</em>, and reconciled two ways: deposits + withdrawals + transfers + realized P&amp;L + financing must equal the current balance, and the P&amp;L summed from the raw transaction stream must equal the P&amp;L summed from the broker's own closed-trade records. All thirteen accounts tie to $0.00 on both checks. The pips are recomputed from OANDA's own fill prices — not from any figure the project's software logged. This is Appendix&nbsp;B's closing table; read straight, it is the whole book on one page.</p>
+
+ <div class="tblwrap">
+ <table>
+  <thead>
+   <tr><th>Acct</th><th>Incept.</th><th>Dep.</th><th>W/D</th><th>Xfer</th><th>P&amp;L</th><th>Fin.</th><th>Trades</th><th>Pips</th><th>NAV</th></tr>
+  </thead>
+  <tbody>
+   <tr><td>001</td><td>2021-02-26</td><td>$27.50</td><td>−$2.50</td><td>$0.05</td><td class="neg">−$16.76</td><td>+$0.14</td><td>942</td><td class="neg">−14,266</td><td>$8.38</td></tr>
+   <tr><td>002</td><td>2021-02-26</td><td>$36.00</td><td>−$4.00</td><td>$1.26</td><td class="neg">−$22.96</td><td>−$1.96</td><td>643</td><td class="neg">−1,575</td><td>$8.35</td></tr>
+   <tr><td>003</td><td>2026-03-15</td><td>$30.00</td><td>—</td><td>−$21.33</td><td class="neg">−$0.33</td><td>—</td><td>494</td><td class="neg">−2,180</td><td>$8.34</td></tr>
+   <tr><td>004</td><td>2026-03-18</td><td>$27.98</td><td>—</td><td>−$18.18</td><td class="neg">−$1.42</td><td>—</td><td>613</td><td class="neg">−4,013</td><td>$8.35</td></tr>
+   <tr><td>005</td><td>2026-03-20</td><td>—</td><td>—</td><td>$0.35</td><td class="neg">−$0.29</td><td>—</td><td>105</td><td class="neg">−414</td><td>$0.06</td></tr>
+   <tr><td>006</td><td>2026-03-22</td><td>—</td><td>—</td><td>$0.55</td><td class="neg">−$0.52</td><td>—</td><td>187</td><td class="neg">−217</td><td>$0.02</td></tr>
+   <tr><td>007</td><td>2026-03-22</td><td>—</td><td>—</td><td>$2.26</td><td class="neg">−$2.22</td><td>—</td><td>1,218</td><td class="neg">−14,044</td><td>$0.03</td></tr>
+   <tr><td>008</td><td>2026-03-24</td><td>$1.00</td><td>—</td><td>$1.16</td><td class="neg">−$2.11</td><td>—</td><td>984</td><td class="neg">−13,511</td><td>$0.03</td></tr>
+   <tr><td>009</td><td>2026-03-24</td><td>—</td><td>—</td><td>$10.72</td><td class="neg">−$1.00</td><td>—</td><td>824</td><td class="neg">−3,211</td><td>$9.70</td></tr>
+   <tr><td><strong>010</strong></td><td>2026-03-24</td><td>$3.76</td><td>—</td><td>$95.17</td><td class="neg">−$0.49</td><td>−$0.25</td><td>135</td><td class="pos">+171</td><td><strong>$97.22</strong></td></tr>
+   <tr><td>011</td><td>2026-03-29</td><td>—</td><td>—</td><td>$3.02</td><td class="neg">−$2.88</td><td>−$0.09</td><td>527</td><td class="neg">−2,353</td><td>$0.05</td></tr>
+   <tr><td>012</td><td>2026-03-29</td><td>$80.00</td><td>—</td><td>−$75.96</td><td class="neg">−$4.01</td><td>+$0.02</td><td>979</td><td class="neg">−13,118</td><td>$0.06</td></tr>
+   <tr><td>013</td><td>2026-03-29</td><td>—</td><td>—</td><td>$1.93</td><td class="neg">−$1.86</td><td>−$0.01</td><td>1,036</td><td class="neg">−13,550</td><td>$0.05</td></tr>
+   <tr class="total"><td><strong>Total</strong></td><td></td><td>$206.24</td><td>−$6.50</td><td>≈$0</td><td class="neg">−$56.85</td><td>−$2.22</td><td>8,687</td><td class="neg">≈ −82,000</td><td>$140.72</td></tr>
+  </tbody>
+ </table>
+ </div>
+
+ <p>Across all thirteen accounts and every year of trading — 001 and 002 reach back to February 2021 — the enterprise took in $206.24 of deposits, gave $56.85 back to trading and $2.22 to financing, and ended at $140.72 of net asset value. The dollar loss is tiny only because the stakes were: 8,687 closed trades produced it. Account 010 is the only one of the thirteen with positive lifetime pips (+171) — itself the decayed remainder of a +693-pip three-week peak, and that strategy too was wound down. Every other account is net-negative, roughly −82,000 pips in total.</p>
+
+ <p><strong>One reconciliation, so the counts cannot be read as contradicting each other.</strong> The book's cover counts <strong>4,932 live trades</strong> — the live rows of the frozen 31&nbsp;May&nbsp;2026 database snapshot every table in the book is computed from (5,556 rows in all, counting the 624 paper trades that never touch a broker; see <a href="verify.html">Verify</a>). The <strong>8,687</strong> here is a different measure of a different window: the broker's own lifetime fill count, pulled at the end of June 2026, which reaches back to 2021-era trading on accounts 001 and 002 that predates the project's central database entirely, and runs a month past the frozen snapshot. Same enterprise, two instruments: the snapshot is the auditable dataset the book's numbers come from; the broker pull is the complete history the enterprise is judged on. Neither corrects the other.</p>
+
+ <p class="note">Accounting notes, as published: the reconciliation identity is on account balance; the NAV column equals balance for the eleven flat accounts and differed at pull time only for the two then holding open positions (009, 010) by their unrealized P&amp;L. Per-account cells are rounded to the cent, so a column may not foot to the last cent; the total row carries the exact broker figures.</p>
+</main>
+<footer style="max-width:860px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+</footer>
+</body>
+</html>
