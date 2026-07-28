@@ -189,6 +189,7 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 .figs figcaption {{ font-size:.75rem; color:var(--muted); word-break:break-all; }}
 .keynum {{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; }}
 #empty {{ color:var(--muted); padding:40px; }}
+@media (min-width:1400px){{ .figs figure{{ max-width:640px; }} #side{{ width:460px; }} }}
 @media (max-width:760px){{ .wrap{{flex-direction:column;height:auto}} #side{{width:100%;max-height:45vh}} }}
 </style>
 </head>

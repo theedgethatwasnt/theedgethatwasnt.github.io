@@ -47,6 +47,10 @@ main { max-width:820px; margin:0 auto; padding:20px 24px 80px; }
 #none { color:var(--muted); padding:30px 0; display:none; }
 /* the sticky header stacks ~210px tall on phones and buries anchor jumps —
    let it scroll away on small screens and shrink the anchor offset to match */
+@media (min-width:1280px) {
+  main { max-width:1160px; }
+  .term figure.chart { max-width:960px; }
+}
 @media (max-width:600px) {
  header { position:static; }
  .term { scroll-margin-top:10px; }
