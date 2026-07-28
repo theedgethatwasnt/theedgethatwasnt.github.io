@@ -21,6 +21,11 @@ checkpoints/
 # Glossary indicator charts (enc_* author plates + gen_* generated) live one level down.
 !docs/experiments/figures/glossary/
 !docs/experiments/figures/glossary/*.png
+# Site cover, social card, and the power-curve figure (deliberately committed).
+!docs/cover.png
+!docs/og-card.png
+!docs/figures/
+!docs/figures/power_curve.png
 
 # --- Small data "receipts" cited by the experiments (all < 1 MB) ---
 # Weekly COT positioning, FRED rate history, and PPP reference rates are

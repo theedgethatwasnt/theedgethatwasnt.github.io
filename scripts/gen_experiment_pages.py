@@ -72,6 +72,12 @@ PAGE = """<!DOCTYPE html>
 <title>#{id} {name} — The Edge That Wasn't</title>
 <meta name="description" content="{meta_desc}">
 <link rel="canonical" href="{canonical}">
+<meta property="og:title" content="#{id} {name} — The Edge That Wasn't">
+<meta property="og:description" content="{meta_desc}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{favicon}">
 <style>
 :root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }}
@@ -106,6 +112,9 @@ h1 {{ font-size:1.5rem; line-height:1.25; margin-bottom:6px; }}
 .pn {{ display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--line); margin-top:34px; padding-top:16px; font-size:.9rem; }}
 .pn a {{ color:var(--acc); text-decoration:none; }}
 .pn a:hover {{ text-decoration:underline; }}
+.bookline {{ margin-top:26px; padding-top:14px; border-top:1px solid var(--line); font-size:.85rem; color:var(--muted); }}
+.bookline a {{ color:var(--acc); text-decoration:none; }}
+.bookline a:hover {{ text-decoration:underline; }}
 footer {{ border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }}
 footer p {{ font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }}
 footer a {{ color:var(--muted); }}
@@ -138,6 +147,7 @@ footer a {{ color:var(--muted); }}
  {code}
  <p style="margin-top:22px;font-size:.9rem;color:var(--muted)">Interactive version (search, filters, figures): <a href="index.html" style="color:var(--acc)">the experiment explorer</a>.</p>
  <div class="pn">{prev}{next}</div>
+ <div class="bookline">This page is one experiment from the audited record behind the book <em>The Edge That Wasn't</em> — <a href="/index.html#buy">get the book</a> · <a href="/index.html">about the project</a>.</div>
 </main>
 <footer style="max-width:760px;margin:0 auto;padding:0 24px 40px">
  <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
@@ -169,11 +179,20 @@ def code_block(e: dict, pathmap: dict) -> str:
     return f'<div class="code">{"".join(parts)}</div>' if parts else ""
 
 
+def meta_description(e: dict, limit: int = 160) -> str:
+    """SEO meta description: the one-liner (which front-loads the key finding),
+    trimmed to <=160 chars at a word boundary."""
+    text = (e.get("one_line", "") or "").strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rsplit(" ", 1)[0].rstrip(",;:—-") + "…"
+
+
 def render(e: dict, pathmap: dict, prev_e: dict | None, next_e: dict | None) -> str:
     fn = build_explorer.page_filename(e)
     vword = verdict_class(e.get("verdict", ""))
     one = esc(e.get("one_line", ""))
-    meta_desc = (e.get("one_line", "") or "")[:250]
+    meta_desc = meta_description(e)
     prev_html = (f'<a href="{build_explorer.page_filename(prev_e)}">&larr; #{prev_e["id"]} {esc(prev_e["name"])}</a>'
                  if prev_e else "<span></span>")
     next_html = (f'<a href="{build_explorer.page_filename(next_e)}">#{next_e["id"]} {esc(next_e["name"])} &rarr;</a>'
@@ -204,6 +223,7 @@ def write_sitemap(exp_files: list[str]) -> None:
     today = _dt.date.today().isoformat()
     static_pages = [
         "", "verify.html", "retractions.html", "about.html", "ledger.html",
+        "power-curve.html", "excerpt.html",
         "experiments/index.html", "experiments/glossary.html",
         "viewer/index.html", "viewer/eur_jpy_indicators.html",
         "viewer/eur_gbp_indicators.html", "viewer/eur_gbp_swing_asi.html",

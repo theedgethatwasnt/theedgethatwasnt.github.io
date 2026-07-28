@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Power Curve — The Edge That Wasn't</title>
+<meta name="description" content="Could the gate stack even find an edge? Known edges injected into real price data measured the detection floor: 1.0 pip/trade at 2,000 trades, 0.5 at 10,000.">
+<link rel="canonical" href="https://theedgethatwasnt.com/power-curve.html">
+<meta property="og:title" content="Could this apparatus even find an edge?">
+<meta property="og:description" content="Synthetic edges of known size were injected into real price data and the full validation stack run blind against them. The power curve is the result — the detection floor behind every 'no' in the book.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://theedgethatwasnt.com/power-curve.html">
+<meta property="og:image" content="https://theedgethatwasnt.com/figures/power_curve.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<style>
+:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --rule:#d8d5cd; }
+@media (prefers-color-scheme: dark) {
+ :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --rule:#37352f; }
+}
+* { box-sizing:border-box; margin:0; }
+body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
+header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
+header.sitehdr .brand:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
+nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
+main { max-width:720px; margin:0 auto; padding:40px 24px 80px; }
+h1 { font-size:2rem; line-height:1.15; margin-bottom:14px; }
+p { margin:0 0 16px; }
+a { color:var(--acc); }
+figure { margin:26px 0; }
+figure img { max-width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:8px; background:#fff; }
+figcaption { font-size:.85rem; color:var(--muted); line-height:1.5; margin-top:10px; }
+.floor { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc); border-radius:8px; padding:14px 18px; font-size:.95rem; margin:18px 0; }
+.next { border-top:1px solid var(--rule); margin-top:36px; padding-top:22px; }
+.next p { font-size:.95rem; }
+footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
+footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
+footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<header class="sitehdr">
+ <a class="brand" href="index.html">The Edge That Wasn't</a>
+ <nav class="sitenav">
+  <a href="verify.html">Verify</a>
+  <a href="experiments/index.html">Experiments</a>
+  <a href="experiments/glossary.html">Glossary</a>
+  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="retractions.html">Retractions</a>
+  <a href="ledger.html">Ledger</a>
+  <a href="about.html">About</a>
+ </nav>
+</header>
+<main>
+ <h1>Could this apparatus even find an edge?</h1>
+
+ <p>A validation stack that only ever says "no" proves nothing by itself. "No" is also what a broken instrument says — a thermometer stuck at zero will report a cold snap forever, whatever the weather is doing. The book's eighty-one experiments end in a negative verdict, so the verdict is only as strong as the instrument's eyesight, and that eyesight had to be measured rather than assumed.</p>
+
+ <p>So the instrument was given a positive control, the way a lab assay is. Synthetic edges of known, controlled size were injected into the real twelve-pair price data — an artificial signal worth exactly half a pip per trade net, one pip, two — and the full validation stack was run blind against each size, two hundred runs per point. The stack did not know which runs contained a planted edge or how large it was; it just did what it does to every candidate strategy. The fraction of runs in which the gates recover the planted edge, plotted against how large it is, is the <strong>power curve</strong>.</p>
+
+ <figure>
+  <img src="figures/power_curve.png" alt="The power curve: recovery rate of the full gate stack versus injected edge size on real twelve-pair data, two hundred runs per point, with stars marking the detection floor at each trade count — 1.0 pip per trade at 2,000 trades, 0.5 at 10,000, 2.5 at 500" width="2580" height="1740">
+  <figcaption>How often the full gate stack recovers a planted edge of known size on real twelve-pair data, two hundred runs per point. Stars mark the detection floor — the smallest edge caught at least four times in five.</figcaption>
+ </figure>
+
+ <div class="floor">
+  <p style="margin:0">The floor it measured: at the project's standard 2,000-trade evidence bar, the stack reliably detects an injected edge of <strong>1.0 pip per trade</strong> or larger. At 10,000 trades the floor drops to <strong>0.5</strong>; at 500 trades it rises to <strong>2.5</strong>. At half a pip on the standard bar it catches roughly one attempt in four; at a third of a pip, one in six — effectively blind below about 0.35 pips per trade at any trade count the project could reach. And with zero edge planted, fewer than two percent of runs pass: the instrument does not invent edges either.</p>
+ </div>
+
+ <p>The floor is published deliberately, because it is what the book's negative verdict actually means. Every "no" in the eighty-one experiments is not a proof of zero — it is <em>"no edge larger than the floor."</em> If a smaller edge exists in the field the book scanned, it lives below the resolution of the instrument, in a region where the spread costs more than the signal earns. A measured floor, with the emptiness above it established; nothing stronger is claimed.</p>
+
+ <p>The usual caveats attach. The curve is measured on this data, this gate stack, and one mechanical way of planting an edge; a differently shaped edge — rarer, lumpier, concentrated in one regime — could be seen more easily or less. And a sub-two-percent false-pass rate at zero edge is small, not zero: run enough candidates and some will slip through, which is exactly what happened to three of this book's own headline results before the record caught them.</p>
+
+ <div class="next">
+  <p>The same instrument, pointed at this book's own claims, forced three published corrections: <a href="retractions.html">the retractions</a>. The full run of what it was pointed at is in <a href="experiments/index.html">the 81 experiments</a>. The whole story — the apparatus, the floor, and the verdict — is in <a href="index.html#buy">the book</a>.</p>
+ </div>
+</main>
+<footer style="max-width:720px;margin:0 auto;padding:0 24px 40px">
+ <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+</footer>
+</body>
+</html>

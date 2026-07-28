@@ -112,7 +112,8 @@ def surfaces_from_header(header: str) -> tuple[str, list[str]]:
 # ─────────────────────────────────────────────────── §6 glossary parse ──
 
 def parse_glossary(md: str) -> list[dict]:
-    m = re.search(r"^## 6\. Complete Glossary\b", md, re.M)
+    # section number drifts as the book gains sections (was §6, now §7)
+    m = re.search(r"^## \d+\. Complete Glossary\b", md, re.M)
     if not m:
         return []
     section = md[m.end():]
@@ -435,10 +436,14 @@ HTML = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't — Glossary</title>
-<meta name="description" content="257 terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
+<meta name="description" content="{count} terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/glossary.html">
 <meta property="og:title" content="The Edge That Wasn't — Glossary">
-<meta property="og:description" content="257 terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
+<meta property="og:description" content="{count} terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://theedgethatwasnt.com/experiments/glossary.html">
+<meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
 :root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; }}
@@ -448,34 +453,41 @@ HTML = """<!DOCTYPE html>
 * {{ box-sizing:border-box; margin:0; }}
 body {{ font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
 header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; position:sticky; top:0; background:var(--bg); z-index:5; }}
-header .brand {{ font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }}
-header .brand:hover {{ color:var(--acc); }}
+h1.brand {{ font-size:1.2rem; font-weight:600; }}
+h1.brand a {{ color:var(--fg); text-decoration:none; }}
+h1.brand a:hover {{ color:var(--acc); }}
 nav.sitenav {{ display:flex; gap:14px; flex-wrap:wrap; }}
 nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
 nav.sitenav a:hover {{ color:var(--acc); }}
 nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
-#q {{ margin-left:auto; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:.9rem; min-width:220px; }}
+#q {{ margin-left:auto; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; min-width:220px; }}
 main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
 .count {{ color:var(--muted); font-size:.85rem; margin:6px 0 18px; }}
 .jump {{ display:flex; flex-wrap:wrap; gap:4px; margin-bottom:22px; }}
 .jump a {{ font:600 .78rem/1 ui-monospace,Menlo,monospace; color:var(--acc); text-decoration:none; padding:3px 6px; border:1px solid var(--line); border-radius:5px; }}
 .jump a:hover {{ background:var(--chip); }}
-.term {{ padding:14px 0 12px; border-bottom:1px solid var(--line); scroll-margin-top:70px; }}
+.term {{ padding:14px 0 12px; border-bottom:1px solid var(--line); scroll-margin-top:82px; }}
 .term.hidden, .letter.hidden {{ display:none; }}
 .term dt {{ font-weight:700; font-size:1.05rem; }}
 .term dt .src {{ font:400 .7rem/1 ui-monospace,Menlo,monospace; color:var(--muted); margin-left:8px; vertical-align:middle; text-transform:uppercase; letter-spacing:.05em; }}
 .term dt .alias {{ font:400 .8rem/1 ui-monospace,Menlo,monospace; color:var(--muted); margin-left:8px; }}
-.term dd {{ margin:5px 0 0; color:var(--fg); }}
+.term dd {{ margin:5px 0 0; color:var(--fg); overflow-wrap:anywhere; }}
 .term figure.chart {{ margin:12px 0 2px; max-width:640px; }}
 .term figure.chart img {{ width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:6px; background:#fff; }}
 .term figure.chart figcaption {{ font:italic .82rem/1.45 Georgia,serif; color:var(--muted); margin-top:5px; }}
 .letter {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:26px 0 2px; border-top:1px solid var(--line); padding-top:10px; }}
 #none {{ color:var(--muted); padding:30px 0; display:none; }}
+/* the sticky header stacks ~210px tall on phones and buries anchor jumps —
+   let it scroll away on small screens and shrink the anchor offset to match */
+@media (max-width:600px) {{
+ header {{ position:static; }}
+ .term {{ scroll-margin-top:10px; }}
+}}
 </style>
 </head>
 <body>
 <header>
- <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <h1 class="brand"><a href="../index.html">The Edge That Wasn't</a></h1>
  <nav class="sitenav">
   <a href="../verify.html">Verify</a>
   <a href="index.html">Experiments</a>

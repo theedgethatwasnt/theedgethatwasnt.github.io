@@ -121,20 +121,25 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Edge That Wasn't — Explore the 81 Experiments</title>
 <meta name="description" content="Drill into all 81 documented experiments behind the book — method, data, indicators, algorithms, key numbers, figures, and links to the exact code, positive and negative results alike.">
+<link rel="canonical" href="https://theedgethatwasnt.com/experiments/index.html">
 <meta property="og:title" content="The Edge That Wasn't — Explore the 81 Experiments">
 <meta property="og:description" content="Drill into all 81 documented experiments behind the book — method, data, indicators, algorithms, key numbers, figures, and links to the exact code, positive and negative results alike.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://theedgethatwasnt.com/experiments/index.html">
+<meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
-:root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#8a8880; }}
+:root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#75736b; }}
 @media (prefers-color-scheme: dark) {{
- :root {{ --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#6f6d66; }}
+ :root {{ --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#8c8a81; }}
 }}
 * {{ box-sizing:border-box; margin:0; }}
-body {{ font:15px/1.55 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
+body {{ font:16px/1.55 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
 header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }}
-header .brand {{ font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }}
-header .brand:hover {{ color:var(--acc); }}
+h1.brand {{ font-size:1.2rem; font-weight:600; }}
+h1.brand a {{ color:var(--fg); text-decoration:none; }}
+h1.brand a:hover {{ color:var(--acc); }}
 header p {{ color:var(--muted); font-size:.85rem; }}
 nav.sitenav {{ margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }}
 nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
@@ -143,7 +148,7 @@ nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
 .wrap {{ display:flex; height:calc(100vh - 62px); }}
 #side {{ width:400px; min-width:280px; border-right:1px solid var(--line); display:flex; flex-direction:column; }}
 #controls {{ padding:10px 12px; border-bottom:1px solid var(--line); }}
-#q {{ width:100%; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:.9rem; }}
+#q {{ width:100%; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; }}
 #verds {{ margin-top:8px; display:flex; flex-wrap:wrap; gap:5px; }}
 .vbtn {{ font:inherit; font-size:.75rem; padding:2px 9px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--fg); cursor:pointer; }}
 .vbtn.on {{ background:var(--acc); color:#fff; border-color:var(--acc); }}
@@ -156,7 +161,10 @@ a.item {{ display:block; color:inherit; text-decoration:none; }}
 .item .s {{ color:var(--muted); font-size:.78rem; margin-top:1px; }}
 #detail {{ flex:1; overflow-y:auto; padding:26px 34px 60px; }}
 #detail h2 {{ font-size:1.45rem; margin-bottom:2px; }}
-.meta {{ color:var(--muted); font-size:.85rem; margin-bottom:14px; }}
+.meta {{ color:var(--muted); font-size:.85rem; margin-bottom:6px; }}
+.permalink {{ color:var(--muted); font-size:.8rem; margin-bottom:14px; }}
+.permalink a {{ color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--muted); }}
+.permalink a:hover {{ color:var(--acc); border-bottom-color:var(--acc); }}
 .oneline {{ font-style:italic; font-size:1.02rem; border-left:3px solid var(--acc); padding:6px 12px; margin:12px 0 18px; background:var(--card); }}
 .sec {{ margin:16px 0; }}
 .sec h3 {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }}
@@ -186,7 +194,7 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 </head>
 <body>
 <header>
- <a class="brand" href="../index.html">The Edge That Wasn't</a>
+ <h1 class="brand"><a href="../index.html">The Edge That Wasn't</a></h1>
  <p>{n} experiments — data, indicators, algorithms, code, figures, verdicts.</p>
  <nav class="sitenav">
   <a href="../verify.html">Verify</a>
@@ -214,14 +222,17 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 const DATA = {data};
 const PATHMAP = {pathmap};
 const FIGMAP = {figmap};
+const PAGEMAP = {pagemap};
 const exps = DATA.experiments;
 const vclass = v => (v.match(/[⛔✅🟡🟢🔴⚫️]+/u)||['·'])[0];
+const VLABEL = {{'⛔':'negative','✅':'positive','🟡':'mixed','🔴':'retracted','🟢':'live','⚫️':'off'}};
 const verdicts = [...new Set(exps.map(e=>vclass(e.verdict)))];
 let sel = null, vFilter = null, q = '';
 const list = document.getElementById('list'), detail = document.getElementById('detail');
 const vbox = document.getElementById('verds');
 verdicts.forEach(v=>{{
-  const b=document.createElement('button'); b.className='vbtn'; b.textContent=v + ' ' + exps.filter(e=>vclass(e.verdict)===v).length;
+  const b=document.createElement('button'); b.className='vbtn';
+  b.textContent=v + ' ' + (VLABEL[v]?VLABEL[v]+' ':'') + exps.filter(e=>vclass(e.verdict)===v).length;
   b.onclick=()=>{{ vFilter = vFilter===v?null:v; render(); }};
   b.dataset.v=v; vbox.appendChild(b);
 }});
@@ -236,9 +247,12 @@ function render(){{
   document.querySelectorAll('.vbtn').forEach(b=>b.classList.toggle('on', b.dataset.v===vFilter));
   list.innerHTML='';
   exps.filter(matches).forEach(e=>{{
-    const d=document.createElement('div'); d.className='item'+(sel===e.id?' sel':'');
+    // real links to the static per-experiment pages (middle-click / new-tab /
+    // keyboard all work); a plain left-click is intercepted for in-pane display
+    const d=document.createElement('a'); d.className='item'+(sel===e.id?' sel':'');
+    d.href=PAGEMAP[e.id]||'#';
     d.innerHTML=`<div class="t">#${{e.id}} ${{e.name}}</div><div class="s">${{e.verdict}} — ${{e.one_line.slice(0,110)}}${{e.one_line.length>110?'…':''}}</div>`;
-    d.onclick=()=>{{ sel=e.id; render(); show(e); }};
+    d.onclick=(ev)=>{{ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey) return; ev.preventDefault(); sel=e.id; render(); show(e); }};
     list.appendChild(d);
   }});
 }}
@@ -321,6 +335,7 @@ function show(e){{
   detail.innerHTML = `
    <h2>#${{e.id}} — ${{esc(e.name)}}</h2>
    <div class="meta">${{esc(e.verdict)}}${{e.period&&e.period!=='not recorded'?' · '+esc(e.period):''}}${{e.journey_anchor?' · JOURNEY: “'+esc(e.journey_anchor)+'”':''}}</div>
+   ${{PAGEMAP[e.id]?`<div class="permalink">Permalink: <a href="${{PAGEMAP[e.id]}}">https://theedgethatwasnt.com/experiments/${{PAGEMAP[e.id]}}</a></div>`:''}}
    <div class="oneline">${{mark(esc(e.one_line), seen)}}</div>
    ${{sec('What it tests', `<p>${{mark(esc(e.what_it_tests), seen)}}</p>`)}}
    ${{sec('Description', `<p>${{mark(esc(e.description), seen)}}</p>`)}}
@@ -333,6 +348,7 @@ function show(e){{
    ${{sec('Figures', figs?`<div class="figs">${{figs}}</div>`:'')}}
   `;
   detail.scrollTop=0;
+  if(matchMedia('(max-width:760px)').matches) detail.scrollIntoView({{behavior:'smooth'}});
 }}
 function chipFilter(term){{
   const qEl = document.getElementById('q');
@@ -348,6 +364,12 @@ loadGlossary();
 """
 
 
+def build_pagemap(data: dict) -> dict:
+    """experiment id -> static per-experiment page filename (for permalinks
+    and the real-href list items)."""
+    return {e["id"]: page_filename(e) for e in data["experiments"]}
+
+
 def build() -> str:
     data = json.load(EXPERIMENTS_JSON.open(encoding="utf-8"))
     pathmap = build_pathmap(data)
@@ -357,6 +379,7 @@ def build() -> str:
         data=json.dumps(data, ensure_ascii=False),
         pathmap=json.dumps(pathmap, ensure_ascii=False),
         figmap=json.dumps(figmap, ensure_ascii=False),
+        pagemap=json.dumps(build_pagemap(data), ensure_ascii=False),
         staticlist=build_static_list(data),
     )
     INDEX_HTML.write_text(html, encoding="utf-8")
@@ -370,7 +393,7 @@ def build() -> str:
 def check() -> None:
     html = build()
     # Extract and parse each embedded const payload as a smoke test.
-    for name in ("DATA", "PATHMAP", "FIGMAP"):
+    for name in ("DATA", "PATHMAP", "FIGMAP", "PAGEMAP"):
         start = html.index(f"const {name} = ") + len(f"const {name} = ")
         end = html.index(";\n", start)
         json.loads(html[start:end])

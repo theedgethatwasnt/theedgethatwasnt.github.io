@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-07",
+ "generated": "2026-07-28",
  "terms": [
   {
    "slug": "di-positive-directional",
@@ -476,6 +476,18 @@
    "source": "glossary"
   },
   {
+   "slug": "carry-rollover-financing",
+   "display": "Carry / rollover (financing)",
+   "surfaces": [
+    "Carry",
+    "rollover",
+    "financing"
+   ],
+   "tooltip": "The interest credited or charged at the 17:00 New York rollover on any position held overnight, set by the interest-rate gap between the two currencies — at broker-set rates thinner than the…",
+   "body": "The interest credited or charged at the 17:00 New York rollover on any position held overnight, set by the interest-rate gap between the two currencies — at broker-set rates thinner than the interbank differential. It posts every trading day, but not evenly: a position held through one rollover per week (Wednesday's, at most brokers) is charged three days of interest in that single posting (spot settles two business days forward, so Wednesday's rollover crosses the weekend); nothing posts Saturday or Sunday. Invisible to an intraday backtest and decisive at a multi-day hold: it is the cost that net-refuted the regime-gated daily mean-reversion, the record's last surviving edge (Entry 58; see the Coda).",
+   "source": "glossary"
+  },
+  {
    "slug": "cma-es",
    "display": "CMA-ES",
    "surfaces": [
@@ -544,8 +556,8 @@
     "Counter-trend",
     "fade"
    ],
-   "tooltip": "Trading against the prevailing move; the same family as mean reversion.",
-   "body": "Trading against the prevailing move; the same family as mean reversion.",
+   "tooltip": "Trading against the direction of the prevailing move.",
+   "body": "Trading against the direction of the prevailing move. A cousin of mean reversion, not a synonym: mean reversion trades toward a reference level (an average, a band, a fair value), while a counter-trend trade bets against the move itself — and when the reference is trending, the two point opposite ways. Buying a dip back to a rising average is mean-reverting and trend-aligned; shorting the uptrend is counter-trend, a bet that the average itself is about to turn. The two coincide only when the faded move is a short-lived stretch away from a roughly flat reference — which is what most of this book's fades are.",
    "source": "glossary"
   },
   {
@@ -554,8 +566,8 @@
    "surfaces": [
     "CSI"
    ],
-   "tooltip": "two unrelated indicators with the same three letters.",
-   "body": "two unrelated indicators with the same three letters. (1) Currency Strength Index (per-currency): a single strength number for each major currency (USD, EUR, JPY, …), pooled across all the pairs it appears in, so you can pair the strong against the weak. (2) Commodity Selection Index (per-pair), Wilder's classic, adapted for FX as CSI = ADXR × ATR_pips × (V/√M) × (1/(150+C)) × 100: a per-pair tradeability score that blends trendiness, opportunity size, and cost. The first tells you which currency is strong; the second ranks which pairs are worth trading. The surrounding context disambiguates which one is meant — currency-strength work points at the first, factor and tradeability work at the second. In this project's factor study every component of the second scored contrarian (IC below zero).",
+   "tooltip": "Commodity Selection Index (Wilder).",
+   "body": "Commodity Selection Index (Wilder). Wilder's classic per-pair tradeability score, adapted for FX as CSI = ADXR × ATR_pips × (V/√M) × (1/(150+C)) × 100: it blends trendiness, opportunity size, and cost into one figure that ranks which pairs are worth trading. In this book bare CSI always means this indicator — its standard meaning in the technical-indicator literature. It shares its three letters with the project's per-currency currency-strength index (a single strength number per major currency, pooled across all the pairs it appears in, so you can pair the strong against the weak); to keep the two apart, the strength measure is always written out in full and never abbreviated. In this project's factor study every component of the Commodity Selection Index scored contrarian (IC below zero).",
    "source": "glossary"
   },
   {
@@ -731,7 +743,7 @@
     "Edge"
    ],
    "tooltip": "A real, repeatable advantage: a way of trading that beats guessing, after every cost.",
-   "body": "A real, repeatable advantage: a way of trading that beats guessing, after every cost. The whole game is whether you have one. Almost no one does.",
+   "body": "A real, repeatable advantage: a way of trading that beats guessing, after every cost. The whole game is whether you have one — and far fewer have one than believe they do: the loss disclosures required on every retail broker's site say most accounts lose, and the eighty-one experiments in this book say how rarely the belief survives testing.",
    "source": "glossary"
   },
   {
@@ -866,7 +878,7 @@
     "FIFO"
    ],
    "tooltip": "First-In-First-Out.",
-   "body": "First-In-First-Out. A position-management style in which the oldest open position is closed first.",
+   "body": "First-In-First-Out. A position-management style in which the oldest open position is closed first. Not a stylistic choice for a US retail account: NFA Compliance Rule 2-43(b) has mandated FIFO close sequencing (and barred hedging) since 2009 — the regulatory-geography note in Appendix D carries the full history, through the 2010 leverage caps and the ~2012 broker consolidation.",
    "source": "glossary"
   },
   {
