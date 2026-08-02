@@ -435,6 +435,8 @@ HTML = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>The Edge That Wasn't — Glossary</title>
 <meta name="description" content="{count} terms — indicators, formulas, reward functions, and statistics — defined in plain language, each indicator illustrated with a real EUR/USD chart.">
 <link rel="canonical" href="https://theedgethatwasnt.com/experiments/glossary.html">
@@ -443,6 +445,7 @@ HTML = """<!DOCTYPE html>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://theedgethatwasnt.com/experiments/glossary.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -453,9 +456,9 @@ HTML = """<!DOCTYPE html>
 * {{ box-sizing:border-box; margin:0; }}
 body {{ font:16px/1.6 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
 header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; position:sticky; top:0; background:var(--bg); z-index:5; }}
-h1.brand {{ font-size:1.2rem; font-weight:600; }}
-h1.brand a {{ color:var(--fg); text-decoration:none; }}
-h1.brand a:hover {{ color:var(--acc); }}
+a.brand {{ font-size:1.2rem; font-weight:600; color:var(--fg); text-decoration:none; }}
+a.brand:hover {{ color:var(--acc); }}
+main h1 {{ font-size:2rem; line-height:1.15; margin:6px 0 4px; }}
 nav.sitenav {{ display:flex; gap:14px; flex-wrap:wrap; }}
 nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
 nav.sitenav a:hover {{ color:var(--acc); }}
@@ -487,23 +490,26 @@ main {{ max-width:820px; margin:0 auto; padding:20px 24px 80px; }}
  header {{ position:static; }}
  .term {{ scroll-margin-top:10px; }}
 }}
+a:focus-visible, button:focus-visible {{ outline:2px solid var(--acc); outline-offset:2px; }}
 </style>
 </head>
 <body>
 <header>
- <h1 class="brand"><a href="../index.html">The Edge That Wasn't</a></h1>
+ <a class="brand" href="../index.html">The Edge That Wasn't</a>
  <nav class="sitenav">
   <a href="../verify.html">Verify</a>
   <a href="index.html">Experiments</a>
   <a href="glossary.html" class="cur" aria-current="page">Glossary</a>
   <a href="../viewer/index.html">Indicator Viewer</a>
   <a href="../retractions.html">Retractions</a>
+  <a href="../power-curve.html">Power Curve</a>
   <a href="../ledger.html">Ledger</a>
   <a href="../about.html">About</a>
  </nav>
  <input id="q" type="search" placeholder="Filter terms…" autocomplete="off">
 </header>
 <main>
+ <h1>Glossary</h1>
  <div class="count">{count} terms — indicators, formulas, reward functions, statistics, and the project's own coinages, drawn from the book's Complete Glossary and Master Indicator Encyclopedia. Hover a term anywhere in the explorer to preview; click through to here.</div>
  <div class="jump">{jump}</div>
  <dl id="glist">

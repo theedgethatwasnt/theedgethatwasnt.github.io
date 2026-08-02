@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>Read an excerpt — The Edge That Wasn't</title>
 <meta name="description" content="Chapter III of The Edge That Wasn't, in full: the lookahead bug — how a clean backtest can be pure fiction, and the 55,000 pips it took to find out.">
 <link rel="canonical" href="https://theedgethatwasnt.com/excerpt.html">
@@ -11,6 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://theedgethatwasnt.com/excerpt.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -41,6 +44,7 @@ a { color:var(--acc); }
 footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
 footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
 footer a { color:var(--muted); }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -52,6 +56,7 @@ footer a { color:var(--muted); }
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
   <a href="retractions.html">Retractions</a>
+  <a href="power-curve.html">Power Curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
@@ -60,9 +65,9 @@ footer a { color:var(--muted); }
  <p class="srcnote">An excerpt from Chapter III of <em>The Edge That Wasn't</em></p>
  <h1>Chapter III — The Lookahead Bug: How a Clean Backtest Can Be Pure Fiction</h1>
  <article>
-  <p>The first great lesson cost about 55,000 pips — the combined realized loss across sixteen live strategies running at research-account scale, every one trained on the corrupted indicator — and it was not a lesson about markets. It was a lesson about me. (The pip count is large; at micro-lot sizes the dollar impact was minimal.)</p>
+  <p>The first great lesson cost about 55,000 pips — the combined realized loss across sixteen live strategies running at research-account scale, every one trained on the corrupted indicator — and it was not a lesson about markets. It was a lesson about me. (The pip count is large; at micro-lot sizes — the smallest standard trade size, pennies of exposure per pip — the dollar impact was minimal.)</p>
 
-  <p>The morning I found it, nothing dramatic happened. I sat down with coffee and opened the dashboard the way I had every morning for weeks, expecting the usual quiet confirmation. On the left of the screen was the backtest equity curve for the book of strategies: the smooth, patient, upward line I had spent months learning to produce. On the right was the live tape — the same strategies, the same pairs, the same logic, running on real accounts at micro-lot scale. The live line went down.</p>
+  <p>The morning I found it, nothing dramatic happened. I sat down with coffee and opened the dashboard the way I had every morning for weeks, expecting the usual quiet confirmation. On the left of the screen was the backtest equity curve for the book of strategies (a <em>book</em>, in the trading sense: the set of strategies run together as one portfolio): the smooth, patient, upward line I had spent months learning to produce. On the right was the live tape — the same strategies, the same pairs, the same logic, running on real accounts at micro-lot scale. The live line went down.</p>
 
   <p>Not crashing down. Bleeding down, slowly, the way a real losing strategy bleeds — small adverse increments, a sawtooth with a downward bias, sixteen of them stacked and every one of them tilted the wrong way. I had been telling myself, for some days, that it was variance. Small accounts, early days, noise. The backtest said these were positive-expectancy systems and the backtest had passed every gate I knew how to build.</p>
 
@@ -70,7 +75,7 @@ footer a { color:var(--muted); }
 
   <p>I did not yet know about the 719 bars, or the wrong moving-average recipe — those came later, in the root-cause analysis. What I knew in that moment was smaller and harder. Sixteen times, the apparatus I trusted had told me a true-sounding story about a system that could not work, and sixteen times I had believed it. The live tape was the only witness in the room with nothing to gain from telling me what I wanted to hear.</p>
 
-  <p>What the witness was testifying to, I worked out only later. Two bugs did it. The first was a timeframe-alignment error that leaked up to 719 bars of <em>future</em> data into an <em>indicator</em> — a mathematical transform computed <em>from</em> price and fed into the decision logic as a feature. The whole point of an indicator is to summarize what the market has done <em>so far</em>, which is exactly why leaking <em>future</em> data into one is catastrophic: you are no longer summarizing the past, you are cheating with the answer key.</p>
+  <p>What the live tape was actually showing, I worked out only later. Two bugs did it. The first was a timeframe-alignment error that leaked up to 719 bars of <em>future</em> data into an <em>indicator</em> — a mathematical transform computed <em>from</em> price and fed into the decision logic as a feature. The whole point of an indicator is to summarize what the market has done <em>so far</em>, which is exactly why leaking <em>future</em> data into one is catastrophic: you are no longer summarizing the past, you are cheating with the answer key.</p>
 
   <p>The second was a mis-computed indicator feeding a live strategy a number that meant nothing. It used the wrong <em>moving average</em> recipe together with the wrong <em>normalization</em>, the rescaling that lets "big" and "small" mean the same thing across pairs, so a number that <em>looked</em> familiar to the model carried a different meaning. And a strategy trained on one recipe behaves differently if fed another live. The two bugs lived in <code>lib/asi_indicator.py</code> and <code>services/curator/main.py</code> respectively. Sixteen strategies — the ones, out of the hundreds I had built over the years, that had made it to a live account — all "validated," all profitable in backtest, all bleeding live.</p>
 
@@ -78,7 +83,7 @@ footer a { color:var(--muted); }
 
   <p>That is when I stopped trusting my own judgment about my own systems, and started building the apparatus in Chapter II.</p>
 
-  <p>The lesson is bigger than FX: <strong>someone with a backtest and no apparatus to check it is a risk to their own conclusions, and to any capital later put behind them, because the backtest will tell them what they want to hear, in a voice that sounds like truth.</strong></p>
+  <p>The lesson is bigger than FX: <strong>someone with a backtest and no apparatus to check it is a risk to their own conclusions, and to any capital later put behind them, because the backtest will tell them what they want to hear — and it will look exactly like evidence.</strong></p>
  </article>
 
  <div class="after">

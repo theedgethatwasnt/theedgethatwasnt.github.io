@@ -252,8 +252,8 @@
    "surfaces": [
     "ASI USD-Normalized"
    ],
-   "tooltip": "Cross-instrument-comparable ASI: normalizes swing index to USD terms for multi-pair context",
-   "body": "Cross-instrument-comparable ASI: normalizes swing index to USD terms for multi-pair context",
+   "tooltip": "Cross-pair-comparable ASI: normalizes swing index to USD terms for multi-pair context",
+   "body": "Cross-pair-comparable ASI: normalizes swing index to USD terms for multi-pair context",
    "source": "encyclopedia"
   },
   {
@@ -753,8 +753,8 @@
     "eFF",
     "Efficient Filter"
    ],
-   "tooltip": "Noise reduction for noisy instruments (not validated in this project's pipeline)",
-   "body": "Noise reduction for noisy instruments (not validated in this project's pipeline)",
+   "tooltip": "Noise reduction for noisy markets (not validated in this project's pipeline)",
+   "body": "Noise reduction for noisy markets (not validated in this project's pipeline)",
    "source": "encyclopedia"
   },
   {
@@ -2572,6 +2572,16 @@
    ],
    "tooltip": "A multi-scale time-frequency decomposition of the price window (computed with kymatio's Scattering1D) that cascades wavelet transforms and modulus operations into a translation-invariant…",
    "body": "A multi-scale time-frequency decomposition of the price window (computed with kymatio's Scattering1D) that cascades wavelet transforms and modulus operations into a translation-invariant, deformation-stable representation of ~128 coefficients. Disambiguation: in this project the abbreviation WST means this transform; SWT is the name of the repository (new_swt) that used it, not a separate \"stationary wavelet transform.\" A principled feature extractor — but a wide input that invites overfitting, and neither RL pipeline that consumed it ever reached positive expectancy on real prices.",
+   "source": "glossary"
+  },
+  {
+   "slug": "weekend-gap",
+   "display": "Weekend gap",
+   "surfaces": [
+    "Weekend gap"
+   ],
+   "tooltip": "The week runs continuously Sunday ~17:00 NY to Friday 17:00, then stops; news accrues over the closed weekend and Monday reopens away from Friday's close — the gap.",
+   "body": "The week runs continuously Sunday ~17:00 NY to Friday 17:00, then stops; news accrues over the closed weekend and Monday reopens away from Friday's close — the gap. A stop is a tripwire on the tape, so across a gap it cannot fill inside the jump: it fills at the reopen, wherever that lands — which is why a weekend-held stop is not the protection it looks like.",
    "source": "glossary"
   },
   {

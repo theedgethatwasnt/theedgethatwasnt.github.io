@@ -3,13 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>Retractions — The Edge That Wasn't</title>
-<meta name="description" content="Three retracted results: the ≈55,000-pip lookahead bug, the first-touch H4 fade bar-grid artifact, and the mean-reversion survivor retracted at the premise.">
+<meta name="description" content="Four retracted results: the ≈55,000-pip lookahead bug, the first-touch H4 fade bar-grid artifact, the mean-reversion survivor retracted at the premise, and the Bollinger-band re-entry fade's phantom fill.">
 <link rel="canonical" href="https://theedgethatwasnt.com/retractions.html">
 <meta property="og:title" content="Retractions — The Edge That Wasn't">
-<meta property="og:description" content="Three retracted results: the ≈55,000-pip lookahead bug, the first-touch H4 fade bar-grid artifact, and the mean-reversion survivor retracted at the premise.">
+<meta property="og:description" content="Four retracted results: the ≈55,000-pip lookahead bug, the first-touch H4 fade bar-grid artifact, the mean-reversion survivor retracted at the premise, and the Bollinger-band re-entry fade's phantom fill.">
 <meta property="og:url" content="https://theedgethatwasnt.com/retractions.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -39,6 +42,7 @@ a { color:var(--acc); }
 footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
 footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
 footer a { color:var(--muted); }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -50,13 +54,14 @@ footer a { color:var(--muted); }
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
   <a href="retractions.html" class="cur" aria-current="page">Retractions</a>
+  <a href="power-curve.html">Power Curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
 </header>
 <main>
  <h1>Retractions</h1>
- <p>A book about not fooling yourself must publish its own corrections first. Three headline results in this project's history were later retracted. Each is listed here with what was claimed, what the bug or flaw was, and the corrected number. The full write-ups live in the book and in the <a href="experiments/index.html">experiment record</a>.</p>
+ <p>A book about not fooling yourself must publish its own corrections first. Four headline results in this project's history were later retracted. Each is listed here with what was claimed, what the bug or flaw was, and the corrected number. The full write-ups live in the book and in the <a href="experiments/index.html">experiment record</a>.</p>
 
  <div class="retraction">
   <h2>1. StrengthSpread and the pre-RCA book — the lookahead retraction</h2>
@@ -91,6 +96,18 @@ footer a { color:var(--muted); }
    <dd>Not a code bug this time — the premise. The Coda's field-scan re-run, under a different gate, re-measured the underlying daily mean-reversion signal far smaller gross (+1.1 pips/trade) and negative net of the daily rollover financing cost, which consumes the gross edge several times over.</dd>
    <dt>The corrected number</dt>
    <dd>+1.1 pips/trade gross; negative net of rollover. The paper-test flag was closed at the premise, and nothing from this family is running. See experiment <a href="experiments/58-indicator-screen-momentum-efficiency-regime-gated-daily-mean.html">#58</a>.</dd>
+  </dl>
+ </div>
+
+ <div class="retraction">
+  <h2>4. The Bollinger-band re-entry fade — the phantom fill</h2>
+  <dl>
+   <dt>What was claimed</dt>
+   <dd>The candidate that cleared every gate the verdict was built on: fade a bar that closes fully outside a one-standard-deviation band on its re-entry. It tested at +34.6 pips/day run across four timeframes at once, held on eleven of twelve pairs across five years, and passed every gate that had condemned everything before it — out-of-sample, walk-forward, multi-pair, Monte-Carlo p = 0, a t-statistic near fifteen. It was armed live in late June 2026 on four $8 accounts, one per timeframe. The narrative's "The Edge That Almost Was" chapter tells the story in full.</dd>
+   <dt>What the bug was</dt>
+   <dd>A phantom fill. The backtest closed short trades at stops that sat <em>below</em> the entry price — fills at prices the market never printed — so the exit fired the instant the trade opened and booked a gain that never existed. On the fastest timeframe more than half the short trades booked phantom gains. The consistency test passed the whole time, because both code paths shared the same bug: agreement between two measurements is not the same as either being right.</dd>
+   <dt>The corrected number</dt>
+   <dd>With the fill model corrected to refuse any entry already past its stop, the +34.6 pips/day inverts to a small loss — −1.11 pips/trade. The four accounts were stopped within days. The corrected fill is recorded in experiment <a href="experiments/79-core-pricing-arithmetic-re-pricing-the-gross-positive-family.html">#79</a>, which re-prices this family net of costs.</dd>
   </dl>
  </div>
 

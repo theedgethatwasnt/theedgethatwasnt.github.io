@@ -3,17 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>The Edge That Wasn't</title>
-<meta name="description" content="A memoir of retail FX algorithmic trading: 81 experiments, a 55,000-pip lookahead bug, three retractions, and the answer was no. Receipts, not backtests.">
+<meta name="description" content="A memoir of retail FX algorithmic trading: 81 experiments, a 55,000-pip lookahead bug, four retractions, and the answer was no. Receipts, not backtests.">
 <link rel="canonical" href="https://theedgethatwasnt.com/">
 <meta property="og:title" content="The Edge That Wasn't">
-<meta property="og:description" content="A memoir of retail FX algorithmic trading: 81 experiments, a 55,000-pip lookahead bug, three retractions, and the answer was no. Receipts, not backtests.">
+<meta property="og:description" content="A memoir of retail FX algorithmic trading: 81 experiments, a 55,000-pip lookahead bug, four retractions, and the answer was no. Receipts, not backtests.">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://theedgethatwasnt.com/">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"The Edge That Wasn't","alternateName":"The Edge That Wasn't: Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No","author":{"@type":"Person","name":"Aharon Zbaida"},"isbn":"9798189494147","bookFormat":"https://schema.org/Paperback","numberOfPages":"578","inLanguage":"en","url":"https://theedgethatwasnt.com/","image":"https://theedgethatwasnt.com/cover.png","offers":{"@type":"Offer","price":"29.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+{"@context":"https://schema.org","@type":"Book","name":"The Edge That Wasn't","alternateName":"The Edge That Wasn't: Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No","author":{"@type":"Person","name":"Aharon Zbaida"},"isbn":"9798189494147","bookFormat":"https://schema.org/Paperback","numberOfPages":"578","inLanguage":"en","url":"https://theedgethatwasnt.com/","image":"https://theedgethatwasnt.com/cover.png","offers":{"@type":"Offer","price":"29.99","priceCurrency":"USD","availability":"https://schema.org/PreOrder"}}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -134,6 +137,7 @@ footer p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px
 footer a { color:var(--muted); text-decoration:underline; }
 footer a:hover { color:var(--acc); }
 .disclaimer { font-style:italic; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -145,6 +149,7 @@ footer a:hover { color:var(--acc); }
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
   <a href="retractions.html">Retractions</a>
+  <a href="power-curve.html">Power Curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
@@ -178,7 +183,7 @@ footer a:hover { color:var(--acc); }
         <span class="l">pips lifetime, the best of thirteen accounts — later wound down like the rest</span>
       </div>
       <a class="num neg" href="retractions.html">
-        <span class="v">3</span>
+        <span class="v">4</span>
         <span class="l">headline results retracted, corrections published</span>
       </a>
     </div>
@@ -189,7 +194,7 @@ footer a:hover { color:var(--acc); }
 
     <p>One question runs through it: is there a repeatable, statistically real edge available to a retail trader in spot FX, and if so, is it large enough — after costs, after tail risk, after the capital required to hold open positions through their drawdowns — to beat a stock-index fund? Eighty-one audited experiments answer it: thirteen positive on their own terms, twenty-two mixed, forty-five negative, and one late survivor retracted.</p>
 
-    <p>The apparatus included a positive control — an instrument calibrated to prove it could detect a real edge before being trusted to report that there wasn't one — and it forced three published retractions on this book's own results. Both are documented here: the <a href="power-curve.html">calibration</a> and the <a href="retractions.html">corrections</a>.</p>
+    <p>The apparatus included a positive control — an instrument calibrated to prove it could detect a real edge before being trusted to report that there wasn't one — and it forced four published retractions on this book's own results. Both are documented here: the <a href="power-curve.html">calibration</a> and the <a href="retractions.html">corrections</a>.</p>
 
     <p>What the apparatus taught outlasts the trading. Pre-registration, a sealed out-of-sample set touched exactly once, a working taxonomy of lookahead bias, the coin-flip control that separates skill from luck, and the cost floors that sink most edges: a full research-methods spine, demonstrated on live results rather than lectured. It is meant to be useful to a data scientist or engineer who will never place a trade.</p>
 
@@ -207,7 +212,7 @@ footer a:hover { color:var(--acc); }
            <a class="btn primary" href="https://www.amazon.com/dp/NEW_ASIN" target="_blank" rel="noopener">Buy on Amazon</a>
            and change .avail to: "Also available: Kindle edition to follow." -->
       <a class="btn primary" href="excerpt.html">Read an excerpt &rarr;</a>
-      <p class="avail">The paperback is in Amazon&rsquo;s review queue right now &mdash; the listing goes live within a day or two, and the buy link will appear here the moment it does. Kindle edition to follow.</p>
+      <p class="avail">Submitted to Amazon on 28 July 2026 and in KDP review; the buy link will appear here the moment the listing is live. Kindle edition to follow.</p>
       <p class="secondary"><a href="verify.html">Every number is checkable</a> &middot; <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io">star the repository</a> to catch the release</p>
     </div>
   </section>
@@ -232,7 +237,7 @@ footer a:hover { color:var(--acc); }
   <section class="notvictories">
     <blockquote>
       <p>"The positives are not victories in the usual sense. Several did not survive finite-margin re-validation once a realistic stop-loss was added; two worked in simulation but failed live execution; and the late-program successes are cost-accounting and risk-reduction findings, not edges."</p>
-      <cite>— from the <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io#results-summary" target="_blank" rel="noopener">repository's experiment map</a>. Three headline results were later retracted outright — <a href="retractions.html">the corrections are published here</a>.</cite>
+      <cite>— from the <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io#results-summary" target="_blank" rel="noopener">repository's experiment map</a>. Four headline results were later retracted outright — <a href="retractions.html">the corrections are published here</a>.</cite>
     </blockquote>
   </section>
 

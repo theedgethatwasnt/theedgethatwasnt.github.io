@@ -69,6 +69,8 @@ PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>#{id} {name} — The Edge That Wasn't</title>
 <meta name="description" content="{meta_desc}">
 <link rel="canonical" href="{canonical}">
@@ -77,6 +79,7 @@ PAGE = """<!DOCTYPE html>
 <meta property="og:type" content="article">
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{favicon}">
 <style>
@@ -120,6 +123,7 @@ h1 {{ font-size:1.5rem; line-height:1.25; margin-bottom:6px; }}
 footer {{ border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }}
 footer p {{ font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }}
 footer a {{ color:var(--muted); }}
+a:focus-visible, button:focus-visible {{ outline:2px solid var(--acc); outline-offset:2px; }}
 </style>
 </head>
 <body>

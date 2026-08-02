@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>#53 H4 Donchian + FIFO stopped (live check) — The Edge That Wasn't</title>
 <meta name="description" content="Live money was the final gate: H4 Donchian lost −61.6p at 0% WR in 8 days and FIFO-Trends (GBP_JPY) lost −168.5p at 7% WR over 15 trades, so both containers…">
 <link rel="canonical" href="https://theedgethatwasnt.com/experiments/53-h4-donchian-fifo-stopped-live-check.html">
@@ -11,6 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://theedgethatwasnt.com/experiments/53-h4-donchian-fifo-stopped-live-check.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -54,6 +57,7 @@ h1 { font-size:1.5rem; line-height:1.25; margin-bottom:6px; }
 footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
 footer p { font-size:.8rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
 footer a { color:var(--muted); }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -65,6 +69,7 @@ footer a { color:var(--muted); }
   <a href="glossary.html">Glossary</a>
   <a href="../viewer/index.html">Indicator Viewer</a>
   <a href="../retractions.html">Retractions</a>
+  <a href="../power-curve.html">Power Curve</a>
   <a href="../ledger.html">Ledger</a>
   <a href="../about.html">About</a>
  </nav>

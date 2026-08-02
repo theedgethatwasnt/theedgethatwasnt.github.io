@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>The Ledger — The Edge That Wasn't</title>
 <meta name="description" content="The ledger of record, reconciled to the broker: thirteen OANDA accounts, 8,687 lifetime trades, ≈−82,000 pips, $140.72 ending NAV. The whole book on one page.">
 <link rel="canonical" href="https://theedgethatwasnt.com/ledger.html">
@@ -10,6 +12,7 @@
 <meta property="og:description" content="The ledger of record, reconciled to the broker: thirteen OANDA accounts, 8,687 lifetime trades, ≈−82,000 pips, $140.72 ending NAV. The whole book on one page.">
 <meta property="og:url" content="https://theedgethatwasnt.com/ledger.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -30,7 +33,9 @@ main { max-width:860px; margin:0 auto; padding:40px 24px 80px; }
 h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; }
 p { margin:0 0 16px; max-width:720px; }
 a { color:var(--acc); }
-.tblwrap { overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+.tblwrap { overflow-x:auto; margin:22px 0 6px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+.scrollhint { display:none; font:600 .72rem/1.4 ui-monospace,Menlo,monospace; letter-spacing:.06em; color:var(--muted); margin:0 0 16px; text-align:right; }
+@media (max-width:720px) { .scrollhint { display:block; } }
 table { border-collapse:collapse; width:100%; font:13.5px/1.5 ui-monospace,Menlo,monospace; }
 th, td { padding:6px 10px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
 th:first-child, td:first-child { text-align:left; }
@@ -44,6 +49,7 @@ td.neg { color:var(--neg); }
 footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
 footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
 footer a { color:var(--muted); }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -55,6 +61,7 @@ footer a { color:var(--muted); }
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
   <a href="retractions.html">Retractions</a>
+  <a href="power-curve.html">Power Curve</a>
   <a href="ledger.html" class="cur" aria-current="page">Ledger</a>
   <a href="about.html">About</a>
  </nav>
@@ -83,16 +90,17 @@ footer a { color:var(--muted); }
    <tr><th scope="row">011</th><td>2026-03-29</td><td>—</td><td>—</td><td>$3.02</td><td class="neg">−$2.88</td><td>−$0.09</td><td>527</td><td class="neg">−2,353</td><td>$0.05</td></tr>
    <tr><th scope="row">012</th><td>2026-03-29</td><td>$80.00</td><td>—</td><td>−$75.96</td><td class="neg">−$4.01</td><td>+$0.02</td><td>979</td><td class="neg">−13,118</td><td>$0.06</td></tr>
    <tr><th scope="row">013</th><td>2026-03-29</td><td>—</td><td>—</td><td>$1.93</td><td class="neg">−$1.86</td><td>−$0.01</td><td>1,036</td><td class="neg">−13,550</td><td>$0.05</td></tr>
-   <tr class="total"><td><strong>Total</strong></td><td></td><td>$206.24</td><td>−$6.50</td><td>≈$0</td><td class="neg">−$56.85</td><td>−$2.22</td><td>8,687</td><td class="neg">≈ −82,000</td><td>$140.72</td></tr>
+   <tr class="total"><td><strong>Total</strong></td><td></td><td>$206.24</td><td>−$6.50</td><td>+$1.00</td><td class="neg">−$56.85</td><td>−$2.22</td><td>8,687</td><td class="neg">≈ −82,000</td><td>$140.72</td></tr>
   </tbody>
  </table>
  </div>
+ <p class="scrollhint" aria-hidden="true">table scrolls sideways &#8594;</p>
 
  <p>Across all thirteen accounts and every year of trading — 001 and 002 reach back to February 2021 — the enterprise took in $206.24 of deposits, gave $56.85 back to trading and $2.22 to financing, and ended at $140.72 of net asset value. The dollar loss is tiny only because the stakes were: 8,687 closed trades produced it. Account 010 is the only one of the thirteen with positive lifetime pips (+171) — itself the decayed remainder of a +693-pip three-week peak, and that strategy too was wound down. Every other account is net-negative, roughly −82,000 pips in total.</p>
 
- <p><strong>One reconciliation, so the counts cannot be read as contradicting each other.</strong> The book's cover counts <strong>4,932 live trades</strong> — the live rows of the frozen 31&nbsp;May&nbsp;2026 database snapshot every table in the book is computed from (5,556 rows in all, counting the 624 paper trades that never touch a broker; see <a href="verify.html">Verify</a>). The <strong>8,687</strong> here is a different measure of a different window: the broker's own lifetime fill count, pulled at the end of June 2026, which reaches back to 2021-era trading on accounts 001 and 002 that predates the project's central database entirely, and runs a month past the frozen snapshot. Same enterprise, two instruments: the snapshot is the auditable dataset the book's numbers come from; the broker pull is the complete history the enterprise is judged on. Neither corrects the other.</p>
+ <p><strong>One reconciliation, so the counts cannot be read as contradicting each other.</strong> The book's cover counts <strong>4,932 live trades</strong> — the live rows of the frozen 31&nbsp;May&nbsp;2026 database snapshot every table in the book is computed from (5,556 rows in all, counting the 624 paper trades that never touch a broker; see <a href="verify.html">Verify</a>). The <strong>8,687</strong> here is a different measure of a different window: the broker's own lifetime fill count, pulled at the end of June 2026, which reaches back to 2021-era trading on accounts 001 and 002 that predates the project's central database entirely, and runs a month past the frozen snapshot. Same enterprise, two measures: the snapshot is the auditable dataset the book's numbers come from; the broker pull is the complete history the enterprise is judged on. Neither corrects the other.</p>
 
- <p class="note">Accounting notes, as published: the reconciliation identity is on account balance; the NAV column equals balance for the eleven flat accounts and differed at pull time only for the two then holding open positions (009, 010) by their unrealized P&amp;L. Per-account cells are rounded to the cent, so a column may not foot to the last cent; the total row carries the exact broker figures.</p>
+ <p class="note">Accounting notes, as published: the reconciliation identity is on account balance; the NAV column equals balance for the eleven flat accounts and differed at pull time only for the two then holding open positions (009, 010) by their unrealized P&amp;L. Per-account cells are rounded to the cent, so a column may not foot to the last cent; the total row carries the exact broker figures. The transfer column nets to +$1.00 rather than zero because one $1.00 transfer (into 001, April 2025) arrived from an OANDA account outside these thirteen — functionally a deposit that the broker's ledger labels a transfer. The financing cells shown as "—" hide values under a few cents; the exact total (−$2.22) includes them, which is why the visible cells foot to −$2.15. Row sums can likewise sit a few cents from the balance: small broker adjustments outside these five columns. The $0.00 reconciliation was checked at full precision on the raw pull, not on the rounded cells.</p>
 </main>
 <footer style="max-width:860px;margin:0 auto;padding:0 24px 40px">
  <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>

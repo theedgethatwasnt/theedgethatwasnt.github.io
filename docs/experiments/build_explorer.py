@@ -119,6 +119,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>The Edge That Wasn't — Explore the 81 Experiments</title>
 <meta name="description" content="Drill into all 81 documented experiments behind the book — method, data, indicators, algorithms, key numbers, figures, and links to the exact code, positive and negative results alike.">
 <link rel="canonical" href="https://theedgethatwasnt.com/experiments/index.html">
@@ -127,6 +129,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://theedgethatwasnt.com/experiments/index.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/og-card.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -186,11 +189,12 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
 .figs {{ display:flex; flex-wrap:wrap; gap:14px; }}
 .figs figure {{ max-width:460px; }}
 .figs img {{ max-width:100%; border:1px solid var(--line); border-radius:4px; background:#fff; }}
-.figs figcaption {{ font-size:.75rem; color:var(--muted); word-break:break-all; }}
+.figs figcaption {{ font-size:.75rem; color:var(--muted); }}
 .keynum {{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; }}
 #empty {{ color:var(--muted); padding:40px; }}
 @media (min-width:1400px){{ .figs figure{{ max-width:640px; }} #side{{ width:460px; }} }}
 @media (max-width:760px){{ .wrap{{flex-direction:column;height:auto}} #side{{width:100%;max-height:45vh}} }}
+a:focus-visible, button:focus-visible {{ outline:2px solid var(--acc); outline-offset:2px; }}
 </style>
 </head>
 <body>
@@ -203,6 +207,7 @@ code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
   <a href="glossary.html">Glossary</a>
   <a href="../viewer/index.html">Indicator Viewer</a>
   <a href="../retractions.html">Retractions</a>
+  <a href="../power-curve.html">Power Curve</a>
   <a href="../ledger.html">Ledger</a>
   <a href="../about.html">About</a>
  </nav>
@@ -324,14 +329,15 @@ function chips(arr, cls){{
   }});
   return `<div class="chips">${{parts.join('<span style="position:absolute;left:-9999px">, </span>')}}</div>`;
 }}
-function figBlock(p){{
+function figBlock(p, i, name){{
+  const label = `${{name}} — figure ${{i+1}}`;
   const src = FIGMAP[p];
-  if (!src) return `<figure><figcaption>${{esc(p)}} (figure not included)</figcaption></figure>`;
-  return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(p)}}"></a><figcaption>${{esc(p)}}</figcaption></figure>`;
+  if (!src) return `<figure><figcaption>${{esc(label)}} (figure not included)</figcaption></figure>`;
+  return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(label)}}"></a><figcaption>${{esc(label)}}</figcaption></figure>`;
 }}
 function show(e){{
   const code = (e.code_paths||[]).map(codeLink).join('');
-  const figs = (e.figures||[]).map(figBlock).join('');
+  const figs = (e.figures||[]).map((p,i)=>figBlock(p,i,e.name)).join('');
   const seen = new Set();                          // first-occurrence-per-pane, shared across prose fields
   detail.innerHTML = `
    <h2>#${{e.id}} — ${{esc(e.name)}}</h2>

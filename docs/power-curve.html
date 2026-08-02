@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161614" media="(prefers-color-scheme: dark)">
 <title>The Power Curve — The Edge That Wasn't</title>
 <meta name="description" content="Could the gate stack even find an edge? Known edges injected into real price data measured the detection floor: 1.0 pip/trade at 2,000 trades, 0.5 at 10,000.">
 <link rel="canonical" href="https://theedgethatwasnt.com/power-curve.html">
@@ -11,6 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://theedgethatwasnt.com/power-curve.html">
 <meta property="og:image" content="https://theedgethatwasnt.com/figures/power_curve.png">
+<meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
 <style>
@@ -40,6 +43,7 @@ figcaption { font-size:.85rem; color:var(--muted); line-height:1.5; margin-top:1
 footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
 footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
 footer a { color:var(--muted); }
+a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -51,6 +55,7 @@ footer a { color:var(--muted); }
   <a href="experiments/glossary.html">Glossary</a>
   <a href="viewer/index.html">Indicator Viewer</a>
   <a href="retractions.html">Retractions</a>
+  <a href="power-curve.html" class="cur" aria-current="page">Power Curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
@@ -68,7 +73,7 @@ footer a { color:var(--muted); }
  </figure>
 
  <div class="floor">
-  <p style="margin:0">The floor it measured: at the project's standard 2,000-trade evidence bar, the stack reliably detects an injected edge of <strong>1.0 pip per trade</strong> or larger. At 10,000 trades the floor drops to <strong>0.5</strong>; at 500 trades it rises to <strong>2.5</strong>. At half a pip on the standard bar it catches roughly one attempt in four; at a third of a pip, one in six — effectively blind below about 0.35 pips per trade at any trade count the project could reach. And with zero edge planted, fewer than two percent of runs pass: the instrument does not invent edges either.</p>
+  <p style="margin:0">The floor it measured: at the project's standard 2,000-trade evidence bar, the stack reliably detects an injected edge of <strong>1.0 pip per trade</strong> or larger. At 10,000 trades the floor drops to <strong>0.5</strong>; at 500 trades it rises to <strong>2.5</strong>. At half a pip on the standard bar it catches roughly one attempt in four; at a third of a pip, one in six — nearly blind below about a fifth of a pip at any trade count the project could reach. And with zero edge planted, fewer than two percent of runs pass: the instrument does not invent edges either.</p>
  </div>
 
  <p>The floor is published deliberately, because it is what the book's negative verdict actually means. Every "no" in the eighty-one experiments is not a proof of zero — it is <em>"no edge larger than the floor."</em> If a smaller edge exists in the field the book scanned, it lives below the resolution of the instrument, in a region where the spread costs more than the signal earns. A measured floor, with the emptiness above it established; nothing stronger is claimed.</p>
