@@ -15,28 +15,16 @@
 <meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --rule:#d8d5cd; --neg:#a23b2c; --pos:#0f6b4f; }
-@media (prefers-color-scheme: dark) {
- :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --rule:#37352f; --neg:#e08b7d; --pos:#5ec89f; }
-}
-* { box-sizing:border-box; margin:0; }
-body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
-header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
-header.sitehdr .brand:hover { color:var(--acc); }
-nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
-nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
-nav.sitenav a:hover { color:var(--acc); }
-nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
-main { max-width:860px; margin:0 auto; padding:40px 24px 80px; }
-h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; }
-p { margin:0 0 16px; max-width:720px; }
-a { color:var(--acc); }
+:root { --page-w:860px; }
+h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; max-width:var(--measure); }
+p { margin:0 0 16px; max-width:var(--measure); }
 .tblwrap { overflow-x:auto; margin:22px 0 6px; border:1px solid var(--line); border-radius:8px; background:var(--card); }
-.scrollhint { display:none; font:600 .72rem/1.4 ui-monospace,Menlo,monospace; letter-spacing:.06em; color:var(--muted); margin:0 0 16px; text-align:right; }
+.scrollhint { display:none; font:italic .85rem/1.4 var(--serif); color:var(--muted); margin:0 0 16px; text-align:right; }
 @media (max-width:720px) { .scrollhint { display:block; } }
-table { border-collapse:collapse; width:100%; font:13.5px/1.5 ui-monospace,Menlo,monospace; }
+table { border-collapse:collapse; width:100%; font:13.5px/1.5 var(--mono); }
 th, td { padding:6px 10px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
 th:first-child, td:first-child { text-align:left; }
 th { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
@@ -45,28 +33,26 @@ tbody th { font-size:inherit; font-weight:400; text-transform:none; letter-spaci
 tr.total td { font-weight:700; border-top:2px solid var(--rule); border-bottom:0; }
 td.pos { color:var(--pos); font-weight:700; }
 td.neg { color:var(--neg); }
-.note { font-size:.88rem; color:var(--muted); font-style:italic; max-width:720px; }
-footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
-footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
-footer a { color:var(--muted); }
-a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+.note { font-size:.88rem; color:var(--muted); font-style:italic; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="verify.html">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
-  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="viewer/index.html">Viewer</a>
   <a href="retractions.html">Retractions</a>
-  <a href="power-curve.html">Power Curve</a>
+  <a href="power-curve.html">Power curve</a>
   <a href="ledger.html" class="cur" aria-current="page">Ledger</a>
   <a href="about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<main>
+<main class="page" id="main">
  <h1>The complete ledger of record, reconciled to the broker</h1>
  <p>Every transaction and every closed trade for all thirteen OANDA accounts, pulled <em>directly from the broker with no database in the loop</em>, and reconciled two ways: deposits + withdrawals + transfers + realized P&amp;L + financing must equal the current balance, and the P&amp;L summed from the raw transaction stream must equal the P&amp;L summed from the broker's own closed-trade records. All thirteen accounts tie to $0.00 on both checks. The pips are recomputed from OANDA's own fill prices — not from any figure the project's software logged. This is Appendix&nbsp;B's closing table; read straight, it is the whole book on one page.</p>
 
@@ -94,7 +80,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
   </tbody>
  </table>
  </div>
- <p class="scrollhint" aria-hidden="true">table scrolls sideways &#8594;</p>
+ <p class="scrollhint" aria-hidden="true">the table scrolls sideways</p>
 
  <p>Across all thirteen accounts and every year of trading — 001 and 002 reach back to February 2021 — the enterprise took in $206.24 of deposits, gave $56.85 back to trading and $2.22 to financing, and ended at $140.72 of net asset value. The dollar loss is tiny only because the stakes were: 8,687 closed trades produced it. Account 010 is the only one of the thirteen with positive lifetime pips (+171) — itself the decayed remainder of a +693-pip three-week peak, and that strategy too was wound down. Every other account is net-negative, roughly −82,000 pips in total.</p>
 
@@ -102,9 +88,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
 
  <p class="note">Accounting notes, as published: inception dates are month-day (every account opened in 2026 except 001 and 002, opened February 2021); the reconciliation identity is on account balance; the NAV column equals balance for the eleven flat accounts and differed at pull time only for the two then holding open positions (009, 010) by their unrealized P&amp;L. Per-account cells are rounded to the cent, so a column may not foot to the last cent; the total row carries the exact broker figures. The transfer column nets to +$1.00 rather than zero because one $1.00 transfer (into 001, April 2025) arrived from an OANDA account outside these thirteen — functionally a deposit that the broker's ledger labels a transfer. The financing cells shown as "—" hide values under a few cents; the exact total (−$2.22) includes them, which is why the visible cells foot to −$2.15. Row sums can likewise sit a few cents from the balance: small broker adjustments outside these five columns. The $0.00 reconciliation was checked at full precision on the raw pull, not on the rounded cells.</p>
 </main>
-<footer style="max-width:860px;margin:0 auto;padding:0 24px 40px">
- <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
- <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+<footer class="sitefoot">
+ <p class="disclaimer">Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a></p>
+ <p>&copy; 2026 Aharon Zbaida</p>
 </footer>
 </body>
 </html>

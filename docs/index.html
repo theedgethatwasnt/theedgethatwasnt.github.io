@@ -19,151 +19,128 @@
 {"@context":"https://schema.org","@type":"Book","name":"The Edge That Wasn't","alternateName":"The Edge That Wasn't: Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No","author":{"@type":"Person","name":"Aharon Zbaida"},"isbn":"9798189494147","bookFormat":"https://schema.org/Paperback","numberOfPages":"582","inLanguage":"en","url":"https://theedgethatwasnt.com/","image":"https://theedgethatwasnt.com/cover.png","offers":{"@type":"Offer","price":"29.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://www.amazon.com/dp/B0HC5V3YM7"},"workExample":{"@type":"Book","name":"The Edge That Wasn't (Kindle Edition)","author":{"@type":"Person","name":"Aharon Zbaida"},"bookFormat":"https://schema.org/EBook","inLanguage":"en","url":"https://www.amazon.com/dp/B0HBT4KW4F","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://www.amazon.com/dp/B0HBT4KW4F"}}}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root {
-  --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da;
-  --acc:#0f6b4f; --acc-fg:#fff; --chip:#eef2ee; --rule:#d8d5cd;
-  --neg:#a23b2c; --pos:#0f6b4f;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f;
-    --acc:#5ec89f; --acc-fg:#10231b; --chip:#2a2e2a; --rule:#37352f;
-    --neg:#e08b7d; --pos:#5ec89f;
-  }
-}
-* { box-sizing:border-box; margin:0; }
-html { scroll-behavior:smooth; }
-body {
-  font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif;
-  background:var(--bg); color:var(--fg);
-  -webkit-font-smoothing:antialiased;
-}
-.wrap { max-width:720px; margin:0 auto; padding:0 24px; }
-main { padding:0 0 40px; }
+main.page { padding-top:0; }
 
-/* Site nav */
-header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
-header.sitehdr .brand:hover { color:var(--acc); }
-nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
-nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
-nav.sitenav a:hover { color:var(--acc); }
-nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
-
-/* Hero */
-.hero { padding:56px 0 40px; border-bottom:1px solid var(--rule); display:flex; gap:36px; align-items:center; }
-.hero .herotext { flex:1; min-width:0; }
-.hero .coverimg { flex:0 0 auto; width:200px; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.12); }
-@media (max-width:560px){ .hero { flex-direction:column; align-items:flex-start; gap:24px; padding-top:40px; } .hero .coverimg { width:100%; max-width:240px; } }
-.kicker { font:600 .72rem/1.4 ui-monospace,Menlo,monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--acc); }
-h1 { font-size:2.7rem; line-height:1.08; font-weight:700; margin:14px 0 12px; letter-spacing:-.01em; }
-.sub { font-size:1.22rem; font-style:italic; color:var(--muted); line-height:1.4; }
-.byline { margin-top:20px; font-size:.95rem; color:var(--muted); }
+/* Hero: title block + cover, buy row beneath the title */
+.hero { display:grid; grid-template-columns:1fr 240px; grid-template-rows:auto 1fr; column-gap:40px; row-gap:22px;
+  align-items:start; padding:48px 0 36px; border-bottom:1px solid var(--rule); }
+.hero .herotext { grid-column:1; grid-row:1; min-width:0; }
+.hero .herobuy { grid-column:1; grid-row:2; align-self:start; }
+.hero picture { grid-column:2; grid-row:1 / span 2; align-self:start; line-height:0; }
+.hero .coverimg { width:240px; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,.12); }
+.kicker { font:.95rem/1.4 var(--serif); color:var(--muted); }
+h1 { font-size:clamp(2rem,7.5vw,2.7rem); line-height:1.08; font-weight:700; margin:12px 0 12px; letter-spacing:-.01em; }
+.sub { font-size:1.18rem; font-style:italic; color:var(--muted); line-height:1.4; }
+.byline { margin-top:14px; font-size:.95rem; color:var(--muted); }
+.price { font-size:.95rem; color:var(--muted); margin:0 0 12px; }
+.cta { display:flex; flex-wrap:wrap; gap:12px 14px; align-items:center; }
+.buy { display:inline-flex; align-items:center; min-height:44px; font-size:.98rem; color:var(--muted); text-decoration:none; }
+.buy span { border-bottom:1px dashed var(--rule); }
+.buy:hover { color:var(--acc); }
+.buy:hover span { border-color:var(--acc); }
+@media (max-width:560px) {
+  .hero { grid-template-columns:1fr 112px; column-gap:18px; row-gap:18px; padding:28px 0 28px; }
+  .hero picture { grid-row:1; }
+  .hero .coverimg { width:112px; }
+  .hero .herobuy { grid-column:1 / span 2; grid-row:2; }
+  .byline { margin-top:10px; }
+}
 
 /* Lead copy */
 .lead { padding:34px 0 8px; }
-.lead p { margin:0 0 18px; }
-.lead p.first { font-size:1.18rem; }
-.lead p.first::first-letter {
-  font-size:3.3rem; line-height:.8; float:left; padding:6px 10px 0 0; font-weight:700; color:var(--acc);
-}
+.lead p { margin:0 0 18px; max-width:var(--measure); }
+.lead p.first { font-size:1.18rem; max-width:30em; }
+.lead p.first::first-letter { font-size:3.3rem; line-height:.8; float:left; padding:6px 10px 0 0; font-weight:700; color:var(--acc); }
 
-/* Four numbers */
-.numbers { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:26px 0 12px; }
-.num { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 16px; text-align:center; }
+/* Four numbers: a ruled 2×2 strip */
+.numbers { display:grid; grid-template-columns:repeat(2,1fr); gap:0; margin:26px 0 22px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.num { padding:16px 14px 14px; text-align:left; }
+.num:nth-child(odd) { border-right:1px solid var(--line); }
+.num:nth-child(-n+2) { border-bottom:1px solid var(--line); }
 a.num { display:block; text-decoration:none; color:inherit; }
-a.num:hover { border-color:var(--acc); }
-.num .v { font:700 1.9rem/1 Georgia,serif; letter-spacing:-.01em; }
+a.num:hover { background:var(--chip); }
+.num .v { font:700 2.1rem/1 var(--serif); letter-spacing:-.01em; }
 .num.neg .v { color:var(--neg); }
 .num.pos .v { color:var(--pos); }
 .num .l { display:block; margin-top:8px; font-size:.82rem; color:var(--muted); line-height:1.4; }
-@media (max-width:560px){ .numbers{ grid-template-columns:1fr; } }
-
-/* CTAs */
-.cta { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin:34px 0 8px; }
-.btn {
-  display:inline-flex; align-items:center; gap:8px;
-  font:600 1rem/1 Georgia,serif; text-decoration:none;
-  padding:14px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer;
-}
-.btn.primary { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
-.btn.primary:hover { filter:brightness(1.06); }
-.btn.ghost { background:transparent; color:var(--fg); border-color:var(--line); }
-.btn.ghost:hover { background:var(--chip); }
-.buy { display:inline-flex; align-items:center; gap:8px; font-size:.98rem; color:var(--muted); text-decoration:none; border-bottom:1px dashed var(--rule); padding-bottom:2px; }
-.buy:hover { color:var(--acc); border-color:var(--acc); }
-
-/* Inside list */
-.inside { padding:40px 0 8px; border-top:1px solid var(--rule); margin-top:36px; }
-.inside h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-bottom:16px; font-weight:600; }
-.inside ul { list-style:none; }
-.inside li { padding:12px 0 12px 26px; border-bottom:1px solid var(--line); position:relative; font-size:1rem; }
-.inside li:last-child { border-bottom:0; }
-.inside li::before { content:"—"; position:absolute; left:0; color:var(--acc); }
-
-/* Buy section */
-.buysec { border-top:1px solid var(--rule); margin-top:36px; padding:36px 0 8px; display:flex; gap:28px; align-items:flex-start; }
-.buysec .coverthumb { flex:0 0 auto; width:130px; height:auto; border:1px solid var(--line); border-radius:5px; }
-.buysec h2 { font-size:1.35rem; line-height:1.25; margin-bottom:10px; }
-.buysec .avail { font-size:.88rem; color:var(--muted); margin:12px 0 0; }
-.buysec .secondary { font-size:.92rem; color:var(--muted); margin-top:14px; }
-.buysec .secondary a { color:var(--acc); }
-@media (max-width:560px){ .buysec { flex-direction:column; } }
-.buyagain { border-top:1px solid var(--rule); margin-top:24px; padding:28px 0 8px; display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
-.buyagain .also { font-size:.92rem; color:var(--muted); }
-.buyagain .also a { color:var(--acc); }
-
-/* Capture strip */
-.capture { border-top:1px solid var(--rule); margin-top:24px; padding:22px 0 0; }
-.capture p { font-size:.88rem; color:var(--muted); margin:0; }
-.capture a { color:var(--acc); }
 
 /* Dataset note */
 .datanote { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc); border-radius:8px; padding:14px 18px; font-size:.95rem; }
-.datanote a { color:var(--acc); }
+.lead .cta { margin:30px 0 8px; }
+
+/* Buy section */
+.buysec { border-top:1px solid var(--rule); margin-top:36px; padding:36px 0 8px; display:flex; gap:28px; align-items:flex-start; }
+.buysec picture { flex:0 0 auto; line-height:0; }
+.buysec .coverthumb { width:120px; height:auto; border:1px solid var(--line); border-radius:5px; }
+.buysec h2 { font-size:1.45rem; line-height:1.25; margin-bottom:6px; }
+.buysec .price { margin-bottom:16px; }
+.buysec .avail { font-size:.88rem; color:var(--muted); margin:14px 0 0; max-width:var(--measure); }
+.buysec .secondary { font-size:.92rem; color:var(--muted); margin-top:12px; }
+@media (max-width:560px) { .buysec { flex-direction:column; } }
+.buyagain { border-top:1px solid var(--rule); margin-top:24px; padding:28px 0 8px; display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+.buyagain .also { font-size:.92rem; color:var(--muted); }
+
+/* Inside list */
+.inside { padding:40px 0 8px; border-top:1px solid var(--rule); margin-top:36px; }
+.inside h2 { font:700 1.35rem/1.25 var(--serif); margin-bottom:12px; }
+.inside ul { list-style:none; padding:0; }
+.inside li { padding:12px 0 12px 26px; border-bottom:1px solid var(--line); position:relative; font-size:1rem; max-width:var(--measure); }
+.inside li:last-child { border-bottom:0; }
+.inside li::before { content:"—"; position:absolute; left:0; color:var(--acc); }
+
+/* Capture strip */
+.capture { border-top:1px solid var(--rule); margin-top:24px; padding:22px 0 0; }
+.capture p { font-size:.88rem; color:var(--muted); margin:0; max-width:var(--measure); }
 
 /* "Not victories" quote */
 .notvictories { border-top:1px solid var(--rule); margin-top:24px; padding:32px 0 8px; }
-.notvictories blockquote { border-left:3px solid var(--neg); padding:4px 0 4px 18px; }
+.notvictories blockquote { border-left:3px solid var(--neg); padding:4px 0 4px 18px; max-width:var(--measure); }
 .notvictories p { font-style:italic; font-size:1.02rem; margin:0 0 10px; }
 .notvictories cite { font-style:normal; font-size:.85rem; color:var(--muted); }
 .notvictories cite a { color:var(--muted); }
 .notvictories cite a:hover { color:var(--acc); }
-
-/* Footer */
-footer { border-top:1px solid var(--rule); padding:28px 0 60px; margin-top:24px; }
-footer p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px; }
-footer a { color:var(--muted); text-decoration:underline; }
-footer a:hover { color:var(--acc); }
-.disclaimer { font-style:italic; }
-a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="verify.html">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
-  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="viewer/index.html">Viewer</a>
   <a href="retractions.html">Retractions</a>
-  <a href="power-curve.html">Power Curve</a>
+  <a href="power-curve.html">Power curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<main class="wrap">
+<main class="page" id="main">
 
   <section class="hero">
     <div class="herotext">
-      <div class="kicker">A Memoir of Retail FX, and What the Receipts Showed</div>
+      <p class="kicker">A Memoir of Retail FX, and What the Receipts Showed</p>
       <h1>The Edge That Wasn't</h1>
       <p class="sub">Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No</p>
       <p class="byline">by Aharon Zbaida</p>
     </div>
-    <img class="coverimg" src="cover.png" alt="Front cover of The Edge That Wasn't" width="700" height="1050">
+    <div class="herobuy">
+      <p class="price">Paperback $29.99, 582 pages. Kindle $9.99.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.amazon.com/dp/B0HC5V3YM7" target="_blank" rel="noopener">Buy the paperback</a>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0HBT4KW4F" target="_blank" rel="noopener">Kindle edition</a>
+        <a class="buy" href="excerpt.html"><span>Read Chapter III free</span></a>
+      </div>
+    </div>
+    <picture>
+      <source type="image/webp" srcset="cover-480.webp 480w, cover-960.webp 960w" sizes="(max-width:560px) 112px, 240px">
+      <img class="coverimg" src="cover.png" alt="Front cover of The Edge That Wasn't" width="480" height="720" fetchpriority="high" decoding="async">
+    </picture>
   </section>
 
   <section class="lead">
@@ -199,20 +176,26 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
     <p>What the apparatus taught outlasts the trading. Pre-registration, a sealed out-of-sample set touched exactly once, a working taxonomy of lookahead bias, the coin-flip control that separates skill from luck, and the cost floors that sink most edges: a full research-methods spine, demonstrated on live results rather than lectured. It is meant to be useful to a data scientist or engineer who will never place a trade.</p>
 
     <div class="cta">
-      <a class="btn primary" href="experiments/index.html">Explore the 81 experiments &rarr;</a>
-      <a class="btn ghost" href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">Browse the repository — code released as it is reviewed</a>
+      <a class="btn ghost" href="experiments/index.html">Explore the 81 experiments</a>
+      <a class="buy" href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener"><span>Browse the repository — code released as it is reviewed</span></a>
     </div>
   </section>
 
   <section class="buysec" id="buy">
-    <img class="coverthumb" src="cover.png" alt="Front cover of The Edge That Wasn't" width="700" height="1050">
+    <picture>
+      <source type="image/webp" srcset="cover-480.webp" sizes="120px">
+      <img class="coverthumb" src="cover.png" alt="Front cover of The Edge That Wasn't" width="480" height="720" loading="lazy" decoding="async">
+    </picture>
     <div>
-      <h2>Get the book — Paperback, 582 pages, $29.99 &middot; Kindle, $9.99</h2>
-      <a class="btn primary" href="https://www.amazon.com/dp/B0HC5V3YM7" target="_blank" rel="noopener">Buy on Amazon &rarr;</a>
-      <a class="btn ghost" href="https://www.amazon.com/dp/B0HBT4KW4F" target="_blank" rel="noopener">Kindle Edition — $9.99 &rarr;</a>
-      <a class="btn" href="excerpt.html">Read an excerpt</a>
+      <h2>Get the book</h2>
+      <p class="price">Paperback, 582 pages, $29.99. Kindle, $9.99.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.amazon.com/dp/B0HC5V3YM7" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0HBT4KW4F" target="_blank" rel="noopener">Kindle edition</a>
+        <a class="btn ghost" href="excerpt.html">Read an excerpt</a>
+      </div>
       <p class="avail">Both formats live on Amazon now (allow up to 3 days for the in-stock flag in some marketplaces). Kindle edition included in Kindle Unlimited.</p>
-      <p class="secondary"><a href="verify.html">Every number is checkable</a> &middot; <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io">star the repository</a> to catch the release</p>
+      <p class="secondary"><a href="verify.html">Every number is checkable</a>, and you can <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io">star the repository</a> to catch the release.</p>
     </div>
   </section>
 
@@ -241,7 +224,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
   </section>
 
   <div class="buyagain">
-    <a class="btn primary" href="#buy">Get the book &rarr;</a>
+    <a class="btn primary" href="#buy">Get the book</a>
     <span class="also">or <a href="excerpt.html">read an excerpt from Chapter III</a> first</span>
   </div>
 
@@ -249,12 +232,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
     <p>Occasional updates only — corrections and any post-book result that survives the gates: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">star the repository</a> to follow, or open an issue there to reach the author.</p>
   </div>
 
-  <footer>
-    <p class="disclaimer">This site and the book it accompanies are a record of research and a memoir of method. Nothing here is financial, investment, or trading advice, or a solicitation to trade. Trading foreign exchange carries substantial risk of loss. Past results — including every figure shown here — do not indicate future performance.</p>
-    <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
-  </footer>
-
 </main>
+<footer class="sitefoot">
+  <p class="disclaimer">This site and the book it accompanies are a record of research and a memoir of method. Nothing here is financial, investment, or trading advice, or a solicitation to trade. Trading foreign exchange carries substantial risk of loss. Past results — including every figure shown here — do not indicate future performance.</p>
+  <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a></p>
+  <p>&copy; 2026 Aharon Zbaida</p>
+</footer>
 <!-- analytics: cookieless counter goes here at hosting step (CF Web Analytics or GoatCounter) — no cookies, no banners -->
 </body>
 </html>

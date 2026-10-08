@@ -16,52 +16,35 @@
 <meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --acc-fg:#fff; --chip:#eef2ee; --rule:#d8d5cd; }
-@media (prefers-color-scheme: dark) {
- :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --acc-fg:#10231b; --chip:#2a2e2a; --rule:#37352f; }
-}
-* { box-sizing:border-box; margin:0; }
-body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
-header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
-header.sitehdr .brand:hover { color:var(--acc); }
-nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
-nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
-nav.sitenav a:hover { color:var(--acc); }
-nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
-main { max-width:720px; margin:0 auto; padding:40px 24px 80px; }
-.srcnote { font:600 .72rem/1.5 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin-bottom:18px; }
+:root { --page-w:610px; }
+.srcnote { font:italic 1rem/1.5 var(--serif); color:var(--muted); margin-bottom:18px; }
 h1 { font-size:1.75rem; line-height:1.2; margin-bottom:24px; }
-article p { margin:0 0 18px; }
-article code { font:15px/1.5 ui-monospace,Menlo,monospace; background:var(--chip); border-radius:4px; padding:1px 5px; }
-a { color:var(--acc); }
+article p { margin:0 0 18px; max-width:var(--measure); }
+article code { font:15px/1.5 var(--mono); background:var(--chip); border-radius:4px; padding:1px 5px; }
 .after { border-top:1px solid var(--rule); margin-top:36px; padding-top:24px; }
-.btn { display:inline-flex; align-items:center; gap:8px; font:600 1rem/1 Georgia,serif; text-decoration:none; padding:14px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; }
-.btn.primary { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
-.btn.primary:hover { filter:brightness(1.06); }
-.after .also { font-size:.95rem; color:var(--muted); margin-top:16px; }
-footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
-footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
-footer a { color:var(--muted); }
-a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+.after .also { font-size:.95rem; color:var(--muted); margin-top:16px; max-width:var(--measure); }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="verify.html">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
-  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="viewer/index.html">Viewer</a>
   <a href="retractions.html">Retractions</a>
-  <a href="power-curve.html">Power Curve</a>
+  <a href="power-curve.html">Power curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<main>
+<main class="page" id="main">
  <p class="srcnote">An excerpt from Chapter III of <em>The Edge That Wasn't</em></p>
  <h1>Chapter III — The Lookahead Bug: How a Clean Backtest Can Be Pure Fiction</h1>
  <article>
@@ -87,13 +70,14 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
  </article>
 
  <div class="after">
-  <p><a class="btn primary" href="index.html#buy">Get the book &rarr;</a></p>
+  <p><a class="btn primary" href="index.html#buy">Get the book</a></p>
   <p class="also">How the apparatus that came out of this was itself tested — the smallest edge it can actually see — is on <a href="power-curve.html">the power-curve page</a>.</p>
  </div>
 </main>
-<footer style="max-width:720px;margin:0 auto;padding:0 24px 40px">
- <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
- <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+<footer class="sitefoot">
+ <p class="disclaimer">Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a></p>
+ <p>&copy; 2026 Aharon Zbaida</p>
 </footer>
 </body>
 </html>

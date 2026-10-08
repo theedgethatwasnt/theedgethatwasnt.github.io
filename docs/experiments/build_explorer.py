@@ -132,46 +132,36 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root {{ --bg:#fafaf8; --fg:#1a1a1a; --muted:#6b6b6b; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --dead:#75736b; }}
-@media (prefers-color-scheme: dark) {{
- :root {{ --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --dead:#8c8a81; }}
-}}
-* {{ box-sizing:border-box; margin:0; }}
-body {{ font:16px/1.55 Georgia,'Palatino Linotype',serif; background:var(--bg); color:var(--fg); }}
-header {{ padding:16px 24px 12px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }}
-h1.brand {{ font-size:1.2rem; font-weight:600; }}
-h1.brand a {{ color:var(--fg); text-decoration:none; }}
-h1.brand a:hover {{ color:var(--acc); }}
-header p {{ color:var(--muted); font-size:.85rem; }}
-nav.sitenav {{ margin-left:auto; display:flex; gap:14px; flex-wrap:wrap; }}
-nav.sitenav a {{ color:var(--muted); text-decoration:none; font:600 .82rem/1 ui-monospace,Menlo,monospace; padding-bottom:2px; border-bottom:2px solid transparent; }}
-nav.sitenav a:hover {{ color:var(--acc); }}
-nav.sitenav a.cur {{ color:var(--acc); border-bottom-color:var(--acc); }}
-.wrap {{ display:flex; height:calc(100vh - 62px); }}
+@media (min-width:761px) {{ body {{ display:flex; flex-direction:column; height:100vh; }} }}
+main.wrap {{ display:flex; flex:1; min-height:0; }}
 #side {{ width:400px; min-width:280px; border-right:1px solid var(--line); display:flex; flex-direction:column; }}
 #controls {{ padding:10px 12px; border-bottom:1px solid var(--line); }}
-#q {{ width:100%; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; }}
+#q {{ width:100%; min-height:40px; padding:7px 10px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; }}
 #verds {{ margin-top:8px; display:flex; flex-wrap:wrap; gap:5px; }}
-.vbtn {{ font:inherit; font-size:.75rem; padding:2px 9px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--fg); cursor:pointer; }}
-.vbtn.on {{ background:var(--acc); color:#fff; border-color:var(--acc); }}
+.vbtn {{ font:inherit; font-size:.78rem; padding:4px 10px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--fg); cursor:pointer; }}
+.vbtn.on {{ background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }}
 #list {{ overflow-y:auto; flex:1; }}
 .item {{ padding:10px 14px; border-bottom:1px solid var(--line); cursor:pointer; }}
 a.item {{ display:block; color:inherit; text-decoration:none; }}
 .item:hover {{ background:var(--chip); }}
 .item.sel {{ background:var(--chip); border-left:3px solid var(--acc); padding-left:11px; }}
-.item .t {{ font-weight:600; font-size:.9rem; }}
-.item .s {{ color:var(--muted); font-size:.78rem; margin-top:1px; }}
+.item .t {{ font-weight:600; font-size:.9rem; line-height:1.35; }}
+.item .s {{ color:var(--muted); font-size:.78rem; line-height:1.45; margin-top:2px; }}
 #detail {{ flex:1; overflow-y:auto; padding:26px 34px 60px; }}
-#detail h2 {{ font-size:1.45rem; margin-bottom:2px; }}
-.meta {{ color:var(--muted); font-size:.85rem; margin-bottom:6px; }}
-.permalink {{ color:var(--muted); font-size:.8rem; margin-bottom:14px; }}
+#detail h2 {{ font-size:1.45rem; line-height:1.25; margin-bottom:4px; max-width:var(--measure); }}
+.meta {{ color:var(--muted); font-size:.85rem; margin-bottom:6px; max-width:var(--measure); }}
+.meta span {{ display:inline-block; margin-right:14px; }}
+.permalink {{ color:var(--muted); font-size:.8rem; margin-bottom:14px; max-width:var(--measure); overflow-wrap:anywhere; }}
 .permalink a {{ color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--muted); }}
 .permalink a:hover {{ color:var(--acc); border-bottom-color:var(--acc); }}
-.oneline {{ font-style:italic; font-size:1.02rem; border-left:3px solid var(--acc); padding:6px 12px; margin:12px 0 18px; background:var(--card); }}
+.oneline {{ font-style:italic; font-size:1.02rem; border-left:3px solid var(--acc); padding:6px 12px; margin:12px 0 18px; background:var(--card); max-width:var(--measure); }}
 .sec {{ margin:16px 0; }}
-.sec h3 {{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }}
-.chips {{ display:flex; flex-wrap:wrap; gap:6px; }}
+.sec h3 {{ font:700 .95rem/1.3 var(--serif); margin-bottom:5px; }}
+.sec p {{ max-width:var(--measure); }}
+.chips {{ display:flex; flex-wrap:wrap; gap:6px; max-width:var(--measure); }}
 .chip {{ background:var(--chip); border:1px solid var(--line); padding:2px 10px; border-radius:12px; font-size:.8rem; cursor:pointer; user-select:none; display:inline-flex; align-items:center; gap:5px; text-decoration:none; color:inherit; }}
 a.chip {{ padding-right:4px; }}
 a.chip:hover {{ border-color:var(--acc); color:var(--acc); }}
@@ -181,41 +171,42 @@ a.chip:hover {{ border-color:var(--acc); color:var(--acc); }}
 .chip .chipfilter:hover {{ opacity:1; color:var(--acc); }}
 a.term {{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); cursor:help; }}
 a.term:hover {{ border-bottom-color:var(--fg); }}
-code, .code a, .code span {{ font:13px/1.5 ui-monospace,Menlo,monospace; }}
+code, .code a, .code span {{ font:13px/1.5 var(--mono); }}
 .code a {{ display:table; color:var(--acc); text-decoration:none; padding:1px 0; word-break:break-all; }}
 .code a:hover {{ text-decoration:underline; }}
 .code span.dead {{ display:block; color:var(--dead); padding:1px 0; word-break:break-all; cursor:help; }}
-.code span.dead::after {{ content:" ·"; }}
 .figs {{ display:flex; flex-wrap:wrap; gap:14px; }}
 .figs figure {{ max-width:460px; }}
 .figs img {{ max-width:100%; border:1px solid var(--line); border-radius:4px; background:#fff; }}
 .figs figcaption {{ font-size:.75rem; color:var(--muted); }}
-.keynum {{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; }}
-#empty {{ color:var(--muted); padding:40px; }}
+.keynum {{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; max-width:var(--measure); }}
+#empty {{ color:var(--muted); padding:40px; max-width:var(--measure); }}
+footer.sitefoot {{ max-width:none; flex:0 0 auto; padding:8px 24px 10px; margin:0; }}
+footer.sitefoot p {{ display:inline; margin:0 16px 0 0; font-size:.78rem; max-width:none; }}
 @media (min-width:1400px){{ .figs figure{{ max-width:640px; }} #side{{ width:460px; }} }}
-@media (max-width:760px){{ .wrap{{flex-direction:column;height:auto}} #side{{width:100%;max-height:45vh}} }}
-a:focus-visible, button:focus-visible {{ outline:2px solid var(--acc); outline-offset:2px; }}
+@media (max-width:760px){{ main.wrap{{flex-direction:column;height:auto}} #side{{width:100%;max-height:45vh;border-right:0;border-bottom:1px solid var(--line)}} #detail{{padding:22px 16px 60px}} }}
 </style>
 </head>
 <body>
-<header>
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehdr">
  <h1 class="brand"><a href="../index.html">The Edge That Wasn't</a></h1>
- <p>{n} experiments — data, indicators, algorithms, code, figures, verdicts.</p>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="../verify.html">Verify</a>
   <a href="index.html" class="cur" aria-current="page">Experiments</a>
   <a href="glossary.html">Glossary</a>
-  <a href="../viewer/index.html">Indicator Viewer</a>
+  <a href="../viewer/index.html">Viewer</a>
   <a href="../retractions.html">Retractions</a>
-  <a href="../power-curve.html">Power Curve</a>
+  <a href="../power-curve.html">Power curve</a>
   <a href="../ledger.html">Ledger</a>
   <a href="../about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<div class="wrap">
+<main class="wrap" id="main">
  <div id="side">
   <div id="controls">
-   <input id="q" type="search" placeholder="Search name, description, indicator, algorithm…">
+   <input id="q" type="search" placeholder="Search {n} experiments: name, indicator, algorithm…" aria-label="Search the experiments">
    <div id="verds"></div>
   </div>
   <div id="list">
@@ -223,7 +214,11 @@ a:focus-visible, button:focus-visible {{ outline:2px solid var(--acc); outline-o
   </div>
  </div>
  <div id="detail"><div id="empty">Select an experiment. Every experiment also has a stable static page of its own — the list on the left links to them.</div></div>
-</div>
+</main>
+<footer class="sitefoot">
+ <p class="disclaimer">Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
+ <p>&copy; 2026 Aharon Zbaida</p>
+</footer>
 <script>
 const DATA = {data};
 const PATHMAP = {pathmap};
@@ -258,7 +253,7 @@ function render(){{
     const d=document.createElement('a'); d.className='item'+(sel===e.id?' sel':'');
     d.href=PAGEMAP[e.id]||'#';
     d.innerHTML=`<div class="t">#${{e.id}} ${{e.name}}</div><div class="s">${{e.verdict}} — ${{e.one_line.slice(0,110)}}${{e.one_line.length>110?'…':''}}</div>`;
-    d.onclick=(ev)=>{{ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey) return; ev.preventDefault(); sel=e.id; render(); show(e); }};
+    d.onclick=(ev)=>{{ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey) return; ev.preventDefault(); sel=e.id; render(); show(e, true); }};
     list.appendChild(d);
   }});
 }}
@@ -335,13 +330,13 @@ function figBlock(p, i, name){{
   if (!src) return `<figure><figcaption>${{esc(label)}} (figure not included)</figcaption></figure>`;
   return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(label)}}"></a><figcaption>${{esc(label)}}</figcaption></figure>`;
 }}
-function show(e){{
+function show(e, userPick){{
   const code = (e.code_paths||[]).map(codeLink).join('');
   const figs = (e.figures||[]).map((p,i)=>figBlock(p,i,e.name)).join('');
   const seen = new Set();                          // first-occurrence-per-pane, shared across prose fields
   detail.innerHTML = `
    <h2>#${{e.id}} — ${{esc(e.name)}}</h2>
-   <div class="meta">${{esc(e.verdict)}}${{e.period&&e.period!=='not recorded'?' · '+esc(e.period):''}}${{e.journey_anchor?' · JOURNEY: “'+esc(e.journey_anchor)+'”':''}}</div>
+   <div class="meta"><span>${{esc(e.verdict)}}</span>${{e.period&&e.period!=='not recorded'?'<span>'+esc(e.period)+'</span>':''}}${{e.journey_anchor?'<span>JOURNEY: “'+esc(e.journey_anchor)+'”</span>':''}}</div>
    ${{PAGEMAP[e.id]?`<div class="permalink">Permalink: <a href="${{PAGEMAP[e.id]}}">https://theedgethatwasnt.com/experiments/${{PAGEMAP[e.id]}}</a></div>`:''}}
    <div class="oneline">${{mark(esc(e.one_line), seen)}}</div>
    ${{sec('What it tests', `<p>${{mark(esc(e.what_it_tests), seen)}}</p>`)}}
@@ -355,7 +350,7 @@ function show(e){{
    ${{sec('Figures', figs?`<div class="figs">${{figs}}</div>`:'')}}
   `;
   detail.scrollTop=0;
-  if(matchMedia('(max-width:760px)').matches) detail.scrollIntoView({{behavior:'smooth'}});
+  if(userPick && matchMedia('(max-width:760px)').matches) detail.scrollIntoView({{behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}});
 }}
 function chipFilter(term){{
   const qEl = document.getElementById('q');

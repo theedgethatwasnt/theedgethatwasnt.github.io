@@ -15,51 +15,38 @@
 <meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --rule:#d8d5cd; --neg:#a23b2c; }
-@media (prefers-color-scheme: dark) {
- :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --rule:#37352f; --neg:#e08b7d; }
-}
-* { box-sizing:border-box; margin:0; }
-body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
-header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
-header.sitehdr .brand:hover { color:var(--acc); }
-nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
-nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
-nav.sitenav a:hover { color:var(--acc); }
-nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
-main { max-width:720px; margin:0 auto; padding:40px 24px 80px; }
+:root { --page-w:610px; }
 h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; }
-p { margin:0 0 16px; }
-a { color:var(--acc); }
+p { margin:0 0 16px; max-width:var(--measure); }
 .retraction { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--neg); border-radius:8px; padding:20px 22px; margin:22px 0; }
-.retraction h2 { font-size:1.15rem; margin-bottom:12px; }
+.retraction h2 { font-size:1.15rem; line-height:1.3; margin-bottom:12px; }
 .retraction dl { margin:0; }
-.retraction dt { font:600 .75rem/1.4 ui-monospace,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:12px; }
+.retraction dt { font:italic .95rem/1.4 var(--serif); color:var(--muted); margin-top:12px; }
 .retraction dt:first-child { margin-top:0; }
 .retraction dd { margin:2px 0 0; font-size:.98rem; }
-footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
-footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
-footer a { color:var(--muted); }
-a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+.retraction code { font:.9em var(--mono); }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="verify.html">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
-  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="viewer/index.html">Viewer</a>
   <a href="retractions.html" class="cur" aria-current="page">Retractions</a>
-  <a href="power-curve.html">Power Curve</a>
+  <a href="power-curve.html">Power curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<main>
+<main class="page" id="main">
  <h1>Retractions</h1>
  <p>A book about not fooling yourself must publish its own corrections first. Four headline results in this project's history were later retracted. Each is listed here with what was claimed, what the bug or flaw was, and the corrected number. The full write-ups live in the book and in the <a href="experiments/index.html">experiment record</a>.</p>
 
@@ -69,7 +56,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
    <dt>What was claimed</dt>
    <dd>A family of trained strategies with backtests running from 42 to 747 pips/day across sixteen deployed strategies — and, in the same family but caught before deployment, StrengthSpread at an implausible +203 pips/day out-of-sample, the number that triggered the root-cause analysis.</dd>
    <dt>What the bug was</dt>
-   <dd>Lookahead bias. A <code style="font-family:ui-monospace,Menlo,monospace;font-size:.9em">merge_asof</code> timestamp-alignment bug leaked up to 55 minutes of future data into StrengthSpread's features, and a related timeframe-downsample bug in the shared indicator pipeline leaked future bars into every strategy trained on it. The apparatus was reading tomorrow's newspaper.</dd>
+   <dd>Lookahead bias. A <code>merge_asof</code> timestamp-alignment bug leaked up to 55 minutes of future data into StrengthSpread's features, and a related timeframe-downsample bug in the shared indicator pipeline leaked future bars into every strategy trained on it. The apparatus was reading tomorrow's newspaper.</dd>
    <dt>The corrected number</dt>
    <dd>All sixteen deployed strategies were net-negative live: ≈55,000 pips retracted across 4,869 live trades. StrengthSpread, which never went live, scored −14.18 pips/day on its causal re-run. The best of sixteen causal retrains managed +0.11 pips/day — zero causal edge. See experiments <a href="experiments/12-rca-lookahead-macd-bug.html">#12</a>, <a href="experiments/13-causal-retrain-verdict.html">#13</a> and <a href="experiments/20-strengthspread-lookahead-rca.html">#20</a>.</dd>
   </dl>
@@ -113,9 +100,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-of
 
  <p>Every other verdict in the record stands as published — including the forty-five negatives, which need no retracting.</p>
 </main>
-<footer style="max-width:720px;margin:0 auto;padding:0 24px 40px">
- <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
- <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+<footer class="sitefoot">
+ <p class="disclaimer">Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a></p>
+ <p>&copy; 2026 Aharon Zbaida</p>
 </footer>
 </body>
 </html>

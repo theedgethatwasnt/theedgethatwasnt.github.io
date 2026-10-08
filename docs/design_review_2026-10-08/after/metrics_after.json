@@ -1,0 +1,4427 @@
+{
+ "index_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Buy the paperback",
+    172,
+    44,
+    450
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    450
+   ],
+   [
+    "Read Chapter III free",
+    134,
+    44,
+    506
+   ],
+   [
+    "Explore the 81 experiments",
+    229,
+    44,
+    2409
+   ],
+   [
+    "Browse the repository \u2014 code",
+    342,
+    53,
+    2465
+   ],
+   [
+    "Buy on Amazon",
+    150,
+    44,
+    2890
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    2890
+   ],
+   [
+    "Read an excerpt",
+    153,
+    44,
+    2946
+   ],
+   [
+    "Get the book",
+    130,
+    44,
+    5004
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 43,
+  "cplFont": "18.88px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 5567,
+  "title": "The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "index_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Buy the paperback",
+    172,
+    44,
+    450
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    450
+   ],
+   [
+    "Read Chapter III free",
+    134,
+    44,
+    506
+   ],
+   [
+    "Explore the 81 experiments",
+    229,
+    44,
+    2409
+   ],
+   [
+    "Browse the repository \u2014 code",
+    342,
+    53,
+    2465
+   ],
+   [
+    "Buy on Amazon",
+    150,
+    44,
+    2890
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    2890
+   ],
+   [
+    "Read an excerpt",
+    153,
+    44,
+    2946
+   ],
+   [
+    "Get the book",
+    130,
+    44,
+    5004
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 43,
+  "cplFont": "18.88px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 5567,
+  "title": "The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "index_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Buy the paperback",
+    172,
+    44,
+    387
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    387
+   ],
+   [
+    "Read Chapter III free",
+    134,
+    44,
+    443
+   ],
+   [
+    "Explore the 81 experiments",
+    229,
+    44,
+    1809
+   ],
+   [
+    "Browse the repository \u2014 code",
+    352,
+    44,
+    1809
+   ],
+   [
+    "Buy on Amazon",
+    150,
+    44,
+    2018
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    2018
+   ],
+   [
+    "Read an excerpt",
+    153,
+    44,
+    2018
+   ],
+   [
+    "Get the book",
+    130,
+    44,
+    3630
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 71,
+  "cplFont": "18.88px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 566,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 4132,
+  "title": "The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "index_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Buy the paperback",
+    172,
+    44,
+    387
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    387
+   ],
+   [
+    "Read Chapter III free",
+    134,
+    44,
+    443
+   ],
+   [
+    "Explore the 81 experiments",
+    229,
+    44,
+    1809
+   ],
+   [
+    "Browse the repository \u2014 code",
+    352,
+    44,
+    1809
+   ],
+   [
+    "Buy on Amazon",
+    150,
+    44,
+    2018
+   ],
+   [
+    "Kindle edition",
+    139,
+    44,
+    2018
+   ],
+   [
+    "Read an excerpt",
+    153,
+    44,
+    2018
+   ],
+   [
+    "Get the book",
+    130,
+    44,
+    3630
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 71,
+  "cplFont": "18.88px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 566,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 4132,
+  "title": "The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "about_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1622,
+  "title": "About \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "about_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1622,
+  "title": "About \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "about_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1216,
+  "title": "About \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "about_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1216,
+  "title": "About \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "excerpt_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Get the book",
+    130,
+    44,
+    3302
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 3728,
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "excerpt_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Get the book",
+    130,
+    44,
+    3302
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 3728,
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "excerpt_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Get the book",
+    130,
+    44,
+    2184
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2585,
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "excerpt_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Get the book",
+    130,
+    44,
+    2184
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2585,
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "ledger_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2825,
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "ledger_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2825,
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "ledger_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2134,
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "ledger_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2134,
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "retractions_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 3856,
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "retractions_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 3856,
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "retractions_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2752,
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "retractions_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2752,
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "power-curve_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2590,
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "power-curve_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2590,
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "power-curve_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2221,
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "power-curve_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2221,
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "verify_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2719,
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "verify_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2719,
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "verify_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2020,
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "verify_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2020,
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "404_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Back to the book",
+    157,
+    44,
+    396
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 844,
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "404_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Back to the book",
+    157,
+    44,
+    396
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 844,
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "404_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Back to the book",
+    157,
+    44,
+    327
+   ]
+  ],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "404_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [
+   [
+    "Back to the book",
+    157,
+    44,
+    327
+   ]
+  ],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "experiments_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 49,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 358,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2851,
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "experiments_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 49,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 358,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2851,
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "experiments_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "experiments_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "exp12_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2545,
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "exp12_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 2545,
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "exp12_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1884,
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "exp12_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1884,
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "glossary_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 99141,
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "glossary_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 47,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 99141,
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "glossary_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 156468,
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "glossary_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "17px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 527,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 156468,
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 53,
+  "cplFont": "15.2px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1263,
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 53,
+  "cplFont": "15.2px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 342,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1263,
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "15.2px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 471,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1029,
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "15.2px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 471,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1029,
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurjpy_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 849,
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurjpy_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 849,
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurjpy_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurjpy_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurgbp_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 911,
+  "title": "EUR/GBP M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurgbp_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 911,
+  "title": "EUR/GBP M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurgbp_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR/GBP M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-eurgbp_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR/GBP M5 \u2014 Indicator Viewer",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-swing_m_light": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1084,
+  "title": "EUR/GBP M5 \u2014 Wilder Swing System",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-swing_m_dark": {
+  "ovx": false,
+  "scrollW": 390,
+  "innerW": 390,
+  "hdrH": 90,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 354,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 1084,
+  "title": "EUR/GBP M5 \u2014 Wilder Swing System",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-swing_d_light": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(250, 250, 248)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR/GBP M5 \u2014 Wilder Swing System",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "viewer-swing_d_dark": {
+  "ovx": false,
+  "scrollW": 1280,
+  "innerW": 1280,
+  "hdrH": 49,
+  "nav": [
+   [
+    "Verify",
+    58,
+    44
+   ],
+   [
+    "Experiments",
+    98,
+    44
+   ],
+   [
+    "Glossary",
+    74,
+    44
+   ],
+   [
+    "Viewer",
+    63,
+    44
+   ],
+   [
+    "Retractions",
+    91,
+    44
+   ],
+   [
+    "Power curve",
+    97,
+    44
+   ],
+   [
+    "Ledger",
+    64,
+    44
+   ],
+   [
+    "About",
+    58,
+    44
+   ]
+  ],
+  "toggle": [
+   44,
+   44
+  ],
+  "btns": [],
+  "bgc": "rgb(22, 22, 20)",
+  "theme": null,
+  "cpl": 73,
+  "cplFont": "italic 11.52px Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+  "cplW": 357,
+  "landmarks": {
+   "main": true,
+   "footer": true,
+   "nav": true,
+   "skip": true,
+   "h1": 1
+  },
+  "docH": 900,
+  "title": "EUR/GBP M5 \u2014 Wilder Swing System",
+  "fontReq": [],
+  "thirdParty": []
+ },
+ "_toggle_test": {
+  "l0": "Switch to the dark theme",
+  "afterFirst": "dark",
+  "stored": "dark",
+  "bg": "rgb(22, 22, 20)",
+  "metas": [
+   "#161614",
+   "#161614"
+  ],
+  "l1": "Switch to the light theme",
+  "afterSecond": "light",
+  "stored2": "light"
+ },
+ "_persist_test": {
+  "theme": "dark",
+  "bg": "rgb(22, 22, 20)"
+ },
+ "_explorer_load": {
+  "scrollY": 0,
+  "q": 100
+ }
+}

@@ -15,52 +15,37 @@
 <meta property="og:image:alt" content="The Edge That Wasn’t — Algorithmic Trading, 81 Experiments, 4,932 Live Trades, and the Answer Was No">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%230f6b4f%27/%3E%3Cline%20x1%3D%2711%27%20y1%3D%276%27%20x2%3D%2711%27%20y2%3D%2726%27%20stroke%3D%27%235ec89f%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23f2f1ec%27/%3E%3Cline%20x1%3D%2722%27%20y1%3D%274%27%20x2%3D%2722%27%20y2%3D%2724%27%20stroke%3D%27%23e08b7d%27%20stroke-width%3D%272%27/%3E%3Crect%20x%3D%2719%27%20y%3D%279%27%20width%3D%276%27%20height%3D%279%27%20rx%3D%271%27%20fill%3D%27%23a23b2c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <style>
-:root { --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --acc:#0f6b4f; --chip:#eef2ee; --rule:#d8d5cd; }
-@media (prefers-color-scheme: dark) {
- :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --acc:#5ec89f; --chip:#2a2e2a; --rule:#37352f; }
-}
-* { box-sizing:border-box; margin:0; }
-body { font:17px/1.65 Georgia,'Palatino Linotype','Book Antiqua',serif; background:var(--bg); color:var(--fg); -webkit-font-smoothing:antialiased; }
-header.sitehdr { padding:14px 24px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-header.sitehdr .brand { font:700 1rem/1 Georgia,'Palatino Linotype',serif; color:var(--fg); text-decoration:none; }
-header.sitehdr .brand:hover { color:var(--acc); }
-nav.sitenav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
-nav.sitenav a { color:var(--muted); text-decoration:none; font:600 .8rem/1 ui-monospace,Menlo,monospace; letter-spacing:.02em; padding-bottom:2px; border-bottom:2px solid transparent; }
-nav.sitenav a:hover { color:var(--acc); }
-nav.sitenav a.cur { color:var(--acc); border-bottom-color:var(--acc); }
-main { max-width:720px; margin:0 auto; padding:40px 24px 80px; }
-h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; }
-h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin:34px 0 12px; font-weight:600; }
-p { margin:0 0 16px; }
-a { color:var(--acc); }
+h1 { font-size:2rem; line-height:1.15; margin-bottom:10px; max-width:var(--measure); }
+h2 { font:700 1.3rem/1.25 var(--serif); margin:34px 0 12px; }
+p { margin:0 0 16px; max-width:var(--measure); }
 .datanote { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--acc); border-radius:8px; padding:14px 18px; font-size:.95rem; margin:18px 0; }
-code, pre { font:14px/1.55 ui-monospace,Menlo,monospace; }
+code, pre { font:14px/1.55 var(--mono); }
 pre { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px; overflow-x:auto; margin:0 0 16px; }
 ul.cols { list-style:none; padding:0; margin:0 0 16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:6px 18px; }
-ul.cols li { font:14px/1.5 ui-monospace,Menlo,monospace; padding:2px 0; border-bottom:1px solid var(--line); }
-ul.cols li span { color:var(--muted); font-family:Georgia,serif; font-size:.85rem; }
-footer { border-top:1px solid var(--rule); margin-top:50px; padding-top:18px; }
-footer p { font-size:.82rem; color:var(--muted); line-height:1.6; }
-footer a { color:var(--muted); }
-a:focus-visible, button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+ul.cols li { font:14px/1.5 var(--mono); padding:2px 0; border-bottom:1px solid var(--line); }
+ul.cols li span { color:var(--muted); font-family:var(--serif); font-size:.85rem; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="sitehdr">
  <a class="brand" href="index.html">The Edge That Wasn't</a>
- <nav class="sitenav">
+ <nav class="sitenav" aria-label="Site">
   <a href="verify.html" class="cur" aria-current="page">Verify</a>
   <a href="experiments/index.html">Experiments</a>
   <a href="experiments/glossary.html">Glossary</a>
-  <a href="viewer/index.html">Indicator Viewer</a>
+  <a href="viewer/index.html">Viewer</a>
   <a href="retractions.html">Retractions</a>
-  <a href="power-curve.html">Power Curve</a>
+  <a href="power-curve.html">Power curve</a>
   <a href="ledger.html">Ledger</a>
   <a href="about.html">About</a>
  </nav>
+ <button class="theme" type="button" data-theme-toggle aria-label="Switch between light and dark"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 </header>
-<main>
+<main class="page" id="main">
  <h1>Verify the book's numbers</h1>
  <p>Every per-strategy table in the book is computed from one frozen file, and that file is public. This page tells you where it lives, what is in it, and how to reproduce the tables from it yourself.</p>
 
@@ -100,9 +85,10 @@ print(t.groupby(["label", "is_paper"])["pnl_pips"].agg(["count", "sum"]).round(1
  <h2>4,932 vs 5,556 vs 8,687 — one reconciliation</h2>
  <p>Three trade counts appear around this project, and they measure different things. <strong>4,932</strong> is the live-trade row count of the frozen snapshot — the number on the book's cover. <strong>5,556</strong> is the full snapshot including the 624 paper trades that never touched a broker. <strong>8,687</strong> is the broker's own lifetime fill count, pulled directly from OANDA at the end of June 2026 — it reaches back to 2021-era trading on accounts 001 and 002 that predates the project's database entirely, and runs a month past the frozen snapshot. Same enterprise, two measures: the snapshot is the auditable dataset the book's numbers come from; the broker pull is the complete history the enterprise is judged on. Neither corrects the other.</p>
 </main>
-<footer style="max-width:720px;margin:0 auto;padding:0 24px 40px">
- <p>Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results do not indicate future performance.</p>
- <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a> · &copy; 2026 Aharon Zbaida</p>
+<footer class="sitefoot">
+ <p class="disclaimer">Nothing here is financial, investment, or trading advice, or a solicitation to trade. Past results — including every figure shown here — do not indicate future performance.</p>
+ <p>Companion repository: <a href="https://github.com/theedgethatwasnt/theedgethatwasnt.github.io" target="_blank" rel="noopener">github.com/theedgethatwasnt/theedgethatwasnt.github.io</a></p>
+ <p>&copy; 2026 Aharon Zbaida</p>
 </footer>
 </body>
 </html>

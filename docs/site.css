@@ -1,0 +1,95 @@
+/* The Edge That Wasn't — shared site stylesheet (design review 2026-10-08, R10).
+   Tokens (light + auto dark + forced [data-theme]), body, header, nav, theme
+   toggle, buttons, footer, skip link, focus and reduced motion. Each page keeps
+   only its own page-specific rules in an inline <style> after this file. */
+
+:root {
+  --bg:#fafaf8; --fg:#1a1a1a; --muted:#615f58; --card:#fff; --line:#e2e0da; --rule:#d8d5cd;
+  --acc:#0f6b4f; --acc-fg:#fff; --chip:#eef2ee; --neg:#a23b2c; --pos:#0f6b4f; --dead:#6f6d66;
+  --serif:Georgia,'Palatino Linotype','Book Antiqua',serif;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  --page-w:720px;
+  --measure:31em;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --rule:#37352f;
+    --acc:#5ec89f; --acc-fg:#10231b; --chip:#2a2e2a; --neg:#e08b7d; --pos:#5ec89f; --dead:#8c8a81;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#161614; --fg:#e8e6e1; --muted:#9a988f; --card:#201f1c; --line:#37352f; --rule:#37352f;
+  --acc:#5ec89f; --acc-fg:#10231b; --chip:#2a2e2a; --neg:#e08b7d; --pos:#5ec89f; --dead:#8c8a81;
+  color-scheme:dark;
+}
+
+* { box-sizing:border-box; margin:0; }
+html { -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
+body {
+  font:17px/1.65 var(--serif);
+  background:var(--bg); color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+}
+a { color:var(--acc); }
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+  outline:2px solid var(--acc); outline-offset:2px;
+}
+
+/* Skip link */
+.skip { position:absolute; left:-999px; top:8px; z-index:20; background:var(--acc); color:var(--acc-fg);
+  padding:10px 14px; border-radius:6px; text-decoration:none; font:600 .95rem/1 var(--serif); }
+.skip:focus { left:8px; }
+
+/* Site header: brand, one-row nav, theme toggle */
+header.sitehdr { display:flex; align-items:center; gap:8px; padding:2px 16px 2px 24px; border-bottom:1px solid var(--rule); }
+header.sitehdr .brand { display:inline-flex; align-items:center; min-height:44px; font:700 1rem/1 var(--serif);
+  color:var(--fg); text-decoration:none; white-space:nowrap; margin:0; }
+header.sitehdr .brand a { color:inherit; text-decoration:none; }
+header.sitehdr .brand:hover, header.sitehdr .brand a:hover { color:var(--acc); }
+nav.sitenav { margin-left:auto; display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+nav.sitenav::-webkit-scrollbar { display:none; }
+nav.sitenav a { flex:0 0 auto; display:inline-flex; align-items:center; min-height:44px; padding:0 10px;
+  font:600 .9rem/1 var(--serif); letter-spacing:0; color:var(--muted); text-decoration:none;
+  border-bottom:2px solid transparent; border-top:2px solid transparent; white-space:nowrap; }
+nav.sitenav a:hover { color:var(--acc); }
+nav.sitenav a.cur, nav.sitenav a[aria-current="page"] { color:var(--acc); border-bottom-color:var(--acc); }
+button.theme { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px;
+  border:1px solid transparent; border-radius:8px; background:none; color:var(--muted); cursor:pointer; padding:0; }
+button.theme:hover { color:var(--acc); border-color:var(--line); }
+@media (max-width:640px) {
+  header.sitehdr { flex-wrap:wrap; padding:0 8px 0 16px; row-gap:0; }
+  header.sitehdr .brand { flex:1 1 auto; }
+  button.theme { order:2; }
+  nav.sitenav { order:3; flex:1 0 100%; margin:0 -8px 0 -16px; padding:0 24px 0 8px; border-top:1px solid var(--line);
+    mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent); -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent); }
+}
+
+/* Buttons. A bare .btn renders as the quiet (ghost) style, so an unqualified
+   class never falls through to browser-default link styling. */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px;
+  font:600 1rem/1.2 var(--serif); text-decoration:none; padding:10px 20px; border-radius:8px;
+  border:1px solid var(--line); color:var(--fg); background:transparent; cursor:pointer; }
+.btn:hover { background:var(--chip); }
+.btn.primary { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
+.btn.primary:hover { filter:brightness(1.06); background:var(--acc); }
+.btn.ghost { background:transparent; color:var(--fg); border-color:var(--line); }
+.btn.ghost:hover { background:var(--chip); }
+
+/* Page column + footer */
+main.page { max-width:var(--page-w); margin:0 auto; padding:40px 24px 60px; }
+footer.sitefoot { max-width:var(--page-w); margin:0 auto; padding:24px 24px 56px; border-top:1px solid var(--rule); }
+footer.sitefoot p { font-size:.82rem; color:var(--muted); line-height:1.6; margin:0 0 8px; max-width:var(--measure); }
+footer.sitefoot a { color:var(--muted); }
+footer.sitefoot a:hover { color:var(--acc); }
+footer.sitefoot .disclaimer { font-style:italic; }
+
+/* Shared reading-measure cap (R7): any page may add elements to this list */
+.measure { max-width:var(--measure); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { transition:none !important; animation:none !important; }
+}
