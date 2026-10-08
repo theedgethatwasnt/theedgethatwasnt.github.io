@@ -1,0 +1,5298 @@
+{
+ "index_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "4\n        headline results ret",
+    "wh": [
+     342,
+     98
+    ]
+   },
+   {
+    "t": "Explore the 81 experiments \u2192",
+    "wh": [
+     253,
+     46
+    ]
+   },
+   {
+    "t": "Browse the repository \u2014 code r",
+    "wh": [
+     342,
+     62
+    ]
+   },
+   {
+    "t": "Buy on Amazon \u2192",
+    "wh": [
+     174,
+     46
+    ]
+   },
+   {
+    "t": "Kindle Edition \u2014 $9.99 \u2192",
+    "wh": [
+     227,
+     46
+    ]
+   },
+   {
+    "t": "Read an excerpt",
+    "wh": [
+     157,
+     46
+    ]
+   },
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 40,
+  "h1": {
+   "fs": "43.2px",
+   "lh": "46.656px",
+   "wh": [
+    342,
+    93
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 6284,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't",
+  "ovx": false
+ },
+ "index_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "4\n        headline results ret",
+    "wh": [
+     342,
+     98
+    ]
+   },
+   {
+    "t": "Explore the 81 experiments \u2192",
+    "wh": [
+     253,
+     46
+    ]
+   },
+   {
+    "t": "Browse the repository \u2014 code r",
+    "wh": [
+     342,
+     62
+    ]
+   },
+   {
+    "t": "Buy on Amazon \u2192",
+    "wh": [
+     174,
+     46
+    ]
+   },
+   {
+    "t": "Kindle Edition \u2014 $9.99 \u2192",
+    "wh": [
+     227,
+     46
+    ]
+   },
+   {
+    "t": "Read an excerpt",
+    "wh": [
+     157,
+     46
+    ]
+   },
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 40,
+  "h1": {
+   "fs": "43.2px",
+   "lh": "46.656px",
+   "wh": [
+    342,
+    93
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 6284,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't",
+  "ovx": false
+ },
+ "index_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "4\n        headline results ret",
+    "wh": [
+     328,
+     117
+    ]
+   },
+   {
+    "t": "Explore the 81 experiments \u2192",
+    "wh": [
+     253,
+     46
+    ]
+   },
+   {
+    "t": "Browse the repository \u2014 code r",
+    "wh": [
+     422,
+     46
+    ]
+   },
+   {
+    "t": "Buy on Amazon \u2192",
+    "wh": [
+     174,
+     46
+    ]
+   },
+   {
+    "t": "Kindle Edition \u2014 $9.99 \u2192",
+    "wh": [
+     227,
+     46
+    ]
+   },
+   {
+    "t": "Read an excerpt",
+    "wh": [
+     157,
+     46
+    ]
+   },
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 79,
+  "h1": {
+   "fs": "43.2px",
+   "lh": "46.656px",
+   "wh": [
+    436,
+    47
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 3703,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't",
+  "ovx": false
+ },
+ "index_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "4\n        headline results ret",
+    "wh": [
+     328,
+     117
+    ]
+   },
+   {
+    "t": "Explore the 81 experiments \u2192",
+    "wh": [
+     253,
+     46
+    ]
+   },
+   {
+    "t": "Browse the repository \u2014 code r",
+    "wh": [
+     422,
+     46
+    ]
+   },
+   {
+    "t": "Buy on Amazon \u2192",
+    "wh": [
+     174,
+     46
+    ]
+   },
+   {
+    "t": "Kindle Edition \u2014 $9.99 \u2192",
+    "wh": [
+     227,
+     46
+    ]
+   },
+   {
+    "t": "Read an excerpt",
+    "wh": [
+     157,
+     46
+    ]
+   },
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 79,
+  "h1": {
+   "fs": "43.2px",
+   "lh": "46.656px",
+   "wh": [
+    436,
+    47
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 3703,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't",
+  "ovx": false
+ },
+ "about_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "About the author"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1663,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "About \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "about_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "About the author"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1663,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "About \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "about_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "About the author"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1054,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "About \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "about_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "About the author"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1054,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "About \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "excerpt_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 45,
+  "h1": {
+   "fs": "28px",
+   "lh": "33.6px",
+   "wh": [
+    342,
+    134
+   ],
+   "t": "Chapter III \u2014 The Lookahead Bug: How a Clean Backtest Can Be"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 3750,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "excerpt_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 45,
+  "h1": {
+   "fs": "28px",
+   "lh": "33.6px",
+   "wh": [
+    342,
+    134
+   ],
+   "t": "Chapter III \u2014 The Lookahead Bug: How a Clean Backtest Can Be"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 3750,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "excerpt_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 88,
+  "h1": {
+   "fs": "28px",
+   "lh": "33.6px",
+   "wh": [
+    672,
+    67
+   ],
+   "t": "Chapter III \u2014 The Lookahead Bug: How a Clean Backtest Can Be"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 2162,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "excerpt_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Get the book \u2192",
+    "wh": [
+     154,
+     46
+    ]
+   }
+  ],
+  "cpl": 88,
+  "h1": {
+   "fs": "28px",
+   "lh": "33.6px",
+   "wh": [
+    672,
+    67
+   ],
+   "t": "Chapter III \u2014 The Lookahead Bug: How a Clean Backtest Can Be"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 2162,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Read an excerpt \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "ledger_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    110
+   ],
+   "t": "The complete ledger of record, reconciled to the broker"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2864,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "ledger_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    110
+   ],
+   "t": "The complete ledger of record, reconciled to the broker"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2864,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "ledger_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 94,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    812,
+    37
+   ],
+   "t": "The complete ledger of record, reconciled to the broker"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1720,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "ledger_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 94,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    812,
+    37
+   ],
+   "t": "The complete ledger of record, reconciled to the broker"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1720,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Ledger \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "retractions_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "Retractions"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 3895,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "retractions_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "Retractions"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 3895,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "retractions_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Retractions"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2363,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "retractions_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Retractions"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2363,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Retractions \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "power-curve_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    74
+   ],
+   "t": "Could this apparatus even find an edge?"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2631,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "power-curve_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    74
+   ],
+   "t": "Could this apparatus even find an edge?"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2631,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "power-curve_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Could this apparatus even find an edge?"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1854,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "power-curve_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Could this apparatus even find an edge?"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1854,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Power Curve \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "verify_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    74
+   ],
+   "t": "Verify the book's numbers"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 2798,
+  "hdrH": 143,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "verify_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 45,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    74
+   ],
+   "t": "Verify the book's numbers"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 2798,
+  "hdrH": 143,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "verify_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Verify the book's numbers"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 1810,
+  "hdrH": 46,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "verify_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 88,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    672,
+    37
+   ],
+   "t": "Verify the book's numbers"
+  },
+  "bodyFont": "17px 28.05px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 1810,
+  "hdrH": 46,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Verify \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "404_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     13
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     13
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     13
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2190 Back to The Edge That Wasn't",
+    "wh": [
+     277,
+     40
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "38.4px",
+   "wh": [
+    342,
+    38
+   ],
+   "t": "This page doesn't exist."
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 844,
+  "hdrH": 146,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "404_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     13
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     13
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     13
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2190 Back to The Edge That Wasn't",
+    "wh": [
+     277,
+     40
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "38.4px",
+   "wh": [
+    342,
+    38
+   ],
+   "t": "This page doesn't exist."
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 844,
+  "hdrH": 146,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "404_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     13
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     13
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     13
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2190 Back to The Edge That Wasn't",
+    "wh": [
+     277,
+     40
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "38.4px",
+   "wh": [
+    512,
+    38
+   ],
+   "t": "This page doesn't exist."
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 800,
+  "hdrH": 60,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "404_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     13
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     13
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     13
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     13
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     13
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2190 Back to The Edge That Wasn't",
+    "wh": [
+     277,
+     40
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "38.4px",
+   "wh": [
+    512,
+    38
+   ],
+   "t": "This page doesn't exist."
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 800,
+  "hdrH": 60,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "Page not found \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "experiments_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2705 positive 13",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "\u26d4 negative 45",
+    "wh": [
+     94,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udfe1 mixed 22",
+    "wh": [
+     83,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udd34 retracted 1",
+    "wh": [
+     89,
+     25
+    ]
+   }
+  ],
+  "cpl": 45,
+  "h1": {
+   "fs": "19.2px",
+   "lh": "29.76px",
+   "wh": [
+    184,
+    30
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "16px 24.8px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2903,
+  "hdrH": 212,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "ovx": false
+ },
+ "experiments_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2705 positive 13",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "\u26d4 negative 45",
+    "wh": [
+     94,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udfe1 mixed 22",
+    "wh": [
+     83,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udd34 retracted 1",
+    "wh": [
+     89,
+     25
+    ]
+   }
+  ],
+  "cpl": 45,
+  "h1": {
+   "fs": "19.2px",
+   "lh": "29.76px",
+   "wh": [
+    184,
+    30
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "16px 24.8px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2903,
+  "hdrH": 212,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "ovx": false
+ },
+ "experiments_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2705 positive 13",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "\u26d4 negative 45",
+    "wh": [
+     94,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udfe1 mixed 22",
+    "wh": [
+     83,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udd34 retracted 1",
+    "wh": [
+     89,
+     25
+    ]
+   }
+  ],
+  "cpl": 112,
+  "h1": {
+   "fs": "19.2px",
+   "lh": "29.76px",
+   "wh": [
+    184,
+    30
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "16px 24.8px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 830,
+  "hdrH": 92,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "ovx": false
+ },
+ "experiments_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "\u2705 positive 13",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "\u26d4 negative 45",
+    "wh": [
+     94,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udfe1 mixed 22",
+    "wh": [
+     83,
+     25
+    ]
+   },
+   {
+    "t": "\ud83d\udd34 retracted 1",
+    "wh": [
+     89,
+     25
+    ]
+   }
+  ],
+  "cpl": 112,
+  "h1": {
+   "fs": "19.2px",
+   "lh": "29.76px",
+   "wh": [
+    184,
+    30
+   ],
+   "t": "The Edge That Wasn't"
+  },
+  "bodyFont": "16px 24.8px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 830,
+  "hdrH": 92,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Explore the 81 Experiments",
+  "ovx": false
+ },
+ "glossary_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": null,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "Glossary"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 64019,
+  "hdrH": 213,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "ovx": false
+ },
+ "glossary_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": null,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    342,
+    37
+   ],
+   "t": "Glossary"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 64019,
+  "hdrH": 213,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "ovx": false
+ },
+ "glossary_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": null,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    1112,
+    37
+   ],
+   "t": "Glossary"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 56333,
+  "hdrH": 71,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "ovx": false
+ },
+ "glossary_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": null,
+  "h1": {
+   "fs": "32px",
+   "lh": "36.8px",
+   "wh": [
+    1112,
+    37
+   ],
+   "t": "Glossary"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 56333,
+  "hdrH": 71,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Glossary",
+  "ovx": false
+ },
+ "exp12_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 47,
+  "h1": {
+   "fs": "24px",
+   "lh": "30px",
+   "wh": [
+    342,
+    60
+   ],
+   "t": "#12 \u2014 RCA \u2014 lookahead + MACD bug"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2471,
+  "hdrH": 155,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "exp12_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 47,
+  "h1": {
+   "fs": "24px",
+   "lh": "30px",
+   "wh": [
+    342,
+    60
+   ],
+   "t": "#12 \u2014 RCA \u2014 lookahead + MACD bug"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 2471,
+  "hdrH": 155,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "exp12_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 123,
+  "h1": {
+   "fs": "24px",
+   "lh": "30px",
+   "wh": [
+    892,
+    30
+   ],
+   "t": "#12 \u2014 RCA \u2014 lookahead + MACD bug"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1518,
+  "hdrH": 60,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "exp12_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     63,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     126,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     87,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     39,
+     17
+    ]
+   }
+  ],
+  "btns": [],
+  "cpl": 123,
+  "h1": {
+   "fs": "24px",
+   "lh": "30px",
+   "wh": [
+    892,
+    30
+   ],
+   "t": "#12 \u2014 RCA \u2014 lookahead + MACD bug"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1518,
+  "hdrH": 60,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "#12 RCA \u2014 lookahead + MACD bug \u2014 The Edge That Wasn't",
+  "ovx": false
+ },
+ "viewer_m_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "EUR/JPY M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     342,
+     190
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     342,
+     166
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Wilder Swing Syst",
+    "wh": [
+     342,
+     218
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "22.4px",
+   "lh": "35.84px",
+   "wh": [
+    342,
+    36
+   ],
+   "t": "Indicator Viewer"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1344,
+  "hdrH": 158,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer_m_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "EUR/JPY M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     342,
+     190
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     342,
+     166
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Wilder Swing Syst",
+    "wh": [
+     342,
+     218
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "22.4px",
+   "lh": "35.84px",
+   "wh": [
+    342,
+    36
+   ],
+   "t": "Indicator Viewer"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 1344,
+  "hdrH": 158,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer_d_light": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "EUR/JPY M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     712,
+     119
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     712,
+     119
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Wilder Swing Syst",
+    "wh": [
+     712,
+     119
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "22.4px",
+   "lh": "35.84px",
+   "wh": [
+    712,
+    36
+   ],
+   "t": "Indicator Viewer"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 855,
+  "hdrH": 60,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer_d_dark": {
+  "nav": [
+   {
+    "t": "Verify",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     64,
+     17
+    ]
+   },
+   {
+    "t": "Indicator Viewer",
+    "wh": [
+     127,
+     17
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     88,
+     17
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     48,
+     17
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     40,
+     17
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "EUR/JPY M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     712,
+     119
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Indicator Viewer\u2192",
+    "wh": [
+     712,
+     119
+    ]
+   },
+   {
+    "t": "EUR/GBP M5 \u2014 Wilder Swing Syst",
+    "wh": [
+     712,
+     119
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "22.4px",
+   "lh": "35.84px",
+   "wh": [
+    712,
+    36
+   ],
+   "t": "Indicator Viewer"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace"
+  ],
+  "docH": 855,
+  "hdrH": 60,
+  "bgc": "rgb(22, 22, 20)",
+  "fonts": [],
+  "title": "The Edge That Wasn't \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer-eurjpy_m_light": {
+  "nav": [
+   {
+    "t": "Book",
+    "wh": [
+     34,
+     29
+    ]
+   },
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     61,
+     29
+    ]
+   },
+   {
+    "t": "Charts",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     41,
+     29
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Clear all",
+    "wh": [
+     87,
+     24
+    ]
+   },
+   {
+    "t": "\u2630 Indicators \u2014 tap to choose",
+    "wh": [
+     362,
+     38
+    ]
+   },
+   {
+    "t": "SMA",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "EMA",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Bollinger",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Donchian",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Keltner",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "PSAR",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SuperTrend",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ATR",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "RSI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Efficiency Ratio",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ASI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ASI SMA5",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "MC(D)",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "+",
+    "wh": [
+     34,
+     34
+    ]
+   },
+   {
+    "t": "\u2212",
+    "wh": [
+     34,
+     34
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "15.2px",
+   "lh": "15.2px",
+   "wh": [
+    147,
+    15
+   ],
+   "t": "The Edge That Wasn\u2019t"
+  },
+  "bodyFont": "15px 22.5px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 844,
+  "hdrH": 105,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer-eurjpy_m_dark": {
+  "nav": [
+   {
+    "t": "Book",
+    "wh": [
+     34,
+     29
+    ]
+   },
+   {
+    "t": "Verify",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     61,
+     29
+    ]
+   },
+   {
+    "t": "Charts",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     80,
+     29
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     47,
+     29
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     41,
+     29
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Clear all",
+    "wh": [
+     87,
+     24
+    ]
+   },
+   {
+    "t": "\u2630 Indicators \u2014 tap to choose",
+    "wh": [
+     362,
+     38
+    ]
+   },
+   {
+    "t": "SMA",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "EMA",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Bollinger",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Donchian",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Keltner",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "PSAR",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SuperTrend",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ATR",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "RSI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Efficiency Ratio",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ASI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "ASI SMA5",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "MC(D)",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "+",
+    "wh": [
+     34,
+     34
+    ]
+   },
+   {
+    "t": "\u2212",
+    "wh": [
+     34,
+     34
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "15.2px",
+   "lh": "15.2px",
+   "wh": [
+    147,
+    15
+   ],
+   "t": "The Edge That Wasn\u2019t"
+  },
+  "bodyFont": "15px 22.5px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 844,
+  "hdrH": 105,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer-eurjpy_d_light": {
+  "nav": [
+   {
+    "t": "Book",
+    "wh": [
+     29,
+     16
+    ]
+   },
+   {
+    "t": "Verify",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     57,
+     16
+    ]
+   },
+   {
+    "t": "Charts",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     36,
+     16
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Clear all",
+    "wh": [
+     87,
+     24
+    ]
+   },
+   {
+    "t": "\u2630 Indicators \u2014 tap to choose",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SMA",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "EMA",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "Bollinger",
+    "wh": [
+     85,
+     25
+    ]
+   },
+   {
+    "t": "Donchian",
+    "wh": [
+     78,
+     25
+    ]
+   },
+   {
+    "t": "Keltner",
+    "wh": [
+     71,
+     25
+    ]
+   },
+   {
+    "t": "PSAR",
+    "wh": [
+     51,
+     25
+    ]
+   },
+   {
+    "t": "SuperTrend",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "ATR",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "RSI",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "Efficiency Ratio",
+    "wh": [
+     132,
+     25
+    ]
+   },
+   {
+    "t": "ASI",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "ASI SMA5",
+    "wh": [
+     78,
+     25
+    ]
+   },
+   {
+    "t": "MC(D)",
+    "wh": [
+     58,
+     25
+    ]
+   },
+   {
+    "t": "+",
+    "wh": [
+     34,
+     34
+    ]
+   },
+   {
+    "t": "\u2212",
+    "wh": [
+     34,
+     34
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "15.2px",
+   "lh": "15.2px",
+   "wh": [
+    147,
+    15
+   ],
+   "t": "The Edge That Wasn\u2019t"
+  },
+  "bodyFont": "15px 22.5px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 800,
+  "hdrH": 37,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "ovx": false
+ },
+ "viewer-eurjpy_d_dark": {
+  "nav": [
+   {
+    "t": "Book",
+    "wh": [
+     29,
+     16
+    ]
+   },
+   {
+    "t": "Verify",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "Experiments",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Glossary",
+    "wh": [
+     57,
+     16
+    ]
+   },
+   {
+    "t": "Charts",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "Retractions",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Power Curve",
+    "wh": [
+     79,
+     16
+    ]
+   },
+   {
+    "t": "Ledger",
+    "wh": [
+     43,
+     16
+    ]
+   },
+   {
+    "t": "About",
+    "wh": [
+     36,
+     16
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Clear all",
+    "wh": [
+     87,
+     24
+    ]
+   },
+   {
+    "t": "\u2630 Indicators \u2014 tap to choose",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SMA",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "EMA",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "Bollinger",
+    "wh": [
+     85,
+     25
+    ]
+   },
+   {
+    "t": "Donchian",
+    "wh": [
+     78,
+     25
+    ]
+   },
+   {
+    "t": "Keltner",
+    "wh": [
+     71,
+     25
+    ]
+   },
+   {
+    "t": "PSAR",
+    "wh": [
+     51,
+     25
+    ]
+   },
+   {
+    "t": "SuperTrend",
+    "wh": [
+     91,
+     25
+    ]
+   },
+   {
+    "t": "ATR",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "RSI",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "Efficiency Ratio",
+    "wh": [
+     132,
+     25
+    ]
+   },
+   {
+    "t": "ASI",
+    "wh": [
+     44,
+     25
+    ]
+   },
+   {
+    "t": "ASI SMA5",
+    "wh": [
+     78,
+     25
+    ]
+   },
+   {
+    "t": "MC(D)",
+    "wh": [
+     58,
+     25
+    ]
+   },
+   {
+    "t": "+",
+    "wh": [
+     34,
+     34
+    ]
+   },
+   {
+    "t": "\u2212",
+    "wh": [
+     34,
+     34
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "15.2px",
+   "lh": "15.2px",
+   "wh": [
+    147,
+    15
+   ],
+   "t": "The Edge That Wasn\u2019t"
+  },
+  "bodyFont": "15px 22.5px",
+  "families": [
+   "Georgia, \"Palatino Linotype\", \"Book Antiqua\", serif",
+   "Georgia, \"Palatino Linotype\", serif",
+   "ui-monospace, Menlo, monospace",
+   "Georgia, serif"
+  ],
+  "docH": 800,
+  "hdrH": 37,
+  "bgc": "rgb(250, 250, 248)",
+  "fonts": [],
+  "title": "EUR_JPY M5 \u2014 Indicator Viewer",
+  "ovx": false
+ }
+}

@@ -1,0 +1,3890 @@
+{
+ "ref-stripepress_m_light": {
+  "nav": [],
+  "btns": [
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     60,
+     67
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     60,
+     67
+    ]
+   },
+   {
+    "t": "Apply to host a screening \u00bb\u00bb\u00bb\u00bb",
+    "wh": [
+     429,
+     139
+    ]
+   },
+   {
+    "t": "[click to play]",
+    "wh": [
+     310,
+     70
+    ]
+   },
+   {
+    "t": "The Art of Doing Science and E",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Built to Grow\n      \n    \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Poor Charlie\u2019s Almanack\n      ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Maintenance\n      \n    \n    St",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Origins of Efficiency\n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Scaling Era\n      \n    \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Boom\n      \n    \n    Byrne Hob",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Scaling People\n      \n    \n   ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Pieces of the Action\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Where Is My Flying Car?\n      ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Big Score\n      \n    \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Scientific Freedom\n      \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Working in Public\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Making of Prince of Persia",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Get Together\n      \n    \n    B",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "An Elegant Puzzle\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Revolt of the Public\n     ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Stubborn Attachments\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Dream Machine\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "High Growth Handbook\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "We Are As Gods\n    A film abou",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Beneath the Surface\n    A Stri",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     45,
+     51
+    ]
+   },
+   {
+    "t": "Submit",
+    "wh": [
+     77,
+     49
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Return to shelf",
+    "wh": [
+     26,
+     26
+    ]
+   },
+   {
+    "t": "The Art of Doing Science and E",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Built to Grow",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Poor Charlie\u2019s Almanack",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Maintenance",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Origins of Efficiency",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Scaling Era",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Boom",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Scaling People",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Pieces of the Action",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Where Is My Flying Car?",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Big Score",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Scientific Freedom",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Working in Public",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Making of Prince of Persia",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Get Together",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "An Elegant Puzzle",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Revolt of the Public",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Stubborn Attachments",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Dream Machine",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "High Growth Handbook",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "We Are As Gods",
+    "wh": [
+     24,
+     20
+    ]
+   },
+   {
+    "t": "Beneath the Surface",
+    "wh": [
+     24,
+     20
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     13,
+     27
+    ]
+   },
+   {
+    "t": "Copy Material",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cpl": 36,
+  "h1": {
+   "fs": "17.6px",
+   "lh": "17.6px",
+   "wh": [
+    0,
+    0
+   ],
+   "t": "Stripe Press"
+  },
+  "bodyFont": "16px normal",
+  "families": [
+   "\"Ivar Text\", Georgia",
+   "\"Ivar Display\"",
+   "\"Ivar Headline\""
+  ],
+  "docH": 99109,
+  "hdrH": 0,
+  "bgc": "rgb(32, 24, 25)",
+  "fonts": [
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Headline",
+   "Ivar Headline",
+   "Ivar Headline",
+   "Ivar Text",
+   "Ivar Text",
+   "Ivar Text"
+  ],
+  "title": "Stripe Press \u2014 The Art of Doing Science and Engineering",
+  "ovx": false
+ },
+ "ref-stripepress_d_light": {
+  "nav": [],
+  "btns": [
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "PDF",
+    "wh": [
+     97,
+     37
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     40,
+     40
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     109,
+     67
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     109,
+     67
+    ]
+   },
+   {
+    "t": "Apply to host a screening \u00bb\u00bb\u00bb\u00bb",
+    "wh": [
+     1408,
+     279
+    ]
+   },
+   {
+    "t": "[click to play]",
+    "wh": [
+     450,
+     70
+    ]
+   },
+   {
+    "t": "The Art of Doing Science and E",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Built to Grow\n      \n    \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Poor Charlie\u2019s Almanack\n      ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Maintenance\n      \n    \n    St",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Origins of Efficiency\n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Scaling Era\n      \n    \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Boom\n      \n    \n    Byrne Hob",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Scaling People\n      \n    \n   ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Pieces of the Action\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Where Is My Flying Car?\n      ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Big Score\n      \n    \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Scientific Freedom\n      \n    ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Working in Public\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Making of Prince of Persia",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Get Together\n      \n    \n    B",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "An Elegant Puzzle\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Revolt of the Public\n     ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Stubborn Attachments\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "The Dream Machine\n      \n    \n",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "High Growth Handbook\n      \n  ",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "We Are As Gods\n    A film abou",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Beneath the Surface\n    A Stri",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     63,
+     69
+    ]
+   },
+   {
+    "t": "Submit",
+    "wh": [
+     121,
+     49
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Return to shelf",
+    "wh": [
+     34,
+     26
+    ]
+   },
+   {
+    "t": "The Art of Doing Science and E",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Built to Grow",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Poor Charlie\u2019s Almanack",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Maintenance",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Origins of Efficiency",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Scaling Era",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Boom",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Scaling People",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Pieces of the Action",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Where Is My Flying Car?",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Big Score",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Scientific Freedom",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Working in Public",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Making of Prince of Persia",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Get Together",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "An Elegant Puzzle",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Revolt of the Public",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "Stubborn Attachments",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "The Dream Machine",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "High Growth Handbook",
+    "wh": [
+     16,
+     13
+    ]
+   },
+   {
+    "t": "We Are As Gods",
+    "wh": [
+     32,
+     20
+    ]
+   },
+   {
+    "t": "Beneath the Surface",
+    "wh": [
+     32,
+     20
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     13,
+     27
+    ]
+   },
+   {
+    "t": "Copy Material",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cpl": 52,
+  "h1": {
+   "fs": "17.6px",
+   "lh": "17.6px",
+   "wh": [
+    0,
+    0
+   ],
+   "t": "Stripe Press"
+  },
+  "bodyFont": "16px normal",
+  "families": [
+   "\"Ivar Text\", Georgia",
+   "\"Ivar Display\"",
+   "\"Ivar Headline\""
+  ],
+  "docH": 65372,
+  "hdrH": 0,
+  "bgc": "rgb(32, 24, 25)",
+  "fonts": [
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Display",
+   "Ivar Headline",
+   "Ivar Headline",
+   "Ivar Headline",
+   "Ivar Text",
+   "Ivar Text",
+   "Ivar Text"
+  ],
+  "title": "Stripe Press \u2014 The Art of Doing Science and Engineering",
+  "ovx": false
+ },
+ "ref-pragprog_m_light": {
+  "nav": [
+   {
+    "t": "Home",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Books",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Authors",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Publish with Us",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Support",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "eGifts",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Swag",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "My Orders",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "",
+    "wh": [
+     34,
+     36
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "28.3008px",
+   "wh": [
+    358,
+    28
+   ],
+   "t": "Release It! Second Edition"
+  },
+  "bodyFont": "16px 24px",
+  "families": [
+   "Helvetica, Calibri, Arial, sans-serif",
+   "\"noto sans\", Helvetica, Arial, \"microsoft yahei new\", \"microsoft yahei\", \u5fae\u8f6f\u96c5\u9ed1, \u5b8b\u4f53, SimSun, STXihei, \u534e\u6587\u7ec6\u9ed1, sans-serif",
+   "FontAwesome",
+   "Helvetica, Arial, sans-serif"
+  ],
+  "docH": 5770,
+  "hdrH": 231,
+  "bgc": "rgb(255, 255, 255)",
+  "fonts": [
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "FontAwesome"
+  ],
+  "title": "Release It! Second Edition: Design and Deploy Production-Ready Software by Michael Nygard",
+  "ovx": false
+ },
+ "ref-pragprog_d_light": {
+  "nav": [
+   {
+    "t": "Home",
+    "wh": [
+     46,
+     22
+    ]
+   },
+   {
+    "t": "Books",
+    "wh": [
+     46,
+     22
+    ]
+   },
+   {
+    "t": "Authors",
+    "wh": [
+     60,
+     22
+    ]
+   },
+   {
+    "t": "Publish with Us",
+    "wh": [
+     115,
+     22
+    ]
+   },
+   {
+    "t": "Support",
+    "wh": [
+     60,
+     22
+    ]
+   },
+   {
+    "t": "eGifts",
+    "wh": [
+     44,
+     22
+    ]
+   },
+   {
+    "t": "Swag",
+    "wh": [
+     40,
+     22
+    ]
+   },
+   {
+    "t": "My Orders",
+    "wh": [
+     79,
+     22
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "",
+    "wh": [
+     34,
+     36
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "24px",
+   "lh": "28.3008px",
+   "wh": [
+    541,
+    28
+   ],
+   "t": "Release It! Second Edition"
+  },
+  "bodyFont": "16px 24px",
+  "families": [
+   "Helvetica, Calibri, Arial, sans-serif",
+   "\"noto sans\", Helvetica, Arial, \"microsoft yahei new\", \"microsoft yahei\", \u5fae\u8f6f\u96c5\u9ed1, \u5b8b\u4f53, SimSun, STXihei, \u534e\u6587\u7ec6\u9ed1, sans-serif",
+   "FontAwesome",
+   "Helvetica, Arial, sans-serif"
+  ],
+  "docH": 2753,
+  "hdrH": 201,
+  "bgc": "rgb(255, 255, 255)",
+  "fonts": [
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "Noto Sans",
+   "FontAwesome"
+  ],
+  "title": "Release It! Second Edition: Design and Deploy Production-Ready Software by Michael Nygard",
+  "ovx": false
+ },
+ "ref-crafting_m_light": {
+  "nav": [],
+  "btns": [],
+  "cpl": 42,
+  "h1": null,
+  "bodyFont": "16px 24px",
+  "families": [
+   "Crimson, Georgia, serif",
+   "monospace",
+   "\"Source Sans Pro\", sans-serif"
+  ],
+  "docH": 3014,
+  "hdrH": 268,
+  "bgc": "rgb(41, 49, 61)",
+  "fonts": [
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro"
+  ],
+  "title": "Crafting Interpreters",
+  "ovx": false
+ },
+ "ref-crafting_d_light": {
+  "nav": [],
+  "btns": [],
+  "cpl": 60,
+  "h1": null,
+  "bodyFont": "16px 24px",
+  "families": [
+   "Crimson, Georgia, serif",
+   "monospace",
+   "\"Source Sans Pro\", sans-serif"
+  ],
+  "docH": 2498,
+  "hdrH": 451,
+  "bgc": "rgb(41, 49, 61)",
+  "fonts": [
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Crimson",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Code Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro",
+   "Source Sans Pro"
+  ],
+  "title": "Crafting Interpreters",
+  "ovx": false
+ },
+ "ref-oreilly_m_light": {
+  "nav": [
+   {
+    "t": "For Enterprise",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "For Government",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "For Higher Ed",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "For Individuals",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "For Content Marketing",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Microsoft Azure",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Amazon Web Services (AWS)",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Google Cloud",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Cloud Migration",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Cloud Deployment",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Cloud Platforms",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Data Warehouse",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SQL",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Apache Spark",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Microsoft SQL Server",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "MySQL",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Kafka",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Data Lake",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Streaming & Messaging",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "NoSQL Databases",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Relational Databases",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Pandas",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "R",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "MATLAB",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "SAS",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "D3",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Power BI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Tableau",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Statistics",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Exploratory Data Analysis",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Data Visualization",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Generative AI",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Machine Learning",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Artificial Intelligence (AI)",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Deep Learning",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Reinforcement Learning",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Natural Language Processing",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "TensorFlow",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Scikit-Learn",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Hyperparameter Tuning",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "MLOps",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Java",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "JavaScript",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Spring",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Python",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Go",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "C#",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "C++",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "C",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Swift",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Rust",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Functional Programming",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Object-Oriented",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Distributed Systems",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Domain-Driven Design",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Architectural Patterns",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Kubernetes",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Docker",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "GitHub",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Terraform",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Continuous Delivery",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Continuous Integration",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Database Administration",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Computer Networking",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Operating Systems",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "IT Certifications",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Network Security",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Application Security",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Incident Response",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Zero Trust Model",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Disaster Recovery",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Penetration Testing / Ethical Hacking",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Governance",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Malware",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Security Architecture",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Security Engineering",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Security Certifications",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Web Design",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Graphic Design",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Interaction Design",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Film & Video",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "User Experience (UX)",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Design Process",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Design Tools",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Agile",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Project Management",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Product Management",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Marketing",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Human Resources",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Finance",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Team Management",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Business Strategy",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Digital Transformation",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Organizational Leadership",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Professional Communication",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Emotional Intelligence",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Presentation Skills",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Innovation",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Critical Thinking",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Public Speaking",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Collaboration",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Personal Productivity",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Confidence / Motivation",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View all",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "All features",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Expert Intelligence",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Verifiable skills",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Academies",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Courses",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Certifications",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Interactive learning",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Live events",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Superstreams",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Answers",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Insights reporting",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Radar Blog",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Live",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Plans",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Sign In",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Try Now",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "For Enterprise",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "For Government",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "For Higher Ed",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "For Individuals",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "For Content Marketing",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Microsoft Azure",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Amazon Web Services (AWS)",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Google Cloud",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Cloud Migration",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Cloud Deployment",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Cloud Platforms",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Data Warehouse",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "SQL",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Apache Spark",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Microsoft SQL Server",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "MySQL",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Kafka",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Data Lake",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Streaming & Messaging",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "NoSQL Databases",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Relational Databases",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Pandas",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "R",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "MATLAB",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "SAS",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "D3",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Power BI",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Tableau",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Statistics",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Exploratory Data Analysis",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Data Visualization",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Generative AI",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Machine Learning",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Artificial Intelligence (AI)",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Deep Learning",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Reinforcement Learning",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Natural Language Processing",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "TensorFlow",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Scikit-Learn",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Hyperparameter Tuning",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "MLOps",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Java",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "JavaScript",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Spring",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Python",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Go",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "C#",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "C++",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "C",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Swift",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Rust",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Functional Programming",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Object-Oriented",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Distributed Systems",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Domain-Driven Design",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Architectural Patterns",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Kubernetes",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Docker",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "GitHub",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Terraform",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Continuous Delivery",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Continuous Integration",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Database Administration",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Computer Networking",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Operating Systems",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "IT Certifications",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Network Security",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Application Security",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Incident Response",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Zero Trust Model",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Disaster Recovery",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Penetration Testing / Ethical Hacking",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Governance",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Malware",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Security Architecture",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Security Engineering",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Security Certifications",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Web Design",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Graphic Design",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Interaction Design",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Film & Video",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "User Experience (UX)",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Design Process",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Design Tools",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Agile",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Project Management",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Product Management",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Marketing",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Human Resources",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Finance",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Team Management",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Business Strategy",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Digital Transformation",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Organizational Leadership",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Professional Communication",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Emotional Intelligence",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Presentation Skills",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Innovation",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Critical Thinking",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Public Speaking",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Collaboration",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Personal Productivity",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Confidence / Motivation",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "All features",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Expert Intelligence",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Verifiable skills",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Academies",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Courses",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Certifications",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Interactive learning",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Live events",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Superstreams",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Answers",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Insights reporting",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Radar Blog",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Live",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Plans",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Sign In",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Try Now",
+    "wh": [
+     342,
+     38
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "",
+    "wh": [
+     48,
+     48
+    ]
+   },
+   {
+    "t": "Explore Skills",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Cloud Computing",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Data Engineering",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Data Science",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "AI & ML",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Programming Languages",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Software Architecture",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "IT/Ops",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Security",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Design",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Business",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Soft Skills",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Features",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     48,
+     48
+    ]
+   },
+   {
+    "t": "Explore Skills",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Cloud Computing",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Data Engineering",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Data Science",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "AI & ML",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Programming Languages",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Software Architecture",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "IT/Ops",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Security",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Design",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Business",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Soft Skills",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Features",
+    "wh": [
+     390,
+     38
+    ]
+   },
+   {
+    "t": "Back",
+    "wh": [
+     73,
+     22
+    ]
+   },
+   {
+    "t": "Show More",
+    "wh": [
+     82,
+     16
+    ]
+   },
+   {
+    "t": "Cookie Settings",
+    "wh": [
+     350,
+     40
+    ]
+   },
+   {
+    "t": "Accept",
+    "wh": [
+     350,
+     42
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Enable All",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View Vendor Details\u200e",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View Vendor Details\u200e",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View Vendor Details\u200e",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "View Vendor Details\u200e",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Back Button",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Filter Icon",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Clear",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Apply",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Cancel",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Reject All",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Confirm",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cpl": 40,
+  "h1": {
+   "fs": "32.44px",
+   "lh": "36.0019px",
+   "wh": [
+    326,
+    108
+   ],
+   "t": "Designing Data-Intensive Applications"
+  },
+  "bodyFont": "16px normal",
+  "families": [
+   "Gilroy, Helvetica, Arial, sans-serif"
+  ],
+  "docH": 7885,
+  "hdrH": 52,
+  "bgc": "rgba(0, 0, 0, 0)",
+  "fonts": [
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Gilroy",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Guardian Sans Text",
+   "Noto Serif",
+   "Noto Serif",
+   "Noto Serif",
+   "Noto Serif",
+   "OpenDyslexic",
+   "OpenDyslexic",
+   "OpenDyslexic",
+   "OpenDyslexic"
+  ],
+  "title": "Designing Data-Intensive Applications [Book]",
+  "ovx": false
+ },
+ "ref-oreilly_d_light": {
+  "nav": [],
+  "btns": [],
+  "cpl": null,
+  "h1": {
+   "fs": "32px",
+   "lh": "normal",
+   "wh": [
+    1264,
+    37
+   ],
+   "t": "Access Denied"
+  },
+  "bodyFont": "16px normal",
+  "families": [
+   "\"Times New Roman\""
+  ],
+  "docH": 800,
+  "hdrH": null,
+  "bgc": "rgba(0, 0, 0, 0)",
+  "fonts": [],
+  "title": "Access Denied",
+  "ovx": false
+ },
+ "ref-nostarch_m_light": {
+  "nav": [
+   {
+    "t": "",
+    "wh": [
+     234,
+     50
+    ]
+   },
+   {
+    "t": "Catalog",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "New",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Upcoming",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Early Access",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Catalog",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "New",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Upcoming",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Early Access",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Toggle navigation",
+    "wh": [
+     50,
+     50
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Topics",
+    "wh": [
+     320,
+     34
+    ]
+   },
+   {
+    "t": "Add to cart",
+    "wh": [
+     360,
+     34
+    ]
+   },
+   {
+    "t": "Download Chapter 1: Hash Table",
+    "wh": [
+     251,
+     34
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "18px",
+   "lh": "19.8px",
+   "wh": [
+    360,
+    33
+   ],
+   "t": "Algorithmic Thinking, 2nd Edition"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Arial, Helvetica, Verdana, sans-serif",
+   "\"Glyphicons Halflings\""
+  ],
+  "docH": 6149,
+  "hdrH": 82,
+  "bgc": "rgb(245, 245, 245)",
+  "fonts": [
+   "Glyphicons Halflings"
+  ],
+  "title": "Algorithmic Thinking, 2nd Edition | No Starch Press",
+  "ovx": false
+ },
+ "ref-nostarch_d_light": {
+  "nav": [
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Catalog",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "New",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Upcoming",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Early Access",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Catalog",
+    "wh": [
+     59,
+     30
+    ]
+   },
+   {
+    "t": "New",
+    "wh": [
+     33,
+     30
+    ]
+   },
+   {
+    "t": "Upcoming",
+    "wh": [
+     78,
+     30
+    ]
+   },
+   {
+    "t": "Early Access",
+    "wh": [
+     99,
+     30
+    ]
+   }
+  ],
+  "btns": [
+   {
+    "t": "Toggle navigation",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     60,
+     32
+    ]
+   },
+   {
+    "t": "Topics",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "Add to cart",
+    "wh": [
+     111,
+     34
+    ]
+   },
+   {
+    "t": "Download Chapter 1: Hash Table",
+    "wh": [
+     251,
+     34
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   },
+   {
+    "t": "",
+    "wh": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cpl": null,
+  "h1": {
+   "fs": "18px",
+   "lh": "19.8px",
+   "wh": [
+    555,
+    30
+   ],
+   "t": "Algorithmic Thinking, 2nd Edition"
+  },
+  "bodyFont": "16px 25.6px",
+  "families": [
+   "Arial, Helvetica, Verdana, sans-serif",
+   "\"Glyphicons Halflings\""
+  ],
+  "docH": 4659,
+  "hdrH": 172,
+  "bgc": "rgb(245, 245, 245)",
+  "fonts": [
+   "Glyphicons Halflings"
+  ],
+  "title": "Algorithmic Thinking, 2nd Edition | No Starch Press",
+  "ovx": true
+ }
+}
