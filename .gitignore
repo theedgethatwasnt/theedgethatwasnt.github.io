@@ -18,6 +18,7 @@ checkpoints/
 # The explorer embeds the book's result figures locally; keep them.
 !docs/experiments/figures/
 !docs/experiments/figures/*.png
+!docs/experiments/figures/*.webp
 # Glossary indicator charts (enc_* author plates + gen_* generated, WebP) live one level down.
 !docs/experiments/figures/glossary/
 !docs/experiments/figures/glossary/*.webp

@@ -14,9 +14,13 @@ reader repository*. Two differences from the fx-core original:
    resulting PATHMAP (orig path -> URL or null) is embedded in the page.
 
 2. **Figures are embedded locally.** The referenced figure PNGs were copied
-   into `docs/experiments/figures/` (flattened to basenames). FIGMAP maps each
-   original figure path to its local `figures/<basename>` src so the images
-   render on GitHub Pages with no reference back to fx-core.
+   into `docs/experiments/figures/` (flattened to basenames), each with a
+   `.webp` sibling (≤1200 px, `cwebp -q 82`, never upscaled). FIGMAP maps each
+   original figure path to `{png, webp, w, h}`; the renderer emits a
+   `<picture>` (WebP source, PNG fallback) so the images render on GitHub
+   Pages with no reference back to fx-core. To add a figure: drop the PNG in
+   figures/, run `cwebp -q 82 -resize 1200 0 x.png -o x.webp` (omit -resize
+   if the PNG is ≤1200 px wide), then rebuild.
 
 Zero references to the private source repository are emitted.
 
@@ -101,16 +105,33 @@ def build_pathmap(data: dict) -> dict:
 
 
 def build_figmap(data: dict) -> dict:
-    """orig figure path -> local relative src under docs/experiments/."""
-    figmap: dict[str, str] = {}
+    """orig figure path -> {png, webp, w, h} under docs/experiments/.
+
+    `png` is the committed original (kept for external references and as the
+    <picture> fallback); `webp` is the ≤1200 px re-encode made with
+    `cwebp -q 82 [-resize 1200 0]` (never upscaled) — null when absent, in
+    which case the renderer emits a plain <img>. `w`/`h` are the PNG's pixel
+    size so the <img> reserves its box before the lazy load (same aspect)."""
+    figmap: dict[str, dict] = {}
     for e in data["experiments"]:
         for f in e.get("figures", []):
             base = Path(f).name
             local = FIGURES_DIR / base
-            if local.is_file():
-                figmap[f] = f"figures/{base}"
-            # if a referenced figure is missing locally we simply omit it from
-            # the map; the renderer then shows the caption without a broken img
+            if not local.is_file():
+                # missing locally: omitted from the map; the renderer then
+                # shows the caption without a broken img
+                continue
+            webp = local.with_suffix(".webp")
+            w = h = None
+            try:
+                from PIL import Image  # type: ignore
+                with Image.open(local) as im:
+                    w, h = im.size
+            except Exception:
+                pass
+            figmap[f] = {"png": f"figures/{base}",
+                         "webp": f"figures/{webp.name}" if webp.is_file() else None,
+                         "w": w, "h": h}
     return figmap
 
 
@@ -177,7 +198,7 @@ code, .code a, .code span {{ font:13px/1.5 var(--mono); }}
 .code span.dead {{ display:block; color:var(--dead); padding:1px 0; word-break:break-all; cursor:help; }}
 .figs {{ display:flex; flex-wrap:wrap; gap:14px; }}
 .figs figure {{ max-width:460px; }}
-.figs img {{ max-width:100%; border:1px solid var(--line); border-radius:4px; background:#fff; }}
+.figs img {{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; background:#fff; }}
 .figs figcaption {{ font-size:.75rem; color:var(--muted); }}
 .keynum {{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:10px 14px; font-size:.92rem; max-width:var(--measure); }}
 #empty {{ color:var(--muted); padding:40px; max-width:var(--measure); }}
@@ -326,9 +347,12 @@ function chips(arr, cls){{
 }}
 function figBlock(p, i, name){{
   const label = `${{name}} — figure ${{i+1}}`;
-  const src = FIGMAP[p];
-  if (!src) return `<figure><figcaption>${{esc(label)}} (figure not included)</figcaption></figure>`;
-  return `<figure><a href="${{src}}" target="_blank" rel="noopener"><img src="${{src}}" loading="lazy" alt="${{esc(label)}}"></a><figcaption>${{esc(label)}}</figcaption></figure>`;
+  const f = FIGMAP[p];
+  if (!f) return `<figure><figcaption>${{esc(label)}} (figure not included)</figcaption></figure>`;
+  const dims = (f.w && f.h) ? ` width="${{f.w}}" height="${{f.h}}"` : '';
+  const img = `<img src="${{f.png}}"${{dims}} loading="lazy" decoding="async" alt="${{esc(label)}}">`;
+  const pic = f.webp ? `<picture><source type="image/webp" srcset="${{f.webp}}">${{img}}</picture>` : img;
+  return `<figure><a href="${{f.png}}" target="_blank" rel="noopener">${{pic}}</a><figcaption>${{esc(label)}}</figcaption></figure>`;
 }}
 function show(e, userPick){{
   const code = (e.code_paths||[]).map(codeLink).join('');

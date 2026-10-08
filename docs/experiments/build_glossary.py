@@ -11,8 +11,9 @@ Two jobs, two subcommands:
 
     python3 build_glossary.py build [--json glossary.json] [--out glossary.html]
         Read glossary.json and emit a self-contained glossary.html (system
-        fonts, light/dark, alphabetical, per-term #slug anchors, search box,
-        back-to-explorer link). Needs no markdown source, so it runs in the
+        fonts, light/dark, one <section> per letter with an A–Z jump row,
+        per-term #slug anchors, search box, one open plate per indicator
+        family and a folded copy on the other family members). Needs no markdown source, so it runs in the
         curated reader repo too.
 
 glossary.json is the single source of truth for BOTH glossary.html AND the
@@ -428,19 +429,36 @@ def _plate_dims(fname: str) -> str:
         return ""
 
 
-def chart_html(slug: str) -> str:
-    """<figure> for a term's chart, or '' if the term has no plate. Plates are
-    served as WebP (≤1200 px wide, design review 2026-10-08 R8); the key in
-    CHART_FIGS/CHART_SLUGS keeps the historical .png basename."""
-    fig = CHART_SLUGS.get(slug)
-    if not fig:
-        return ""
+def _figure_html(fig: str) -> str:
     cap = CHART_FIGS.get(fig, "")
     fname = fig[:-4] + ".webp" if fig.endswith(".png") else fig
     return (f'<figure class="chart">'
             f'<img loading="lazy" decoding="async" src="{CHART_DIR}/{_h(fname)}"{_plate_dims(fname)} '
             f'alt="{_h(cap)}">'
             f'<figcaption>{_h(cap)}</figcaption></figure>')
+
+
+def plate_html(slug: str, first_of_family: dict[str, tuple[str, str]]) -> str:
+    """<dd class="plate"> for a term's chart, or '' if the term has no plate.
+
+    Plates are served as WebP (≤1200 px wide, design review 2026-10-08 R8); the
+    key in CHART_FIGS/CHART_SLUGS keeps the historical .png basename. One
+    plate serves a whole family of terms, so it is drawn open only on the
+    first term (alphabetically) bound to it; every later family member carries
+    the same figure inside a closed <details> ("Show the chart"), which keeps
+    the page short and — because a closed <details> has no layout box — never
+    fetches the lazy image until the reader asks for it (2026-10-08 follow-up).
+    `first_of_family` maps figure basename -> (slug, display) of its first term."""
+    fig = CHART_SLUGS.get(slug)
+    if not fig:
+        return ""
+    first_slug, first_disp = first_of_family[fig]
+    if first_slug == slug:
+        return f'<dd class="plate">{_figure_html(fig)}</dd>'
+    return (f'<dd class="plate"><details class="plate">'
+            f'<summary>Show the chart <span class="shared">(drawn under '
+            f'<a href="#{_h(first_slug)}">{_h(first_disp)}</a>)</span></summary>'
+            f'{_figure_html(fig)}</details></dd>')
 
 
 # ───────────────────────────────────────────────────── html builder ──
@@ -470,25 +488,49 @@ HTML = """<!DOCTYPE html>
 main.page {{ padding-top:20px; }}
 h1 {{ font-size:2rem; line-height:1.15; margin:6px 0 4px; }}
 .count {{ color:var(--muted); font-size:.9rem; margin:6px 0 18px; max-width:var(--measure); }}
-.gsearch {{ position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; margin-bottom:8px; border-bottom:1px solid var(--line); }}
-#q {{ width:100%; max-width:420px; min-height:44px; padding:8px 12px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; }}
-.jump {{ display:flex; flex-wrap:wrap; gap:4px; margin:14px 0 22px; }}
-.jump a {{ display:inline-flex; align-items:center; justify-content:center; min-width:34px; min-height:34px; font:600 .9rem/1 var(--serif); color:var(--acc); text-decoration:none; padding:0 6px; border:1px solid var(--line); border-radius:5px; }}
-.jump a:hover {{ background:var(--chip); }}
+/* sticky tool row: the filter box, and (from 640px) the letter row beside it */
+.gtools {{ position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; margin-bottom:8px; border-bottom:1px solid var(--line);
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px 18px; }}
+#q {{ flex:1 1 220px; max-width:420px; min-height:44px; padding:8px 12px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; font-size:1rem; }}
+nav.jump {{ display:flex; flex-wrap:wrap; gap:2px; scroll-margin-top:80px; }}
+nav.jump a {{ display:inline-flex; align-items:center; justify-content:center; min-width:30px; min-height:36px; font:600 .9rem/1 var(--serif); color:var(--acc); text-decoration:none; padding:0 4px; border-radius:5px; }}
+nav.jump a:hover {{ background:var(--chip); }}
+section.lsec {{ scroll-margin-top:76px; }}
+section.lsec h2 {{ display:flex; align-items:baseline; justify-content:space-between; font:700 1.1rem/1 var(--serif); color:var(--muted); margin:28px 0 2px; border-top:1px solid var(--line); padding-top:12px; }}
+section.lsec:first-of-type h2 {{ border-top:0; margin-top:14px; }}
+section.lsec h2 .toidx {{ display:none; font:400 .85rem/1 var(--serif); color:var(--muted); text-decoration:none; padding:8px 0 8px 12px; }}
+section.lsec h2 .toidx:hover {{ color:var(--acc); }}
+section.lsec dl {{ margin:0; }}
 .term {{ padding:14px 0 12px; border-bottom:1px solid var(--line); scroll-margin-top:76px; }}
-.term.hidden, .letter.hidden {{ display:none; }}
+.term.hidden, section.lsec.hidden {{ display:none; }}
 .term dt {{ font-weight:700; font-size:1.05rem; }}
-.term dt .src {{ font:400 .7rem/1 var(--mono); color:var(--muted); margin-left:8px; vertical-align:middle; text-transform:uppercase; letter-spacing:.05em; }}
 .term dt .alias {{ font:400 .8rem/1 var(--mono); color:var(--muted); margin-left:8px; }}
 .term dd {{ margin:5px 0 0; color:var(--fg); overflow-wrap:anywhere; max-width:var(--measure); }}
-.term figure.chart {{ margin:12px 0 2px; max-width:640px; }}
+.term dd.plate {{ margin:12px 0 2px; max-width:640px; }}
+.term figure.chart {{ margin:0; }}
 .term figure.chart img {{ width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:6px; background:#fff; }}
 .term figure.chart figcaption {{ font:italic .82rem/1.45 var(--serif); color:var(--muted); margin-top:5px; max-width:var(--measure); }}
-.letter {{ font:700 1.1rem/1 var(--serif); color:var(--muted); margin:28px 0 2px; border-top:1px solid var(--line); padding-top:12px; }}
+details.plate summary {{ display:inline-flex; align-items:center; min-height:36px; font:600 .9rem/1.3 var(--serif); color:var(--acc); cursor:pointer; list-style:none; padding:4px 0; }}
+details.plate summary::-webkit-details-marker {{ display:none; }}
+details.plate summary::before {{ content:""; width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(-45deg); margin:0 10px 0 3px; flex:0 0 auto; }}
+details.plate[open] summary::before {{ transform:rotate(45deg); }}
+details.plate summary .shared {{ font-weight:400; color:var(--muted); margin-left:6px; }}
+details.plate summary .shared a {{ color:var(--muted); }}
+details.plate summary .shared a:hover {{ color:var(--acc); }}
+details.plate[open] summary {{ margin-bottom:8px; }}
 #none {{ color:var(--muted); padding:30px 0; display:none; }}
+@media (max-width:639px) {{
+  /* phones: only the filter box stays sticky; the letter row sits once below it
+     and each section heading carries a quiet way back to it */
+  .gtools {{ position:static; border-bottom:0; padding-bottom:0; margin-bottom:0; }}
+  .gtools-sticky {{ position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0; border-bottom:1px solid var(--line); }}
+  nav.jump {{ padding:10px 0 4px; }}
+  nav.jump a {{ min-width:34px; min-height:40px; }}
+  section.lsec h2 .toidx {{ display:inline-block; }}
+}}
 @media (min-width:1280px) {{
   :root {{ --page-w:1160px; }}
-  .term figure.chart {{ max-width:960px; }}
+  .term dd.plate {{ max-width:960px; }}
 }}
 </style>
 </head>
@@ -511,11 +553,11 @@ h1 {{ font-size:2rem; line-height:1.15; margin:6px 0 4px; }}
 <main class="page" id="main">
  <h1>Glossary</h1>
  <div class="count">{count} terms — indicators, formulas, reward functions, statistics, and the project's own coinages, drawn from the book's Complete Glossary and Master Indicator Encyclopedia. Hover a term anywhere in the explorer to preview; click through to here.</div>
- <div class="gsearch"><input id="q" type="search" placeholder="Filter terms…" autocomplete="off" aria-label="Filter the glossary"></div>
- <div class="jump">{jump}</div>
- <dl id="glist">
+ <div class="gtools">
+  <div class="gtools-sticky"><input id="q" type="search" placeholder="Filter terms…" autocomplete="off" aria-label="Filter the glossary"></div>
+  <nav class="jump" id="jump" aria-label="Jump to a letter">{jump}</nav>
+ </div>
 {items}
- </dl>
  <div id="none">No term matches that filter.</div>
 </main>
 <footer class="sitefoot">
@@ -525,28 +567,25 @@ h1 {{ font-size:2rem; line-height:1.15; margin:6px 0 4px; }}
 </footer>
 <script>
 const q=document.getElementById('q'), none=document.getElementById('none');
-const nodes=[...document.getElementById('glist').children];   // letters + terms in order
+const secs=[...document.querySelectorAll('section.lsec')];
+const terms=[...document.querySelectorAll('.term')];
+// filter key built here from the visible text (name, aliases, definition) rather than
+// duplicated into the markup
+terms.forEach(t=>{{ t.dataset.k=(t.querySelector('dt').textContent+' '+t.querySelector('dd').textContent).toLowerCase(); }});
 q.addEventListener('input',()=>{{
   const v=q.value.trim().toLowerCase(); let shown=0;
-  // first pass: show/hide terms
-  nodes.forEach(n=>{{
-    if(!n.classList.contains('term'))return;
-    const hit=!v||n.dataset.k.includes(v);
-    n.classList.toggle('hidden',!hit); if(hit)shown++;
-  }});
-  // second pass: a letter header is visible only if a visible term follows it
-  // before the next letter header
-  let pendingLetter=null, letterHasVisible=false;
-  const flush=()=>{{ if(pendingLetter)pendingLetter.classList.toggle('hidden',!letterHasVisible); }};
-  nodes.forEach(n=>{{
-    if(n.classList.contains('letter')){{ flush(); pendingLetter=n; letterHasVisible=false; }}
-    else if(!n.classList.contains('hidden')){{ letterHasVisible=true; }}
-  }});
-  flush();
+  terms.forEach(t=>{{ const hit=!v||t.dataset.k.includes(v); t.classList.toggle('hidden',!hit); if(hit)shown++; }});
+  // a letter section stays only while one of its terms is showing
+  secs.forEach(s=>s.classList.toggle('hidden',!s.querySelector('.term:not(.hidden)')));
   none.style.display=shown?'none':'block';
 }});
-// deep-link highlight
-if(location.hash){{ const el=document.querySelector(location.hash); if(el){{ el.style.background='var(--chip)'; el.scrollIntoView(); }} }}
+// deep link: highlight the term and open its chart if it is folded
+function reveal(){{
+  if(!location.hash)return; const el=document.getElementById(location.hash.slice(1)); if(!el)return;
+  const d=el.querySelector('details.plate'); if(d)d.open=true;
+  if(el.classList.contains('term'))el.style.background='var(--chip)';
+}}
+reveal(); addEventListener('hashchange',reveal);
 </script>
 <!-- analytics: cookieless counter goes here at hosting step (CF Web Analytics or GoatCounter) — no cookies, no banners -->
 </body>
@@ -566,27 +605,41 @@ def build_html(data: dict) -> str:
     firsts_sorted = sorted(firsts, key=lambda c: (c == "#", c))
     jump = "".join(f'<a href="#letter-{c if c!="#" else "sym"}">{c}</a>' for c in firsts_sorted)
 
+    # first term (in page order) bound to each plate -> that plate is drawn open there
+    first_of_family: dict[str, tuple[str, str]] = {}
+    for t in terms:
+        fig = CHART_SLUGS.get(t["slug"])
+        if fig and fig not in first_of_family:
+            first_of_family[fig] = (t["slug"], t["display"])
+
     items: list[str] = []
     cur_letter = None
     for t in terms:
         c = t["display"][0].upper()
         c = c if c.isalpha() else "#"
         if c != cur_letter:
+            if cur_letter is not None:
+                items.append("  </dl>\n </section>")
             cur_letter = c
             anchor = c if c != "#" else "sym"
-            items.append(f'  <div class="letter" id="letter-{anchor}">{c}</div>')
+            items.append(f' <section class="lsec" id="letter-{anchor}" aria-labelledby="h-{anchor}">\n'
+                         f'  <h2 id="h-{anchor}">{c}<a class="toidx" href="#jump">Letters</a></h2>\n'
+                         f'  <dl>')
         aliases = [s for s in t["surfaces"] if s.lower() != t["display"].lower()]
         alias_html = (f'<span class="alias">{_h(", ".join(aliases))}</span>'
                       if aliases else "")
-        key = _h((t["display"] + " " + " ".join(t["surfaces"]) + " " + t["body"]).lower())
         items.append(
-            f'  <div class="term" id="{t["slug"]}" data-k="{key}">'
+            f'  <div class="term" id="{t["slug"]}">'
             f'<dt title="from the book\'s {_h(t["source"])} section">'
             f'{_h(t["display"])}{alias_html}</dt>'
-            f'<dd>{_h(t["body"])}</dd>{chart_html(t["slug"])}</div>'
+            f'<dd>{_h(t["body"])}</dd>{plate_html(t["slug"], first_of_family)}</div>'
         )
+    if cur_letter is not None:
+        items.append("  </dl>\n </section>")
+    n_open = len(first_of_family)
     n_charts = sum(1 for t in terms if t["slug"] in CHART_SLUGS)
-    print(f"  {n_charts}/{len(terms)} terms carry a chart.")
+    print(f"  {n_charts}/{len(terms)} terms carry a chart; {n_open} plates drawn open, "
+          f"{n_charts - n_open} folded under their family's first term.")
     # warn on chart bindings that match no term (typo guard)
     known = {t["slug"] for t in terms}
     stray = [s for s in CHART_SLUGS if s not in known]
